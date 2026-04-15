@@ -1,0 +1,11 @@
+request_meta:
+  request_id: "REQ-PROF-ABS-YYYYMMDD-001"
+  requested_by: "your_name"
+  requested_at_utc: "2026-04-15T00:00:00Z"
+
+input:
+  titles_json: "01_data_collection/step_results/professor_paper_titles/pubmed_yong_fei_wang_titles.json"
+
+output:
+  output_prefix: "pubmed_yong_fei_wang"
+  output_dir: "01_data_collection/step_results/professor_paper_abstracts"
