@@ -212,6 +212,23 @@ powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collec
 - 摘要：`01_data_collection/step_results/professor_paper_abstracts`
 - 实验室信息：`01_data_collection/step_results/professor_lab_info`
 
+结果解释（建议先看这三条）：
+
+- `professor_paper_titles`：论文标题与 PMID 列表，用于后续抓摘要和关联分析
+- `professor_paper_abstracts`：论文摘要正文，用于主题归纳、趋势分析、自动报告草稿
+- `professor_lab_info`：按论文作者单位聚合得到的机构候选，不是唯一实验室真值
+
+详细字段说明与核验建议见：
+
+- `01_data_collection/step_results/README.md`
+
+推荐最简工作流（4 步）：
+
+1. 确定作者查询词（先用 `姓名[au]`，必要时加 `机构[ad]`）
+2. 执行一键命令（`run_professor_collection.ps1`）
+3. 查看 `professor_lab_info` 前 10 条机构是否集中
+4. 若混入同名作者，收敛查询词后重新执行
+
 ## Step 02：文档解析与结构化（目录骨架已就绪）
 
 目录：
