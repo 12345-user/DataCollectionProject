@@ -42,3 +42,15 @@ python "01_data_collection/processing/lab_paper_tools/fetch_pubmed_titles.py" --
 python "01_data_collection/processing/lab_paper_tools/fetch_pubmed_abstracts.py" --titles-json "01_data_collection/step_results/professor_paper_titles/$P`_titles.json" --output-prefix $P
 python "01_data_collection/processing/lab_paper_tools/extract_lab_info_from_pubmed.py" --titles-json "01_data_collection/step_results/professor_paper_titles/$P`_titles.json" --output-prefix $P
 ```
+
+## 四、一键执行（最简）
+
+脚本位置：
+
+- `scripts/bootstrap/run_professor_collection.ps1`
+
+执行命令：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collection.ps1" -ProfessorQuery "Yong-Fei Wang[au]" -OutputPrefix "pubmed_yong_fei_wang"
+```

@@ -1,0 +1,806 @@
+{
+  "count_affiliations": 1479,
+  "unique_affiliations": 597,
+  "top_affiliations": [
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "count": 51
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China; Key Laboratory of Clinical Diagnosis and Treatment Techniques for Animal Disease, Ministry of Agriculture, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China.",
+      "count": 24
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Shanghai Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 24
+    },
+    {
+      "affiliation": "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "count": 22
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Shanghai Pituitary Tumor Center, Huashan Hospital, Shanghai Medical College, Fudan University, Shanghai 200040, China.",
+      "count": 20
+    },
+    {
+      "affiliation": "Key Laboratory of Dermatology, Ministry of Education, Anhui Medical University, Hefei, Anhui, China.",
+      "count": 18
+    },
+    {
+      "affiliation": "National Key Facility for Crop Gene Resources and Genetic Improvement, Institute of Crop Sciences, Chinese Academy of Agricultural Sciences, Beijing, 100081, China.",
+      "count": 18
+    },
+    {
+      "affiliation": "University of Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 16
+    },
+    {
+      "affiliation": "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 15
+    },
+    {
+      "affiliation": "Key Laboratory of Plant Carbon Capture, Chinese Academy of Sciences, Shanghai, China.",
+      "count": 14
+    },
+    {
+      "affiliation": "Department of Endocrinology and Metabolism, Huashan Hospital, Fudan University, Shanghai, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "National Key Facility for Crop Gene Resources and Genetic Improvement, Institute of Crop Sciences, Chinese Academy of Agricultural Sciences, Beijing 100081, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "National Key Laboratory for Crop Genetics and Germplasm Enhancement, Jiangsu Plant Gene Engineering Research Center, Nanjing Agricultural University, Nanjing 210095, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "National Key Laboratory for Crop Genetics and Germplasm Enhancement, Jiangsu Plant Gene Engineering Research Center, Nanjing Agricultural University, Nanjing, 210095, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "Bio-X Institutes, Ministry of Education Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders, Institute of Social Cognitive and Behavioral Sciences, Shanghai Jiao Tong University, Shanghai 200030, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "Department of Dermatology, No. 1 Hospital, Anhui Medical University, Hefei, Anhui, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 12
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 12
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China.",
+      "count": 12
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "count": 12
+    },
+    {
+      "affiliation": "Department of Dermatology and Institute of Dermatology, First Affiliated Hospital, Anhui Medical University, Hefei, Anhui, People's Republic of China.",
+      "count": 12
+    },
+    {
+      "affiliation": "Key Lab of Dermatology, Ministry of Education (Anhui Medical University), Hefei, Anhui, People's Republic of China.",
+      "count": 12
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Chinese Academy of Sciences Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China.",
+      "count": 11
+    },
+    {
+      "affiliation": "University of Chinese Academy of Sciences, Beijing, China.",
+      "count": 10
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "count": 10
+    },
+    {
+      "affiliation": "Division of Genetics and Molecular Medicine, King's College London, London, UK.",
+      "count": 10
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Hong Kong.",
+      "count": 10
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics,Chinese Academy of Sciences Center for Excellence in Molecular Plant Sciences, Shanghai Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, 200032, China.",
+      "count": 9
+    },
+    {
+      "affiliation": "Shanghai Pituitary Tumor Center, Shanghai, China.",
+      "count": 9
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "count": 9
+    },
+    {
+      "affiliation": "Department of Medical and Molecular Genetics, King's College London, London, UK.",
+      "count": 9
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Centre for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "count": 8
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences, Beijing 100730, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Huashan Hospital, Shanghai Medical College, Fudan University, Shanghai 200040, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "Department of Medical Sciences, Ministry of Public Health, Nonthaburi, Thailand.",
+      "count": 7
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "Department of Nephrology, The Fourth Affiliated Hospital, Zhejiang University School of Medicine, Yiwu, Zhejiang, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "Department of Rheumatology, Hanyang University Hospital for Rheumatic Diseases, Seoul, South Korea.",
+      "count": 7
+    },
+    {
+      "affiliation": "Hanyang University Institute for Rheumatology Research, Seoul, South Korea.",
+      "count": 7
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, Shanghai 200032, China; University of Chinese Academy of Sciences, Beijing 100039, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "State Key Laboratory of Genetic Engineering, Department of Biochemistry and Molecular Biology, School of Life Sciences, Fudan University, Shanghai 200438, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "Shanghai Pituitary Tumor Center, Shanghai 200040, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences CITY: Shanghai STATE: Shanghai China [CN].",
+      "count": 7
+    },
+    {
+      "affiliation": "Department of Nephrology, Center for Regeneration and Aging Medicine, the Fourth Affiliated Hospital of School of Medicine and International School of Medicine, International Institutes of Medicine, Zhejiang University, Yiwu, Zhejiang, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Department of Nephrology, Fourth Affiliated Hospital, Zhejiang University School of Medicine, Yiwu, Zhejiang, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "University of Hong Kong, Hong Kong, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "count": 6
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, Hong Kong.",
+      "count": 6
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, CAS Center for Excellence in Molecular Plant Sciences, Chinese Academy of Sciences, Shanghai, 200032, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Li Ka Shing Faculty of Medicine, University of Hong Kong, Hong Kong, SAR China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong.",
+      "count": 6
+    },
+    {
+      "affiliation": "Division of Biological Sciences, Cell and Developmental Biology Section, University of California San Diego, La Jolla, CA, 92093-0116, USA.",
+      "count": 6
+    },
+    {
+      "affiliation": "University of Chinese Academy of Sciences, Shanghai, 200032, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "State Key Laboratory of Plant Trait Design, CAS Center for Excellence in Molecular Plant Sciences, Chinese Academy of Sciences (CAS), Shanghai, 200032, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "The First Clinical Medical College, Lanzhou University, Lanzhou 730000, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, The First Hospital of Lanzhou University, The First Clinical Medical College, Lanzhou University, Lanzhou 730000, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "The First Clinical Medical College of Lanzhou University, Lanzhou, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, The First Hospital of Lanzhou University, Lanzhou, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Nephrology, The Fourth Affiliated Hospital, Zhejiang University School of Medicine, International Institutes of Medicine, Zhejiang University, Zhejiang University Belt and Road International School of Medicine, Yiwu, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Plant Biology Section, School Of Integrative Plant Science, Cornell University, Ithaca, New York, USA.",
+      "count": 5
+    },
+    {
+      "affiliation": "The First Clinical Medical College of Lanzhou University, Lanzhou, Gansu, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "University of the Chinese Academy of Sciences, Beijing, 100049, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "School of Integrative Plant Science, Plant Biology Section, Cornell University, Ithaca, New York, USA.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Li Ka Shing Faculty of Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Thyroid Surgery, The First Affiliated Hospital of Zhengzhou University Zhengzhou 450052, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Li Ka Shing Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Neurosurgery, The Affiliated Beijing Tiantan Hospital of Capital Medical University, Beijing 100050, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, Shanghai 200032, China; Institute of Plant Physiology and Ecology, University of Chinese Academy of Sciences, Shanghai 200032, China;",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Huashan Hospital, Fudan University, Shanghai, 200040, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Shanghai Medical College, Fudan University, Shanghai, 200040, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Shanghai Pituitary Tumor Center, Shanghai, 200040, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Institute of Technology, University of Tartu, 50411, Tartu, Estonia.",
+      "count": 5
+    },
+    {
+      "affiliation": "Department of Gastrointestinal Surgery, Hebei General Hospital, Shijiazhuang, Hebei, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Shenzhen Futian Hospital for Rheumatic Diseases, and Joint Research Laboratory for Rheumatology of Shenzhen University Health Science Center and Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Department of Statistics and Actuarial Science, The University of Hong Kong, Hong Kong SAR, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Department of Dermatology, China-Japan Friendship Hospital, Beijing, People's Republic of China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Laboratory for Bone and Joint Diseases, RIKEN Center for Medical Sciences, Tokyo, Japan.",
+      "count": 4
+    },
+    {
+      "affiliation": "Laboratory for Statistical and Translational Genetics Analysis, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "count": 4
+    },
+    {
+      "affiliation": "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "count": 4
+    },
+    {
+      "affiliation": "Renal Division, Department of Medicine, Peking University First Hospital, No.8 Xi Shi Ku Street, Xi Cheng District, Beijing, 100034, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Institute of Nephrology, Peking University, Beijing, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Key Laboratory of Renal Disease, Ministry of Health of China, Beijing, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Key Laboratory of Chronic Kidney Disease Prevention and Treatment (Peking University), Ministry of Education, Beijing, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Shanghai Key Laboratory of Bio-Energy Crops, Plant Science Center, School of Life Sciences, Shanghai University, Shanghai 200444, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "School of Public Health, The University of Hong Kong, Hong Kong, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Queen Mary Hospital, Li Ka Shing Faculty of Medicine, The University of Hong Kong, 21 Sassoon Road, Sandy Bay, Hong Kong.",
+      "count": 4
+    },
+    {
+      "affiliation": "Institute/Department of Dermatology, No.1 Hospital, Anhui Medical University, Hefei, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Kidney Disease Center, the First Affiliated Hospital, College of Medicine, Zhejiang University, Hangzhou, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China. yangwl@hku.hk.",
+      "count": 3
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, The First Hospital of Lanzhou University, The First Clinical Medical College of Lanzhou University, Lanzhou 730000, PR China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "count": 3
+    },
+    {
+      "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Division of Allergy, Immunology, and Rheumatology, Department of Medicine, Faculty of Medicine, Ramathibodi Hospital, Mahidol University, Bangkok, Thailand.",
+      "count": 3
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, the First Hospital of Lanzhou University, the First Clinical Medical College of Lanzhou University, Lanzhou, 730000, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Inner Mongolia Academy of Agricultural & Animal Husbandry Science, Hohhot 010010, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China; Key Laboratory of Clinical Diagnosis and Treatment Techniques for Animal Disease, Ministry of Agriculture, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China. Electronic address: jinshancao@imau.edu.cn.",
+      "count": 3
+    },
+    {
+      "affiliation": "Key Laboratory of Plant Carbon Capture, Chinese Academy of Sciences, Shanghai, China. pengzhang01@cemps.ac.cn.",
+      "count": 3
+    },
+    {
+      "affiliation": "Shanghai Normal University, Shanghai, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Medical Laboratory of Jining Medical University, Jining Medical University, Jining, Shandong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 3
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology and School of Medicine, The Chinese University of Hong Kong, Shenzhen, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Key Laboratory of Food Quality and Safety, Institute of Plant Protection, Jiangsu Academy of Agricultural Sciences, Nanjing, Jiangsu, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "The First Clinical Medical College of Lanzhou University Lanzhou China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience Medical Frontier Innovation Research Center The First Hospital of Lanzhou University Lanzhou China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Division of Genome Science, Department of Precision Medicine, National Institute of Health, Cheongju-si, South Korea.",
+      "count": 3
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University, School of Medicine (SJTUSM), Shanghai, People's Republic of China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, People's Republic of China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH, 45229, USA.",
+      "count": 3
+    },
+    {
+      "affiliation": "Kidney disease center, the First Affiliated Hospital, College of Medicine, Zhejiang University, Hangzhou, Zhejiang, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Key Laboratory of Food Quality and Safety, Institute of Plant Protection, Jiangsu Academy of Agricultural Sciences, Nanjing, Jiangsu Province, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Huashan Hospital, Fudan University, Shanghai, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Affiliated Hospital of Jining Medical University, Shandong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Rheumatology, Ren Ji Hospital, School of Medicine, Shanghai Jiao Tong University, 145 Middle of Shandong Road, Huangpu District, Shanghai 200001, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Li Ka Shing Faculty of Medicine, Queen Mary Hospital, the University of Hong Kong, 21 Sassoon Road, Hong Kong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "State Key Laboratory of Plant Physiology and Biochemistry, National Maize Improvement Center, Beijing Key Laboratory of Crop Genetic Improvement, Joint International Research Laboratory of Crop Molecular Breeding, College of Agronomy and Biotechnology, China Agricultural University, Beijing 100193, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "State Key Laboratory of Tropical Oceanography, South China Sea Institute of Oceanology, Chinese Academy of Sciences, Guangzhou, 510301, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Pediatric Surgery, Guangzhou Institute of Pediatrics, Guangdong Provincial Key Laboratory of Research in Structural Birth Defect Disease, Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Dermatology, No.1 Hospital, Anhui Medical University, Hefei, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Pediatrics, Union Hospital Affiliated to Fujian Medical University, Fuzhou, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Centre of Excellent in Immunology and Immune-Mediated Diseases, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, 1873 Ratchadamri Road, Pathum wan, Bangkok, 10330, Thailand.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Dermatology, No.1 Hospital Affiliated to Anhui Medical University, Hefei, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Dermatology, Huashan Hospital of Fudan University, Shanghai, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Dermatology, No. 1 Hospital and Key Laboratory of Dermatology, Ministry of Education, Anhui Medical University, Hefei, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Cardiology, the Second Hospital of Hebei Medical University, Shijiazhuang, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Dermatology, China-Japan Friendship Hospital, Beijing, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Internal Medicine 3, University of Erlangen-Nuremberg, Erlangen, Germany.",
+      "count": 3
+    },
+    {
+      "affiliation": "Institute for Clinical Immunology, University of Erlangen-Nuremberg, Erlangen, Germany.",
+      "count": 3
+    },
+    {
+      "affiliation": "a National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences , Chinese Academy of Sciences , Shanghai , China.",
+      "count": 3
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, Shanghai 200032, China;",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Endocrinology, Huashan Hospital, Shanghai Medical College, Fudan University, Shanghai 200040, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "University of Chinese Academy of Sciences, Shanghai, 200032, China. yfw@cemps.ac.cn.",
+      "count": 2
+    },
+    {
+      "affiliation": "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Clinical Research Center, Shizuoka General Hospital, Shizuoka, Japan.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Applied Genetics, School of Pharmaceutical Sciences, University of Shizuoka, Shizuoka, Japan.",
+      "count": 2
+    },
+    {
+      "affiliation": "Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, The First Clinical Medical College, The First Hospital of Lanzhou University, Lanzhou University, Lanzhou, 730000, People's Republic of China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Kidney Disease Center, First Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, Zhejiang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "School of Medicine and Warshel Institute for Computational Biology, Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, University of Hong Kong, Hong Kong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China. yfw@cemps.ac.cn.",
+      "count": 2
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, CAS Center for Excellence in Molecular Plant Sciences, Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China. pengzhang01@cemps.ac.cn.",
+      "count": 2
+    },
+    {
+      "affiliation": "The First Clinical Medical College of Lanzhou University, Lanzhou 730000, PR China; Institute of Cancer Neuroscience, Medical Frontier Innovation Research Center, The First Hospital of Lanzhou University, The First Clinical Medical College of Lanzhou University, Lanzhou 730000, PR China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China; Key Laboratory of Clinical Diagnosis and Treatment Techniques for Animal Disease, Ministry of Agriculture, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China; Inner Mongolia Medical University, Hohhot 010030, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China. Electronic address: surong@imau.edu.cn.",
+      "count": 2
+    },
+    {
+      "affiliation": "Laboratory of Veterinary Clinical Pharmacology, College of Veterinary Medicine, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China; Key Laboratory of Clinical Diagnosis and Treatment Techniques for Animal Disease, Ministry of Agriculture, Inner Mongolia Agricultural University, No. 29, Erdosdong Road, Saihan District, 010011 Hohhot City, China. Electronic address: hastinhim@imau.edu.cn.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, Hong Kong University, Hong Kong, People's Republic of China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Community Medicine, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Jining, Shandong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Division of Nephrology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Plastic and Reconstructive Surgery, Shanghai Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Shanghai Institute of Plant Physiology and Ecology, Chinese Academy of Sciences, Shanghai, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Sheng Yushou Center of Cell Biology and Immunology, Joint International Research Laboratory of Metabolic & Developmental Sciences, School of Life Sciences and Biotechnology, Shanghai Jiao Tong University, Shanghai, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "National Key Laboratory of Crop Genetic Improvement, College of Life Science and Technology, Huazhong Agricultural University, Wuhan 430070, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Key Laboratory of Plant Development and Environmental Adaption Biology, Ministry of Education, School of Life Sciences, Shandong University, Qingdao, Shandong 266237, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong SAR, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Sainsbury Laboratory, University of Cambridge, 47 Bateman Street, Cambridge, CB2 1LR, United Kingdom.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Biology and Department of Life and Nanopharmaceutical Sciences, Kyung Hee University, Seoul, Korea.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Orthopaedic Surgery, Graduate School of Medical Sciences, Kyushu University, Fukuoka, Japan.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Epidemiology and Biostatistics, School of Public Health, Anhui Medical University, Hefei, People's Republic of China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Laboratory for Autoimmune Diseases, RIKEN Center for Integrative Medical Sciences, Kanagawa, Japan.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, 999077, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Sheng Yushou Center of Cell Biology and Immunology, Joint International Research Laboratory of Metabolic and Developmental Sciences, School of Life Sciences and Biotechnology, Shanghai Jiao Tong University (SJTU), Shanghai, 200240, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Clinical Laboratory, the First Affiliated Hospital, College of Medicine, Zhejiang University, Hangzhou, Zhejiang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Nephrology, the Forth Affiliated Hospital, College of Medicine,Zhejiang University, Yiwu, Zhejiang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Chulalongkorn University, Bangkok, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province and Jining Medical University, Shandong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Ministry of Public Health, Nonthaburi, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Bioengineering, Jinan University, Guangzhou, 510632, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "National Key Laboratory of Plant Molecular Genetics, Institute of Plant Physiology and Ecology, CAS Center for Excellence in Molecular Plant Sciences, Chinese Academy of Sciences, Shanghai 200032, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Section of Translational Medicine, Faculty of Medicine, Mahidol University, Ramathibodi Hospital, Bangkok, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Division of Genetics and Molecular Medicine, King's College London, London, United Kingdom.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Dermatology, NO. 1 Hospital, Anhui Medical University, Hefei, Anhui, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "College of Life and Environment Sciences, Shanghai Normal University, Shanghai 200234, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Endocrinology, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences, Beijing 100730, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Cardiology, the Third Hospital of Hebei Medical University, Shijiazhuang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "College of Basic Medicine, Hebei Medical University, Shijiazhuang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Pharmacology, Hebei Medical University, Shijiazhuang, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Division of Genetics and Molecular Medicine, King's College London, London, SE1 9RT, UK.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Epidemiology and Biostatistics, School of Public Health, Anhui Medical University, Hefei, Anhui, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Epidemiology and Biostatistics, School of Public Health, Anhui Medical University, Hefei, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "School of Life Sciences, Hubei Key Laboratory of Genetic Regulation and Integrative Biology, Central China Normal University, Wuhan 430079, Hubei Province, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Neurosurgery, Qilu Hospital of Shandong University, Jinan, Shandong 250012, China.",
+      "count": 2
+    }
+  ]
+}

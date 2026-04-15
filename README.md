@@ -94,8 +94,8 @@ python "01_data_collection/processing/web_crawler_local/run_local_crawl.py"
 
 输出文件：
 
-- `01_data_collection/step_results/raw_multisource_dataset/local_crawl_results.json`
-- `01_data_collection/step_results/raw_multisource_dataset/local_crawl_results.md`
+- `01_data_collection/step_results/professor_lab_info/local_crawl_results.json`
+- `01_data_collection/step_results/professor_lab_info/local_crawl_results.md`
 
 ### 01-B PubMed 示例采集（作者论文标题）
 
@@ -181,22 +181,36 @@ powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_step01_local.ps1
 执行命令（按作者检索并写入项目输出）：
 
 ```powershell
-python -c "import json, urllib.parse, urllib.request, pathlib; term='huang hsien-da[au]'; q=urllib.parse.urlencode({'db':'pubmed','term':term,'retmax':'100000','retmode':'json'}); u='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?'+q; d=json.load(urllib.request.urlopen(u)); ids=d['esearchresult'].get('idlist',[]); titles=[]; batch=200; from urllib.parse import urlencode; [titles.extend([{'pmid':pid,'title':(s.get('result',{}).get(pid,{}).get('title') or '').strip()} for pid in chunk if (s:=json.load(urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?'+urlencode({'db':'pubmed','id':','.join(chunk),'retmode':'json'}))))]) for chunk in [ids[i:i+batch] for i in range(0,len(ids),batch)]]; out=pathlib.Path(r'01_data_collection/step_results/raw_multisource_dataset/pubmed_titles.json'); out.write_text(json.dumps({'query':term,'count':len(titles),'titles':titles},ensure_ascii=False,indent=2),encoding='utf-8'); print(out)"
+python "01_data_collection/processing/lab_paper_tools/fetch_pubmed_titles.py" --query "Yong-Fei Wang[au]" --output-prefix "pubmed_yong_fei_wang"
 ```
 
 输出文件：
 
-- `01_data_collection/step_results/raw_multisource_dataset/pubmed_titles.json`
+- `01_data_collection/step_results/professor_paper_titles/pubmed_yong_fei_wang_titles.json`
 
-如果你要输出可读清单（Markdown）：
+摘要采集：
 
 ```powershell
-python -c "import json, pathlib; p=pathlib.Path(r'01_data_collection/step_results/raw_multisource_dataset/pubmed_titles.json'); d=json.loads(p.read_text(encoding='utf-8')); out=pathlib.Path(r'01_data_collection/step_results/raw_multisource_dataset/pubmed_titles_list.md'); lines=[f'# PubMed Title List: {d.get(\"query\",\"\")}', '', f'Total: {d.get(\"count\",0)}', '']; lines.extend([f'{i}. {it.get(\"title\",\"\")} (PMID: {it.get(\"pmid\",\"\")})' for i,it in enumerate(d.get('titles',[]),1)]); out.write_text('\\n'.join(lines), encoding='utf-8'); print(out)"
+python "01_data_collection/processing/lab_paper_tools/fetch_pubmed_abstracts.py" --titles-json "01_data_collection/step_results/professor_paper_titles/pubmed_yong_fei_wang_titles.json" --output-prefix "pubmed_yong_fei_wang"
 ```
 
-清单输出文件：
+实验室信息提取：
 
-- `01_data_collection/step_results/raw_multisource_dataset/pubmed_titles_list.md`
+```powershell
+python "01_data_collection/processing/lab_paper_tools/extract_lab_info_from_pubmed.py" --titles-json "01_data_collection/step_results/professor_paper_titles/pubmed_yong_fei_wang_titles.json" --output-prefix "pubmed_yong_fei_wang"
+```
+
+最简一键命令：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collection.ps1" -ProfessorQuery "Yong-Fei Wang[au]" -OutputPrefix "pubmed_yong_fei_wang"
+```
+
+输出目录：
+
+- 标题：`01_data_collection/step_results/professor_paper_titles`
+- 摘要：`01_data_collection/step_results/professor_paper_abstracts`
+- 实验室信息：`01_data_collection/step_results/professor_lab_info`
 
 ## Step 02：文档解析与结构化（目录骨架已就绪）
 
@@ -283,5 +297,5 @@ python -c "import json, pathlib; p=pathlib.Path(r'01_data_collection/step_result
 2. 填写环境变量（CrewAI / Bright Data MCP）
 3. 先执行 Step 01 本地爬虫验证
 4. 按需执行 CrewAI 与 MCP
-5. 检查 `01_data_collection/step_results/raw_multisource_dataset` 输出
+5. 检查 `01_data_collection/step_results` 下分类结果输出
 6. 继续进入 Step 02~05 的实现与联调
