@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://example.com",
+    "fetched_at_utc": "2026-04-15T09:59:14.693938+00:00",
+    "status": "ok",
+    "title": "Example Domain",
+    "links": [
+      "https://iana.org/domains/example"
+    ],
+    "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+    "error": null
+  },
+  {
+    "url": "https://httpbin.org/html",
+    "fetched_at_utc": "2026-04-15T09:59:15.292181+00:00",
+    "status": "ok",
+    "title": "",
+    "links": [],
+    "snippet": "Herman Melville - Moby-Dick Availing himself of the mild, summer-cool weather that now reigned in these latitudes, and in preparation for the peculiarly active pursuits shortly to be anticipated, Perth, the begrimed, blistered old blacksmith, had not removed his portable forge to",
+    "error": null
+  }
+]

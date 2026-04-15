@@ -1,0 +1,36 @@
+pipeline:
+  name: "enterprise_search_local_pipeline"
+  mode: "local_only" # local_only disables cursor-native search
+  enable_remote_search_tools: false
+  enable_local_scripts_only: true
+
+paths:
+  request_template: "01_data_collection/data_sources/request_profiles/enterprise_search.request.template.yaml"
+  raw_output_dir: "01_data_collection/step_results/raw_multisource_dataset"
+  normalized_output_dir: "02_parsing/step_results/structured_json"
+  logs_dir: "shared/logs"
+
+collectors:
+  local_web_crawler:
+    enabled: true
+    entry_script: "01_data_collection/processing/web_crawler_local/run_local_crawl.py"
+    url_input_file: "01_data_collection/processing/web_crawler_local/crawl_urls.txt"
+  brightdata_mcp:
+    enabled: true
+    workdir: "01_data_collection/processing/brightdata_mcp_connector/service"
+    start_command: "npm run mcp:start:research"
+    required_env:
+      - API_TOKEN
+
+orchestration:
+  crewai:
+    enabled: true
+    project_dir: "01_data_collection/processing/crewai_scheduler/data_collection_orchestrator"
+    runtime_python: "01_data_collection/processing/crewai_scheduler/runtime/.venv/Scripts/python.exe"
+    entry_module: "src.data_collection_orchestrator.main"
+
+validation:
+  enforce_source_whitelist: false
+  deduplicate: true
+  save_intermediate_files: true
+  generate_markdown_list: true

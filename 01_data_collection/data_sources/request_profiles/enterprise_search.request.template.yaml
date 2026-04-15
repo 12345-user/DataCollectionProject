@@ -1,0 +1,60 @@
+request_meta:
+  request_id: "REQ-YYYYMMDD-001"
+  requested_by: "your_name"
+  requested_at_utc: "2026-04-15T00:00:00Z"
+  priority: "normal" # low | normal | high
+
+target_company:
+  company_name_zh: ""
+  company_name_en: ""
+  aliases: []
+  official_domains: []
+  stock_ticker: ""
+  country_region: ""
+
+search_scope:
+  include_sources:
+    - official_website
+    - news
+    - academic
+    - forums
+    - patents
+    - hiring
+  exclude_sources: []
+  language:
+    - zh
+    - en
+  geography:
+    - global
+  time_range:
+    start_date: "2023-01-01"
+    end_date: "2026-12-31"
+
+collection_objectives:
+  required_questions:
+    - "Company profile and core business?"
+    - "Key products and technical capabilities?"
+    - "Recent strategic events?"
+    - "Competitors and market signals?"
+  optional_questions: []
+
+output_requirements:
+  format: "json_markdown" # json | markdown | json_markdown
+  required_fields:
+    - source_url
+    - source_type
+    - title
+    - published_date
+    - extracted_summary
+    - confidence_score
+    - evidence_snippet
+  max_records: 300
+  deduplicate_by:
+    - canonical_url
+    - normalized_title
+
+quality_constraints:
+  official_source_first: true
+  min_confidence_score: 0.6
+  keep_unverified_records: true
+  verification_notes: "Mark uncertain records with reason."

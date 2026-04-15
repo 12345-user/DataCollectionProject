@@ -1,0 +1,12 @@
+[project]
+name = "data_collection_orchestrator"
+version = "0.1.0"
+description = "Minimal CrewAI scaffold for data collection orchestration"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "crewai>=1.14.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

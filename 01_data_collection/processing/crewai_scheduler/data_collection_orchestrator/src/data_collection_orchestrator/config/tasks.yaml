@@ -1,0 +1,15 @@
+plan_collection_task:
+  description: >
+    Build a data collection plan for {topic} covering:
+    company websites, lab instrument docs, academic papers, and industry forums.
+  expected_output: >
+    A markdown plan with source groups, query ideas, and priority.
+  agent: research_coordinator
+
+collect_with_mcp_task:
+  description: >
+    Execute the collection plan with Bright Data MCP entry tooling and return
+    a normalized source list.
+  expected_output: >
+    A markdown block containing collected source urls and short notes.
+  agent: web_collection_specialist
