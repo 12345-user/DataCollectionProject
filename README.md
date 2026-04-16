@@ -206,6 +206,48 @@ python "01_data_collection/processing/lab_paper_tools/extract_lab_info_from_pubm
 powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collection.ps1" -ProfessorQuery "Yong-Fei Wang[au]" -OutputPrefix "pubmed_yong_fei_wang"
 ```
 
+## Step 01-F-1：最简封装命令（只输入姓名 + 所属单位）
+
+脚本位置：
+
+- `scripts/bootstrap/run_professor_collection_by_name_unit.ps1`
+
+命令格式：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collection_by_name_unit.ps1" `
+  -ProfessorName "Yong-Fei Wang" `
+  -AffiliationUnit "对应所属单位/机构名称"
+```
+
+该命令会自动构造 PubMed 检索词：`ProfessorName[au] AND "AffiliationUnit"[ad]`，并依次完成：
+
+- 采集 titles
+- 采集 abstracts
+- 聚合 lab_info
+
+默认输出前缀会从 `ProfessorName` 自动生成；如需自定义可在脚本参数里加入 `-OutputPrefix`。
+
+## Step 01-F-2：最简封装命令（姓名 + 单位 + 额外网页 URL）
+
+脚本位置：
+
+- `scripts/bootstrap/run_professor_collection_with_sources.ps1`
+
+命令格式：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collection_with_sources.ps1" `
+  -ProfessorName "Yong-Fei Wang" `
+  -AffiliationUnit "对应所属单位/机构名称" `
+  "https://example.com/paper" "https://example.com/lab"
+```
+
+行为说明：
+
+1. 先把命令后追加的 URL 临时写入本地爬虫 `crawl_urls.txt`，执行本地爬取（结果会落在 `01_data_collection/step_results/professor_lab_info/local_crawl_results.*`）
+2. 再执行同名的“姓名 + 单位”PubMed 采集（生成 titles/abstracts/lab_info）
+
 输出目录：
 
 - 标题：`01_data_collection/step_results/professor_paper_titles`
