@@ -48,7 +48,16 @@ def fetch_abstracts(pmids: list[str], cache_dir: Path) -> list[dict[str, Any]]:
         ).strip()
         if pmid:
             results.append({"pmid": pmid, "title": title, "abstract": abstract_text})
-    return results
+    # Strict de-dup by PMID.
+    seen_pmids: set[str] = set()
+    deduped: list[dict[str, Any]] = []
+    for item in results:
+        pmid = str(item.get("pmid", "")).strip()
+        if not pmid or pmid in seen_pmids:
+            continue
+        seen_pmids.add(pmid)
+        deduped.append(item)
+    return deduped
 
 
 def main() -> None:

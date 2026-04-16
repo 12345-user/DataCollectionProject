@@ -56,7 +56,17 @@ def fetch_titles(author_query: str, cache_dir: Path) -> dict[str, Any]:
             title = (summary_data.get("result", {}).get(pmid, {}).get("title") or "").strip()
             if title:
                 titles.append({"pmid": pmid, "title": title})
-    return {"query": author_query, "count": len(titles), "titles": titles}
+    # Strict de-dup: PubMed query results should be unique by PMID.
+    seen_pmids: set[str] = set()
+    deduped: list[dict[str, str]] = []
+    for item in titles:
+        pmid = str(item.get("pmid", "")).strip()
+        if not pmid or pmid in seen_pmids:
+            continue
+        seen_pmids.add(pmid)
+        deduped.append({"pmid": pmid, "title": item.get("title", "")})
+
+    return {"query": author_query, "count": len(deduped), "titles": deduped}
 
 
 def write_markdown(data: dict[str, Any], path: Path) -> None:
