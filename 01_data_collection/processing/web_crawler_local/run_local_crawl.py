@@ -99,7 +99,8 @@ def read_urls(url_file: Path) -> list[str]:
 def main() -> None:
     base_dir = Path(__file__).resolve().parent
     url_file = base_dir / "crawl_urls.txt"
-    output_dir = base_dir.parent.parent / "step_results" / "raw_multisource_dataset"
+    # Step-01: 本地网页抓取结果作为“实验室/机构线索”的辅助证据
+    output_dir = base_dir.parent.parent / "step_results" / "professor_lab_info"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     urls = read_urls(url_file)

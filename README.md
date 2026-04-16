@@ -102,7 +102,7 @@ python "01_data_collection/processing/web_crawler_local/run_local_crawl.py"
 执行命令：
 
 ```powershell
-python -c "import json, urllib.parse, urllib.request, pathlib; term='huang hsien-da[au]'; q=urllib.parse.urlencode({'db':'pubmed','term':term,'retmax':'100000','retmode':'json'}); u='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?'+q; d=json.load(urllib.request.urlopen(u)); ids=d['esearchresult'].get('idlist',[]); titles=[]; batch=200; from urllib.parse import urlencode; [titles.extend([{'pmid':pid,'title':(s.get('result',{}).get(pid,{}).get('title') or '').strip()} for pid in chunk if (s:=json.load(urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?'+urlencode({'db':'pubmed','id':','.join(chunk),'retmode':'json'}))))]) for chunk in [ids[i:i+batch] for i in range(0,len(ids),batch)]]; out=pathlib.Path(r'01_data_collection/step_results/raw_multisource_dataset/pubmed_titles.json'); out.write_text(json.dumps({'query':term,'count':len(titles),'titles':titles},ensure_ascii=False,indent=2),encoding='utf-8'); print(out)"
+python "01_data_collection/processing/lab_paper_tools/fetch_pubmed_titles.py" --query "Yong-Fei Wang[au]" --output-prefix "pubmed_yong_fei_wang"
 ```
 
 ### 01-C 运行 CrewAI 调度
@@ -228,6 +228,41 @@ powershell -ExecutionPolicy Bypass -File "scripts/bootstrap/run_professor_collec
 2. 执行一键命令（`run_professor_collection.ps1`）
 3. 查看 `professor_lab_info` 前 10 条机构是否集中
 4. 若混入同名作者，收敛查询词后重新执行
+
+### 01-G Step 01 模块流程图（当前本地部署）
+
+```mermaid
+flowchart TD
+    A[输入教授检索词<br/>ProfessorQuery + OutputPrefix] --> B[fetch_pubmed_titles.py<br/>采集标题与PMID]
+    B --> C[professor_paper_titles<br/>*_titles.json / *_titles_list.md]
+    C --> D[fetch_pubmed_abstracts.py<br/>按PMID抓摘要]
+    C --> E[extract_lab_info_from_pubmed.py<br/>按PMID聚合Affiliation]
+    D --> F[professor_paper_abstracts<br/>*_abstracts.json / *_abstracts_list.md]
+    E --> G[professor_lab_info<br/>*_lab_info.json / *_lab_info_list.md]
+    H[run_professor_collection.ps1<br/>一键脚本] --> B
+    H --> D
+    H --> E
+```
+
+### 01-H Step 01 完整性检查（本地部署）
+
+已实现（可用）：
+
+- 本地网页爬取可执行（`run_local_crawl.py`）
+- 教授论文标题采集可执行（`fetch_pubmed_titles.py`）
+- 教授论文摘要采集可执行（`fetch_pubmed_abstracts.py`）
+- 教授实验室线索聚合可执行（`extract_lab_info_from_pubmed.py`）
+- 一键采集入口可执行（`run_professor_collection.ps1`）
+- 结果按三类目录落盘（titles / abstracts / lab_info）
+- 请求模板与步骤说明文档已提供（含简化命令）
+
+待优化与补充：
+
+- `shared/config/enterprise_search.pipeline.defaults.yaml` 的 `raw_output_dir` 仍指向旧目录，建议改为分类目录或新增 `professor_result_dirs`
+- `step_results/raw_multisource_dataset` 目前仍保留，建议标记为 legacy 或迁移清理
+- 同名作者消歧目前依赖手工查询词，建议增加自动过滤规则（机构白名单/年份阈值/关键词评分）
+- 摘要与实验室信息请求量较大时耗时较长，建议增加重试与缓存机制
+- 目前尚未把 Step 01 输出自动推送到 Step 02 输入，建议增加桥接脚本
 
 ## Step 02：文档解析与结构化（目录骨架已就绪）
 

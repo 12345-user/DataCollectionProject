@@ -24,3 +24,6 @@ Thumbs.db
 # Outputs and logs
 *.log
 shared/logs/
+
+# Tool caches (for API retries/caching)
+.cache/
