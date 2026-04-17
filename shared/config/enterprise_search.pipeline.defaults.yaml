@@ -6,7 +6,12 @@ pipeline:
 
 paths:
   request_template: "01_data_collection/data_sources/request_profiles/enterprise_search.request.template.yaml"
-  raw_output_dir: "01_data_collection/step_results/raw_multisource_dataset"
+  raw_output_dir: "01_data_collection/step_results/professor_paper_titles"
+  professor_result_dirs:
+    titles: "01_data_collection/step_results/professor_paper_titles"
+    abstracts: "01_data_collection/step_results/professor_paper_abstracts"
+    lab_info: "01_data_collection/step_results/professor_lab_info"
+  legacy_raw_output_dir: "01_data_collection/step_results/raw_multisource_dataset"
   normalized_output_dir: "02_parsing/step_results/structured_json"
   logs_dir: "shared/logs"
 
@@ -34,3 +39,5 @@ validation:
   deduplicate: true
   save_intermediate_files: true
   generate_markdown_list: true
+  disambiguation:
+    enable_affiliation_keyword_filter: true

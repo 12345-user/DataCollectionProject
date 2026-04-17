@@ -1,230 +1,147 @@
-# Data Collection Pipeline Project
+# 教授项目投入精力推断（本地优先）
 
-This repository implements a local-first, step-by-step pipeline:
+## 1）项目基础介绍（输入 -> 结构化结果 -> 投入推断）
 
-1. `01_data_collection`
-2. `02_parsing`
-3. `03_feature_extraction`
-4. `04_report_generation`
-5. `05_delivery`
+你输入：`教授名 + 指定论文网址（建议 PubMed 链接）`。系统会输出：
+- `标题/摘要/发表时间`（`json` + `md`）
+- 基于“领域/项目”推断的当前投入比例与未来趋势
+- 通过同名教授消歧尽量排除非目标教授的不同领域论文
 
-The current implementation focus is on making step `01_data_collection` runnable end-to-end and providing the full project skeleton for later steps.
+已保留并可直接使用：`01_data_collection`（Step 01 数据采集链路）。
 
-## 0) Prerequisites
+当前已完成的统一环境准备：
+- 项目根 `.venv` 已创建
+- 已安装：`paperscraper`、`scipdf-parser`、`gliner`、`keybert`、`sentence-transformers`、`hdbscan`、`umap-learn`、`scikit-learn`、`pandas`
+- 统一配置模板：`shared/config/professor_pipeline.env.example`
+- 统一输入输出契约：`shared/config/professor_pipeline.io.contract.yaml`
 
-- Windows 10/11 (PowerShell)
-- Python 3.12
-- Node.js + npm
-- (Optional) API keys for external services
+## 2）时间架构（02-07；对应你的技术栈明细）
 
-Quick checks:
+### Step 02：扩展论文列表采集（02_paper_list_extend）
+- 输入：Step 01 的论文元数据（至少：`title/abstract/pub_date/authors/doi`）
+- 工具：`paperscraper`（arXiv/bioRxiv/medRxiv/chemRxiv；纯爬虫，ML 参与：❌）
+- 输出：`02_paper_list_extend/step_results/*_expanded_papers.jsonl`
+  - 字段：`paper_id, source, source_id, title, abstract, pub_date, authors, doi, url`
 
-```powershell
-py -3.12 --version
-node --version
-npm --version
+架构与执行逻辑（简图）：
+
+```mermaid
+flowchart TD
+    A[读 Step01 abstracts.jsonl] --> B[构造 paperscraper 查询\n教授名 -> surname + given/initial]
+    B --> C1[paperscraper: arXiv 搜索 -> 临时 jsonl]
+    B --> C2[XRXivQuery: bio/med/chem dump 搜索 -> 临时 jsonl]
+    C1 --> D[合并 + 去重\n优先 doi，其次 title]
+    C2 --> D
+    D --> E[写 step_results/*_expanded_papers.jsonl]
 ```
 
-## 1) Required Information You Must Fill
-
-### 1.1 Enterprise request input
-
-Fill file:
-
-- `01_data_collection/data_sources/request_profiles/enterprise_search.request.template.yaml`
-
-Minimum required fields before running enterprise collection:
-
-- `target_company.company_name_zh` or `target_company.company_name_en`
-- `target_company.official_domains` (at least one domain)
-- `search_scope.time_range.start_date`
-- `search_scope.time_range.end_date`
-- `collection_objectives.required_questions`
-
-### 1.2 Environment variables
-
-#### CrewAI
-
-Copy and edit:
-
-- `01_data_collection/processing/crewai_scheduler/data_collection_orchestrator/.env.example`
-
-Required:
-
-- `OPENAI_API_KEY` (or replace model/provider in config if using another provider)
-
-#### Bright Data MCP
-
-Create `.env` in:
-
-- `01_data_collection/processing/brightdata_mcp_connector/service`
-
-Required:
-
-- `API_TOKEN`
-
-Optional:
-
-- `GROUPS` (for example: `research,advanced_scraping`)
-
-## 2) Step-by-Step Execution
-
-## Step 01 - Data Collection
-
-### 01-A. Run local crawler (no API key required)
-
-Inputs:
-
-- `01_data_collection/processing/web_crawler_local/crawl_urls.txt`
-
-Command:
+依赖与准备：
 
 ```powershell
-python "01_data_collection/processing/web_crawler_local/run_local_crawl.py"
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install paperscraper
 ```
 
-Outputs:
-
-- `01_data_collection/step_results/raw_multisource_dataset/local_crawl_results.json`
-- `01_data_collection/step_results/raw_multisource_dataset/local_crawl_results.md`
-
-### 01-B. Run PubMed title collection example
-
-Use this pattern to fetch author publications into project outputs:
+下载 bioRxiv/medRxiv/chemRxiv server dumps（耗时较长；生成本地 `server_dumps/*`）：
 
 ```powershell
-python -c "import json, urllib.parse, urllib.request, pathlib; term='huang hsien-da[au]'; q=urllib.parse.urlencode({'db':'pubmed','term':term,'retmax':'100000','retmode':'json'}); u='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?'+q; d=json.load(urllib.request.urlopen(u)); ids=d['esearchresult'].get('idlist',[]); titles=[]; from urllib.parse import urlencode; batch=200; [titles.extend([{'pmid':pid,'title':(s.get('result',{}).get(pid,{}).get('title') or '').strip()} for pid in chunk if (s:=json.load(urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?'+urlencode({'db':'pubmed','id':','.join(chunk),'retmode':'json'}))))]) for chunk in [ids[i:i+batch] for i in range(0,len(ids),batch)]]; out=pathlib.Path(r'01_data_collection/step_results/raw_multisource_dataset/pubmed_titles.json'); out.write_text(json.dumps({'query':term,'count':len(titles),'titles':titles},ensure_ascii=False,indent=2),encoding='utf-8'); print(out)"
+.\.venv\Scripts\python.exe 02_paper_list_extend/processing/download_step02_paperscraper_dumps.py --recent-days 30
 ```
 
-### 01-C. Run CrewAI orchestrator
-
-Activate runtime and execute:
+执行命令（准确运行）：
 
 ```powershell
-& "01_data_collection/processing/crewai_scheduler/runtime/.venv/Scripts/python.exe" -m src.data_collection_orchestrator.main
+.\.venv\Scripts\python.exe "02_paper_list_extend\processing\run_step02_paper_list_extend_paperscraper.py" `
+  --professor-name "教授姓名" `
+  --step01-output-prefix "Step01OutputPrefix" `
+  --output-prefix "Step02OutputPrefix" `
+  --server-dump-dir "02_paper_list_extend/data_sources/paperscraper_server_dumps/server_dumps"
 ```
 
-Working directory for the command above:
-
-- `01_data_collection/processing/crewai_scheduler/data_collection_orchestrator`
-
-Main files:
-
-- `01_data_collection/processing/crewai_scheduler/data_collection_orchestrator/src/data_collection_orchestrator/config/agents.yaml`
-- `01_data_collection/processing/crewai_scheduler/data_collection_orchestrator/src/data_collection_orchestrator/config/tasks.yaml`
-- `01_data_collection/processing/crewai_scheduler/data_collection_orchestrator/src/data_collection_orchestrator/crew.py`
-
-### 01-D. Start Bright Data MCP service
-
-Working directory:
-
-- `01_data_collection/processing/brightdata_mcp_connector/service`
-
-Commands:
+本地部署优先（推荐用于“先跑通与验收”；跳过不稳定的 arXiv 远端 API）：
 
 ```powershell
-npm install
-npm run mcp:start
+.\.venv\Scripts\python.exe "02_paper_list_extend\processing\run_step02_paper_list_extend_paperscraper.py" `
+  --professor-name "教授姓名" `
+  --step01-output-prefix "Step01OutputPrefix" `
+  --output-prefix "Step02OutputPrefix" `
+  --server-dump-dir "02_paper_list_extend/data_sources/paperscraper_server_dumps/server_dumps" `
+  --skip-arxiv
 ```
 
-or (research tool groups):
+### Step 03：PDF 解析与元数据提取（03_pdf_parsing）
+- 输入：Step 02 的 PDF
+- 工具：`GROBID`（Docker；本地）+ `scipdf_parser`
+- 输出：结构化 `JSON`（标题、摘要、作者列表、发表日期、关键词、参考文献）
+
+启动命令：
 
 ```powershell
-npm run mcp:start:research
+docker compose -f 03_pdf_parsing/processing/docker-compose.grobid.yml up -d
 ```
 
-## Step 02 - Parsing (structure ready)
+### Step 04：同名教授消歧（04_author_disambiguation）
+- 输入：论文标题/摘要/作者/机构（含 Step 03 信息）
+- 工具：`WhoIsWho`（OAG-BERT）+ `GLiNER`
+- 输出：过滤后的“目标教授论文集合”
 
-Directories:
+### Step 05：关键词与实体抽取（05_keyword_entity）
+- 输入：目标论文的标题 + 摘要（可含机构/引用）
+- 工具：`KeyBERT` + `GLiNER`
+- 输出：
+  - `keywords[]`：关键词/技术方向（项目名候选）
+  - `entities[]`：方法/模型/技术实体
+  - 项目（Project）构造建议：高频 n-gram + 技术实体 + 规范化同义合并
 
-- `02_parsing/data_sources`
-- `02_parsing/processing`
-- `02_parsing/step_results`
+### Step 06：领域聚类（06_domain_clustering）
+- 输入：所有论文摘要/关键词拼接文本
+- 工具：`sentence-transformers` + `HDBSCAN`（可选 `UMAP`）
+- 输出：每篇论文 `domain_label` + 领域列表/代表关键词
 
-Fill before execution:
+### Step 07：时间分析与投入精力推断（07_temporal_analysis）
+- 输入：发表日期 + `domain_label` + `project` + 身份一致性权重（Step 04）
+- 输出：
+  - `share_current`：当前投入比例（按领域/项目加权）
+  - `trend_future`：未来趋势
+  - `consistency_report`：领域分布突变提示（同名混入风险）
 
-- Parsing engine configs (Unstructured/Marker/PaddleOCR)
-- Pydantic schema definitions in `02_parsing/processing/pydantic_modeling`
+轻量实现建议：
+- 时间序列：`count(t)`；当前权重指数衰减 `w(t)=exp(-(T-now)/tau)` 得到 share_current
+- 未来预测：对最近窗口做趋势拟合/平滑
+- “训练一个模型”最小可行：`sklearn` baseline 预测下一时间窗是否继续出现于同一 project/domain
 
-Expected output location:
+## 3）推荐执行顺序与命令（先跑通 Step 01）
 
-- `02_parsing/step_results/structured_json`
-- `02_parsing/step_results/structured_markdown`
+### 3.1 Step 01：教授论文 titles/abstracts/lab_info
 
-## Step 03 - Feature Extraction (structure ready)
+如果你有 PubMed seed `PMID`（建议从“论文网址”提取 PMID）：
 
-Directories:
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collection_simple.ps1" `
+  -ProfessorName "教授名" `
+  -SeedPaperTitle "种子论文标题" `
+  -SeedPMID "种子 PMID"
+```
 
-- `03_feature_extraction/data_sources`
-- `03_feature_extraction/processing`
-- `03_feature_extraction/step_results`
+可选追加额外 URL（辅助证据）：
 
-Fill before execution:
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collection_simple.ps1" `
+  -ProfessorName "教授名" `
+  -SeedPaperTitle "种子论文标题" `
+  -SeedPMID "种子 PMID" `
+  "新URL" "新URL"
+```
 
-- GLiNER model/runtime settings
-- Ollama endpoint/model (for example Qwen2.5 local)
-- Summary/trend prompt templates
+Step 01 输出将作为 Step 02~07 的输入来源：
+- `01_data_collection/step_results/professor_paper_abstracts/<前缀>_abstracts.jsonl`
+- `01_data_collection/step_results/professor_paper_abstracts/<前缀>_abstracts.md`
+- `01_data_collection/step_results/professor_lab_info/<前缀>_lab_info.json`
 
-Expected output location:
+### 3.2 Step 02~07：目录串接（待你补齐入口脚本）
+Step 串接逻辑：
+- Step 02 `JSONL` -> Step 03 `JSON` -> Step 04 消歧集合 -> Step 05 keywords/entities/project
+- Step 06 domain_label -> Step 07 share_current + trend_future
 
-- `03_feature_extraction/step_results/entities_relations`
-- `03_feature_extraction/step_results/summaries`
-- `03_feature_extraction/step_results/trend_insights`
-- `03_feature_extraction/step_results/report_draft`
-
-## Step 04 - Report Generation (structure ready)
-
-Directories:
-
-- `04_report_generation/data_sources`
-- `04_report_generation/processing/python_pptx_template_fill`
-- `04_report_generation/processing/deeppresenter_visual_loop`
-- `04_report_generation/step_results`
-
-Fill before execution:
-
-- PPT template files in `04_report_generation/processing/python_pptx_template_fill/templates`
-- DeepPresenter runtime settings/assets
-
-Expected output location:
-
-- `04_report_generation/step_results/standardized_reports/pptx`
-- `04_report_generation/step_results/standardized_reports/pdf`
-- `04_report_generation/step_results/presentation_slides_optimized`
-
-## Step 05 - Delivery (structure ready)
-
-Directories:
-
-- `05_delivery/data_sources`
-- `05_delivery/processing/openclaw_task_listener`
-- `05_delivery/processing/distribution_channels/email`
-- `05_delivery/step_results`
-
-Fill before execution:
-
-- Email SMTP settings
-- Recipient list
-- OpenClaw listener trigger rules
-
-Expected output location:
-
-- `05_delivery/step_results/distribution_logs`
-- `05_delivery/step_results/delivery_receipts`
-
-## 3) Pipeline Default Config
-
-Default config file:
-
-- `shared/config/enterprise_search.pipeline.defaults.yaml`
-
-This file enforces local-only mode and defines all key paths for step-01 tooling.
-
-## 4) Recommended Run Order
-
-1. Fill enterprise request template
-2. Fill `.env` files (CrewAI, Bright Data MCP)
-3. Run local crawler test
-4. Run CrewAI orchestration
-5. Validate outputs in `01_data_collection/step_results/raw_multisource_dataset`
-6. Continue into step-02 parsing
+统一路径和字段以 `shared/config/professor_pipeline.io.contract.yaml` 为准。

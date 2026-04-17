@@ -1,2 +1,2 @@
-https://example.com
-https://httpbin.org/html
+https://pubmed.ncbi.nlm.nih.gov/
+https://molpharm.aspetjournals.org/

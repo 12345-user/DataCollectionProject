@@ -24,3 +24,15 @@ Thumbs.db
 # Outputs and logs
 *.log
 shared/logs/
+
+# Tool caches (for API retries/caching)
+.cache/
+
+# Step results / downloaded data (do not commit)
+01_data_collection/step_results/
+02_paper_list_extend/step_results/
+02_paper_list_extend/data_sources/paperscraper_server_dumps/
+03_pdf_parsing/data_sources/pdf_cache/
+
+# Keep placeholder files if present
+!**/.keep
