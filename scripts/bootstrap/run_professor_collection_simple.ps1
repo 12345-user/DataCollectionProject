@@ -80,6 +80,14 @@ Write-Host "ProfessorQuery: $ProfessorQuery"
   -OutputPrefix $OutputPrefix `
   -AffiliationKeywords $AffiliationKeywords
 
+# 3) 同步 Step01 结果到 Step02 的 data_sources（让 Step02 直接消费）
+$bridge = Join-Path $projectRoot "scripts\bootstrap\bridge_step01_to_step02.ps1"
+if (Test-Path $bridge) {
+    & powershell -ExecutionPolicy Bypass -File $bridge -OutputPrefix $OutputPrefix
+} else {
+    Write-Warning "未找到 bridge 脚本，已跳过同步：$bridge"
+}
+
 # 2) 若提供了额外 URL：只作为“辅助网页采集证据”，同样落到 professor_lab_info 目录
 if ($ExtraUrls -and $ExtraUrls.Count -gt 0) {
     Write-Host "附加 ExtraUrls 数量: $($ExtraUrls.Count)"

@@ -1,0 +1,43 @@
+{
+  "allocation": {
+    "tau_days": 365,
+    "total_weight": 98.21832609164983,
+    "share_current": [
+      {
+        "project_or_domain": "domain_0",
+        "share_current": 0.893721,
+        "weight": 87.7797
+      },
+      {
+        "project_or_domain": "domain_noise",
+        "share_current": 0.072591,
+        "weight": 7.1298
+      },
+      {
+        "project_or_domain": "domain_1",
+        "share_current": 0.033688,
+        "weight": 3.3088
+      }
+    ]
+  },
+  "trend": [
+    {
+      "project_or_domain": "domain_noise",
+      "trend_future": 7129753.2898,
+      "recent_weight": 7.1298,
+      "past_weight": 0.0
+    },
+    {
+      "project_or_domain": "domain_1",
+      "trend_future": 3308826.8096,
+      "recent_weight": 3.3088,
+      "past_weight": 0.0
+    },
+    {
+      "project_or_domain": "domain_0",
+      "trend_future": 316.8513,
+      "recent_weight": 87.167,
+      "past_weight": 0.2751
+    }
+  ]
+}

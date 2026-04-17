@@ -1,0 +1,90 @@
+{
+  "query": "Wanling Yang[au] AND (Chinese[ad] AND University[ad] AND Hong[ad] AND Kong[ad])",
+  "count": 21,
+  "titles": [
+    {
+      "pmid": "41794919",
+      "title": "Identifying genetic and cellular connections and distinctions among 15 autoimmune diseases using an in-silico approach."
+    },
+    {
+      "pmid": "41272119",
+      "title": "Imputation disparities driven by recent selection and their impact on disease risk estimation in East and Southeast Asian populations."
+    },
+    {
+      "pmid": "38741185",
+      "title": "Unraveling transcriptomic signatures and dysregulated pathways in systemic lupus erythematosus across disease states."
+    },
+    {
+      "pmid": "38515699",
+      "title": "Functional investigation of a novel ANKRD11 frameshift variant identified in a Chinese family with KBG syndrome."
+    },
+    {
+      "pmid": "38458775",
+      "title": "Association of genetic variation on X chromosome with systemic lupus erythematosus in both Thai and Chinese populations."
+    },
+    {
+      "pmid": "38354915",
+      "title": "Identification and functional analysis of first heterozygous frameshift mutation in the GHRH gene in a Chinese boy with isolated growth hormone deficiency."
+    },
+    {
+      "pmid": "38220134",
+      "title": "Molecular diagnosis is an important indicator for response to growth hormone therapy in children with short stature."
+    },
+    {
+      "pmid": "38141203",
+      "title": "Transcriptomic features of systemic lupus erythematosus patients in flare and changes during acute in-hospital treatment."
+    },
+    {
+      "pmid": "37835574",
+      "title": "Genome-Wide DNA Methylation Profiling as Frontline Diagnostics for Central Nervous System Embryonal Tumors in Hong Kong."
+    },
+    {
+      "pmid": "37605180",
+      "title": "Clinical and genetic evaluation of children with short stature of unknown origin."
+    },
+    {
+      "pmid": "37398664",
+      "title": "Risk and Factors associated with disease manifestations in systemic lupus erythematosus - lupus nephritis (RIFLE-LN): a ten-year risk prediction strategy derived from a cohort of 1652 patients."
+    },
+    {
+      "pmid": "35388006",
+      "title": "Lupus enhancer risk variant causes dysregulation of IRF8 through cooperative lncRNA and DNA methylation machinery."
+    },
+    {
+      "pmid": "34826401",
+      "title": "Molecular diagnosis for growth hormone deficiency in Chinese children and adolescents and evaluation of impact of rare genetic variants on treatment efficacy of growth hormone."
+    },
+    {
+      "pmid": "33493351",
+      "title": "Genome-wide association study on Northern Chinese identifies KLF2, DOT1L and STAB2 associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "33437829",
+      "title": "Erratum to development and formulation of the classification criteria for osteoarthritis."
+    },
+    {
+      "pmid": "33178745",
+      "title": "Guidelines for the diagnosis and treatment of osteoarthritis in China (2019 edition)."
+    },
+    {
+      "pmid": "31133697",
+      "title": "Growth hormone peak modifies the effect of BMI on increased systolic blood pressure in children with short stature."
+    },
+    {
+      "pmid": "30217742",
+      "title": "Identification of Genes Associated With Hirschsprung Disease, Based on Whole-Genome Sequence Analysis, and Potential Effects on Enteric Nervous System Development."
+    },
+    {
+      "pmid": "28116329",
+      "title": "CFTR founder mutation causes protein trafficking defects in Chinese patients with cystic fibrosis."
+    },
+    {
+      "pmid": "28108556",
+      "title": "Confirmation of five novel susceptibility loci for systemic lupus erythematosus (SLE) and integrated network analysis of 82 SLE susceptibility loci."
+    },
+    {
+      "pmid": "27481557",
+      "title": "Identification of the long noncoding RNA NEAT1 as a novel inflammatory regulator acting through MAPK pathway in human lupus."
+    }
+  ]
+}

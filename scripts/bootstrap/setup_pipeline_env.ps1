@@ -35,12 +35,8 @@ Write-Host "[3/4] 安装 Step 02-07 依赖 ..."
 Write-Host "[4/4] 环境检查 ..."
 & $pythonExe -c "import paperscraper, keybert, sentence_transformers, hdbscan, umap, gliner, sklearn, pandas, pydantic, scipdf; print('python packages ok')"
 
-if (Get-Command docker -ErrorAction SilentlyContinue) {
-    Write-Host "Docker 已安装，可继续启动 GROBID："
-    Write-Host "docker compose -f 03_pdf_parsing/processing/docker-compose.grobid.yml up -d"
-} else {
-    Write-Warning "未检测到 Docker。Step 03 的 GROBID 配置文件已准备好，但需要先安装 Docker Desktop 才能启动。"
-}
+Write-Host "Step03（GROBID）推荐走 WSL 本地运行（不依赖 Docker Desktop）。"
+Write-Host "启动方式见：scripts/bootstrap/step03_grobid_wsl_start.ps1"
 
 Write-Host ""
 Write-Host "配置模板：shared/config/professor_pipeline.env.example"

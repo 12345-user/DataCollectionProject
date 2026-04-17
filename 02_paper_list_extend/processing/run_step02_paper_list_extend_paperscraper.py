@@ -309,13 +309,23 @@ def main() -> None:
     if not step01_abstracts_json:
         if not args.step01_output_prefix.strip():
             raise SystemExit("请提供 --step01-abstracts-json 或 --step01-output-prefix")
-        base_dir = Path("01_data_collection/step_results/professor_paper_abstracts")
-        jsonl_candidate = base_dir / f"{args.step01_output_prefix}_abstracts.jsonl"
-        json_candidate = base_dir / f"{args.step01_output_prefix}_abstracts.json"
-        if jsonl_candidate.exists():
-            step01_abstracts_json = str(jsonl_candidate)
+        # Prefer Step02 data_sources bridge location first (synced from Step01).
+        bridged_dir = Path("02_paper_list_extend/data_sources/from_step01") / args.step01_output_prefix.strip()
+        bridged_jsonl = bridged_dir / "abstracts.jsonl"
+        bridged_json = bridged_dir / "abstracts.json"
+        if bridged_jsonl.exists():
+            step01_abstracts_json = str(bridged_jsonl)
+        elif bridged_json.exists():
+            step01_abstracts_json = str(bridged_json)
         else:
-            step01_abstracts_json = str(json_candidate)
+            # Fallback to Step01 step_results (legacy direct read)
+            base_dir = Path("01_data_collection/step_results/professor_paper_abstracts")
+            jsonl_candidate = base_dir / f"{args.step01_output_prefix}_abstracts.jsonl"
+            json_candidate = base_dir / f"{args.step01_output_prefix}_abstracts.json"
+            if jsonl_candidate.exists():
+                step01_abstracts_json = str(jsonl_candidate)
+            else:
+                step01_abstracts_json = str(json_candidate)
 
     abstracts_path = Path(step01_abstracts_json)
     if not abstracts_path.exists():

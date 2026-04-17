@@ -72,13 +72,13 @@ py -3.12 -m venv .venv
 
 ### Step 03：PDF 解析与元数据提取（03_pdf_parsing）
 - 输入：Step 02 的 PDF
-- 工具：`GROBID`（Docker；本地）+ `scipdf_parser`
+- 工具：`GROBID`（WSL 本地运行；不依赖 Docker Desktop）+ `scipdf_parser`
 - 输出：结构化 `JSON`（标题、摘要、作者列表、发表日期、关键词、参考文献）
 
 启动命令：
 
 ```powershell
-docker compose -f 03_pdf_parsing/processing/docker-compose.grobid.yml up -d
+powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\step03_grobid_wsl_start.ps1"
 ```
 
 ### Step 04：同名教授消歧（04_author_disambiguation）

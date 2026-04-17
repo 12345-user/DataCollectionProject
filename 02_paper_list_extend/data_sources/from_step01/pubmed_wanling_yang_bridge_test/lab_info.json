@@ -1,0 +1,870 @@
+{
+  "count_affiliations": 491,
+  "unique_affiliations": 229,
+  "disambiguation_keywords": [
+    "The Chinese University of Hong Kong",
+    "School of Medicine",
+    "Warshel Institute for Computational Biology",
+    "The Second Affiliated Hospital",
+    "Guangdong Basic Research Center of Excellence for Aggregate Science",
+    "School of Science and Engineering",
+    "Laboratory for Statistical and Translational Genetics",
+    "RIKEN Center for Integrative Medical Sciences",
+    "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development",
+    "Department of Microbiology",
+    "Chulalongkorn University",
+    "Department of Paediatrics & Adolescent Medicine"
+  ],
+  "count_affiliations_after_filter": 92,
+  "unique_affiliations_after_filter": 46,
+  "top_affiliations": [
+    {
+      "affiliation": "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 15
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "count": 10
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "count": 3
+    },
+    {
+      "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 3
+    },
+    {
+      "affiliation": "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Department of Computer Science and Engineering, The Chinese University of Hong Kong, Hong Kong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Joint Molecular Rheumatology Laboratory of the Institute of Health Sciences and Shanghai Renji Hospital, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, and Shanghai Jiaotong University School of Medicine, Shanghai 200025, People's Republic of China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Centre of Excellent in Immunology and Immune-Mediated Diseases, Department of Microbiology, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 1
+    },
+    {
+      "affiliation": "Immunology Division, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong - Shenzhen, Shenzhen, Guangdong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Paediatrics, Faculty of Medicine, The Chinese University of Hong Kong, Hong Kong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Transfusion Medicine and Clinical Microbiology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 1
+    },
+    {
+      "affiliation": "Master of Sciences Program in Molecular Science of Medical Microbiology and Immunology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Nephrology, Fourth Affiliated Hospital, International Institutes of Medicine, Zhejiang University School of Medicine, Hangzhou, Zhejiang, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China yfwang@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, Qingdao University, Qingdao, Shandong, 266071, P.R. China.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, School of Medicine and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Obstetrics and Gynecology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Key Laboratory of Gynecologic Oncology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. houguojun225@163.com.",
+      "count": 1
+    },
+    {
+      "affiliation": "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. houguojun225@163.com.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. nanshensibs@gmail.com.",
+      "count": 1
+    },
+    {
+      "affiliation": "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. nanshensibs@gmail.com.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Rheumatology, The First Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Sports Medicine and Adult Reconstructive Surgery, Drum Tower Hospital, School of Medicine, Nanjing University, Nanjing, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "The Key Laboratory for Experimental Teratology of the Ministry of Education, Shandong University School of Medicine, Jinan, Shandong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Paediatrics Faculty of Medicine The Chinese University of Hong Kong Hong Kong Hong Kong.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Statistical Genetics, Osaka University Graduate School of Medicine, Osaka, Japan.",
+      "count": 1
+    },
+    {
+      "affiliation": "Laboratory for Statistical Analysis, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Allergy and Rheumatology, Graduate School of Medicine, The University of Tokyo, Tokyo, Japan.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China; The Center for Autoimmune Genomics and Etiology (CAGE), Cincinnati Children's Hospital Medical Center, Cincinnati, OH, USA. Electronic address: nanshensibs@gmail.com.",
+      "count": 1
+    },
+    {
+      "affiliation": "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China. Electronic address: tangyuanjia028@163.com.",
+      "count": 1
+    }
+  ],
+  "pmid_affiliations": {
+    "41794919": [
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China. yangwl@hku.hk."
+    ],
+    "41272119": [
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Transfusion Medicine and Clinical Microbiology, Faculty of Allied Health Sciences, Bangkok, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Department of Microbiology, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Faculty of Medicine, Section of Translational Medicine, Mahidol University, Ramathibodi Hospital, Bangkok, Thailand.",
+      "Division of Allergy, Immunology, and Rheumatology, Department of Medicine, Faculty of Medicine, Ramathibodi Hospital, Mahidol University, Bangkok, Thailand.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Medical Sciences, Ministry of Public Health, Nonthaburi, Thailand.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Immunology Division, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "Clinical Research Center, Shizuoka General Hospital, Shizuoka, Japan.",
+      "Department of Applied Genetics, School of Pharmaceutical Sciences, University of Shizuoka, Shizuoka, Japan.",
+      "Department of Biology, Kyung Hee University, Seoul, Republic of Korea.",
+      "Department of Rheumatology, Hanyang University Hospital for Rheumatic Diseases, Seoul, Republic of Korea.",
+      "Hanyang University Institute for Rheumatology Research and Hanyang Institute of Bioscience and Biotechnology, Seoul, Republic of Korea.",
+      "Department of Rheumatology and Immunology, The Second People's Hospital, The First Affiliated Hospital of Shenzhen University, Shenzhen, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn."
+    ],
+    "38741185": [
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong - Shenzhen, Shenzhen, Guangdong, China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics, Faculty of Medicine, The Chinese University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Medical Laboratory of Jining Medical University, Jining Medical University, Jining, Shandong, China.",
+      "Medical Laboratory of Jining Medical University, Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Clinical Immunology, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China. songqin1230@163.com.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China. yangwl@hku.hk."
+    ],
+    "38515699": [
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China."
+    ],
+    "38458775": [
+      "Department of Transfusion Medicine and Clinical Microbiology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong University, Hong Kong, People's Republic of China.",
+      "Master of Sciences Program in Molecular Science of Medical Microbiology and Immunology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong University, Hong Kong, People's Republic of China.",
+      "National Biobank of Thailand (NBT), National Science and Technology Development Agency, Khlong Luang, Pathum Thani, Thailand.",
+      "Department of Medical Sciences, Ministry of Public Health, Nonthaburi, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Medical Sciences, Ministry of Public Health, Nonthaburi, Thailand.",
+      "Division of Allergy, Immunology, and Rheumatology, Department of Medicine, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "Department of Nephrology, Fourth Affiliated Hospital, International Institutes of Medicine, Zhejiang University School of Medicine, Hangzhou, Zhejiang, China.",
+      "Department of Community Medicine, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "Department of Community Medicine, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "Program in Translational Medicine, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "Integrative Computational BioScience (ICBS) Center, Mahidol University, Nakornpathom, Thailand.",
+      "Ramathibodi School of Nursing, Mahidol University Faculty of Medicine Ramathibodi Hospital, Bangkok, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China yfwang@cuhk.edu.cn.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China."
+    ],
+    "38354915": [
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China. Electronic address: banbo2011@163.com.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China. Electronic address: hehe0917@mail.jnmc.edu.com."
+    ],
+    "38220134": [
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China.",
+      "Department of Pediatrics and Adolescent Medicine, The University of Hong Kong, 21 Sassoon Road, Pokfulam 999077 Hong Kong, China. Electronic address: yangwl@hku.hk.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong 272029, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong 272029, PR China. Electronic address: banbo2011@163.com."
+    ],
+    "38141203": [
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Medical Laboratory of Jining Medical University, Jining Medical University, Jining, Shandong, China.",
+      "School of Biological Science, Jining Medical University, Rizhao, Shandong, China.",
+      "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Jining, Shandong, China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China.",
+      "Department of Rheumatology and Lupus Research Institute, Affiliated Hospital of Jining Medical University, Jining, Shandong, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, China."
+    ],
+    "37835574": [
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Pathology, Gleneagles Hospital, Wong Chuk Hang, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Anatomical and Cellular Pathology, Chinese University of Hong Kong, Sha Tin, Hong Kong.",
+      "Department of Pathology, Queen Elizabeth Hospital, Kowloon, Hong Kong.",
+      "Department of Pathology, Queen Elizabeth Hospital, Kowloon, Hong Kong.",
+      "Department of Pathology, Queen Elizabeth Hospital, Kowloon, Hong Kong.",
+      "Department of Neurosurgery, Queen Mary Hospital, Pok Fu Lam, Hong Kong.",
+      "Department of Neurosurgery, Hong Kong Children's Hospital, Kowloon, Hong Kong.",
+      "Department of Neurosurgery, Queen Mary Hospital, Pok Fu Lam, Hong Kong.",
+      "Department of Neurosurgery, Hong Kong Children's Hospital, Kowloon, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong Children's Hospital, Kowloon, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong Children's Hospital, Kowloon, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong Children's Hospital, Kowloon, Hong Kong.",
+      "Department of Anatomical and Cellular Pathology, Chinese University of Hong Kong, Sha Tin, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pok Fu Lam, Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine, Hong Kong Children's Hospital, Kowloon, Hong Kong."
+    ],
+    "37605180": [
+      "School of Medicine, Qingdao University, Qingdao, Shandong, 266071, P.R. China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Medical Research Center, Affiliated Hospital of Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, 21 Sassoon Road, Pokfulam, Hong Kong, 999077, P.R. China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China. zhangmeijn@163.com.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China. zhangmeijn@163.com.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China. banbo2011@163.com.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, Jining, Shandong, 272029, P.R. China. banbo2011@163.com."
+    ],
+    "37398664": [
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "School of Life and Health Sciences, School of Medicine and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Division of Nephrology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Nephrology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Medicine & Geriatrics, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Medicine, Queen Elizabeth Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Medicine, Tuen Mun Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Medicine, Pamela Youde Nethersole Eastern Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Division of Rheumatology & Clinical Immunology, Department of Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China."
+    ],
+    "35388006": [
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, 999077, China.",
+      "Shanghai Institute of Nutrition and Health, Shanghai Institutes for Biological Sciences (SIBS), University of Chinese Academy of Sciences, Chinese Academy of Sciences (CAS), Shanghai, 200031, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Sheng Yushou Center of Cell Biology and Immunology, Joint International Research Laboratory of Metabolic and Developmental Sciences, School of Life Sciences and Biotechnology, Shanghai Jiao Tong University (SJTU), Shanghai, 200240, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China.",
+      "Department of Obstetrics and Gynecology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "Shanghai Key Laboratory of Gynecologic Oncology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Hong Kong, 999077, China.",
+      "Sheng Yushou Center of Cell Biology and Immunology, Joint International Research Laboratory of Metabolic and Developmental Sciences, School of Life Sciences and Biotechnology, Shanghai Jiao Tong University (SJTU), Shanghai, 200240, China.",
+      "US Department of Veterans Affairs Medical Center, Cincinnati, OH, 45229, USA.",
+      "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Division of Immunobiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH, 45229, USA.",
+      "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH, 45229, USA.",
+      "Division of Allergy and Immunology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH, 45229, USA.",
+      "Division of Developmental Biology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Division of Biomedical Informatics, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. houguojun225@163.com.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. houguojun225@163.com.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China. houguojun225@163.com.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. nanshensibs@gmail.com.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. nanshensibs@gmail.com.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, 518040, China. nanshensibs@gmail.com.",
+      "Center for Autoimmune Genomics and Etiology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, 45229, USA. nanshensibs@gmail.com.",
+      "Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH, 45229, USA. nanshensibs@gmail.com."
+    ],
+    "34826401": [
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China. Electronic address: zhangmeijn@163.com.",
+      "Department of Endocrinology, Genetics and Metabolism, Affiliated Hospital of Jining Medical University, Jining, PR China; Medical Research Center, Affiliated Hospital of Jining Medical University, Jining, PR China; Chinese Research Center for Behavior Medicine in Growth and Development, Jining, PR China. Electronic address: banbo2011@163.com."
+    ],
+    "33493351": [
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Department of Rheumatology, The Third Affiliated Hospital of Sun Yat-Sen University.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Collaborative Innovation Center for Birth Defect Research and Transformation of Shandong Province, Jining Medical University, Shandong.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Rheumatology and Lupus Research Institute, The Affiliated Hospital of Jining Medical University.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Department of Pediatric Surgery, Guangzhou Institute of Pediatrics, Guangdong Provincial Key Laboratory of Research in Structural Birth Defect Disease, Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, Shandong.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong SAR."
+    ],
+    "33437829": [
+      "Department of Rheumatology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, The First Affiliated Hospital, Harbin Medical University, Harbin, China.",
+      "Evidence-Based Medicine Center, School of Basic Medical Sciences, Lanzhou University, Lanzhou, China.",
+      "WHO Collaborating Centre for Guideline Implementation and Knowledge Translation, Lanzhou, China.",
+      "Department of Rheumatology, The First Affiliated Hospital, Harbin Medical University, Harbin, China.",
+      "Department of Orthopaedics, Peking University People's Hospital, Beijing, China.",
+      "Department of Rheumatology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Orthopaedics, Peking University People's Hospital, Beijing, China.",
+      "Department of Rheumatology, The First Affiliated Hospital, Harbin Medical University, Harbin, China.",
+      "Veterans General Hospital, Taipei and National Yang-Ming Medical University, Taipei.",
+      "Department of Rheumatology, Beijing Chaoyang Hospital, Capital Medical University, Beijing, China.",
+      "Department of Internal Medicine, Kaohsiung Medical College, Kaohsiung City.",
+      "Department of Rheumatology, First Affiliated Hospital of Zhengzhou University, Zhengzhou, China.",
+      "Department of Rheumatology and Immunology, Guang'anmen Hospital, China Academy of Chinese Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, West China Hospital, Sichuan University, Chengdu, China.",
+      "Department of Rheumatology, Second Xiangya Hospital, Central South University, Changsha, China.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, China.",
+      "Department of Rheumatology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Division of Arthritis and Rheumatic Diseases, Oregon Health & Science University and VA Portland Health Care System, Portland, OR, USA.",
+      "Department of Rheumatology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology and Immunology, the First Hospital of Xi'an Jiaotong University, Xi'an, China.",
+      "Department of Rheumatology, The First Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, China.",
+      "Department of Rheumatology, People's Hospital of Xinjiang Uygur Autonomous Region, Urumchi, China.",
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of Anhui Medical University, Hefei, China.",
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of China Medical University, Beijing, China.",
+      "Department of Rheumatology, Peking University People's Hospital, Beijing, China.",
+      "Department of Osteoarthrosis, Affiliated Drum Tower Hospital, Nanjing University Medical College, Nanjing, China.",
+      "Department of Orthopedics, Xiangya Hospital, Central South University, Changsha, China.",
+      "Department of Rheumatology, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China.",
+      "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Rehabilitation Medicine, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Orthopedics, Beijing Jishuitan Hospital, Beijing, China.",
+      "Department of Rheumatology and Immunology, Shanghai Guanghua Hospital, Shanghai, China.",
+      "Department of Rheumatology and Immunology, First Teaching Hospital of Tianjin University of Traditional Chinese Medicine, Tianjin, China.",
+      "Academic Rheumatology, University of Nottingham, Nottingham, UK.",
+      "University of Tasmania, Tasmania, Australia.",
+      "Department of Rheumatology, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China."
+    ],
+    "33178745": [
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of Harbin Medical University, Harbin, China.",
+      "Department of Rheumatology and Immunology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatism, Guang'anmen Hospital, China Academy of Chinese Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, Beijing Chaoyang Hospital Affiliated to Capital University of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology and Immunology, West China Hospital, Sichuan University, Chengdu, China.",
+      "Department of Rheumatology, the First Affiliated Hospital of Zhengzhou University, Zhengzhou, China.",
+      "Department of Rheumatology and Immunology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of Harbin Medical University, Harbin, China.",
+      "University of Tasmania, Tasmania, Australia.",
+      "Department of Radiology, Beijing Hospital, National Center of Gerontology, Beijing, China.",
+      "Department of Rehabilitaion Medicine, Beijing Hospital, National Center of Gerontology, Beijing, China.",
+      "Department of Orthopaedics, Peking University People's Hospital, Beijing, China.",
+      "Department of Rheumatology and Immunology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, the First Affiliated Hospital of Xi'an Jiaotong University, Xi'an, China.",
+      "Shenzhen Futian Hospital for Rheumatic Diseases, Shenzhen, China.",
+      "Department of Rheumatology and Immunology, the People's Hospital of the Xinjiang Uygur Autonomous Region, Urumqi, China.",
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of Anhui Medical University, Hefei, China.",
+      "Department of Rheumatic Immunology, the First Affiliated Hospital of China Medical University, Shenyang, China.",
+      "Department of Rheumatology and Immunology, Peking University People's Hospital, Beijing, China.",
+      "Department of Rheumatology and Immunology, the First Affiliated Hospital of Harbin Medical University, Harbin, China.",
+      "Department of Rheumatology, Second Xiangya Hospital, Central South University, Changsha, China.",
+      "Department of Rheumatology, The First Affiliated Hospital, College of Medicine, Zhejiang University, Hangzhou, China.",
+      "Department of Rheumatology and Immunology, Beijing Hospital, National Center of Gerontology, Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Rheumatology, Peking Union Medical College Hospital, Peking Union Medical College, Chinese Academy of Medical Sciences, Beijing, China.",
+      "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Orthopedics, Beijing Jishuitan Hospital, Beijing, China.",
+      "Department of Sports Medicine and Adult Reconstructive Surgery, Drum Tower Hospital, School of Medicine, Nanjing University, Nanjing, China.",
+      "Division of Arthritis and Rheumatic Diseases, Oregon Health & Science University and VA Portland Health Care System, Portland, OR, USA.",
+      "Evidence-Based Medicine Center, School of Basic Medical Sciences, Lanzhou University, WHO Collaborating Centre for Guideline Implementation and Knowledge Translation, Lanzhou, China.",
+      "Academic Rheumatology, Clinical Sciences Building, University of Nottingham, City Hospital, Nottingham, UK.",
+      "Department of Internal Medicine, Kaohsiung Medical College, Kaohsiung.",
+      "Department of Orthopedic, Xiangya Hospital, Central South University, Changsha, China.",
+      "Department of Arthrology, Guanghua Integrative Medicine Hospital, Shanghai, China.",
+      "Department of Rheumatology and Immunology, First Teaching Hospital of Tianjin University of Traditional Chinese Medicine, Tianjin, China.",
+      "Department of Rheumatology and Immunology, Southwest Hospital, Army Medical University, Chongqing, China.",
+      "Guangdong Provincial Hospital of Chinese Medicine, Guangdong Provincial Academy of Chinese Medical Sciences, The Second Clinical School of Guangzhou University of Chinese Medicine, Guangzhou, China.",
+      "Department of Orthopedics, Peking University People's Hospital, Beijing, China.",
+      "Division of Allergy, Immunology and Rheumatology, Department of Medicine, Chung Shan Medical University Hospital, Taichung.",
+      "Veterans General Hospital, Taipei and National Yang-Ming Medical University, Taipei.",
+      "Department of Rheumatology, Peking Union Medical College Hospital, Peking Union Medical College, Chinese Academy of Medical Sciences, Beijing, China."
+    ],
+    "31133697": [
+      "Qingdao University, Qingdao, 266071, Shandong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Hong Kong University, 999077, Hong Kong, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, 272029, Jining, Shandong, China.",
+      "Key Laboratory of Endocrinology of National Health and Family Planning Commission, Department of Endocrinology, Peking Union Medical College Hospital, Chinese Academy of Medical Science and Peking Union Medical College, 100730, Beijing, China.",
+      "Department of Endocrinology, Affiliated Hospital of Jining Medical University, Jining Medical University, 89 Guhuai Road, 272029, Jining, Shandong, China. banbo2011@163.com.",
+      "Chinese Research Center for Behavior Medicine in Growth and Development, 89 Guhuai Road, 272029, Jining, Shandong, China. banbo2011@163.com."
+    ],
+    "30217742": [
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China; Dr Li Dak-Sum Research Centre, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China; Dr Li Dak-Sum Research Centre, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Computer Science and Engineering, The Chinese University of Hong Kong, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China; Dr Li Dak-Sum Research Centre, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China; Dr Li Dak-Sum Research Centre, The University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Hebei Medical University Second Hospital, Shijiazhuang, Hebei, China.",
+      "National Hospital of Pediatrics, Ha Noi, Viet Nam.",
+      "Department of Epidemiology and Biostatistics, School of Public Health, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, Hubei, China.",
+      "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China.",
+      "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China.",
+      "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China.",
+      "Department of Paediatric Surgery, Shandong Medical University, Shandong, China.",
+      "Shandong Provincial Institute of Dermatology and Venereology, Shandong Academy of Medical Sciences, Jinan, Shandong, China.",
+      "Shandong Provincial Institute of Dermatology and Venereology, Shandong Academy of Medical Sciences, Jinan, Shandong, China.",
+      "The Key Laboratory for Experimental Teratology of the Ministry of Education, Shandong University School of Medicine, Jinan, Shandong, China.",
+      "Guangzhou Women and Children's Medical Center, Guangzhou, Guangdong, China.",
+      "Changchun Children's Hospital, Changchun, Jilin, China.",
+      "Bayi Children's Hospital, General Hospital of Beijing Military Region, Beijing, China.",
+      "Shenzhen Children's Hospital, Shenzhen, Guangdong, China.",
+      "Zhejiang Children's Hospital, Hangzhou, Zhejiang, China.",
+      "School of Biological Sciences, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Pediatrics and Adolescent Medicine, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Paediatric Surgery, Shengjing Hospital, China Medical University, Shenyang, China.",
+      "Department of Computer Science and Engineering, The Chinese University of Hong Kong, Hong Kong, China.",
+      "Department of Psychiatry, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China; Centre for Genomic Sciences, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China. Electronic address: mmgarcia@hku.hk.",
+      "Department of Surgery, Li Ka Shing Faculty of Medicine, University of Hong Kong, Pokfulam, Hong Kong, China. Electronic address: engan@hku.hk."
+    ],
+    "28116329": [
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Psychiatry LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "HKU Shenzhen Institute of Research and Innovation School of Biomedical Sciences The University of Hong Kong Hong Kong Hong Kong.",
+      "HKU Shenzhen Institute of Research and Innovation School of Biomedical Sciences The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine Queen Mary Hospital Hong Kong Hong Kong.",
+      "NHS Lothian Lothian NHS Board Edinburgh UK.",
+      "Department of Genetics Kuala Lumpur Hospital Kuala Lumpur Malaysia.",
+      "Department of Genetics Kuala Lumpur Hospital Kuala Lumpur Malaysia.",
+      "Department of Obstetrics and Gynaecology Tsan Yuk Hospital Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent Medicine LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "HKU Shenzhen Institute of Research and Innovation School of Biomedical Sciences The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics Faculty of Medicine The Chinese University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Psychiatry LKS Faculty of Medicine The University of Hong Kong Hong Kong Hong Kong.",
+      "Department of Paediatrics and Adolescent MedicineLKS Faculty of MedicineThe University of Hong KongHong KongHong Kong; Department of Paediatrics and Adolescent MedicineQueen Mary HospitalHong KongHong Kong.",
+      "Department of Paediatrics and Adolescent MedicineLKS Faculty of MedicineThe University of Hong KongHong KongHong Kong; Department of Paediatrics and Adolescent MedicineQueen Mary HospitalHong KongHong Kong; Department of Paediatrics and Adolescent MedicineThe Duchess of Kent Children's Hospital at Sandy BayHong Kong.",
+      "Department of Paediatrics and Adolescent MedicineLKS Faculty of MedicineThe University of Hong KongHong KongHong Kong; Department of Paediatrics and Adolescent MedicineQueen Mary HospitalHong KongHong Kong; Department of Paediatrics and Adolescent MedicineThe Duchess of Kent Children's Hospital at Sandy BayHong Kong."
+    ],
+    "28108556": [
+      "Arthritis and Clinical Immunology Research Program, Oklahoma Medical Research Foundation, Oklahoma City, OK, USA.",
+      "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong.",
+      "Renal Division, Peking University First Hospital, Peking University Institute of Nephrology, Key Laboratory of Renal Disease, Ministry of Health of China, and Key Laboratory of Chronic Kidney Disease Prevention and Treatment (Peking University), Ministry of Education, Beijing, People's Republic of China.",
+      "Arthritis and Clinical Immunology Research Program, Oklahoma Medical Research Foundation, Oklahoma City, OK, USA.",
+      "Department of Statistical Genetics, Osaka University Graduate School of Medicine, Osaka, Japan.",
+      "Laboratory for Statistical Analysis, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong.",
+      "Department of Biomedical Science, Faculty of Medicine, University of Malaya, Kuala Lumpur, Malaysia.",
+      "Department of Paediatrics and Adolescent Medicine, LKS Faculty of Medicine, The University of Hong Kong, Pokfulam, Hong Kong.",
+      "Laboratory for Autoimmune Diseases, Center for Integrative Medical Sciences, RIKEN, Yokohama, Japan.",
+      "Laboratory for Autoimmune Diseases, Center for Integrative Medical Sciences, RIKEN, Yokohama, Japan.",
+      "Laboratory for Autoimmune Diseases, Center for Integrative Medical Sciences, RIKEN, Yokohama, Japan.",
+      "Department of Allergy and Rheumatology, Graduate School of Medicine, The University of Tokyo, Tokyo, Japan.",
+      "Joint Molecular Rheumatology Laboratory of the Institute of Health Sciences and Shanghai Renji Hospital, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, and Shanghai Jiaotong University School of Medicine, Shanghai 200025, People's Republic of China.",
+      "Department of Rheumatology, Hanyang University Hospital for Rheumatic Diseases, Seoul, Korea.",
+      "Department of Rheumatology, Hanyang University Hospital for Rheumatic Diseases, Seoul, Korea.",
+      "Department of Biology, Kyung Hee University, Seoul 02447, Korea.",
+      "Department of Rheumatology, Hanyang University Hospital for Rheumatic Diseases, Seoul, Korea.",
+      "Renal Division, Peking University First Hospital, Peking University Institute of Nephrology, Key Laboratory of Renal Disease, Ministry of Health of China, and Key Laboratory of Chronic Kidney Disease Prevention and Treatment (Peking University), Ministry of Education, Beijing, People's Republic of China.",
+      "Joint Molecular Rheumatology Laboratory of the Institute of Health Sciences and Shanghai Renji Hospital, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, and Shanghai Jiaotong University School of Medicine, Shanghai 200025, People's Republic of China.",
+      "Janelia Research Campus, Howard Hughes Medical Institute, Ashburn, VA, USA.",
+      "Arthritis and Clinical Immunology Research Program, Oklahoma Medical Research Foundation, Oklahoma City, OK, USA."
+    ],
+    "27481557": [
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Institute of Dermatology and Department of Dermatology, No.1 Hospital, Anhui Medical University, Hefei, China.",
+      "Department of Paediatrics and Adolescent Medicine, The University of Hong Kong, Pokfulam, Hong Kong Special Administrative Region, China.",
+      "Cellular Biomedicine Group Inc., Shanghai, China.",
+      "Cellular Biomedicine Group Inc., Shanghai, China.",
+      "Cellular Biomedicine Group Inc., Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China; The Center for Autoimmune Genomics and Etiology (CAGE), Cincinnati Children's Hospital Medical Center, Cincinnati, OH, USA. Electronic address: nanshensibs@gmail.com.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China. Electronic address: tangyuanjia028@163.com."
+    ]
+  },
+  "pmid_affiliations_after_filter": {
+    "41794919": [
+      "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Chinese University of Hong Kong-Shenzhen, Shenzhen, Guangdong, China."
+    ],
+    "41272119": [
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Department of Microbiology, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Immunology Division, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "Laboratory for Statistical and Translational Genetics, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, China.",
+      "School of Medicine, Warshel Institute for Computational Biology, The Second Affiliated Hospital, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn.",
+      "Guangdong Basic Research Center of Excellence for Aggregate Science, School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong, China. yfwang@cuhk.edu.cn."
+    ],
+    "38741185": [
+      "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong - Shenzhen, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics, Faculty of Medicine, The Chinese University of Hong Kong, Hong Kong, China."
+    ],
+    "38515699": [],
+    "38458775": [
+      "Department of Transfusion Medicine and Clinical Microbiology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Master of Sciences Program in Molecular Science of Medical Microbiology and Immunology, Faculty of Allied Health Sciences, Chulalongkorn University, Bangkok, Thailand.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Department of Nephrology, Fourth Affiliated Hospital, International Institutes of Medicine, Zhejiang University School of Medicine, Hangzhou, Zhejiang, China.",
+      "Centre of Excellent in Immunology and Immune-Mediated Diseases, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Division of Immunology, Department of Microbiology, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China yfwang@cuhk.edu.cn.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, People's Republic of China."
+    ],
+    "38354915": [],
+    "38220134": [],
+    "38141203": [
+      "School of Life and Health Sciences, School of Medicine, and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China."
+    ],
+    "37835574": [],
+    "37605180": [
+      "School of Medicine, Qingdao University, Qingdao, Shandong, 266071, P.R. China."
+    ],
+    "37398664": [
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "School of Life and Health Sciences, School of Medicine and Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Princess Margaret Hospital, Hong Kong, Hong Kong SAR, China.",
+      "Department of Paediatrics & Adolescent Medicine, Queen Mary Hospital, The University of Hong Kong, Hong Kong, Hong Kong SAR, China."
+    ],
+    "35388006": [
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Department of Obstetrics and Gynecology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "Shanghai Key Laboratory of Gynecologic Oncology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200127, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. houguojun225@163.com.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. houguojun225@163.com.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200001, China. nanshensibs@gmail.com.",
+      "State Key Laboratory of Oncogenes and Related Genes, Shanghai Cancer Institute, Renji Hospital, Shanghai Jiao Tong University School of Medicine (SJTUSM), Shanghai, 200032, China. nanshensibs@gmail.com."
+    ],
+    "34826401": [],
+    "33493351": [],
+    "33437829": [
+      "Department of Rheumatology, The First Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, China."
+    ],
+    "33178745": [
+      "Department of Sports Medicine and Adult Reconstructive Surgery, Drum Tower Hospital, School of Medicine, Nanjing University, Nanjing, China."
+    ],
+    "31133697": [],
+    "30217742": [
+      "Department of Computer Science and Engineering, The Chinese University of Hong Kong, Hong Kong, China.",
+      "The Key Laboratory for Experimental Teratology of the Ministry of Education, Shandong University School of Medicine, Jinan, Shandong, China.",
+      "Department of Computer Science and Engineering, The Chinese University of Hong Kong, Hong Kong, China."
+    ],
+    "28116329": [
+      "Department of Paediatrics Faculty of Medicine The Chinese University of Hong Kong Hong Kong Hong Kong."
+    ],
+    "28108556": [
+      "Department of Statistical Genetics, Osaka University Graduate School of Medicine, Osaka, Japan.",
+      "Laboratory for Statistical Analysis, RIKEN Center for Integrative Medical Sciences, Yokohama, Japan.",
+      "Department of Allergy and Rheumatology, Graduate School of Medicine, The University of Tokyo, Tokyo, Japan.",
+      "Joint Molecular Rheumatology Laboratory of the Institute of Health Sciences and Shanghai Renji Hospital, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, and Shanghai Jiaotong University School of Medicine, Shanghai 200025, People's Republic of China.",
+      "Joint Molecular Rheumatology Laboratory of the Institute of Health Sciences and Shanghai Renji Hospital, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences, and Shanghai Jiaotong University School of Medicine, Shanghai 200025, People's Republic of China."
+    ],
+    "27481557": [
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China; The Center for Autoimmune Genomics and Etiology (CAGE), Cincinnati Children's Hospital Medical Center, Cincinnati, OH, USA. Electronic address: nanshensibs@gmail.com.",
+      "Shanghai Institute of Rheumatology, Renji Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China; Institute of Health Sciences, Shanghai Jiao Tong University School of Medicine (SJTUSM) & Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences (CAS), Shanghai, China. Electronic address: tangyuanjia028@163.com."
+    ]
+  }
+}
