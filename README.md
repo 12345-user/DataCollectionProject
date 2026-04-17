@@ -21,13 +21,13 @@
 - 输入：Step 01 的论文元数据（至少：`title/abstract/pub_date/authors/doi`）
 - 工具：`paperscraper`（arXiv/bioRxiv/medRxiv/chemRxiv；纯爬虫，ML 参与：❌）
 - 输出：`02_paper_list_extend/step_results/*_expanded_papers.jsonl`
-  - 字段：`title, abstract, pub_date, authors, doi, url, source`
+  - 字段：`paper_id, source, source_id, title, abstract, pub_date, authors, doi, url`
 
 架构与执行逻辑（简图）：
 
 ```mermaid
 flowchart TD
-    A[读 Step01 abstracts.json] --> B[构造 paperscraper 查询\n教授名 -> surname/initial]
+    A[读 Step01 abstracts.jsonl] --> B[构造 paperscraper 查询\n教授名 -> surname + given/initial]
     B --> C1[paperscraper: arXiv 搜索 -> 临时 jsonl]
     B --> C2[XRXivQuery: bio/med/chem dump 搜索 -> 临时 jsonl]
     C1 --> D[合并 + 去重\n优先 doi，其次 title]
@@ -46,9 +46,7 @@ py -3.12 -m venv .venv
 下载 bioRxiv/medRxiv/chemRxiv server dumps（耗时较长；生成本地 `server_dumps/*`）：
 
 ```powershell
-.\.venv\Scripts\python.exe -c "from paperscraper.get_dumps import biorxiv; biorxiv()"
-.\.venv\Scripts\python.exe -c "from paperscraper.get_dumps import medrxiv; medrxiv()"
-.\.venv\Scripts\python.exe -c "from paperscraper.get_dumps import chemrxiv; chemrxiv()"
+.\.venv\Scripts\python.exe 02_paper_list_extend/processing/download_step02_paperscraper_dumps.py --recent-days 30
 ```
 
 执行命令（准确运行）：
@@ -57,7 +55,19 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe "02_paper_list_extend\processing\run_step02_paper_list_extend_paperscraper.py" `
   --professor-name "教授姓名" `
   --step01-output-prefix "Step01OutputPrefix" `
-  --output-prefix "Step02OutputPrefix"
+  --output-prefix "Step02OutputPrefix" `
+  --server-dump-dir "02_paper_list_extend/data_sources/paperscraper_server_dumps/server_dumps"
+```
+
+本地部署优先（推荐用于“先跑通与验收”；跳过不稳定的 arXiv 远端 API）：
+
+```powershell
+.\.venv\Scripts\python.exe "02_paper_list_extend\processing\run_step02_paper_list_extend_paperscraper.py" `
+  --professor-name "教授姓名" `
+  --step01-output-prefix "Step01OutputPrefix" `
+  --output-prefix "Step02OutputPrefix" `
+  --server-dump-dir "02_paper_list_extend/data_sources/paperscraper_server_dumps/server_dumps" `
+  --skip-arxiv
 ```
 
 ### Step 03：PDF 解析与元数据提取（03_pdf_parsing）
@@ -125,9 +135,9 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collec
 ```
 
 Step 01 输出将作为 Step 02~07 的输入来源：
-- `01_data_collection/step_results/<前缀>_abstracts.jsonl`
-- `01_data_collection/step_results/<前缀>_abstracts.md`
-- `01_data_collection/step_results/<前缀>_lab_info.json`
+- `01_data_collection/step_results/professor_paper_abstracts/<前缀>_abstracts.jsonl`
+- `01_data_collection/step_results/professor_paper_abstracts/<前缀>_abstracts.md`
+- `01_data_collection/step_results/professor_lab_info/<前缀>_lab_info.json`
 
 ### 3.2 Step 02~07：目录串接（待你补齐入口脚本）
 Step 串接逻辑：
