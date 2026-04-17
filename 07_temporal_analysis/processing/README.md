@@ -1,16 +1,45 @@
 # 07_temporal_analysis / processing
 
-投入推断（建议轻量实现，避免过度复杂）：
+目标：根据论文时间分布、项目候选频率和 Step 04 的身份一致性，推测教授当前与未来的研究投入方向。
 
-1. 时间加权频率
-   - 对每个 domain/project 计算时间序列 `count(t)`
-   - 用指数衰减：`w(t)=exp(-(T-now)/tau)` 得到当前 share_current
-2. 未来趋势
-   - 最近窗口内的 `count(t)` 做趋势拟合/平滑
-   - 或用“最近 N 篇出现频率上升”作为简单上升指标
-3. 同名混入抑制
-   - 引入身份一致性 `identity_score`（Step 04 得到）
-   - 将权重乘到时间序列上：`effective_count = identity_score * count`
-4. 可解释 baseline 模型（可选）
-   - 用 `sklearn` 训练一个 baseline：预测下一时间窗是否继续出现于同一 project/domain
+## 当前环境
+
+项目根 `.venv` 已安装：
+- `pandas`
+- `scikit-learn`
+
+共享配置：
+- `shared/config/professor_pipeline.env.example`
+
+## 稳定输入输出
+
+输入：
+- `06_domain_clustering/step_results/<前缀>_paper_domains.jsonl`
+
+输出：
+- `07_temporal_analysis/step_results/<前缀>_project_timeline.json`
+- `07_temporal_analysis/step_results/<前缀>_effort_allocation.json`
+- `07_temporal_analysis/step_results/<前缀>_trend_report.md`
+
+关键输出字段：
+- `project_or_domain`
+- `share_current`
+- `trend_future`
+- `evidence`
+
+## 推荐命令形式
+
+```powershell
+.\.venv\Scripts\python.exe 07_temporal_analysis/processing/run_step07_temporal_analysis.py `
+  --input 06_domain_clustering/step_results/示例教授_paper_domains.jsonl `
+  --timeline-output 07_temporal_analysis/step_results/示例教授_project_timeline.json `
+  --allocation-output 07_temporal_analysis/step_results/示例教授_effort_allocation.json `
+  --report-output 07_temporal_analysis/step_results/示例教授_trend_report.md
+```
+
+## 建议方法
+
+1. 用指数衰减频次估算 `share_current`
+2. 用最近窗口与历史窗口对比估算 `trend_future`
+3. 把 `identity_score` 乘进每条论文权重，降低同名误混风险
 

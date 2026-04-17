@@ -7,8 +7,9 @@
 - 输入：教授名 + SeedPaperTitle/SeedPMID（可选 ExtraUrls）
 - 输出（按 `OutputPrefix`）：
   - `01_data_collection/step_results/professor_paper_titles/*_titles.json`
-  - `01_data_collection/step_results/professor_paper_abstracts/*_abstracts.json`
-  - `01_data_collection/step_results/professor_lab_info/*_lab_info.json`（用于消歧/身份一致性辅助）
+  - `01_data_collection/step_results/professor_paper_abstracts/*_abstracts.json`（包含：title/abstract/pub_date/doi/authors）
+  - `01_data_collection/step_results/professor_paper_abstracts/*_abstracts.jsonl`（同上，JSONL 便于下游流水线）
+  - `01_data_collection/step_results/professor_lab_info/*_lab_info.json`（包含：top affiliations + `pmid_affiliations` 映射）
 
 ## Step 02：02_paper_list_extend
 

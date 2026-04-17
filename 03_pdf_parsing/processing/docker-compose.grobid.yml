@@ -1,0 +1,9 @@
+services:
+  grobid:
+    image: lfoppiano/grobid:latest
+    container_name: professor-pipeline-grobid
+    ports:
+      - "8070:8070"
+    environment:
+      JAVA_OPTS: "-Xms1g -Xmx2g"
+    restart: unless-stopped

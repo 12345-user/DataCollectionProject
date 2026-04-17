@@ -10,6 +10,61 @@ from urllib.request import urlopen
 import xml.etree.ElementTree as ET
 
 
+def _text_or_empty(node: ET.Element | None, xpath: str) -> str:
+    if node is None:
+        return ""
+    v = node.findtext(xpath) or ""
+    return v.strip()
+
+
+def _parse_pub_date(article: ET.Element) -> str:
+    # Prefer Year/Month/Day when available; otherwise fall back to MedlineDate.
+    year = _text_or_empty(article, ".//PubDate/Year")
+    month = _text_or_empty(article, ".//PubDate/Month")
+    day = _text_or_empty(article, ".//PubDate/Day")
+    if year:
+        mm = month if month.isdigit() else ""
+        dd = day if day.isdigit() else ""
+        if mm and dd:
+            return f"{year}-{int(mm):02d}-{int(dd):02d}"
+        if mm:
+            return f"{year}-{int(mm):02d}"
+        return year
+    medline = _text_or_empty(article, ".//PubDate/MedlineDate")
+    return medline
+
+
+def _parse_doi(article: ET.Element) -> str:
+    doi = (article.findtext(".//ArticleId[@IdType='doi']") or "").strip()
+    if doi:
+        return doi
+    doi2 = (article.findtext(".//ELocationID[@EIdType='doi']") or "").strip()
+    return doi2
+
+
+def _parse_authors(article: ET.Element) -> list[str]:
+    authors: list[str] = []
+    for a in article.findall(".//AuthorList/Author"):
+        # Some PubMed records use CollectiveName instead of LastName/ForeName
+        collective = (a.findtext("CollectiveName") or "").strip()
+        if collective:
+            authors.append(collective)
+            continue
+
+        last = (a.findtext("LastName") or "").strip()
+        initials = (a.findtext("ForeName/Initials") or (a.findtext("Initials") or "")).strip()
+        fore = (a.findtext("ForeName") or "").strip()
+
+        if last and initials:
+            authors.append(f"{last} {initials}")
+        elif last and fore:
+            # Avoid full given name explosion; prefer initials when present.
+            authors.append(f"{last} {fore}")
+        elif last:
+            authors.append(last)
+    return authors
+
+
 def fetch_xml(url: str, cache_dir: Path, cache_key: str, retries: int = 3) -> ET.Element:
     cache_file = cache_dir / f"{cache_key}.xml"
     if cache_file.exists():
@@ -46,8 +101,17 @@ def fetch_abstracts(pmids: list[str], cache_dir: Path) -> list[dict[str, Any]]:
         abstract_text = " ".join(
             [" ".join((node.itertext() or [])).strip() for node in abstract_nodes if node is not None]
         ).strip()
+
+        record: dict[str, Any] = {
+            "pmid": pmid,
+            "title": title,
+            "abstract": abstract_text,
+            "pub_date": _parse_pub_date(article),
+            "doi": _parse_doi(article),
+            "authors": _parse_authors(article),
+        }
         if pmid:
-            results.append({"pmid": pmid, "title": title, "abstract": abstract_text})
+            results.append(record)
     # Strict de-dup by PMID.
     seen_pmids: set[str] = set()
     deduped: list[dict[str, Any]] = []
@@ -80,16 +144,28 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     out_json = output_dir / f"{args.output_prefix}_abstracts.json"
     out_md = output_dir / f"{args.output_prefix}_abstracts_list.md"
+    out_jsonl = output_dir / f"{args.output_prefix}_abstracts.jsonl"
     out_json.write_text(json.dumps({"count": len(records), "records": records}, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # JSONL (one record per line) for downstream pipeline steps.
+    out_jsonl.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in records), encoding="utf-8")
 
     lines = [f"# PubMed Abstract List: {args.output_prefix}", "", f"Total: {len(records)}", ""]
     for i, item in enumerate(records, 1):
-        lines.append(f"## {i}. {item.get('title', '')} (PMID: {item.get('pmid', '')})")
+        pub_date = item.get("pub_date", "") or ""
+        doi = item.get("doi", "") or ""
+        lines.append(
+            f"## {i}. {item.get('title', '')} (PMID: {item.get('pmid', '')}, PubDate: {pub_date}, DOI: {doi})"
+        )
         lines.append(item.get("abstract", "(no abstract)"))
+        authors = item.get("authors", []) or []
+        if authors:
+            lines.append(f"Authors: {', '.join(authors[:20])}{'...' if len(authors) > 20 else ''}")
         lines.append("")
     out_md.write_text("\n".join(lines), encoding="utf-8")
     print(out_json)
     print(out_md)
+    print(out_jsonl)
 
 
 if __name__ == "__main__":

@@ -16,3 +16,40 @@
 - `*_trend_future.json`：未来趋势（哪些项目/领域更可能增长）
 - `*_consistency_report.md/json`：一致性与混入风险提示
 
+## 投入比例与时间趋势的“可解释”计算（建议实现优先级）
+
+### 1）项目时间序列与加权当前投入 share_current
+
+对每个 `project_id`（canonical project）建立时间序列 `count(project_id, t)`（例如按月/季度/年分桶）。
+
+当前投入权重可用指数衰减：
+
+- `w(t)=exp(-(T-now)/tau)`
+- `score_current(project_id)=sum_t w(t) * count(project_id,t) * identity_score`
+- `share_current = score_current / sum(score_current over all projects)`
+
+identity_score 来自 Step 04（没有就默认 1）。
+
+### 2）未来趋势 trend_future（项目频率 + 时间前后）
+
+对每个 project 的最近窗口与更早窗口做“增长率”：
+
+- `recent = sum count(project_id, t) for t in [now-k, now]`
+- `past   = sum count(project_id, t) for t in [now-m-k, now-k]`
+- `trend = (recent+eps)/(past+eps)`（比值型）或对最近窗口做线性回归得到斜率
+
+最终输出时同时给出证据论文数量与时间范围，保证可解释。
+
+### 3）同名混入一致性 consistency_report
+
+当同名混入发生时，通常会出现：
+
+- 身份一致性分数（Step 04）明显下降
+- domain_label 分布出现不连续跳变
+- project_mentions 的别名/主题突变
+
+建议报告中包含：
+- identity_score 的分布与分位数
+- 近期 domain_label 与过去 domain_label 的距离/占比变化
+- 若检测到突变，输出“可能混入的时间段/论文列表（PMID 列表）”
+
