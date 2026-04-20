@@ -3,7 +3,7 @@
 目标：对“目标教授论文集合”做关键词/实体抽取，构建可用于后续“项目名统计与时间投入推断”的特征。
 
 输入：
-- Step 04 的消歧后论文列表（title + abstract + authors/affiliations 可选）
+- 新 Step 03（原 Step 04）的消歧后论文列表（title + abstract + authors/affiliations 可选）
 
 工具（建议）：
 - `KeyBERT`：语义关键词提取（零训练）
@@ -12,7 +12,7 @@
 输出（写入 step_results）：
 - `*_paper_features.jsonl`：
   - `pmid`：论文唯一标识（若有）
-  - `pub_date`：发表日期（来自 Step 01/03）
+  - `pub_date`：发表日期（来自 Step 01/02）
   - `keywords[]`：语义关键词（KeyBERT）
   - `entities[]`：技术/方法实体（GLiNER）
   - `project_candidates[]`：项目名候选（由 `keywords + entities` 组合 + 归一化同义合并）

@@ -36,23 +36,6 @@ stable_path_contract:
   step03:
     input:
       expanded_papers_jsonl: "02_paper_list_extend/step_results/<prefix>_expanded_papers.jsonl"
-      optional_pdf_cache_dir: "03_pdf_parsing/data_sources/pdf_cache/"
-    output:
-      parsed_papers_jsonl: "03_pdf_parsing/step_results/<prefix>_parsed_papers.jsonl"
-    required_fields:
-      - paper_id
-      - source
-      - title
-      - abstract
-      - pub_date
-      - authors
-      - sections
-      - affiliations
-      - references
-
-  step04:
-    input:
-      parsed_papers_jsonl: "03_pdf_parsing/step_results/<prefix>_parsed_papers.jsonl"
       step01_lab_info_json: "01_data_collection/step_results/<prefix>_lab_info.json"
     output:
       disambiguated_papers_jsonl: "04_author_disambiguation/step_results/<prefix>_disambiguated_papers.jsonl"
@@ -62,7 +45,7 @@ stable_path_contract:
       - identity_decision
       - identity_evidence
 
-  step05:
+  step04:
     input:
       disambiguated_papers_jsonl: "04_author_disambiguation/step_results/<prefix>_disambiguated_papers.jsonl"
     output:
@@ -73,7 +56,7 @@ stable_path_contract:
       - entities
       - project_candidates
 
-  step06:
+  step05:
     input:
       keyword_entity_jsonl: "05_keyword_entity/step_results/<prefix>_keyword_entity.jsonl"
     output:
@@ -84,7 +67,7 @@ stable_path_contract:
       - domain_label
       - domain_confidence
 
-  step07:
+  step06:
     input:
       paper_domains_jsonl: "06_domain_clustering/step_results/<prefix>_paper_domains.jsonl"
     output:

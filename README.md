@@ -15,7 +15,7 @@
 - 统一配置模板：`shared/config/professor_pipeline.env.example`
 - 统一输入输出契约：`shared/config/professor_pipeline.io.contract.yaml`
 
-## 2）时间架构（02-07；对应你的技术栈明细）
+## 2）时间架构（02-06；已取消原 Step03）
 
 ### Step 02：扩展论文列表采集（02_paper_list_extend）
 - 输入：Step 01 的论文元数据（至少：`title/abstract/pub_date/authors/doi`）
@@ -70,23 +70,12 @@ py -3.12 -m venv .venv
   --skip-arxiv
 ```
 
-### Step 03：PDF 解析与元数据提取（03_pdf_parsing）
-- 输入：Step 02 的 PDF
-- 工具：`GROBID`（WSL 本地运行；不依赖 Docker Desktop）+ `scipdf_parser`
-- 输出：结构化 `JSON`（标题、摘要、作者列表、发表日期、关键词、参考文献）
-
-启动命令：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\step03_grobid_wsl_start.ps1"
-```
-
-### Step 04：同名教授消歧（04_author_disambiguation）
-- 输入：论文标题/摘要/作者/机构（含 Step 03 信息）
+### Step 03（新）：同名教授消歧（04_author_disambiguation）
+- 输入：Step 02 扩展论文元数据 + Step 01 的实验室信息
 - 工具：`WhoIsWho`（OAG-BERT）+ `GLiNER`
 - 输出：过滤后的“目标教授论文集合”
 
-### Step 05：关键词与实体抽取（05_keyword_entity）
+### Step 04（新）：关键词与实体抽取（05_keyword_entity）
 - 输入：目标论文的标题 + 摘要（可含机构/引用）
 - 工具：`KeyBERT` + `GLiNER`
 - 输出：
@@ -94,12 +83,12 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\step03_grobid_wsl_st
   - `entities[]`：方法/模型/技术实体
   - 项目（Project）构造建议：高频 n-gram + 技术实体 + 规范化同义合并
 
-### Step 06：领域聚类（06_domain_clustering）
+### Step 05（新）：领域聚类（06_domain_clustering）
 - 输入：所有论文摘要/关键词拼接文本
 - 工具：`sentence-transformers` + `HDBSCAN`（可选 `UMAP`）
 - 输出：每篇论文 `domain_label` + 领域列表/代表关键词
 
-### Step 07：时间分析与投入精力推断（07_temporal_analysis）
+### Step 06（新）：时间分析与投入精力推断（07_temporal_analysis）
 - 输入：发表日期 + `domain_label` + `project` + 身份一致性权重（Step 04）
 - 输出：
   - `share_current`：当前投入比例（按领域/项目加权）
@@ -139,9 +128,18 @@ Step 01 输出将作为 Step 02~07 的输入来源：
 - `01_data_collection/step_results/professor_paper_abstracts/<前缀>_abstracts.md`
 - `01_data_collection/step_results/professor_lab_info/<前缀>_lab_info.json`
 
-### 3.2 Step 02~07：目录串接（待你补齐入口脚本）
+### 3.2 Step 02~06：目录串接
 Step 串接逻辑：
-- Step 02 `JSONL` -> Step 03 `JSON` -> Step 04 消歧集合 -> Step 05 keywords/entities/project
-- Step 06 domain_label -> Step 07 share_current + trend_future
+- Step 02 `JSONL` -> Step 03（原 Step04）消歧集合 -> Step 04 keywords/entities/project
+- Step 05 domain_label -> Step 06 share_current + trend_future
+
+新 Step 03（原 Step04）执行命令：
+
+```powershell
+.\.venv\Scripts\python.exe 04_author_disambiguation/processing/run_step04_author_disambiguation.py `
+  --expanded-papers 02_paper_list_extend/step_results/示例教授_expanded_papers.jsonl `
+  --lab-info 01_data_collection/step_results/professor_lab_info/示例教授_lab_info.json `
+  --output 04_author_disambiguation/step_results/示例教授_disambiguated_papers.jsonl
+```
 
 统一路径和字段以 `shared/config/professor_pipeline.io.contract.yaml` 为准。

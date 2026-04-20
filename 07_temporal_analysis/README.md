@@ -9,7 +9,7 @@
 - `paper_date`
 - `domain_label`
 - `project`（由 Step 05 推断/归一化得到）
-- `identity_score`（来自 Step 04，如果有；没有就默认 1）
+- `identity_score`（来自新 Step 03，如果有；没有就默认 1）
 
 输出（写入 step_results）：
 - `*_share_current.json`：当前投入比例（按项目/领域分布）
@@ -28,7 +28,7 @@
 - `score_current(project_id)=sum_t w(t) * count(project_id,t) * identity_score`
 - `share_current = score_current / sum(score_current over all projects)`
 
-identity_score 来自 Step 04（没有就默认 1）。
+identity_score 来自新 Step 03（没有就默认 1）。
 
 ### 2）未来趋势 trend_future（项目频率 + 时间前后）
 

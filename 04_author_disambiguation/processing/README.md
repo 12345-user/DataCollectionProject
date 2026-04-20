@@ -1,6 +1,6 @@
 # 04_author_disambiguation / processing
 
-目标：把 Step 03 的结构化论文结果与 Step 01 的实验室/单位线索合并，过滤同名作者混入。
+目标：把 Step 02 的扩展论文结果与 Step 01 的实验室/单位线索合并，过滤同名作者混入。
 
 ## 当前环境
 
@@ -15,7 +15,7 @@
 
 ## 稳定输入
 
-- `03_pdf_parsing/step_results/<前缀>_parsed_papers.jsonl`
+- `02_paper_list_extend/step_results/<前缀>_expanded_papers.jsonl`
 - `01_data_collection/step_results/<前缀>_lab_info.json`
 
 ## 稳定输出
@@ -36,7 +36,7 @@
 
 ```powershell
 .\.venv\Scripts\python.exe 04_author_disambiguation/processing/run_step04_author_disambiguation.py `
-  --parsed-papers 03_pdf_parsing/step_results/示例教授_parsed_papers.jsonl `
+  --expanded-papers 02_paper_list_extend/step_results/示例教授_expanded_papers.jsonl `
   --lab-info 01_data_collection/step_results/示例教授_lab_info.json `
   --output 04_author_disambiguation/step_results/示例教授_disambiguated_papers.jsonl
 ```

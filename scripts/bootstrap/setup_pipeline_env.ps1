@@ -18,11 +18,10 @@ if (-not (Test-Path $venvPath)) {
     Write-Host "[2/4] 已存在 .venv，直接复用 ..."
 }
 
-Write-Host "[3/4] 安装 Step 02-07 依赖 ..."
+Write-Host "[3/4] 安装 Step 02-06 依赖 ..."
 & $pythonExe -m pip install --upgrade pip
 & $pythonExe -m pip install `
     paperscraper `
-    scipdf-parser `
     gliner `
     keybert `
     sentence-transformers `
@@ -33,10 +32,9 @@ Write-Host "[3/4] 安装 Step 02-07 依赖 ..."
     pydantic
 
 Write-Host "[4/4] 环境检查 ..."
-& $pythonExe -c "import paperscraper, keybert, sentence_transformers, hdbscan, umap, gliner, sklearn, pandas, pydantic, scipdf; print('python packages ok')"
+& $pythonExe -c "import paperscraper, keybert, sentence_transformers, hdbscan, umap, gliner, sklearn, pandas, pydantic; print('python packages ok')"
 
-Write-Host "Step03（GROBID）推荐走 WSL 本地运行（不依赖 Docker Desktop）。"
-Write-Host "启动方式见：scripts/bootstrap/step03_grobid_wsl_start.ps1"
+Write-Host "已取消原 Step03（PDF/GROBID），当前流程为 Step01 -> Step02 -> Step03(原Step04) -> Step04(原Step05) -> Step05(原Step06) -> Step06(原Step07)。"
 
 Write-Host ""
 Write-Host "配置模板：shared/config/professor_pipeline.env.example"
