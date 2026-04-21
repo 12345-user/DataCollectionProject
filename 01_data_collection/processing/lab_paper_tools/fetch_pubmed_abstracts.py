@@ -42,6 +42,14 @@ def _parse_doi(article: ET.Element) -> str:
     return doi2
 
 
+def _parse_journal(article: ET.Element) -> str:
+    # Prefer full journal title; fallback to ISO abbreviation.
+    journal = (article.findtext(".//Journal/Title") or "").strip()
+    if journal:
+        return journal
+    return (article.findtext(".//Journal/ISOAbbreviation") or "").strip()
+
+
 def _parse_authors(article: ET.Element) -> list[str]:
     authors: list[str] = []
     for a in article.findall(".//AuthorList/Author"):
@@ -108,6 +116,7 @@ def fetch_abstracts(pmids: list[str], cache_dir: Path) -> list[dict[str, Any]]:
             "abstract": abstract_text,
             "pub_date": _parse_pub_date(article),
             "doi": _parse_doi(article),
+            "journal": _parse_journal(article),
             "authors": _parse_authors(article),
         }
         if pmid:
@@ -154,8 +163,9 @@ def main() -> None:
     for i, item in enumerate(records, 1):
         pub_date = item.get("pub_date", "") or ""
         doi = item.get("doi", "") or ""
+        journal = item.get("journal", "") or ""
         lines.append(
-            f"## {i}. {item.get('title', '')} (PMID: {item.get('pmid', '')}, PubDate: {pub_date}, DOI: {doi})"
+            f"## {i}. {item.get('title', '')} (PMID: {item.get('pmid', '')}, PubDate: {pub_date}, Journal: {journal}, DOI: {doi})"
         )
         lines.append(item.get("abstract", "(no abstract)"))
         authors = item.get("authors", []) or []

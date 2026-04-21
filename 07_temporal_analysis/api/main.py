@@ -70,10 +70,10 @@ def domain_time(
     where = ["professor = ?"]
     params: list[Any] = [professor]
     if start is not None:
-        where.append("month >= date_trunc('month', ?)")
+        where.append("month >= date_trunc('quarter', ?)")
         params.append(start)
     if end is not None:
-        where.append("month <= date_trunc('month', ?)")
+        where.append("month <= date_trunc('quarter', ?)")
         params.append(end)
     sql = f"""
       select domain_name, month, paper_count, weight

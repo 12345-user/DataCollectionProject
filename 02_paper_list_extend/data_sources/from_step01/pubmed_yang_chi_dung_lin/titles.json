@@ -1,5 +1,5 @@
 {
-  "query": "Yang-Chi-Dung Lin[au]",
+  "query": "Yang-Chi-Dung Lin[au] AND (Chinese[ad] AND University[ad] AND Hong[ad] AND Kong[ad])",
   "count": 33,
   "titles": [
     {
