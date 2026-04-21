@@ -50,6 +50,7 @@ class Item:
     domain: str
     d: date
     w: float
+    q: float
 
 
 def main() -> None:
@@ -73,17 +74,27 @@ def main() -> None:
         if pub_date is None:
             continue
         identity_score = float(r.get("identity_score", 1.0) or 1.0)
+        quality_score = float(r.get("quality_score", 0.0) or 0.0)
+        quality_score = max(0.0, min(1.0, quality_score))
         age_days = max(0, (today - pub_date).days)
         decay = math.exp(-age_days / float(tau))
-        w = decay * max(0.0, min(1.0, identity_score))
-        items.append(Item(paper_id=paper_id, domain=domain, d=pub_date, w=w))
+        # Combined effort weight: identity confidence * (frequency + quality impact) * time decay
+        effort_factor = 0.6 + 0.4 * quality_score
+        w = decay * max(0.0, min(1.0, identity_score)) * effort_factor
+        items.append(Item(paper_id=paper_id, domain=domain, d=pub_date, w=w, q=quality_score))
 
-    # Timeline: year buckets
+    # Timeline: year buckets (effort and quality)
     timeline: dict[str, dict[str, float]] = {}
+    timeline_quality: dict[str, dict[str, float]] = {}
+    timeline_count: dict[str, dict[str, int]] = {}
     for it in items:
         y = str(it.d.year)
         timeline.setdefault(it.domain, {})
         timeline[it.domain][y] = timeline[it.domain].get(y, 0.0) + it.w
+        timeline_quality.setdefault(it.domain, {})
+        timeline_quality[it.domain][y] = timeline_quality[it.domain].get(y, 0.0) + it.q
+        timeline_count.setdefault(it.domain, {})
+        timeline_count[it.domain][y] = timeline_count[it.domain].get(y, 0) + 1
 
     # Allocation
     scores: dict[str, float] = {}
@@ -97,7 +108,19 @@ def main() -> None:
         "total_weight": total,
         "share_current": [{"project_or_domain": k, "share_current": round(shares[k], 6), "weight": round(scores[k], 4)} for k in sorted(scores, key=scores.get, reverse=True)],
     }
-    timeline_out = {"timeline": [{"project_or_domain": k, "year_weights": timeline.get(k, {})} for k in sorted(timeline.keys())]}
+    timeline_out = {
+        "timeline": [
+            {
+                "project_or_domain": k,
+                "year_weights": timeline.get(k, {}),
+                "year_avg_quality": {
+                    y: round(timeline_quality.get(k, {}).get(y, 0.0) / max(1, timeline_count.get(k, {}).get(y, 0)), 6)
+                    for y in sorted(timeline_count.get(k, {}).keys())
+                },
+            }
+            for k in sorted(timeline.keys())
+        ]
+    }
 
     # Trend heuristic: compare last 1 year vs previous 1 year (by pub_date count weights)
     one_year = 365
@@ -105,16 +128,33 @@ def main() -> None:
     for domain in scores.keys():
         recent = 0.0
         past = 0.0
+        recent_q = 0.0
+        past_q = 0.0
+        recent_n = 0
+        past_n = 0
         for it in items:
             if it.domain != domain:
                 continue
             delta = (today - it.d).days
             if delta <= one_year:
                 recent += it.w
+                recent_q += it.q
+                recent_n += 1
             elif delta <= 2 * one_year:
                 past += it.w
+                past_q += it.q
+                past_n += 1
         ratio = (recent + 1e-6) / (past + 1e-6)
-        trend_rows.append({"project_or_domain": domain, "trend_future": round(ratio, 4), "recent_weight": round(recent, 4), "past_weight": round(past, 4)})
+        trend_rows.append(
+            {
+                "project_or_domain": domain,
+                "trend_future": round(ratio, 4),
+                "recent_weight": round(recent, 4),
+                "past_weight": round(past, 4),
+                "recent_avg_quality": round(recent_q / max(1, recent_n), 6),
+                "past_avg_quality": round(past_q / max(1, past_n), 6),
+            }
+        )
     trend_rows.sort(key=lambda r: r["trend_future"], reverse=True)
 
     md_lines = [

@@ -1,0 +1,722 @@
+{
+  "query": "Wanling Yang[au]",
+  "count": 179,
+  "titles": [
+    {
+      "pmid": "41928407",
+      "title": "Triggering Receptor Expressed on Myeloid Cells-2 Regulates Innate Lymphoid Cell Levels in Bleomycin-Induced Pulmonary Fibrosis."
+    },
+    {
+      "pmid": "41794919",
+      "title": "Identifying genetic and cellular connections and distinctions among 15 autoimmune diseases using an in-silico approach."
+    },
+    {
+      "pmid": "41768261",
+      "title": "Development and validation of simplified prognostic models for 14- and 30-day mortality in advanced cancer: beyond the glasgow prognostic score."
+    },
+    {
+      "pmid": "41526966",
+      "title": "SDrecall: a sensitive approach for variant detection in segmental duplications."
+    },
+    {
+      "pmid": "41354791",
+      "title": "SVhet: towards accurate detection of germline heterozygous deletions using short reads."
+    },
+    {
+      "pmid": "41335419",
+      "title": "OTMODE: an optimal transport theory-based framework for identifying differential features in single-cell multi-omics data."
+    },
+    {
+      "pmid": "41272119",
+      "title": "Imputation disparities driven by recent selection and their impact on disease risk estimation in East and Southeast Asian populations."
+    },
+    {
+      "pmid": "41182817",
+      "title": "DisCP-Atlas: a comprehensive resource mapping cellular processes to complex diseases."
+    },
+    {
+      "pmid": "40795855",
+      "title": "NRT1.1B acts as an abscisic acid receptor in integrating compound environmental cues for plants."
+    },
+    {
+      "pmid": "40703454",
+      "title": "Single-cell transcriptional landscape of peripheral myeloid cells in autoimmune diseases."
+    },
+    {
+      "pmid": "40128466",
+      "title": "Overexpression of lncRNA22524 from Dongxiang Wild Rice Reduces Drought and Salt Stress Tolerance in Cultivated Rice."
+    },
+    {
+      "pmid": "39832277",
+      "title": "Distinct genetic risk loci between biopsy-proven renal and non-renal lupus: a 10-year longitudinal cohort."
+    },
+    {
+      "pmid": "39427224",
+      "title": "Association of hyperactivated transposon expression with exacerbated immune activation in systemic lupus erythematosus."
+    },
+    {
+      "pmid": "39329192",
+      "title": "Pollution characteristics and risk assessment of endocrine-disrupting chemicals in surface water of national (freshwater) aquatic germplasm resource reserves in Guangdong Province."
+    },
+    {
+      "pmid": "39317827",
+      "title": "A model for early clinical detection of pediatric monogenic lupus: implications for the future of digital medicine."
+    },
+    {
+      "pmid": "39293718",
+      "title": "Transcriptomic studies unravel the molecular and cellular complexity of systemic lupus erythematosus: A review."
+    },
+    {
+      "pmid": "39147708",
+      "title": "[Research Progress of Engineered Exosomes in the Treatment of Lung Cancer]."
+    },
+    {
+      "pmid": "39099414",
+      "title": "SPATS2L is a positive feedback regulator of the type I interferon signaling pathway and plays a vital role in lupus."
+    },
+    {
+      "pmid": "38973645",
+      "title": "Electrosynthesis of Transition Metal Coordinated Polymers for Active and Stable Oxygen Evolution."
+    },
+    {
+      "pmid": "38844841",
+      "title": "Genome-wide association study of BNT162b2 vaccine-related myocarditis identifies potential predisposing functional areas in Hong Kong adolescents."
+    },
+    {
+      "pmid": "38805547",
+      "title": "Meta-analysis of Epstein-Barr virus genomes in Southern Chinese identifies genetic variants and high risk viral lineage associated with nasopharyngeal carcinoma."
+    },
+    {
+      "pmid": "38741185",
+      "title": "Unraveling transcriptomic signatures and dysregulated pathways in systemic lupus erythematosus across disease states."
+    },
+    {
+      "pmid": "38515699",
+      "title": "Functional investigation of a novel ANKRD11 frameshift variant identified in a Chinese family with KBG syndrome."
+    },
+    {
+      "pmid": "38512521",
+      "title": "Phytoplankton species composition as bioindicator in the largest fragmented channel of the Pearl River, China."
+    },
+    {
+      "pmid": "38471575",
+      "title": "Enhancement of hepatoprotective activity of limonin from citrus seeds against acetaminophen-induced liver injury by HSCCC purification and liposomal encapsulation."
+    },
+    {
+      "pmid": "38458775",
+      "title": "Association of genetic variation on X chromosome with systemic lupus erythematosus in both Thai and Chinese populations."
+    },
+    {
+      "pmid": "38363428",
+      "title": "Function rather than structure of phytoplankton community reveals changes of water quality in an ecological restored lake."
+    },
+    {
+      "pmid": "38354915",
+      "title": "Identification and functional analysis of first heterozygous frameshift mutation in the GHRH gene in a Chinese boy with isolated growth hormone deficiency."
+    },
+    {
+      "pmid": "38220134",
+      "title": "Molecular diagnosis is an important indicator for response to growth hormone therapy in children with short stature."
+    },
+    {
+      "pmid": "38141203",
+      "title": "Transcriptomic features of systemic lupus erythematosus patients in flare and changes during acute in-hospital treatment."
+    },
+    {
+      "pmid": "38004810",
+      "title": "Metabolome and Transcriptome Combinatory Profiling Reveals Fluconazole Resistance Mechanisms of Trichosporon asahii and the Role of Farnesol in Fluconazole Tolerance."
+    },
+    {
+      "pmid": "37835574",
+      "title": "Genome-Wide DNA Methylation Profiling as Frontline Diagnostics for Central Nervous System Embryonal Tumors in Hong Kong."
+    },
+    {
+      "pmid": "37833950",
+      "title": "MicroRNA2871b of Dongxiang Wild Rice (Oryza rufipogon Griff.) Negatively Regulates Cold and Salt Stress Tolerance in Transgenic Rice Plants."
+    },
+    {
+      "pmid": "37809096",
+      "title": "The genetic and clinical characteristics and effects of Canakinumab on cryopyrin-associated periodic syndrome: a large pediatric cohort study from China."
+    },
+    {
+      "pmid": "37605180",
+      "title": "Clinical and genetic evaluation of children with short stature of unknown origin."
+    },
+    {
+      "pmid": "37398664",
+      "title": "Risk and Factors associated with disease manifestations in systemic lupus erythematosus - lupus nephritis (RIFLE-LN): a ten-year risk prediction strategy derived from a cohort of 1652 patients."
+    },
+    {
+      "pmid": "37180721",
+      "title": "The molecular mechanism for inhibiting the growth of nasopharyngeal carcinoma cells using polymethoxyflavonoids purified from pericarp of Citrus reticulata 'Chachi' via HSCCC."
+    },
+    {
+      "pmid": "36931095",
+      "title": "Baicalin inhibits pressure overload-induced cardiac hypertrophy by regulating the SIRT3-dependent signaling pathway."
+    },
+    {
+      "pmid": "36911822",
+      "title": "Identification of volatile and nonvolatile compounds in Citri Reticulatae Pericarpium Viride using GC-MS, UPLC-Q-Exactive Orbitrap-MS, and HPLC-PDA."
+    },
+    {
+      "pmid": "36884218",
+      "title": "Human germline heterozygous gain-of-function STAT6 variants cause severe allergic disease."
+    },
+    {
+      "pmid": "36844509",
+      "title": "Qualitative and Quantitative Analyses of the Chemical Components of Peels from Different Pomelo Cultivars (Citrus grandis [L.] Osbeck) Based on Gas Chromatography-Mass Spectrometry, Ultraperformance Liquid Chromatography-Q-Exactive Orbitrap-MS, and High-Performance Liquid Chromatography-Photodiode Array Detection."
+    },
+    {
+      "pmid": "36835475",
+      "title": "Genome-Wide Analysis of microRNAs and Their Target Genes in Dongxiang Wild Rice (Oryza rufipogon Griff.) Responding to Salt Stress."
+    },
+    {
+      "pmid": "36600527",
+      "title": "Unravelling the life-history patterns and habitat preferences of the Japanese eel (Anguilla japonica) in the Pearl River, China."
+    },
+    {
+      "pmid": "36436465",
+      "title": "How do multidimensional traits of dominant diatom Aulacoseira respond to abiotic and biotic factors in a river delta system?"
+    },
+    {
+      "pmid": "36369010",
+      "title": "Retraction Note to: LncRNA PVT1 triggers Cyto-protective autophagy and promotes pancreatic ductal adenocarcinoma development via the miR-20a-5p/ULK1 Axis."
+    },
+    {
+      "pmid": "36317206",
+      "title": "[A multiplex PCR-based sensitive and specific method for detecting Y chromosome material in patients with Turner syndrome]."
+    },
+    {
+      "pmid": "36171768",
+      "title": "Comparative analysis of chemical constituents in Citri Exocarpium Rubrum, Citri Reticulatae Endocarpium Alba, and Citri Fructus Retinervus."
+    },
+    {
+      "pmid": "36061179",
+      "title": "Multiethnic polygenic risk prediction in diverse populations through transfer learning."
+    },
+    {
+      "pmid": "36046232",
+      "title": "Random forests algorithm boosts genetic risk prediction of systemic lupus erythematosus."
+    },
+    {
+      "pmid": "35974306",
+      "title": "Analysis of the genetic diversity and population structure of Monochasma savatieri Franch. ex Maxim using novel EST-SSR markers."
+    },
+    {
+      "pmid": "35916988",
+      "title": "Development and verification of SSR markers from drought stress-responsive miRNAs in Dongxiang wild rice (Oryza rufipogon Griff.)."
+    },
+    {
+      "pmid": "35874699",
+      "title": "Targeted Gene Sanger Sequencing Should Remain the First-Tier Genetic Test for Children Suspected to Have the Five Common X-Linked Inborn Errors of Immunity."
+    },
+    {
+      "pmid": "35868510",
+      "title": "NGS4THAL, a One-Stop Molecular Diagnosis and Carrier Screening Tool for Thalassemia and Other Hemoglobinopathies by Next-Generation Sequencing."
+    },
+    {
+      "pmid": "35702295",
+      "title": "Qualitative and quantitative analyses of chemical components of Citri Sarcodactylis Fructus from different origins based on UPLC-Q-Exactive Orbitrap-MS and GC-MS."
+    },
+    {
+      "pmid": "35627119",
+      "title": "Development and Characterization of Chromosome Segment Substitution Lines Derived from Oryza rufipogon in the Background of the Oryza sativa indica Restorer Line R974."
+    },
+    {
+      "pmid": "35614274",
+      "title": "Bacterioplankton community indicators for seasonal variation in a fragmented subtropical river."
+    },
+    {
+      "pmid": "35609976",
+      "title": "Biological insights into systemic lupus erythematosus through an immune cell-specific transcriptome-wide association study."
+    },
+    {
+      "pmid": "35608564",
+      "title": "Analysis of the chemical components of pomelo peels (Citrus grandis [L.] Osbeck) from different cultivars by using supercritical CO(2) fluid extraction and ultra-high-performance liquid chromatography-tandem mass spectrometry."
+    },
+    {
+      "pmid": "35388006",
+      "title": "Lupus enhancer risk variant causes dysregulation of IRF8 through cooperative lncRNA and DNA methylation machinery."
+    },
+    {
+      "pmid": "35314707",
+      "title": "Comprehensive analysis of recessive carrier status using exome and genome sequencing data in 1543 Southern Chinese."
+    },
+    {
+      "pmid": "35140711",
+      "title": "Phenomic Analysis of Chronic Granulomatous Disease Reveals More Severe Integumentary Infections in X-Linked Compared With Autosomal Recessive Chronic Granulomatous Disease."
+    },
+    {
+      "pmid": "34953087",
+      "title": "Dynamic variation of the phytochemical and volatile compounds in the pericarp of Citrus reticulata ''Chachi'' (Rutaceae) during 2 years of storage."
+    },
+    {
+      "pmid": "34925527",
+      "title": "Intraspecific DNA Barcoding and Variation Analysis for Citri Reticulatae Pericarpium of Citrus reticulata \"Chachi\"."
+    },
+    {
+      "pmid": "34828437",
+      "title": "Identification, Analysis, and Confirmation of Seed Storability-Related Loci in Dongxiang Wild Rice (Oryza rufipogon Griff.)."
+    },
+    {
+      "pmid": "34826401",
+      "title": "Molecular diagnosis for growth hormone deficiency in Chinese children and adolescents and evaluation of impact of rare genetic variants on treatment efficacy of growth hormone."
+    },
+    {
+      "pmid": "34783190",
+      "title": "Identification of Shared and Asian-Specific Loci for Systemic Lupus Erythematosus and Evidence for Roles of Type III Interferon Signaling and Lysosomal Function in the Disease: A Multi-Ancestral Genome-Wide Association Study."
+    },
+    {
+      "pmid": "34442849",
+      "title": "Connection between the Gut Microbiota of Largemouth Bass (Micropterus salmoides) and Microbiota of the Pond Culture Environment."
+    },
+    {
+      "pmid": "34435051",
+      "title": "Application of Weighted Gene Coexpression Network Analysis to Identify Key Modules and Hub Genes in Systemic Juvenile Idiopathic Arthritis."
+    },
+    {
+      "pmid": "34186448",
+      "title": "Occurrence, source identification, and ecological risk assessment of polycyclic aromatic hydrocarbons in sediments of the Pearl River Delta, China."
+    },
+    {
+      "pmid": "34076728",
+      "title": "Shared genetic study gives insights into the shared and distinct pathogenic immunity components of IgA nephropathy and SLE."
+    },
+    {
+      "pmid": "33936051",
+      "title": "Revisit of Optimal Donor Number Estimation in the Hong Kong Bone Marrow Donor Registry."
+    },
+    {
+      "pmid": "33600428",
+      "title": "Actionable pharmacogenetic variants in Hong Kong Chinese exome sequencing data and projected prescription impact in the Hong Kong population."
+    },
+    {
+      "pmid": "33536424",
+      "title": "Identification of 38 novel loci for systemic lupus erythematosus and genetic heterogeneity between ancestral groups."
+    },
+    {
+      "pmid": "33493351",
+      "title": "Genome-wide association study on Northern Chinese identifies KLF2, DOT1L and STAB2 associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "33437829",
+      "title": "Erratum to development and formulation of the classification criteria for osteoarthritis."
+    },
+    {
+      "pmid": "33433136",
+      "title": "The differences in nurses' willingness to discuss palliative care with patients and their family members."
+    },
+    {
+      "pmid": "33272962",
+      "title": "Meta-analysis of 208370 East Asians identifies 113 susceptibility loci for systemic lupus erythematosus."
+    },
+    {
+      "pmid": "33223521",
+      "title": "Actionable secondary findings in 1116 Hong Kong Chinese based on exome sequencing data."
+    },
+    {
+      "pmid": "33178745",
+      "title": "Guidelines for the diagnosis and treatment of osteoarthritis in China (2019 edition)."
+    },
+    {
+      "pmid": "33145287",
+      "title": "Development and formulation of the classification criteria for osteoarthritis."
+    },
+    {
+      "pmid": "32941940",
+      "title": "Excessive deubiquitination of NLRP3-R779C variant contributes to very-early-onset inflammatory bowel disease development."
+    },
+    {
+      "pmid": "32893027",
+      "title": "High resolution allele genotyping and haplotype frequencies for NGS based HLA 11 loci of 5266 Hong Kong Chinese bone marrow donors."
+    },
+    {
+      "pmid": "32719713",
+      "title": "Independent Replication on Genome-Wide Association Study Signals Identifies IRF3 as a Novel Locus for Systemic Lupus Erythematosus."
+    },
+    {
+      "pmid": "32077931",
+      "title": "Genome-wide assessment of genetic risk for systemic lupus erythematosus and disease severity."
+    },
+    {
+      "pmid": "31951293",
+      "title": "NF-E2 mutation as a novel cause for inherited thrombocytopenia."
+    },
+    {
+      "pmid": "31877408",
+      "title": "Identification of Regulatory Modules That Stratify Lupus Disease Mechanism through Integrating Multi-Omics Data."
+    },
+    {
+      "pmid": "31733926",
+      "title": "HLA-DQB1, -DQA1, -DPB1, and -DPA1 genotyping and haplotype frequencies for a Hong Kong Chinese population of 1064 individuals."
+    },
+    {
+      "pmid": "31648049",
+      "title": "A dual system platform for drug metabolism: Nalbuphine as a model compound."
+    },
+    {
+      "pmid": "31572394",
+      "title": "Application of Flow Cytometry in the Diagnostics Pipeline of Primary Immunodeficiencies Underlying Disseminated Talaromyces marneffei Infection in HIV-Negative Children."
+    },
+    {
+      "pmid": "31133697",
+      "title": "Growth hormone peak modifies the effect of BMI on increased systolic blood pressure in children with short stature."
+    },
+    {
+      "pmid": "31024623",
+      "title": "Sex-Interacting mRNA- and miRNA-eQTLs and Their Implications in Gene Expression Regulation and Disease."
+    },
+    {
+      "pmid": "30897304",
+      "title": "Genetic studies on systemic lupus erythematosus in East Asia point to population differences in disease susceptibility."
+    },
+    {
+      "pmid": "30806140",
+      "title": "Cell lineage-specific genome-wide DNA methylation analysis of patients with paediatric-onset systemic lupus erythematosus."
+    },
+    {
+      "pmid": "30604282",
+      "title": "Fundamentals of Pharmacokinetics to Assess the Correlation Between Plasma Drug Concentrations and Different Blood Sampling Methods."
+    },
+    {
+      "pmid": "30536939",
+      "title": "High risk Epstein-Barr virus variants characterized by distinct polymorphisms in the EBER locus are strongly associated with nasopharyngeal carcinoma."
+    },
+    {
+      "pmid": "30359267",
+      "title": "Identifying the genetic causes for prenatally diagnosed structural congenital anomalies (SCAs) by whole-exome sequencing (WES)."
+    },
+    {
+      "pmid": "30217742",
+      "title": "Identification of Genes Associated With Hirschsprung Disease, Based on Whole-Genome Sequence Analysis, and Potential Effects on Enteric Nervous System Development."
+    },
+    {
+      "pmid": "30169743",
+      "title": "HLA-IMPUTER: an easy to use web application for HLA imputation and association analysis using population-specific reference panels."
+    },
+    {
+      "pmid": "30109123",
+      "title": "Exome sequencing for paediatric-onset diseases: impact of the extensive involvement of medical geneticists in the diagnostic odyssey."
+    },
+    {
+      "pmid": "30104205",
+      "title": "Inhibition of AIM2 inflammasome activation by a novel transcript isoform of IFI16."
+    },
+    {
+      "pmid": "30039367",
+      "title": "Detecting Small Inversions Using SRinversion."
+    },
+    {
+      "pmid": "30001707",
+      "title": "LncRNA PVT1 triggers Cyto-protective autophagy and promotes pancreatic ductal adenocarcinoma development via the miR-20a-5p/ULK1 Axis."
+    },
+    {
+      "pmid": "29724251",
+      "title": "Meta-analysis of GWAS on both Chinese and European populations identifies GPR173 as a novel X chromosome susceptibility gene for SLE."
+    },
+    {
+      "pmid": "29676044",
+      "title": "HLA-DQβ1 amino acid position 87 and DQB1*0301 are associated with Chinese Han SLE."
+    },
+    {
+      "pmid": "29660452",
+      "title": "Simulation of non-inherited maternal antigens acceptable HLA mismatches to increase the chance of matched cord blood units: Hong Kong's experience."
+    },
+    {
+      "pmid": "29656768",
+      "title": "A rare variant in MLKL confers susceptibility to ApoE ɛ4-negative Alzheimer's disease in Hong Kong Chinese population."
+    },
+    {
+      "pmid": "29625966",
+      "title": "Identification of ST3AGL4, MFHAS1, CSNK2A2 and CD226 as loci associated with systemic lupus erythematosus (SLE) and evaluation of SLE genetics in drug repositioning."
+    },
+    {
+      "pmid": "29547894",
+      "title": "A novel transcript isoform of STING that sequesters cGAMP and dominantly inhibits innate nucleic acid sensing."
+    },
+    {
+      "pmid": "29296277",
+      "title": "Identification of mutations in the PI3K-AKT-mTOR signalling pathway in patients with macrocephaly and developmental delay and/or autism."
+    },
+    {
+      "pmid": "29155103",
+      "title": "RASGRP1 mutation in autoimmune lymphoproliferative syndrome-like disease."
+    },
+    {
+      "pmid": "29096703",
+      "title": "Regulatory and evolutionary signatures of sex-biased genes on both the X chromosome and the autosomes."
+    },
+    {
+      "pmid": "28865670",
+      "title": "Estimation of optimal donor number in Bone Marrow Donor Registry: Hong Kong's experience."
+    },
+    {
+      "pmid": "28777478",
+      "title": "A simplified method of calculating cPRA for kidney allocation application in Hong Kong: a retrospective study."
+    },
+    {
+      "pmid": "28532655",
+      "title": "Homozygous transcription factor 3 gene (TCF3) mutation is associated with severe hypogammaglobulinemia and B-cell acute lymphoblastic leukemia."
+    },
+    {
+      "pmid": "28116329",
+      "title": "CFTR founder mutation causes protein trafficking defects in Chinese patients with cystic fibrosis."
+    },
+    {
+      "pmid": "28108556",
+      "title": "Confirmation of five novel susceptibility loci for systemic lupus erythematosus (SLE) and integrated network analysis of 82 SLE susceptibility loci."
+    },
+    {
+      "pmid": "28085900",
+      "title": "Genome-Wide DNA Methylation Analysis of Chinese Patients with Systemic Lupus Erythematosus Identified Hypomethylation in Genes Related to the Type I Interferon Pathway."
+    },
+    {
+      "pmid": "27804980",
+      "title": "Novel identified associations of RGS1 and RASGRP1 variants in IgA Nephropathy."
+    },
+    {
+      "pmid": "27769748",
+      "title": "HLA-A, -B, -C, and -DRB1 genotyping and haplotype frequencies for a Hong Kong Chinese population of 7595 individuals."
+    },
+    {
+      "pmid": "27769747",
+      "title": "HLA-A, -B and -DRB1 genotyping and haplotype frequencies of 3892 cord blood units in the Hong Kong Chinese Cord Blood Registry."
+    },
+    {
+      "pmid": "27503227",
+      "title": "SRinversion: a tool for detecting short inversions by splitting and re-aligning poorly mapped and unmapped sequencing reads."
+    },
+    {
+      "pmid": "27481557",
+      "title": "Identification of the long noncoding RNA NEAT1 as a novel inflammatory regulator acting through MAPK pathway in human lupus."
+    },
+    {
+      "pmid": "27462267",
+      "title": "A Systems View of the Differences between APOE ε4 Carriers and Non-carriers in Alzheimer's Disease."
+    },
+    {
+      "pmid": "27399966",
+      "title": "Genome-wide association meta-analysis in Chinese and European individuals identifies ten new loci associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "26916970",
+      "title": "Evidence for genetic association of TBX21 and IFNG with systemic lupus erythematosus in a Chinese Han population."
+    },
+    {
+      "pmid": "26867494",
+      "title": "Novel pre-mRNA splicing of intronically integrated HBV generates oncogenic chimera in hepatocellular carcinoma."
+    },
+    {
+      "pmid": "26635088",
+      "title": "Discovery of a novel genetic susceptibility locus on X chromosome for systemic lupus erythematosus."
+    },
+    {
+      "pmid": "26202167",
+      "title": "Gene-based meta-analysis of genome-wide association study data identifies independent single-nucleotide polymorphisms in ANXA6 as being associated with systemic lupus erythematosus in Asian populations."
+    },
+    {
+      "pmid": "26121298",
+      "title": "Systemic Lupus Erythematosus Patients Exhibit Reduced Expression of CLEC16A Isoforms in Peripheral Leukocytes."
+    },
+    {
+      "pmid": "25956955",
+      "title": "HaploShare: identification of extended haplotypes shared by cases and evaluation against controls."
+    },
+    {
+      "pmid": "25908942",
+      "title": "HLAreporter: a tool for HLA typing from next generation sequencing data."
+    },
+    {
+      "pmid": "25880549",
+      "title": "Meta-analysis of two Chinese populations identifies an autoimmune disease risk allele in 22q11.21 as associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "25862617",
+      "title": "Genome-wide search followed by replication reveals genetic interaction of CD80 and ALOX5AP associated with systemic lupus erythematosus in Asian populations."
+    },
+    {
+      "pmid": "25818534",
+      "title": "Functional polymorphisms of the CCL2 and MBL genes cumulatively increase susceptibility to severe acute respiratory syndrome coronavirus infection."
+    },
+    {
+      "pmid": "25731621",
+      "title": "Identification of novel quantitative traits-associated susceptibility loci for APOE ε 4 non-carriers of Alzheimer's disease."
+    },
+    {
+      "pmid": "25676918",
+      "title": "wKGGSeq: A Comprehensive Strategy-Based and Disease-Targeted Online Framework to Facilitate Exome Sequencing Studies of Inherited Disorders."
+    },
+    {
+      "pmid": "25345066",
+      "title": "[Community structure of planktonic rotifers in the Pearl River Delta]."
+    },
+    {
+      "pmid": "25333781",
+      "title": "The clinical impact of chromosomal microarray on paediatric care in Hong Kong."
+    },
+    {
+      "pmid": "25239301",
+      "title": "Solving the genetic puzzle of systemic lupus erythematosus."
+    },
+    {
+      "pmid": "25149475",
+      "title": "Meta-analysis of GWAS on two Chinese populations followed by replication identifies novel genetic variants on the X chromosome associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "24943867",
+      "title": "Brief Report: identification of MTMR3 as a novel susceptibility gene for lupus nephritis in northern Han Chinese by shared-gene analysis with IgA nephropathy."
+    },
+    {
+      "pmid": "24916671",
+      "title": "EFIN: predicting the functional impact of nonsynonymous single nucleotide polymorphisms in human genome."
+    },
+    {
+      "pmid": "24188975",
+      "title": "Penicillium marneffei infection and impaired IFN-γ immunity in humans with autosomal-dominant gain-of-phosphorylation STAT1 mutations."
+    },
+    {
+      "pmid": "24001599",
+      "title": "Three SNPs in chromosome 11q23.3 are independently associated with systemic lupus erythematosus in Asians."
+    },
+    {
+      "pmid": "23614478",
+      "title": "Epistatic interaction between genetic variants in susceptibility gene ETS1 correlates with IL-17 levels in SLE patients."
+    },
+    {
+      "pmid": "23500372",
+      "title": "Biomolecular recognition with a sensitivity-enhanced nanowire transistor biosensor."
+    },
+    {
+      "pmid": "23341771",
+      "title": "Predicting mendelian disease-causing non-synonymous single nucleotide variants in exome sequencing studies."
+    },
+    {
+      "pmid": "23273568",
+      "title": "Meta-analysis followed by replication identifies loci in or near CDKN1B, TET3, CD80, DRAM1, and ARID5B as associated with systemic lupus erythematosus in Asians."
+    },
+    {
+      "pmid": "23124848",
+      "title": "Brief Report: Single-nucleotide polymorphisms in VKORC1 are risk factors for systemic lupus erythematosus in Asians."
+    },
+    {
+      "pmid": "23108157",
+      "title": "Genome-wide copy number variation study in anorectal malformations."
+    },
+    {
+      "pmid": "23104884",
+      "title": "PriVar: a toolkit for prioritizing SNVs and indels from next-generation sequencing data."
+    },
+    {
+      "pmid": "23038697",
+      "title": "Relationship between autoantibody clustering and clinical subsets in SLE: cluster and association analyses in Hong Kong Chinese."
+    },
+    {
+      "pmid": "22116939",
+      "title": "Two-stage genome-wide association study identifies variants in CAMSAP1L1 as susceptibility loci for epilepsy in Chinese."
+    },
+    {
+      "pmid": "22081228",
+      "title": "Genome-wide association study identifies FCGR2A as a susceptibility locus for Kawasaki disease."
+    },
+    {
+      "pmid": "21738483",
+      "title": "A functional variant in microRNA-146a promoter modulates its expression and confers disease risk for systemic lupus erythematosus."
+    },
+    {
+      "pmid": "21309031",
+      "title": "Homozygosity mapping on a single patient: identification of homozygous regions of recent common ancestry by using population data."
+    },
+    {
+      "pmid": "21104867",
+      "title": "A novel deletion mutation in GJB1 causes X-linked Charcot-Marie-Tooth disease in a Han Chinese family."
+    },
+    {
+      "pmid": "21044949",
+      "title": "ELF1 is associated with systemic lupus erythematosus in Asian populations."
+    },
+    {
+      "pmid": "20733074",
+      "title": "Sex-specific association of X-linked Toll-like receptor 7 (TLR7) with male systemic lupus erythematosus."
+    },
+    {
+      "pmid": "20560937",
+      "title": "Bayesian hierarchical modeling and selection of differentially expressed genes for the EST data."
+    },
+    {
+      "pmid": "20508037",
+      "title": "Copy number, linkage disequilibrium and disease association in the FCGR locus."
+    },
+    {
+      "pmid": "20385827",
+      "title": "A defunctioning polymorphism in FCGR2B is associated with protection against malaria but susceptibility to systemic lupus erythematosus."
+    },
+    {
+      "pmid": "20169177",
+      "title": "Genome-wide association study in Asian populations identifies variants in ETS1 and WDFY4 associated with systemic lupus erythematosus."
+    },
+    {
+      "pmid": "19904586",
+      "title": "Clinical characteristics and genotype-phenotype correlation in 62 patients with X-linked agammaglobulinemia."
+    },
+    {
+      "pmid": "19604391",
+      "title": "Linked region detection using high-density SNP genotype data via the minimum recombinant model of pedigree haplotype inference."
+    },
+    {
+      "pmid": "19591787",
+      "title": "In-depth cDNA library sequencing provides quantitative gene expression profiling in cancer biomarker discovery."
+    },
+    {
+      "pmid": "19533785",
+      "title": "Identification of novel FBN1 and TGFBR2 mutations in 65 probands with Marfan syndrome or Marfan-like phenotypes."
+    },
+    {
+      "pmid": "19286673",
+      "title": "ITGAM is associated with disease susceptibility and renal nephritis of systemic lupus erythematosus in Hong Kong Chinese and Thai."
+    },
+    {
+      "pmid": "19221998",
+      "title": "[The role and mission of nurses in hospice care]."
+    },
+    {
+      "pmid": "19061983",
+      "title": "A missense mutation in SLC33A1, which encodes the acetyl-CoA transporter, causes autosomal-dominant spastic paraplegia (SPG42)."
+    },
+    {
+      "pmid": "18942164",
+      "title": "Finding alternative splicing patterns with strong support from expressed sequences on individual exons/introns."
+    },
+    {
+      "pmid": "18831769",
+      "title": "Promoter-sharing by different genes in human genome--CPNE1 and RBM12 gene pair as an example."
+    },
+    {
+      "pmid": "18575462",
+      "title": "Predicting the number and sizes of IBD regions among family members and evaluating the family size requirement for linkage studies."
+    },
+    {
+      "pmid": "18559452",
+      "title": "Copy number of FCGR3B, which is associated with systemic lupus erythematosus, correlates with protein expression and immune complex uptake."
+    },
+    {
+      "pmid": "18260169",
+      "title": "Association of a haplotype of IRF5 gene with systemic lupus erythematosus in Chinese."
+    },
+    {
+      "pmid": "18024969",
+      "title": "Identification of linked regions using high-density SNP genotype data in linkage analysis."
+    },
+    {
+      "pmid": "16006100",
+      "title": "Genomic analysis of G protein gamma subunits in human and mouse - the relationship between conserved gene structure and G protein betagamma dimer formation."
+    },
+    {
+      "pmid": "15564881",
+      "title": "Complex haplotype structure of the human GNAS gene identifies a recombination hotspot centred on a single nucleotide polymorphism widely used in association studies."
+    },
+    {
+      "pmid": "12525693",
+      "title": "In vivo activation of a mutant mu-opioid receptor by antagonist: future direction for opiate pain treatment paradigm that lacks undesirable side effects."
+    }
+  ]
+}

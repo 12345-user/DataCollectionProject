@@ -12,9 +12,16 @@
 - `identity_score`（来自新 Step 03，如果有；没有就默认 1）
 
 输出（写入 step_results）：
-- `*_share_current.json`：当前投入比例（按项目/领域分布）
-- `*_trend_future.json`：未来趋势（哪些项目/领域更可能增长）
-- `*_consistency_report.md/json`：一致性与混入风险提示
+- `*_project_timeline.json`：按时间分桶的领域时间线
+- `*_effort_allocation.json`：当前投入比例（share_current）+ 趋势（trend_future）
+- `*_trend_report.md`：可读报告（摘要）
+
+可视化扩展（推荐）：
+- `pipeline.duckdb`：单文件 DuckDB（用于网站/SQL 查询）
+- Streamlit 可视化网站：
+  - 领域比例饼图（share / weight）
+  - 领域发布频率折线图（paper_count）
+  - 领域“精力/质量”折线图（weight=identity_score*quality_score）
 
 ## 投入比例与时间趋势的“可解释”计算（建议实现优先级）
 
@@ -29,6 +36,18 @@
 - `share_current = score_current / sum(score_current over all projects)`
 
 identity_score 来自新 Step 03（没有就默认 1）。
+
+### 4）可视化网站（DuckDB + FastAPI + Streamlit + Plotly）
+
+为了让结果“可交互、可筛选、可对比多个教授”，推荐把 Step05/06/07 的关键字段写入 DuckDB：
+
+- DuckDB：单文件、免配置、SQL 查询
+- FastAPI：提供教授列表、时间范围、领域份额、领域时间序列等 API
+- Streamlit+Plotly：快速构建可视化网站（饼图 + 折线图），支持选择教授与时间范围
+
+质量（paper quality）字段目前在上游数据里缺失，建议：
+- 先以 `quality_score=1.0` 占位（不影响结构）
+- 后续再接入引用数/期刊信息/模型评分（可选，可能用到 `scikit-learn`）
 
 ### 2）未来趋势 trend_future（项目频率 + 时间前后）
 

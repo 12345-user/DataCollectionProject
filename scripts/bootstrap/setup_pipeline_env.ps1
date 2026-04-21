@@ -22,6 +22,11 @@ Write-Host "[3/4] 安装 Step 02-06 依赖 ..."
 & $pythonExe -m pip install --upgrade pip
 & $pythonExe -m pip install `
     paperscraper `
+    duckdb `
+    fastapi `
+    uvicorn `
+    streamlit `
+    plotly `
     gliner `
     keybert `
     sentence-transformers `
@@ -29,10 +34,11 @@ Write-Host "[3/4] 安装 Step 02-06 依赖 ..."
     umap-learn `
     scikit-learn `
     pandas `
+    pinyin `
     pydantic
 
 Write-Host "[4/4] 环境检查 ..."
-& $pythonExe -c "import paperscraper, keybert, sentence_transformers, hdbscan, umap, gliner, sklearn, pandas, pydantic; print('python packages ok')"
+& $pythonExe -c "import paperscraper, duckdb, fastapi, uvicorn, streamlit, plotly, keybert, sentence_transformers, hdbscan, umap, gliner, sklearn, pandas, pydantic, pinyin; print('python packages ok')"
 
 Write-Host "已取消原 Step03（PDF/GROBID），当前流程为 Step01 -> Step02 -> Step03(原Step04) -> Step04(原Step05) -> Step05(原Step06) -> Step06(原Step07)。"
 

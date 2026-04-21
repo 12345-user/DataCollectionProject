@@ -195,6 +195,8 @@ class PaperRecord:
     url: str
     source: str
     pmid: str = ""
+    venue: str = ""
+    citation_count: int | None = None
 
     def to_json(self) -> dict[str, Any]:
         source_id = self.pmid or self.doi or _norm_title(self.title)
@@ -210,6 +212,8 @@ class PaperRecord:
             "url": _sanitize_jsonl_text(self.url),
             "source": self.source,
             "pmid": self.pmid,
+            "venue": _sanitize_jsonl_text(self.venue),
+            "citation_count": self.citation_count,
         }
 
 
@@ -231,6 +235,8 @@ def _read_pubmed_from_step01(abstracts_path: Path) -> list[PaperRecord]:
                 url="",
                 source="pubmed",
                 pmid=_as_str(r.get("pmid", "")),
+                venue=_as_str(r.get("journal") or r.get("venue") or r.get("source_journal") or ""),
+                citation_count=None,
             )
         )
     return out
@@ -254,6 +260,14 @@ def _map_preprint_record(r: dict[str, Any], source: str) -> PaperRecord:
     authors = _parse_authors(r.get("authors") or r.get("author") or [])
     doi = _parse_doi(r)
     url = _as_str(_pick(r, ["url", "link", "doi_url", "publication_url"]))
+    venue = _as_str(_pick(r, ["journal", "venue", "publisher", "server", "source", "container_title"]))
+    citation_count: int | None = None
+    citation_raw = _pick(r, ["citation_count", "num_citations", "citations", "cited_by_count"])
+    try:
+        if citation_raw not in ("", None):
+            citation_count = max(0, int(float(citation_raw)))
+    except Exception:
+        citation_count = None
 
     return PaperRecord(
         title=title,
@@ -264,6 +278,8 @@ def _map_preprint_record(r: dict[str, Any], source: str) -> PaperRecord:
         url=url,
         source=source,
         pmid="",
+        venue=venue,
+        citation_count=citation_count,
     )
 
 

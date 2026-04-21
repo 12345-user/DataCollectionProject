@@ -1,0 +1,138 @@
+{
+  "query": "Yang-Chi-Dung Lin[au]",
+  "count": 33,
+  "titles": [
+    {
+      "pmid": "41900810",
+      "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation."
+    },
+    {
+      "pmid": "41691474",
+      "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers."
+    },
+    {
+      "pmid": "41669166",
+      "title": "ROS-responsive adhesive nanocomposite hydrogel promotes tendon-to-bone healing by modulating the inflammatory microenvironment and pro-differentiation."
+    },
+    {
+      "pmid": "41481073",
+      "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks."
+    },
+    {
+      "pmid": "41463366",
+      "title": "Integrative Regulatory Networks of MicroRNA-483: Unveiling Its Systematic Role in Human Diseases and Clinical Implications."
+    },
+    {
+      "pmid": "41390462",
+      "title": "Semi-inductive dataset construction and framework optimization for practical drug target interaction prediction with ScopeDTI."
+    },
+    {
+      "pmid": "41317822",
+      "title": "Self-assembled polymeric nanoparticles for redox- and gene-regulated Osteoarthritis therapy."
+    },
+    {
+      "pmid": "41272119",
+      "title": "Imputation disparities driven by recent selection and their impact on disease risk estimation in East and Southeast Asian populations."
+    },
+    {
+      "pmid": "41155666",
+      "title": "Ligusticum chuanxiong Hort. Targets hsa-miR-10a-5p to Potentially Induce Apoptosis and Modulate Lipid Metabolism in Glioblastoma: A Natural-Product-Based Therapeutic Strategy."
+    },
+    {
+      "pmid": "40507105",
+      "title": "Dietary Omega-3 PUFAs in Metabolic Disease Research: A Decade of Omics-Enabled Insights (2014-2024)."
+    },
+    {
+      "pmid": "40396374",
+      "title": "RegRNA 3.0: expanding regulatory RNA analysis with new features for motif, interaction, and annotation."
+    },
+    {
+      "pmid": "40279769",
+      "title": "A comprehensive review of small molecules, targets, and pathways in ulcerative colitis treatment."
+    },
+    {
+      "pmid": "40227198",
+      "title": "Identifying Baicalein as a Key Bioactive Compound in XueBiJing Targeting KEAP1: Implications for Antioxidant Effects."
+    },
+    {
+      "pmid": "40182288",
+      "title": "Enhancing bloodstream infection diagnostics: a novel filtration and targeted next-generation sequencing approach for precise pathogen identification."
+    },
+    {
+      "pmid": "40076546",
+      "title": "Unveiling Novel miRNA-mRNA Interactions and Their Prognostic Roles in Triple-Negative Breast Cancer: Insights into miR-210, miR-183, miR-21, and miR-181b."
+    },
+    {
+      "pmid": "39578697",
+      "title": "miRStart 2.0: enhancing miRNA regulatory insights through deep learning-based TSS identification."
+    },
+    {
+      "pmid": "39578692",
+      "title": "miRTarBase 2025: updates to the collection of experimentally validated microRNA-target interactions."
+    },
+    {
+      "pmid": "39062881",
+      "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types."
+    },
+    {
+      "pmid": "38994794",
+      "title": "DrugRepoBank: a comprehensive database and discovery platform for accelerating drug repositioning."
+    },
+    {
+      "pmid": "38689935",
+      "title": "Recent insights into breast milk microRNA: their role as functional regulators."
+    },
+    {
+      "pmid": "38067658",
+      "title": "Effects of Natural Products on Enzymes Involved in Ferroptosis: Regulation and Implications."
+    },
+    {
+      "pmid": "37762364",
+      "title": "A Robust Drug-Target Interaction Prediction Framework with Capsule Network and Transfer Learning."
+    },
+    {
+      "pmid": "37757992",
+      "title": "Mechanism of Sophorae Flavescentis Radix (Kushen) in treating NSCLC: Insights from miRNA-mRNA network analysis."
+    },
+    {
+      "pmid": "37337262",
+      "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach."
+    },
+    {
+      "pmid": "37114659",
+      "title": "Quantitative model for genome-wide cyclic AMP receptor protein binding site identification and characteristic analysis."
+    },
+    {
+      "pmid": "37007025",
+      "title": "Cinnamomi ramulus inhibits cancer cells growth by inducing G2/M arrest."
+    },
+    {
+      "pmid": "36132186",
+      "title": "Air pollution and blood pressure in the elderly: evidence from a panel study in Nanjing, China."
+    },
+    {
+      "pmid": "35056827",
+      "title": "Enzyme Activity of Natural Products on Cytochrome P450."
+    },
+    {
+      "pmid": "34850920",
+      "title": "miRTarBase update 2022: an informative resource for experimentally validated miRNA-target interactions."
+    },
+    {
+      "pmid": "33850275",
+      "title": "The challenges and opportunities of traditional Chinese medicines against COVID-19: a way out from a network perspective."
+    },
+    {
+      "pmid": "33270889",
+      "title": "MethHC 2.0: information repository of DNA methylation and gene expression in human cancer."
+    },
+    {
+      "pmid": "32938376",
+      "title": "Multi-omics profiling reveals microRNA-mediated insulin signaling networks."
+    },
+    {
+      "pmid": "31647101",
+      "title": "miRTarBase 2020: updates to the experimentally validated microRNA-target interaction database."
+    }
+  ]
+}
