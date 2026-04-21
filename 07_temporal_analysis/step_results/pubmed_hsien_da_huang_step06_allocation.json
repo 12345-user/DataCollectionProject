@@ -1,0 +1,114 @@
+{
+  "allocation": {
+    "tau_days": 365,
+    "total_weight": 5.445869748088979,
+    "share_current": [
+      {
+        "project_or_domain": "domain_5",
+        "share_current": 0.355897,
+        "weight": 1.9382
+      },
+      {
+        "project_or_domain": "domain_7",
+        "share_current": 0.30081,
+        "weight": 1.6382
+      },
+      {
+        "project_or_domain": "domain_2",
+        "share_current": 0.131362,
+        "weight": 0.7154
+      },
+      {
+        "project_or_domain": "domain_1",
+        "share_current": 0.112536,
+        "weight": 0.6129
+      },
+      {
+        "project_or_domain": "domain_6",
+        "share_current": 0.051556,
+        "weight": 0.2808
+      },
+      {
+        "project_or_domain": "domain_4",
+        "share_current": 0.041433,
+        "weight": 0.2256
+      },
+      {
+        "project_or_domain": "domain_3",
+        "share_current": 0.004706,
+        "weight": 0.0256
+      },
+      {
+        "project_or_domain": "domain_0",
+        "share_current": 0.001701,
+        "weight": 0.0093
+      }
+    ]
+  },
+  "trend": [
+    {
+      "project_or_domain": "domain_5",
+      "trend_future": 1.3742,
+      "recent_weight": 1.0356,
+      "past_weight": 0.7536,
+      "recent_avg_quality": 0.693197,
+      "past_avg_quality": 0.669108
+    },
+    {
+      "project_or_domain": "domain_4",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "project_or_domain": "domain_0",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "project_or_domain": "domain_3",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "project_or_domain": "domain_7",
+      "trend_future": 0.5462,
+      "recent_weight": 0.5105,
+      "past_weight": 0.9347,
+      "recent_avg_quality": 0.662447,
+      "past_avg_quality": 0.652396
+    },
+    {
+      "project_or_domain": "domain_2",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.563,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.660796
+    },
+    {
+      "project_or_domain": "domain_1",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.5633,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.661963
+    },
+    {
+      "project_or_domain": "domain_6",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.1866,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.648346
+    }
+  ]
+}

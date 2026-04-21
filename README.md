@@ -17,6 +17,17 @@
 
 ## 2) 开源依赖与远程来源（优先 clone / 官方包）
 
+### Step01-03 依赖（补齐）
+
+- **Step01 数据采集**
+  - `NCBI E-utilities (PubMed)`：<https://www.ncbi.nlm.nih.gov/books/NBK25501/>
+  - Python 标准库：`urllib`、`xml.etree.ElementTree`（本地脚本使用）
+- **Step02 扩展论文列表**
+  - `paperscraper`：<https://github.com/blackadad/paper-scraper>
+  - 预印本 dump/索引来源：`arXiv / bioRxiv / medRxiv / chemRxiv`
+- **Step03 同名作者消歧**
+  - `WhoIsWho`：<https://github.com/THUDM/WhoIsWho>
+
 - `WhoIsWho`：`https://github.com/THUDM/WhoIsWho`
 - `KeyBERT`：`https://github.com/MaartenGr/KeyBERT`
 - `sentence-transformers`：`https://github.com/UKPLab/sentence-transformers`
@@ -30,6 +41,25 @@ git clone https://github.com/MaartenGr/KeyBERT "05_keyword_entity/processing/Key
 git clone https://github.com/UKPLab/sentence-transformers "06_domain_clustering/processing/sentence-transformers"
 .\.venv\Scripts\python.exe -m pip install statsmodels
 ```
+
+---
+
+## 2.1) 一键简化命令（推荐）
+
+只输入教授名和种子论文名即可跑完整 01->07（可选追加来源网站）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "scripts/run_full_pipeline_oneclick.ps1" `
+  -ProfessorName "【教授姓名】" `
+  -SeedPaperTitle "【种子论文名称】" `
+  -SeedPMID "【可选PMID】" `
+  -ExtraSourceUrls "【可选来源URL1】" "【可选来源URL2】"
+```
+
+说明：
+- 该命令会自动运行 Step01 到 Step07，并更新 `pipeline.duckdb`。
+- 若参数 `-StartWeb` 默认开启，会尝试启动网页（默认端口 8502）。
+- 网页内也提供了同等的一键执行入口（输入作者名、种子论文、来源 URL）。
 
 ---
 
@@ -188,4 +218,4 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collec
   - `ETS`：指数平滑（`statsmodels`）
   - `ARIMA(1,1,1)`（`statsmodels`）
   - `Auto`：按每个领域回测误差（MAE/MAPE）自动选模
-- **预测起点**：从当前季度开始（例如 2026-04），向后 4 个季度。
+- **预测起点**：从当前半年节点开始，向后 2 个半年节点。

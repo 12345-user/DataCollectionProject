@@ -1,0 +1,82 @@
+{
+  "query": "Shangfu Li[au] AND (Chinese[ad] AND University[ad] AND Hong[ad] AND Kong[ad])",
+  "count": 19,
+  "titles": [
+    {
+      "pmid": "41900810",
+      "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation."
+    },
+    {
+      "pmid": "40227198",
+      "title": "Identifying Baicalein as a Key Bioactive Compound in XueBiJing Targeting KEAP1: Implications for Antioxidant Effects."
+    },
+    {
+      "pmid": "40076546",
+      "title": "Unveiling Novel miRNA-mRNA Interactions and Their Prognostic Roles in Triple-Negative Breast Cancer: Insights into miR-210, miR-183, miR-21, and miR-181b."
+    },
+    {
+      "pmid": "39526378",
+      "title": "dbPTM 2025 update: comprehensive integration of PTMs and proteomic data for advanced insights into cancer research."
+    },
+    {
+      "pmid": "39062881",
+      "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types."
+    },
+    {
+      "pmid": "38523792",
+      "title": "KinPred-RNA-kinase activity inference and cancer type classification using machine learning on RNA-seq data."
+    },
+    {
+      "pmid": "37337262",
+      "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach."
+    },
+    {
+      "pmid": "36810579",
+      "title": "Holistic similarity-based prediction of phosphorylation sites for understudied kinases."
+    },
+    {
+      "pmid": "36440972",
+      "title": "Extraction of microRNA-target interaction sentences from biomedical literature by deep learning approach."
+    },
+    {
+      "pmid": "35781048",
+      "title": "KinasePhos 3.0: Redesign and Expansion of the Prediction on Kinase-specific Phosphorylation Sites."
+    },
+    {
+      "pmid": "34850155",
+      "title": "dbAMP 2.0: updated resource for antimicrobial peptides with an enhanced scanning method for genomic and proteomic data."
+    },
+    {
+      "pmid": "34788852",
+      "title": "dbPTM in 2022: an updated database for exploring regulatory networks and functional associations of protein post-translational modifications."
+    },
+    {
+      "pmid": "34663215",
+      "title": "A representation and deep learning model for annotating ubiquitylation sentences stating E3 ligase - substrate interaction."
+    },
+    {
+      "pmid": "33693667",
+      "title": "UbiNet 2.0: a verified, classified, annotated and updated database of E3 ubiquitin ligase-substrate interactions."
+    },
+    {
+      "pmid": "32672791",
+      "title": "A large-scale investigation and identification of methicillin-resistant Staphylococcus aureus based on peaks binning of matrix-assisted laser desorption ionization-time of flight MS spectra."
+    },
+    {
+      "pmid": "30292287",
+      "title": "Metabolomics studies on db/db diabetic mice in skeletal muscle reveal effective clearance of overloaded intermediates by exercise."
+    },
+    {
+      "pmid": "29254168",
+      "title": "LC-MS-based metabolomics revealed SLC25A22 as an essential regulator of aspartate-derived amino acids and polyamines in KRAS-mutant colorectal cancer."
+    },
+    {
+      "pmid": "28859482",
+      "title": "Comprehensive Analysis of Acylcarnitine Species in db/db Mouse Using a Novel Method of High-Resolution Parallel Reaction Monitoring Reveals Widespread Metabolic Dysfunction Induced by Diabetes."
+    },
+    {
+      "pmid": "27837831",
+      "title": "Determination of amino acids in colon cancer cells by using UHPLC-MS/MS and [U-(13)C(5)]-glutamine as the isotope tracer."
+    }
+  ]
+}

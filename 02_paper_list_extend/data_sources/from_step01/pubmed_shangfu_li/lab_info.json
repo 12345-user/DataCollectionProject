@@ -1,0 +1,824 @@
+{
+  "count_affiliations": 332,
+  "unique_affiliations": 91,
+  "disambiguation_keywords": [
+    "The Chinese University of Hong Kong",
+    "School of Medicine",
+    "Warshel Institute for Computational Biology",
+    "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development"
+  ],
+  "count_affiliations_after_filter": 228,
+  "unique_affiliations_after_filter": 43,
+  "top_affiliations": [
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 32
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 19
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 18
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 17
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "count": 16
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 15
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "count": 14
+    },
+    {
+      "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "count": 14
+    },
+    {
+      "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 13
+    },
+    {
+      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 8
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "count": 7
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "count": 6
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "count": 5
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "count": 4
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "count": 4
+    },
+    {
+      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, PR China, and also in the School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, PR China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Shenzhen Research Institute, The Chinese University of Hong Kong, Guangdong, China.",
+      "count": 2
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Shenzhen, Guangdong, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, Chinese University of Hong Kong, Shenzhen; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine and the Warshel Institute of Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Medicine, and the executive director of Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life Sciences, University of Science and Technology of China, Hefei 230027, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: huanghsienda@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: leetzongyi@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Warshel Institute for Computational Biology, School of Life and Health Sciences.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Gastroenterology, Sir Run Run Shaw Hospital, School of Medicine, Zhejiang University, Hangzhou, China, Institute of Gastroenterology, Zhejiang University, Hangzhou, China.",
+      "count": 1
+    }
+  ],
+  "pmid_affiliations": {
+    "41900810": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Electrical & Computer Engineering, University of Illinois at Chicago, Chicago, IL 60607, USA.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China."
+    ],
+    "40227198": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Center for Medical Artificial Intelligence, Shandong University of Traditional Chinese Medicine, Qingdao 266112, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "State Key Laboratory of Quality Research in Chinese Medicine, Institute of Chinese Medical Sciences, University of Macau, Macao 999078, China.",
+      "Department of Public Health and Medicinal Administration, Faculty of Health Sciences, University of Macau, Macao 999078, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China."
+    ],
+    "40076546": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "39526378": [
+      "Department of Computer Science and Information Engineering, National Central University, No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320317, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Data Science and Engineering, College of Computer Science, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "Department of Computer Science and Information Engineering, National Central University, No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320317, Taiwan.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "Institute of Medical Science, The University of Tokyo, 4-6-1, Shirokanedai, Minato-ku, Tokyo 108-8639, Japan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Institute of Tropical Plant Sciences and Microbiology, National Cheng Kung University, No.1, University Rd., Tainan City 70101, Taiwan.",
+      "Department of Computer Science and Engineering, Yuan Ze University, No. 135, Yuandong Rd., Zhongli Dist., Taoyuan City 320315, Taiwan.",
+      "Department of Computer Science and Information Engineering, National Central University, No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320317, Taiwan.",
+      "Institute of Bioinformatics and Systems Biology, College of Engineering Bioscience, National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan.",
+      "Center for Intelligent Drug Systems and Smart Bio-devices (IDS2B), National Yang Ming Chiao Tung University, No. 1001, Daxue Rd. East Dist., Hsinchu City 300093, Taiwan."
+    ],
+    "39062881": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Biological Science and Technology, National Yang Ming Chiao Tung University, No. 75, Boai Street, Hsinchu 300, Taiwan.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Biological Science and Technology, National Yang Ming Chiao Tung University, No. 75, Boai Street, Hsinchu 300, Taiwan."
+    ],
+    "38523792": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Computer Science and Information Engineering, National Central University, Taoyuan 320953, Taiwan.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Division of Health Medical Intelligence, Human Genome Center, The Institute of Medical Science, The University of Tokyo, Minato-ku, Tokyo, Japan.",
+      "Institute of Bioinformatics and Systems Biology, National Yang Ming Chiao Tung University, Hsinchu 300093, Taiwan.",
+      "Center for Intelligent Drug Systems and Smart Bio-devices (IDSB), National Yang Ming Chiao Tung University, Hsinchu 300093, Taiwan."
+    ],
+    "37337262": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn."
+    ],
+    "36810579": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Faculty of Business and Law (Artificial Intelligence Specialism), Coventry University, Priory Street, CV1 5FB, Coventry, United Kingdom.",
+      "Parkinson's UK, Organization, Pimlico, SW1V 1EJ, London, United Kingdom.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Shenzhen, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Institute of Bioinformatics and Systems Biology, National Yang Ming Chiao Tung University, Hsinchu 300, Taiwan."
+    ],
+    "36440972": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, PR China, and also in the School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, PR China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, PR China, and also in the School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, PR China.",
+      "Warshel Institute for Computational Biology, Chinese University of Hong Kong, Shenzhen; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "School of Medicine and the Warshel Institute of Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "School of Medicine, and the executive director of Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China."
+    ],
+    "35781048": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life Sciences, University of Science and Technology of China, Hefei 230027, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: huanghsienda@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: leetzongyi@cuhk.edu.cn."
+    ],
+    "34850155": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Computer Science and Information Engineering, National Central University, Taoyuan 32001, Taiwan.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Biomedical Sciences and Engineering, National Central University, Taoyuan 32001, Taiwan.",
+      "Graduate Institute of Biomedical Informatics, Taipei Medical University, Taipei 10675, Taiwan.",
+      "Department of Computer Science and Information Engineering, National Central University, Taoyuan 32001, Taiwan.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "34788852": [
+      "The Genetics Laboratory, Longgang District Maternity & Child Healthcare Hospital of Shenzhen City, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Medical Research, Taipei Medical University Hospital, Taipei 110, Taiwan.",
+      "Institute of Tropical Plant Sciences and Microbiology, National Cheng Kung University, Tainan 701, Taiwan.",
+      "The Genetics Laboratory, Longgang District Maternity & Child Healthcare Hospital of Shenzhen City, Shenzhen 518172, China.",
+      "Department of Cell Biology, Jiamusi University, Jiamusi 154007, China.",
+      "Shenzhen Children's Hospital of China Medical University, Shenzhen 518172, China.",
+      "The Genetics Laboratory, Longgang District Maternity & Child Healthcare Hospital of Shenzhen City, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "34663215": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn."
+    ],
+    "33693667": [
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China."
+    ],
+    "32672791": [
+      "Department of Laboratory Medicine, Chang Gung Memorial Hospital at Linkou, Taoyuan City, Taiwan.",
+      "Department of Computer Science and Information Engineering, National Central University.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Department of Computer Science & Engineering, Yuan Ze University, Taoyuan City, Taiwan.",
+      "Department of Laboratory Medicine, Chang Gung Memorial Hospital at Linkou, Taoyuan City, Taiwan.",
+      "Department of Computer Science and Information Engineering, National Central University, Taiwan.",
+      "Warshel Institute for Computational Biology, School of Life and Health Sciences."
+    ],
+    "30292287": [
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong, Hong Kong, PR China. Electronic address: yu-huang@cuhk.edu.hk.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, PR China. Electronic address: zwcai@hkbu.edu.hk."
+    ],
+    "29254168": [
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "Guangdong Provincial Academy of Chinese Medical Sciences, The Second Affiliated Hospital of Guangzhou University of Chinese Medicine, Guangdong, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "Shenzhen Research Institute, The Chinese University of Hong Kong, Guangdong, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "Shenzhen Research Institute, The Chinese University of Hong Kong, Guangdong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China."
+    ],
+    "28859482": [
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong , Hong Kong 999077, P. R. China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China.",
+      "School of Biomedical Sciences, Chinese University of Hong Kong , Hong Kong 999077, P. R. China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University , Hong Kong 999077, P. R. China."
+    ],
+    "27837831": [
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "State Key Laboratory for Quality Research in Chinese Medicines, Macau University of Science and Technology, Macau, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "Department of Gastroenterology, Sir Run Run Shaw Hospital, School of Medicine, Zhejiang University, Hangzhou, China, Institute of Gastroenterology, Zhejiang University, Hangzhou, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China.",
+      "Institute of Digestive Disease and Department of Medicine and Therapeutics, State Key Laboratory of Digestive Disease, Li Ka Shing Institute of Health Sciences, Chinese University of Hong Kong, Hong Kong, China.",
+      "State Key Laboratory of Environmental and Biological Analysis, Department of Chemistry, Hong Kong Baptist University, Hong Kong, China. Electronic address: zwcai@hkbu.edu.hk."
+    ]
+  },
+  "pmid_affiliations_after_filter": {
+    "41900810": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "40227198": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China."
+    ],
+    "40076546": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "39526378": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001, Longxiang Boulevard, Longgang Dist., Shenzhen, Guangdong 518172, China."
+    ],
+    "39062881": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "38523792": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Kobilka Institute of Innovative Drug Discovery, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "37337262": [
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. yangchidung@cuhk.edu.cn.",
+      "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, 518172, Guangdong, China. huanghsienda@cuhk.edu.cn."
+    ],
+    "36810579": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Shenzhen, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China.",
+      "School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longcheng Street, 518172, Guangdong, China."
+    ],
+    "36440972": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, PR China, and also in the School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, PR China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, PR China, and also in the School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, PR China.",
+      "Warshel Institute for Computational Biology, Chinese University of Hong Kong, Shenzhen; School of Life Sciences, University of Science and Technology of China, Hefei, China.",
+      "School of Medicine and the Warshel Institute of Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "School of Medicine, and the executive director of Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China."
+    ],
+    "35781048": [
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life Sciences, University of Science and Technology of China, Hefei 230027, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: huanghsienda@cuhk.edu.cn.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China; School of Life and Health Sciences, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China. Electronic address: leetzongyi@cuhk.edu.cn."
+    ],
+    "34850155": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "34788852": [
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen 518172, China."
+    ],
+    "34663215": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, China. leetzongyi@cuhk.edu.cn."
+    ],
+    "33693667": [
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "School of Life and Health Sciences, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R.China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China."
+    ],
+    "32672791": [
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, The Chinese University of Hong Kong, Shenzhen, China.",
+      "Warshel Institute for Computational Biology, School of Life and Health Sciences."
+    ],
+    "30292287": [],
+    "29254168": [
+      "Shenzhen Research Institute, The Chinese University of Hong Kong, Guangdong, China.",
+      "Shenzhen Research Institute, The Chinese University of Hong Kong, Guangdong, China."
+    ],
+    "28859482": [],
+    "27837831": [
+      "Department of Gastroenterology, Sir Run Run Shaw Hospital, School of Medicine, Zhejiang University, Hangzhou, China, Institute of Gastroenterology, Zhejiang University, Hangzhou, China."
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+version: "1.0"
+fixed_categories:
+  - name: "数据库开发与应用"
+    keywords:
+      - database
+      - sql
+      - mysql
+      - postgres
+      - duckdb
+      - etl
+      - data warehouse
+      - 数据库
+      - 数据仓库
+
+  - name: "机器学习模型训练"
+    keywords:
+      - machine learning
+      - deep learning
+      - neural network
+      - transformer
+      - xgboost
+      - random forest
+      - training
+      - 机器学习
+      - 深度学习
+      - 模型训练
+

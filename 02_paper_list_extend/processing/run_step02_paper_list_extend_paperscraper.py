@@ -5,9 +5,12 @@ import glob
 import json
 import re
 import time
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlencode
+from urllib.request import urlopen
 
 
 def _slug(s: str) -> str:
@@ -185,6 +188,120 @@ def _dump_arxiv_with_retry(query: list[list[str]], output_path: Path, max_attemp
     return False
 
 
+def _xml_text(node: ET.Element | None) -> str:
+    if node is None or node.text is None:
+        return ""
+    return node.text.strip()
+
+
+def _iter_children_by_localname(parent: ET.Element, name: str) -> list[ET.Element]:
+    out: list[ET.Element] = []
+    for c in list(parent):
+        if str(c.tag).split("}")[-1] == name:
+            out.append(c)
+    return out
+
+
+def _first_desc_text_by_localname(parent: ET.Element, name: str) -> str:
+    for e in parent.iter():
+        if str(e.tag).split("}")[-1] == name:
+            t = _xml_text(e)
+            if t:
+                return t
+    return ""
+
+
+def _collect_desc_texts_by_localname(parent: ET.Element, name: str, limit: int = 50) -> list[str]:
+    out: list[str] = []
+    for e in parent.iter():
+        if str(e.tag).split("}")[-1] != name:
+            continue
+        t = _xml_text(e)
+        if t:
+            out.append(t)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _openaire_query_keywords(professor_name: str) -> str:
+    # Use original name and normalized tokenized form to improve recall.
+    tokens = [t.strip() for t in re.split(r"[\s,]+", professor_name.strip()) if t.strip()]
+    if not tokens:
+        return professor_name
+    full = " ".join(tokens)
+    surname = tokens[-1]
+    initials = "".join(t[0] for t in tokens[:-1] if t)
+    if initials:
+        return f'{full} "{surname} {initials}"'
+    return full
+
+
+def _fetch_openaire_records(
+    professor_name: str,
+    per_page: int = 50,
+    max_pages: int = 4,
+    timeout_sec: int = 30,
+) -> list[PaperRecord]:
+    # OpenAIRE Search API: https://api.openaire.eu/search/publications
+    # Returns XML; we map core publication metadata to Step02 schema.
+    kw = _openaire_query_keywords(professor_name)
+    out: list[PaperRecord] = []
+    for page in range(1, max_pages + 1):
+        params = {
+            "keywords": kw,
+            "size": str(per_page),
+            "page": str(page),
+        }
+        url = "https://api.openaire.eu/search/publications?" + urlencode(params)
+        try:
+            content = urlopen(url, timeout=timeout_sec).read()
+            root = ET.fromstring(content)
+        except Exception as exc:
+            print(f"[warn] OpenAIRE 第 {page} 页抓取失败：{exc}")
+            break
+
+        # The XML may contain both <results>/<result> and nested namespaced nodes.
+        result_nodes = [e for e in root.iter() if str(e.tag).split("}")[-1] == "result"]
+        if not result_nodes:
+            break
+
+        page_added = 0
+        for r in result_nodes:
+            title = _first_desc_text_by_localname(r, "title")
+            if not title:
+                continue
+            abstract = _first_desc_text_by_localname(r, "description")
+            pub_date = _first_desc_text_by_localname(r, "dateofacceptance")
+            doi = _first_desc_text_by_localname(r, "doi")
+            url_val = _first_desc_text_by_localname(r, "url")
+            if not url_val and doi:
+                url_val = f"https://doi.org/{doi}"
+            authors = _collect_desc_texts_by_localname(r, "creator", limit=30)
+            venue = (
+                _first_desc_text_by_localname(r, "journal")
+                or _first_desc_text_by_localname(r, "publisher")
+            )
+            out.append(
+                PaperRecord(
+                    title=_as_str(title),
+                    abstract=_as_str(abstract),
+                    pub_date=_as_str(pub_date),
+                    authors=_parse_authors(authors),
+                    doi=_as_str(doi),
+                    url=_as_str(url_val),
+                    source="openaire",
+                    pmid="",
+                    venue=_as_str(venue),
+                    citation_count=None,
+                )
+            )
+            page_added += 1
+        if page_added == 0:
+            break
+    return out
+
+
 @dataclass
 class PaperRecord:
     title: str
@@ -318,6 +435,8 @@ def main() -> None:
         help="paperscraper server dumps 所在目录",
     )
     parser.add_argument("--skip-arxiv", action="store_true", help="跳过 arXiv API，只使用本地 xRxiv dumps 进行测试/执行")
+    parser.add_argument("--skip-openaire", action="store_true", help="跳过 OpenAIRE 检索")
+    parser.add_argument("--openaire-pages", type=int, default=4, help="OpenAIRE 抓取页数上限（每页50）")
     args = parser.parse_args()
 
     output_prefix = args.output_prefix or _slug(args.professor_name)
@@ -390,6 +509,19 @@ def main() -> None:
         querier.search_keywords(query, output_filepath=str(out_path))
         for r in _read_jsonl_records(out_path):
             all_records.append(_map_preprint_record(r, source))
+
+    # OpenAIRE publications
+    if args.skip_openaire:
+        print("[info] 已跳过 OpenAIRE 检索")
+    else:
+        openaire_rows = _fetch_openaire_records(
+            professor_name=args.professor_name,
+            per_page=50,
+            max_pages=max(1, int(args.openaire_pages)),
+            timeout_sec=30,
+        )
+        print(f"[info] OpenAIRE 抓取到候选记录：{len(openaire_rows)}")
+        all_records.extend(openaire_rows)
 
     merged_out = merged_dir / f"{output_prefix}_all_records_before_dedup.jsonl"
     with merged_out.open("w", encoding="utf-8") as f:

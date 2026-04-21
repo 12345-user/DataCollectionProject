@@ -1,0 +1,223 @@
+{
+  "domains": [
+    {
+      "domain_label": "domain_0",
+      "paper_count": 1,
+      "domain_keywords": [
+        "高血压 空气污染",
+        "污染 血压",
+        "中国 空气污染",
+        "空气污染 血液",
+        "空气污染",
+        "患病率 高血压",
+        "血压 老年人"
+      ],
+      "domain_theme_en": "高血压 空气污染, 污染 血压, 中国 空气污染",
+      "domain_theme_cn": "高血压 空气污染/污染 血压主题汇总",
+      "domain_theme": "高血压 空气污染/污染 血压主题汇总",
+      "avg_quality_score": 0.647536,
+      "evidence_papers": [
+        {
+          "paper_id": "36132186",
+          "title": "Air pollution and blood pressure in the elderly: evidence from a panel study in Nanjing, China.",
+          "abstract_snippet": "Air pollution is known to have notable negative effects on human health. Recently, the effect of air pollution on blood pressure among the elderly has attracted researchers' attent..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_1",
+      "paper_count": 15,
+      "domain_keywords": [
+        "肿瘤"
+      ],
+      "domain_theme_en": "肿瘤",
+      "domain_theme_cn": "肿瘤机制与治疗",
+      "domain_theme": "肿瘤机制与治疗",
+      "avg_quality_score": 0.569271,
+      "evidence_papers": [
+        {
+          "paper_id": "41272119",
+          "title": "Imputation disparities driven by recent selection and their impact on disease risk estimation in East and Southeast Asian populations.",
+          "abstract_snippet": "Accurate genotype imputation is essential for large-scale genetic studies and precision medicine. While East Asian (EAS)-specific reference panels like ChinaMAP and CHN100k have be..."
+        },
+        {
+          "paper_id": "40036264",
+          "title": "Deciphering ovarian cancer heterogeneity through spatial transcriptomics, single-cell profiling, and copy number variations.",
+          "abstract_snippet": "High-grade serous ovarian carcinoma (HGSOC) poses a formidable clinical challenge due to multidrug resistance (MDR) caused by tumor heterogeneity. To elucidate the intricate mechan..."
+        },
+        {
+          "paper_id": "37870291",
+          "title": "A genetic basis of mitochondrial DNAJA3 in nonalcoholic steatohepatitis-related hepatocellular carcinoma.",
+          "abstract_snippet": "NAFLD is the most common form of liver disease worldwide, but only a subset of individuals with NAFLD may progress to NASH. While NASH is an important etiology of HCC, the underlyi..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_2",
+      "paper_count": 9,
+      "domain_keywords": [
+        "不良药物反应",
+        "毒性"
+      ],
+      "domain_theme_en": "不良药物反应, 毒性",
+      "domain_theme_cn": "药物反应与靶点预测",
+      "domain_theme": "药物反应与靶点预测",
+      "avg_quality_score": 0.638314,
+      "evidence_papers": [
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        },
+        {
+          "paper_id": "41390462",
+          "title": "Semi-inductive dataset construction and framework optimization for practical drug target interaction prediction with ScopeDTI.",
+          "abstract_snippet": "Deep learning-based drug-target interaction (DTI) prediction methods have demonstrated strong performance; however, real-world applicability remains constrained by limited data div..."
+        },
+        {
+          "paper_id": "40182288",
+          "title": "Enhancing bloodstream infection diagnostics: a novel filtration and targeted next-generation sequencing approach for precise pathogen identification.",
+          "abstract_snippet": "Bloodstream infections (BSIs) pose a significant diagnostic challenge, largely due to the limitations of traditional methods such as blood cultures. These methods often yield low p..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_3",
+      "paper_count": 10,
+      "domain_keywords": [],
+      "domain_theme_en": "",
+      "domain_theme_cn": "综合主题汇总",
+      "domain_theme": "综合主题汇总",
+      "avg_quality_score": 0.342632,
+      "evidence_papers": [
+        {
+          "paper_id": "31462299",
+          "title": "Bone marrow concentrate-induced mesenchymal stem cell conditioned medium facilitates wound healing and prevents hypertrophic scar formation in a rabbit ear model.",
+          "abstract_snippet": "Hypertrophic scars (HSs) are formed via an aberrant response to the wound healing process. HSs can be cosmetic or can result in functional problems. Prolonged proliferation and rem..."
+        },
+        {
+          "paper_id": "30944305",
+          "title": "Mechanical stretch induces hair regeneration through the alternative activation of macrophages.",
+          "abstract_snippet": "Tissues and cells in organism are continuously exposed to complex mechanical cues from the environment. Mechanical stimulations affect cell proliferation, differentiation, and migr..."
+        },
+        {
+          "paper_id": "openaire:dna_methyltransferases_modulate_hepatogenic_lineage_plasticity_of_mesenchymal_stromal_cells",
+          "title": "DNA Methyltransferases Modulate Hepatogenic Lineage Plasticity of Mesenchymal Stromal Cells",
+          "abstract_snippet": "The irreversibility of developmental processes in mammalian cells has been challenged by rising evidence that de-differentiation of hepatocytes occurs in adult liver. However, whet..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_4",
+      "paper_count": 8,
+      "domain_keywords": [],
+      "domain_theme_en": "",
+      "domain_theme_cn": "综合主题汇总",
+      "domain_theme": "综合主题汇总",
+      "avg_quality_score": 0.624518,
+      "evidence_papers": [
+        {
+          "paper_id": "38994794",
+          "title": "DrugRepoBank: a comprehensive database and discovery platform for accelerating drug repositioning.",
+          "abstract_snippet": "In recent years, drug repositioning has emerged as a promising alternative to the time-consuming, expensive and risky process of developing new drugs for diseases. However, the cur..."
+        },
+        {
+          "paper_id": "38891842",
+          "title": "A Causal Regulation Modeling Algorithm for Temporal Events with Application to",
+          "abstract_snippet": "Time-series experiments are crucial for understanding the transient and dynamic nature of biological phenomena. These experiments, leveraging advanced classification and clustering..."
+        },
+        {
+          "paper_id": "37114659",
+          "title": "Quantitative model for genome-wide cyclic AMP receptor protein binding site identification and characteristic analysis.",
+          "abstract_snippet": "Cyclic AMP receptor proteins (CRPs) are important transcription regulators in many species. The prediction of CRP-binding sites was mainly based on position-weighted matrixes (PWMs..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_5",
+      "paper_count": 19,
+      "domain_keywords": [
+        "ATAD2 染色质",
+        "肿瘤",
+        "ATAD2 溴结构域"
+      ],
+      "domain_theme_en": "ATAD2 染色质, 肿瘤, ATAD2 溴结构域",
+      "domain_theme_cn": "ATAD2/表观肿瘤机制",
+      "domain_theme": "ATAD2/表观肿瘤机制",
+      "avg_quality_score": 0.562852,
+      "evidence_papers": [
+        {
+          "paper_id": "41900810",
+          "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation.",
+          "abstract_snippet": "Background/Objectives : ATPase family AAA domain-containing protein 2 (ATAD2) is an oncogenic chromatin regulator that amplifies E2F/MYC transcriptional programs, yet direct modula..."
+        },
+        {
+          "paper_id": "41380411",
+          "title": "A comprehensive review of herb-induced liver injury: Mechanisms, clinical management, and future perspectives in natural product safety.",
+          "abstract_snippet": "The global surge in medicinal natural product use, driven by a \"natural equals safe\" belief, has led to a significant public health concern: herb-induced liver injury (HILI). As a..."
+        },
+        {
+          "paper_id": "40507105",
+          "title": "Dietary Omega-3 PUFAs in Metabolic Disease Research: A Decade of Omics-Enabled Insights (2014-2024).",
+          "abstract_snippet": "Background/Objectives : The rising global prevalence of metabolic diseases (e.g., obesity, type 2 diabetes mellitus) underscores the need for effective interventions. Omega-3 polyu..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_6",
+      "paper_count": 11,
+      "domain_keywords": [],
+      "domain_theme_en": "",
+      "domain_theme_cn": "综合主题汇总",
+      "domain_theme": "综合主题汇总",
+      "avg_quality_score": 0.551209,
+      "evidence_papers": [
+        {
+          "paper_id": "40886904",
+          "title": "Multi-omics identification of quantitative trait loci associated with vascular pathogenesis and diagnostic potential in chronic venous disease.",
+          "abstract_snippet": "Chronic venous disease (CVD) is a prevalent vascular disorder with a poorly characterized genetic basis. In this study, we employed an integrative omics strategy combining genome-w..."
+        },
+        {
+          "paper_id": "39062881",
+          "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types.",
+          "abstract_snippet": "Ubiquitination, a post-translational modification, refers to the covalent attachment of ubiquitin molecules to substrates. This modification plays a critical role in diverse cellul..."
+        },
+        {
+          "paper_id": "36252121",
+          "title": "MED1 Regulates BMP/TGF-β in Endothelium: Implication for Pulmonary Hypertension.",
+          "abstract_snippet": "Dysregulated BMP (bone morphogenetic protein) or TGF-β (transforming growth factor beta) signaling pathways are imperative in idiopathic and familial pulmonary arterial hypertensio..."
+        }
+      ]
+    },
+    {
+      "domain_label": "domain_7",
+      "paper_count": 23,
+      "domain_keywords": [
+        "微小RNA 微小RNA",
+        "微小RNA",
+        "肿瘤 微小RNA"
+      ],
+      "domain_theme_en": "微小RNA 微小RNA, 微小RNA, 肿瘤 微小RNA",
+      "domain_theme_cn": "miRNA/RNA调控",
+      "domain_theme": "miRNA/RNA调控",
+      "avg_quality_score": 0.567131,
+      "evidence_papers": [
+        {
+          "paper_id": "41691474",
+          "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers.",
+          "abstract_snippet": "MicroRNAs (miRNAs) are pivotal post‑transcriptional regulators whose single‑cell behavior has remained largely inaccessible due to technical barriers in single-cell small‑RNA profi..."
+        },
+        {
+          "paper_id": "41463366",
+          "title": "Integrative Regulatory Networks of MicroRNA-483: Unveiling Its Systematic Role in Human Diseases and Clinical Implications.",
+          "abstract_snippet": "MicroRNA-483 regulates multiple human disease categories, spanning oncology, cardiopulmonary, metabolic, immune, neurological, and musculoskeletal pathologies. We integrate experim..."
+        },
+        {
+          "paper_id": "40396374",
+          "title": "RegRNA 3.0: expanding regulatory RNA analysis with new features for motif, interaction, and annotation.",
+          "abstract_snippet": "Functional RNA molecules are crucial for biological processes from gene regulation to protein synthesis, and analyzing functional motifs and elements is essential for understanding..."
+        }
+      ]
+    }
+  ]
+}

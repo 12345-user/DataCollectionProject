@@ -90,7 +90,8 @@ def crawl_url(url: str) -> CrawlRecord:
 def read_urls(url_file: Path) -> list[str]:
     urls: list[str] = []
     for line in url_file.read_text(encoding="utf-8").splitlines():
-        stripped = line.strip()
+        # Remove UTF-8 BOM if present (Windows PowerShell Set-Content -Encoding utf8 adds BOM).
+        stripped = line.strip().lstrip("\ufeff")
         if stripped and not stripped.startswith("#"):
             urls.append(stripped)
     return urls
