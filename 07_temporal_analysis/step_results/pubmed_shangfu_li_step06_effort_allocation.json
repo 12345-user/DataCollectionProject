@@ -1,61 +1,56 @@
 {
   "allocation": {
     "tau_days": 365,
-    "total_weight": 1.3616730750271864,
+    "total_weight": 1.3616732621387624,
     "share_current": [
       {
-        "project_or_domain": "domain_4",
-        "share_current": 0.730523,
-        "weight": 0.9947
+        "tag_name": "肿瘤",
+        "share_current": 0.574616,
+        "weight": 0.7824
       },
       {
-        "project_or_domain": "domain_7",
-        "share_current": 0.141652,
-        "weight": 0.1929
+        "tag_name": "抗氧化",
+        "share_current": 0.139154,
+        "weight": 0.1895
       },
       {
-        "project_or_domain": "domain_2",
-        "share_current": 0.055187,
-        "weight": 0.0751
+        "tag_name": "综合标签",
+        "share_current": 0.117935,
+        "weight": 0.1606
       },
       {
-        "project_or_domain": "domain_6",
-        "share_current": 0.036971,
-        "weight": 0.0503
+        "tag_name": "微小RNA",
+        "share_current": 0.087986,
+        "weight": 0.1198
       },
       {
-        "project_or_domain": "domain_1",
-        "share_current": 0.01861,
-        "weight": 0.0253
+        "tag_name": "微小RNA 信使RNA",
+        "share_current": 0.057255,
+        "weight": 0.078
       },
       {
-        "project_or_domain": "domain_3",
-        "share_current": 0.010155,
-        "weight": 0.0138
+        "tag_name": "肿瘤 3",
+        "share_current": 0.01674,
+        "weight": 0.0228
       },
       {
-        "project_or_domain": "domain_0",
-        "share_current": 0.006797,
-        "weight": 0.0093
-      },
-      {
-        "project_or_domain": "domain_5",
-        "share_current": 0.000107,
-        "weight": 0.0001
+        "tag_name": "代谢",
+        "share_current": 0.006314,
+        "weight": 0.0086
       }
     ]
   },
   "trend": [
     {
-      "project_or_domain": "domain_4",
-      "trend_future": 1.3843,
+      "tag_name": "肿瘤",
+      "trend_future": 2.3721,
       "recent_weight": 0.5183,
-      "past_weight": 0.3744,
+      "past_weight": 0.2185,
       "recent_avg_quality": 0.695507,
       "past_avg_quality": 0.65561
     },
     {
-      "project_or_domain": "domain_2",
+      "tag_name": "肿瘤 3",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -63,7 +58,7 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_1",
+      "tag_name": "综合标签",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -71,7 +66,7 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_6",
+      "tag_name": "代谢",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -79,36 +74,28 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_0",
-      "trend_future": 1.0,
-      "recent_weight": 0.0,
-      "past_weight": 0.0,
-      "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.0
-    },
-    {
-      "project_or_domain": "domain_3",
-      "trend_future": 1.0,
-      "recent_weight": 0.0,
-      "past_weight": 0.0,
-      "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.0
-    },
-    {
-      "project_or_domain": "domain_5",
-      "trend_future": 1.0,
-      "recent_weight": 0.0,
-      "past_weight": 0.0,
-      "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.0
-    },
-    {
-      "project_or_domain": "domain_7",
+      "tag_name": "抗氧化",
       "trend_future": 0.0,
       "recent_weight": 0.0,
       "past_weight": 0.1895,
       "recent_avg_quality": 0.0,
       "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "微小RNA",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.078,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.65436
+    },
+    {
+      "tag_name": "微小RNA 信使RNA",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.078,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.65436
     }
   ]
 }

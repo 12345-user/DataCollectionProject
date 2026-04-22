@@ -1,61 +1,188 @@
 {
   "allocation": {
     "tau_days": 365,
-    "total_weight": 5.460810396475764,
+    "total_weight": 5.208604731121872,
     "share_current": [
       {
-        "project_or_domain": "domain_5",
-        "share_current": 0.355897,
-        "weight": 1.9435
+        "tag_name": "综合标签",
+        "share_current": 0.270007,
+        "weight": 1.4064
       },
       {
-        "project_or_domain": "domain_7",
-        "share_current": 0.30081,
-        "weight": 1.6427
+        "tag_name": "微小RNA",
+        "share_current": 0.17163,
+        "weight": 0.894
       },
       {
-        "project_or_domain": "domain_2",
-        "share_current": 0.131362,
-        "weight": 0.7173
+        "tag_name": "肿瘤",
+        "share_current": 0.107898,
+        "weight": 0.562
       },
       {
-        "project_or_domain": "domain_1",
-        "share_current": 0.112536,
-        "weight": 0.6145
+        "tag_name": "抗氧化",
+        "share_current": 0.078554,
+        "weight": 0.4092
       },
       {
-        "project_or_domain": "domain_6",
-        "share_current": 0.051556,
-        "weight": 0.2815
+        "tag_name": "不良药物反应",
+        "share_current": 0.072943,
+        "weight": 0.3799
       },
       {
-        "project_or_domain": "domain_4",
-        "share_current": 0.041433,
-        "weight": 0.2263
+        "tag_name": "毒性",
+        "share_current": 0.066745,
+        "weight": 0.3476
       },
       {
-        "project_or_domain": "domain_3",
-        "share_current": 0.004706,
-        "weight": 0.0257
+        "tag_name": "肿瘤 微小RNA",
+        "share_current": 0.042022,
+        "weight": 0.2189
       },
       {
-        "project_or_domain": "domain_0",
-        "share_current": 0.001701,
-        "weight": 0.0093
+        "tag_name": "微小RNA 483",
+        "share_current": 0.039778,
+        "weight": 0.2072
+      },
+      {
+        "tag_name": "代谢",
+        "share_current": 0.037255,
+        "weight": 0.194
+      },
+      {
+        "tag_name": "ATAD2 染色质",
+        "share_current": 0.025693,
+        "weight": 0.1338
+      },
+      {
+        "tag_name": "ATAD2 溴结构域",
+        "share_current": 0.025574,
+        "weight": 0.1332
+      },
+      {
+        "tag_name": "肿瘤 3",
+        "share_current": 0.018863,
+        "weight": 0.0983
+      },
+      {
+        "tag_name": "微小RNA 信使RNA",
+        "share_current": 0.010566,
+        "weight": 0.055
+      },
+      {
+        "tag_name": "血液",
+        "share_current": 0.00976,
+        "weight": 0.0508
+      },
+      {
+        "tag_name": "血液 感染",
+        "share_current": 0.00976,
+        "weight": 0.0508
+      },
+      {
+        "tag_name": "药物靶点",
+        "share_current": 0.004805,
+        "weight": 0.025
+      },
+      {
+        "tag_name": "铁死亡",
+        "share_current": 0.004768,
+        "weight": 0.0248
+      },
+      {
+        "tag_name": "RNA 肿瘤",
+        "share_current": 0.000853,
+        "weight": 0.0044
+      },
+      {
+        "tag_name": "空气污染",
+        "share_current": 0.000593,
+        "weight": 0.0031
+      },
+      {
+        "tag_name": "中国",
+        "share_current": 0.000349,
+        "weight": 0.0018
+      },
+      {
+        "tag_name": "高血压 空气污染",
+        "share_current": 0.000296,
+        "weight": 0.0015
+      },
+      {
+        "tag_name": "污染 血压",
+        "share_current": 0.000296,
+        "weight": 0.0015
+      },
+      {
+        "tag_name": "中国 空气污染",
+        "share_current": 0.000296,
+        "weight": 0.0015
+      },
+      {
+        "tag_name": "空气污染 血液",
+        "share_current": 0.000296,
+        "weight": 0.0015
+      },
+      {
+        "tag_name": "微小RNA 7",
+        "share_current": 0.000138,
+        "weight": 0.0007
+      },
+      {
+        "tag_name": "感染 微小RNA",
+        "share_current": 0.000138,
+        "weight": 0.0007
+      },
+      {
+        "tag_name": "高血压",
+        "share_current": 0.000124,
+        "weight": 0.0006
       }
     ]
   },
   "trend": [
     {
-      "project_or_domain": "domain_5",
-      "trend_future": 1.3742,
-      "recent_weight": 1.0384,
-      "past_weight": 0.7556,
-      "recent_avg_quality": 0.693197,
-      "past_avg_quality": 0.669108
+      "tag_name": "ATAD2 染色质",
+      "trend_future": 118867.4528,
+      "recent_weight": 0.1189,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.695507,
+      "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_4",
+      "tag_name": "ATAD2 溴结构域",
+      "trend_future": 118867.4528,
+      "recent_weight": 0.1189,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.695507,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "肿瘤 3",
+      "trend_future": 75997.9244,
+      "recent_weight": 0.076,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.695507,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "肿瘤 微小RNA",
+      "trend_future": 4.1826,
+      "recent_weight": 0.1615,
+      "past_weight": 0.0386,
+      "recent_avg_quality": 0.662407,
+      "past_avg_quality": 0.66646
+    },
+    {
+      "tag_name": "肿瘤",
+      "trend_future": 1.4342,
+      "recent_weight": 0.2883,
+      "past_weight": 0.201,
+      "recent_avg_quality": 0.678957,
+      "past_avg_quality": 0.653027
+    },
+    {
+      "tag_name": "铁死亡",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -63,7 +190,7 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_0",
+      "tag_name": "药物靶点",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -71,7 +198,7 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_3",
+      "tag_name": "空气污染",
       "trend_future": 1.0,
       "recent_weight": 0.0,
       "past_weight": 0.0,
@@ -79,36 +206,156 @@
       "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_7",
-      "trend_future": 0.5462,
-      "recent_weight": 0.5119,
-      "past_weight": 0.9373,
-      "recent_avg_quality": 0.662447,
-      "past_avg_quality": 0.652396
+      "tag_name": "高血压 空气污染",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_2",
-      "trend_future": 0.0,
+      "tag_name": "污染 血压",
+      "trend_future": 1.0,
       "recent_weight": 0.0,
-      "past_weight": 0.5646,
+      "past_weight": 0.0,
       "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.660796
+      "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_1",
-      "trend_future": 0.0,
+      "tag_name": "中国 空气污染",
+      "trend_future": 1.0,
       "recent_weight": 0.0,
-      "past_weight": 0.5649,
+      "past_weight": 0.0,
       "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.661963
+      "past_avg_quality": 0.0
     },
     {
-      "project_or_domain": "domain_6",
+      "tag_name": "空气污染 血液",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "RNA 肿瘤",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "中国",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "微小RNA 7",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "感染 微小RNA",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "高血压",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "综合标签",
+      "trend_future": 0.9208,
+      "recent_weight": 0.5172,
+      "past_weight": 0.5617,
+      "recent_avg_quality": 0.690807,
+      "past_avg_quality": 0.655877
+    },
+    {
+      "tag_name": "微小RNA",
+      "trend_future": 0.5755,
+      "recent_weight": 0.2653,
+      "past_weight": 0.461,
+      "recent_avg_quality": 0.662407,
+      "past_avg_quality": 0.65402
+    },
+    {
+      "tag_name": "不良药物反应",
       "trend_future": 0.0,
       "recent_weight": 0.0,
-      "past_weight": 0.1871,
+      "past_weight": 0.3489,
       "recent_avg_quality": 0.0,
-      "past_avg_quality": 0.648346
+      "past_avg_quality": 0.65933
+    },
+    {
+      "tag_name": "毒性",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.3166,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.65933
+    },
+    {
+      "tag_name": "微小RNA 483",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.1631,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.649143
+    },
+    {
+      "tag_name": "代谢",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.1894,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68121
+    },
+    {
+      "tag_name": "抗氧化",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.3775,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.67341
+    },
+    {
+      "tag_name": "血液",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0508,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "血液 感染",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0508,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "微小RNA 信使RNA",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.055,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.65436
     }
   ]
 }

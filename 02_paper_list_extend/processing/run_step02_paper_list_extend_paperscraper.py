@@ -109,6 +109,23 @@ def _parse_pub_date(d: dict[str, Any]) -> str:
     return raw_s
 
 
+def _normalize_pub_date(s: str) -> str:
+    s = _as_str(s)
+    if not s:
+        return ""
+    m = re.match(r"^((19|20)\d{2})-(\d{2})-(\d{2})$", s)
+    if m:
+        return s
+    m = re.match(r"^((19|20)\d{2})-(\d{2})$", s)
+    if m:
+        return f"{m.group(1)}-{m.group(3)}-01"
+    m = re.match(r"^((19|20)\d{2})$", s)
+    if m:
+        return f"{m.group(1)}-01-01"
+    # fallback: keep original if parser failed
+    return s
+
+
 def _parse_doi(d: dict[str, Any]) -> str:
     doi = _pick(d, ["doi", "DOI"])
     doi_s = _as_str(doi)
@@ -334,6 +351,24 @@ class PaperRecord:
         }
 
 
+def _clean_record(r: PaperRecord) -> PaperRecord | None:
+    title = _as_str(r.title)
+    if not title:
+        return None
+    return PaperRecord(
+        title=title,
+        abstract=_as_str(r.abstract),
+        pub_date=_normalize_pub_date(r.pub_date),
+        authors=[_as_str(a) for a in r.authors if _as_str(a)],
+        doi=_as_str(r.doi),
+        url=_as_str(r.url),
+        source=_as_str(r.source) or "unknown",
+        pmid=_as_str(r.pmid),
+        venue=_as_str(r.venue),
+        citation_count=r.citation_count,
+    )
+
+
 def _read_pubmed_from_step01(abstracts_path: Path) -> list[PaperRecord]:
     if abstracts_path.suffix.lower() == ".jsonl":
         records = list(_read_jsonl_records(abstracts_path))
@@ -522,6 +557,13 @@ def main() -> None:
         )
         print(f"[info] OpenAIRE 抓取到候选记录：{len(openaire_rows)}")
         all_records.extend(openaire_rows)
+
+    cleaned_records: list[PaperRecord] = []
+    for r in all_records:
+        cr = _clean_record(r)
+        if cr is not None:
+            cleaned_records.append(cr)
+    all_records = cleaned_records
 
     merged_out = merged_dir / f"{output_prefix}_all_records_before_dedup.jsonl"
     with merged_out.open("w", encoding="utf-8") as f:

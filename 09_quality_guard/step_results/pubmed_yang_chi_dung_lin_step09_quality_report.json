@@ -1,0 +1,22 @@
+{
+  "prefix": "pubmed_yang_chi_dung_lin",
+  "status": "pass",
+  "counts": {
+    "step02": 529,
+    "step03": 529,
+    "step04": 36,
+    "step05": 36
+  },
+  "summary": {
+    "errors": 0,
+    "warnings": 1
+  },
+  "findings": [
+    {
+      "severity": "warn",
+      "check": "step02.pub_date",
+      "detail": "invalid/empty pub_date rows: 11"
+    }
+  ],
+  "uses_pandera": false
+}

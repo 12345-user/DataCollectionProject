@@ -1,0 +1,170 @@
+{
+  "queue_l2_count": 80,
+  "queue_l3_count": 58,
+  "learned_l2_count": 62,
+  "learned_l3_count": 38,
+  "top_queue_l2": [
+    {
+      "tag": "mirna",
+      "count": 1
+    },
+    {
+      "tag": "cancer",
+      "count": 1
+    },
+    {
+      "tag": "mirnas",
+      "count": 1
+    },
+    {
+      "tag": "drug",
+      "count": 1
+    },
+    {
+      "tag": "breast cancer",
+      "count": 1
+    },
+    {
+      "tag": "microrna",
+      "count": 1
+    },
+    {
+      "tag": "tumor",
+      "count": 1
+    },
+    {
+      "tag": "omics",
+      "count": 1
+    },
+    {
+      "tag": "drugs",
+      "count": 1
+    },
+    {
+      "tag": "micrornas mirnas",
+      "count": 1
+    },
+    {
+      "tag": "micrornas",
+      "count": 1
+    },
+    {
+      "tag": "mirna target",
+      "count": 1
+    },
+    {
+      "tag": "cancers",
+      "count": 1
+    },
+    {
+      "tag": "microrna target",
+      "count": 1
+    },
+    {
+      "tag": "multi omics",
+      "count": 1
+    },
+    {
+      "tag": "mirna mrna",
+      "count": 1
+    },
+    {
+      "tag": "of mirna",
+      "count": 1
+    },
+    {
+      "tag": "negative breast cancer",
+      "count": 1
+    },
+    {
+      "tag": "mirnas are",
+      "count": 1
+    },
+    {
+      "tag": "validated microrna target",
+      "count": 1
+    }
+  ],
+  "top_queue_l3": [
+    {
+      "tag": "database",
+      "count": 1
+    },
+    {
+      "tag": "datasets",
+      "count": 1
+    },
+    {
+      "tag": "deep learning",
+      "count": 1
+    },
+    {
+      "tag": "framework",
+      "count": 1
+    },
+    {
+      "tag": "databases",
+      "count": 1
+    },
+    {
+      "tag": "atlas",
+      "count": 1
+    },
+    {
+      "tag": "cancer genome atlas",
+      "count": 1
+    },
+    {
+      "tag": "neural network",
+      "count": 1
+    },
+    {
+      "tag": "dataset",
+      "count": 1
+    },
+    {
+      "tag": "updated database",
+      "count": 1
+    },
+    {
+      "tag": "deep learning based",
+      "count": 1
+    },
+    {
+      "tag": "genome atlas",
+      "count": 1
+    },
+    {
+      "tag": "databases and",
+      "count": 1
+    },
+    {
+      "tag": "framework for",
+      "count": 1
+    },
+    {
+      "tag": "sicmir atlas",
+      "count": 1
+    },
+    {
+      "tag": "datasets deepadr",
+      "count": 1
+    },
+    {
+      "tag": "multimodal deep learning",
+      "count": 1
+    },
+    {
+      "tag": "semantic datasets deepadr",
+      "count": 1
+    },
+    {
+      "tag": "scopedti deep learning",
+      "count": 1
+    },
+    {
+      "tag": "human dti dataset",
+      "count": 1
+    }
+  ]
+}

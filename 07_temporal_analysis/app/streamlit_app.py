@@ -94,19 +94,27 @@ def _norm_name(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
 
 
-def _is_first_author(authors: list[str], target_author: str) -> str:
+def _is_first_author(authors: list[str], target_author: str) -> tuple[str, str]:
     if not authors:
-        return "未知"
+        return "未知", "无作者列表"
     if not target_author.strip():
-        return "未设置目标作者"
+        return "未设置目标作者", "未填写目标作者名"
     first_raw = str(authors[0] or "").strip()
     target_raw = str(target_author or "").strip()
     if not first_raw or not target_raw:
-        return "未知"
+        return "未知", "首位作者或目标作者为空"
+
+    def _looks_like_initials(tok: str) -> bool:
+        t = re.sub(r"[^a-z]", "", tok.lower())
+        if not t:
+            return False
+        # e.g., "hd", "h", "hdy"
+        return len(t) <= 4
 
     def _name_parts(s: str) -> tuple[str, str]:
         s = s.strip()
         if "," in s:
+            # Last, Given/Initials
             parts = [x.strip() for x in s.split(",", 1)]
             last = re.sub(r"[^a-z]", "", parts[0].lower())
             given = re.sub(r"[^a-z]", "", parts[1].lower() if len(parts) > 1 else "")
@@ -115,19 +123,32 @@ def _is_first_author(authors: list[str], target_author: str) -> str:
         toks = [t for t in toks if t]
         if not toks:
             return "", ""
+        if len(toks) == 1:
+            return toks[0], ""
+        # Heuristic: "Huang HD" / "Huang H" => Last + initials.
+        if _looks_like_initials(toks[-1]) and len(toks[0]) > 1:
+            return toks[0], toks[-1]
+        # Default: Given ... Last
         return toks[-1], "".join(toks[:-1])
 
     f_last, f_given = _name_parts(first_raw)
     t_last, t_given = _name_parts(target_raw)
     if not f_last or not t_last or f_last != t_last:
-        return "否"
+        return "否", f"姓不匹配：first={f_last or '∅'} target={t_last or '∅'}"
     # Given-name tolerance: initials or partial matching.
     if not t_given:
-        return "是"
+        return "是", "姓匹配；目标名缺失名/缩写，按姓匹配判定"
     if not f_given:
-        return "否"
-    ok = f_given.startswith(t_given[:1]) or t_given.startswith(f_given[:1]) or (t_given in f_given) or (f_given in t_given)
-    return "是" if ok else "否"
+        return "否", "姓匹配但首位作者缺失名/缩写"
+    ok = (
+        f_given.startswith(t_given[:1])
+        or t_given.startswith(f_given[:1])
+        or (t_given in f_given)
+        or (f_given in t_given)
+    )
+    if ok:
+        return "是", f"姓匹配；名/缩写匹配：first={f_given} target={t_given}"
+    return "否", f"姓匹配但名/缩写不匹配：first={f_given} target={t_given}"
 
 
 def _to_keyword_text(raw_keywords: object, topn: int = 6) -> str:
@@ -184,41 +205,139 @@ def _kw_to_cn(kw: str) -> str:
     return low
 
 
-def _build_related_keywords_cn(
-    domain_theme_cn: str,
-    domain_keywords: list[str] | None,
-    paper_keywords: list[str] | None,
-    max_total: int = 5,
-) -> str:
-    domain_keywords = domain_keywords or []
-    paper_keywords = paper_keywords or []
-    picked: list[str] = []
-    seen: set[str] = set()
+def _has_cjk(s: str) -> bool:
+    return any("\u4e00" <= ch <= "\u9fff" for ch in (s or ""))
 
-    # Domain keywords first: keep high relevance.
-    for kw in domain_keywords[:3]:
-        cn = _kw_to_cn(str(kw))
-        key = _norm_name(cn)
-        if cn and key and key not in seen:
-            seen.add(key)
-            picked.append(cn)
-        if len(picked) >= max_total:
-            break
 
-    # Paper keywords: enrich slightly, not too much.
-    if len(picked) < max_total:
-        for kw in paper_keywords:
-            cn = _kw_to_cn(str(kw))
-            key = _norm_name(cn)
-            if cn and key and key not in seen:
-                seen.add(key)
-                picked.append(cn)
-            if len(picked) >= max_total:
-                break
+def _has_ascii_alpha(s: str) -> bool:
+    return bool(re.search(r"[A-Za-z]", s or ""))
 
-    # Ensure Chinese context via domain theme prefix.
-    prefix = f"{(domain_theme_cn or '').strip()}："
-    return prefix + "；".join(picked[:max_total]) if picked else (domain_theme_cn or "")
+
+def _tag_name_zh(tag_name: str) -> str:
+    """
+    Map internal tag key -> Chinese display name (local, no API).
+    If already Chinese, keep. Else use a small glossary; fallback to "<EN>相关".
+    """
+    s = (tag_name or "").strip()
+    if not s:
+        return ""
+    # If it contains English letters, try to translate + strip leftovers.
+    if _has_cjk(s) and not _has_ascii_alpha(s):
+        return s
+    low = re.sub(r"\s+", " ", s.lower()).strip()
+    glossary = {
+        "database": "数据库/平台",
+        "databases": "数据库/平台",
+        "atlas": "图谱/数据库",
+        "platform": "平台",
+        "framework": "框架",
+        "pipeline": "流程/管线",
+        "tool": "工具开发",
+        "benchmark": "基准评测",
+        "dataset": "数据集",
+        "datasets": "数据集",
+        "deep learning": "深度学习",
+        "neural network": "神经网络",
+        "deep neural network": "深度神经网络",
+        "transformer": "Transformer模型",
+        "multimodal": "多模态学习",
+        "bioinformatics": "生物信息学",
+        "cancer genome atlas": "癌症基因组图谱",
+        "cancer": "肿瘤生物学",
+        "tumor": "肿瘤生物学",
+        "breast cancer": "乳腺癌",
+        "glioblastoma": "胶质母细胞瘤",
+        "microrna": "微小RNA（miRNA）",
+        "mirna": "微小RNA（miRNA）",
+        "mirnas": "微小RNA（miRNA）",
+        "omics": "组学",
+        "drug": "药物研究",
+        "drugs": "药物研究",
+        "drug discovery": "药物发现",
+        "drug target": "药物靶点",
+    }
+    if low in glossary:
+        return glossary[low]
+
+    # Phrase-level replacement then remove leftover English fragments.
+    out = low
+    # longer keys first
+    for k in sorted(glossary.keys(), key=len, reverse=True):
+        out = out.replace(k, glossary[k])
+    out = re.sub(r"[A-Za-z]+", " ", out)
+    out = re.sub(r"\s+", " ", out).strip(" -_/，。;；()[]{}")
+    if _has_cjk(out) and not _has_ascii_alpha(out):
+        return out
+    # Last resort: keep only Chinese chars if any
+    only_zh = "".join([ch for ch in out if "\u4e00" <= ch <= "\u9fff" or ch in "/-+（）()、，； "]).strip()
+    only_zh = re.sub(r"\s+", " ", only_zh).strip(" -_/，。;；")
+    if _has_cjk(only_zh) and not _has_ascii_alpha(only_zh):
+        return only_zh
+    return "综合主题汇总"
+
+
+def _tag_label(tag_name: str) -> str:
+    zh = _tag_name_zh(tag_name)
+    if not zh:
+        return ""
+    if zh == tag_name:
+        return zh
+    return f"{zh}（{tag_name}）"
+
+
+def _paper_tags_text_from_step05(r05: dict) -> str:
+    """
+    Display all tags for a paper: L1/L2/L3 layer tags + L4 detailed tags with weights.
+    """
+    parts: list[str] = []
+
+    l1 = str(r05.get("layer_l1_tag") or "").strip()
+    if l1:
+        parts.append(f"L1:{l1}")
+
+    def _layer_items_to_str(items: object, level: str) -> None:
+        if not isinstance(items, list) or not items:
+            return
+        segs: list[str] = []
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            name = str(it.get("tag_name") or "").strip()
+            if not name:
+                continue
+            name = _tag_name_zh(name)
+            w = it.get("tag_weight", None)
+            try:
+                wf = float(w) if w is not None else None
+            except Exception:
+                wf = None
+            segs.append(f"{name}({wf:.2f})" if wf is not None else name)
+        if segs:
+            parts.append(f"{level}:" + "，".join(segs))
+
+    _layer_items_to_str(r05.get("layer_l2_items"), "L2")
+    _layer_items_to_str(r05.get("layer_l3_items"), "L3")
+
+    tag_items = r05.get("tag_items") or []
+    if isinstance(tag_items, list) and tag_items:
+        segs: list[str] = []
+        for it in tag_items:
+            if not isinstance(it, dict):
+                continue
+            name = str(it.get("tag_name") or "").strip()
+            if not name:
+                continue
+            name = _tag_name_zh(name)
+            w = it.get("tag_weight", None)
+            try:
+                wf = float(w) if w is not None else None
+            except Exception:
+                wf = None
+            segs.append(f"{name}({wf:.2f})" if wf is not None else name)
+        if segs:
+            parts.append("L4:" + "，".join(segs))
+
+    return "；".join(parts)
 
 
 def _load_paper_catalog(
@@ -274,6 +393,7 @@ def _load_paper_catalog(
         if not isinstance(authors, list):
             authors = [str(authors)] if authors else []
 
+        fa, fa_reason = _is_first_author(authors, target_author)
         out_rows.append(
             {
                 "论文名称": title,
@@ -286,13 +406,9 @@ def _load_paper_catalog(
                     if str(r.get("identity_score", "")).strip() != ""
                     else None
                 ),
-                "一作是否目标作者": _is_first_author(authors, target_author),
-                "主要概要关键词": _build_related_keywords_cn(
-                    str(r05.get("domain_theme_cn") or r05.get("domain_theme") or ""),
-                    list(r05.get("domain_keywords") or []),
-                    list(r04.get("keywords") or []),
-                    max_total=5,
-                ),
+                "一作是否目标作者": fa,
+                "一作判定依据": fa_reason,
+                "论文标签": _paper_tags_text_from_step05(r05),
                 "首位作者": (str(authors[0]).strip() if authors else ""),
             }
         )
@@ -345,9 +461,109 @@ def _run_oneclick_pipeline(
     return ok, out.strip()
 
 
-def _domain_share_df(con: duckdb.DuckDBPyConnection, professor: str, start: date | None, end: date | None) -> pd.DataFrame:
+def _run_tag_learning_and_refresh(prefix: str) -> tuple[bool, str]:
+    """
+    One-click: purge+dedupe learned tags, rebuild report, rerun Step06 tagging, rerun Step07 outputs + DuckDB.
+    This updates charts + paper list without re-collecting papers.
+    """
+    project_root = Path(__file__).resolve().parents[2]
+    python = project_root / ".venv" / "Scripts" / "python.exe"
+    if not python.exists():
+        return False, f"未找到虚拟环境 Python：{python}"
+
+    step04 = project_root / f"05_keyword_entity/step_results/{prefix}_step04_keyword_entity.jsonl"
+    step06_paper = project_root / f"06_domain_clustering/step_results/{prefix}_step05_paper_domains.jsonl"
+    step06_domains = project_root / f"06_domain_clustering/step_results/{prefix}_step05_domains.json"
+    timeline_out = project_root / f"07_temporal_analysis/step_results/{prefix}_step06_project_timeline.json"
+    allocation_out = project_root / f"07_temporal_analysis/step_results/{prefix}_step06_effort_allocation.json"
+    report_out = project_root / f"07_temporal_analysis/step_results/{prefix}_step06_trend_report.md"
+    duckdb_path = project_root / "07_temporal_analysis/step_results/pipeline.duckdb"
+
+    cmds: list[list[str]] = [
+        [
+            str(python),
+            "08_taxonomy_memory/processing/review_queue_3layer.py",
+            "--purge-learned",
+            "--min-score",
+            "8",
+            "--min-len-ascii",
+            "6",
+        ],
+        [
+            str(python),
+            "08_taxonomy_memory/processing/build_tag_report.py",
+            "--queue-l2",
+            "08_taxonomy_memory/step_results/learning_queue_l2.jsonl",
+            "--queue-l3",
+            "08_taxonomy_memory/step_results/learning_queue_l3.jsonl",
+            "--learned-l2",
+            "08_taxonomy_memory/step_results/learned_l2.jsonl",
+            "--learned-l3",
+            "08_taxonomy_memory/step_results/learned_l3.jsonl",
+            "--output",
+            "08_taxonomy_memory/step_results/tag_report.json",
+        ],
+        [
+            str(python),
+            "06_domain_clustering/processing/run_step06_domain_clustering.py",
+            "--input",
+            str(step04),
+            "--paper-domains-output",
+            str(step06_paper),
+            "--domains-output",
+            str(step06_domains),
+            "--model",
+            "sentence-transformers/all-MiniLM-L6-v2",
+            "--local-files-only",
+        ],
+        [
+            str(python),
+            "07_temporal_analysis/processing/run_step07_temporal_analysis.py",
+            "--input",
+            str(step06_paper),
+            "--timeline-output",
+            str(timeline_out),
+            "--allocation-output",
+            str(allocation_out),
+            "--report-output",
+            str(report_out),
+        ],
+        [
+            str(python),
+            "07_temporal_analysis/processing/build_step07_duckdb.py",
+            "--professor",
+            prefix,
+            "--paper-domains",
+            str(step06_paper),
+            "--duckdb-path",
+            str(duckdb_path),
+        ],
+    ]
+
+    logs: list[str] = []
+    for cmd in cmds:
+        try:
+            cp = subprocess.run(cmd, cwd=str(project_root), text=True, capture_output=True, timeout=1800, check=False)
+        except Exception as e:
+            return False, "\n".join(logs + [f"[异常] {e}"])
+        out = (cp.stdout or "") + ("\n" + cp.stderr if cp.stderr else "")
+        logs.append(f"$ {' '.join(cmd)}\n{out}".rstrip())
+        if cp.returncode != 0:
+            return False, "\n\n".join(logs)
+    return True, "\n\n".join(logs)
+
+
+def _tag_share_df(
+    con: duckdb.DuckDBPyConnection,
+    professor: str,
+    level: int,
+    start: date | None,
+    end: date | None,
+) -> pd.DataFrame:
     where = ["professor = ?"]
     params: list[object] = [professor]
+    where.append("level = ?")
+    params.append(int(level))
     if start is not None:
         where.append("pub_date >= ?")
         params.append(start)
@@ -355,18 +571,26 @@ def _domain_share_df(con: duckdb.DuckDBPyConnection, professor: str, start: date
         where.append("pub_date <= ?")
         params.append(end)
     sql = f"""
-      select domain_name, sum(weight) as weight
-      from v_domain_share
+      select tag_name, sum(weight) as weight
+      from v_tag_share
       where {' and '.join(where)}
-      group by domain_name
+      group by tag_name
       order by weight desc
     """
     return con.execute(sql, params).df()
 
 
-def _domain_time_df(con: duckdb.DuckDBPyConnection, professor: str, start: date | None, end: date | None) -> pd.DataFrame:
+def _tag_time_df(
+    con: duckdb.DuckDBPyConnection,
+    professor: str,
+    level: int,
+    start: date | None,
+    end: date | None,
+) -> pd.DataFrame:
     where = ["professor = ?"]
     params: list[object] = [professor]
+    where.append("level = ?")
+    params.append(int(level))
     if start is not None:
         where.append("month >= date_trunc('quarter', ?)")
         params.append(start)
@@ -374,10 +598,10 @@ def _domain_time_df(con: duckdb.DuckDBPyConnection, professor: str, start: date 
         where.append("month <= date_trunc('quarter', ?)")
         params.append(end)
     sql = f"""
-      select domain_name, month, paper_count, weight
-      from v_domain_time
+      select tag_name, month, paper_count, weight
+      from v_tag_time
       where {' and '.join(where)}
-      order by month asc, domain_name asc
+      order by month asc, tag_name asc
     """
     df = con.execute(sql, params).df()
     if not df.empty:
@@ -387,10 +611,10 @@ def _domain_time_df(con: duckdb.DuckDBPyConnection, professor: str, start: date 
 
 def _predict_next_quarters(df_time: pd.DataFrame, value_col: str, steps: int = 4) -> pd.DataFrame:
     if df_time.empty:
-        return pd.DataFrame(columns=["month", "domain_name", value_col, "series_type"])
+        return pd.DataFrame(columns=["month", "tag_name", value_col, "series_type"])
     now_q_start = pd.Timestamp.now().to_period("Q").start_time
     out_rows: list[dict[str, object]] = []
-    for domain, grp in df_time.groupby("domain_name"):
+    for domain, grp in df_time.groupby("tag_name"):
         g = grp.sort_values("month")
         y = g[value_col].astype(float).to_numpy()
         if len(y) < 2:
@@ -406,7 +630,7 @@ def _predict_next_quarters(df_time: pd.DataFrame, value_col: str, steps: int = 4
             out_rows.append(
                 {
                     "month": first_pred_ts + pd.DateOffset(months=3 * i),
-                    "domain_name": domain,
+                    "tag_name": domain,
                     value_col: float(pred),
                     "series_type": "预测",
                 }
@@ -453,7 +677,7 @@ def _period_index(start: pd.Timestamp, end: pd.Timestamp, months_step: int) -> l
 
 
 def _prepare_series(df_time: pd.DataFrame, domain: str, value_col: str, months_step: int = 3) -> pd.Series:
-    g = df_time[df_time["domain_name"] == domain].copy().sort_values("month")
+    g = df_time[df_time["tag_name"] == domain].copy().sort_values("month")
     if g.empty:
         return pd.Series(dtype=float)
     idx = _period_index(pd.Timestamp(g["month"].min()), pd.Timestamp(g["month"].max()), months_step)
@@ -468,9 +692,9 @@ def _to_halfyear(df_time: pd.DataFrame) -> pd.DataFrame:
     out = df_time.copy()
     out["month"] = out["month"].apply(lambda x: _period_start(pd.Timestamp(x), 6))
     return (
-        out.groupby(["domain_name", "month"], as_index=False)[["paper_count", "weight"]]
+        out.groupby(["tag_name", "month"], as_index=False)[["paper_count", "weight"]]
         .sum()
-        .sort_values(["month", "domain_name"])
+        .sort_values(["month", "tag_name"])
     )
 
 
@@ -480,9 +704,9 @@ def _to_year(df_time: pd.DataFrame) -> pd.DataFrame:
     out = df_time.copy()
     out["month"] = out["month"].apply(lambda x: _period_start(pd.Timestamp(x), 12))
     return (
-        out.groupby(["domain_name", "month"], as_index=False)[["paper_count", "weight"]]
+        out.groupby(["tag_name", "month"], as_index=False)[["paper_count", "weight"]]
         .sum()
-        .sort_values(["month", "domain_name"])
+        .sort_values(["month", "tag_name"])
     )
 
 
@@ -493,19 +717,19 @@ def _fill_history_quarters(
     months_step: int = 3,
 ) -> pd.DataFrame:
     if df_time.empty:
-        return pd.DataFrame(columns=["month", "domain_name", value_col, "series_type"])
+        return pd.DataFrame(columns=["month", "tag_name", value_col, "series_type"])
     start = max(pd.Timestamp(min_start), _period_start(pd.Timestamp(df_time["month"].min()), months_step))
     end = _period_start(pd.Timestamp(df_time["month"].max()), months_step)
     q_idx = _period_index(start, end, months_step)
     rows: list[dict[str, object]] = []
-    for domain in sorted(df_time["domain_name"].dropna().unique()):
-        g = df_time[df_time["domain_name"] == domain].copy()
+    for domain in sorted(df_time["tag_name"].dropna().unique()):
+        g = df_time[df_time["tag_name"] == domain].copy()
         s = g.set_index("month")[value_col].astype(float).reindex(q_idx, fill_value=0.0)
         for ts, val in s.items():
             rows.append(
                 {
                     "month": pd.Timestamp(ts),
-                    "domain_name": domain,
+                    "tag_name": domain,
                     value_col: float(max(0.0, val)),
                     "series_type": "历史",
                 }
@@ -590,14 +814,14 @@ def _predict_with_model(
     months_step: int = 3,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     if df_time.empty:
-        empty_pred = pd.DataFrame(columns=["month", "domain_name", value_col, "series_type", "model"])
-        empty_meta = pd.DataFrame(columns=["domain_name", "value_col", "model", "mae", "mape"])
+        empty_pred = pd.DataFrame(columns=["month", "tag_name", value_col, "series_type", "model"])
+        empty_meta = pd.DataFrame(columns=["tag_name", "value_col", "model", "mae", "mape"])
         return empty_pred, empty_meta
 
     now_q_start = _period_start_now(months_step)
     pred_rows: list[dict[str, object]] = []
     meta_rows: list[dict[str, object]] = []
-    for domain in sorted(df_time["domain_name"].dropna().unique()):
+    for domain in sorted(df_time["tag_name"].dropna().unique()):
         s = _prepare_series(df_time, domain, value_col, months_step=months_step)
         if s.empty:
             continue
@@ -643,7 +867,7 @@ def _predict_with_model(
             pred_rows.append(
                 {
                     "month": first_ts + pd.DateOffset(months=months_step * i),
-                    "domain_name": domain,
+                    "tag_name": domain,
                     value_col: float(pred),
                     "series_type": "预测",
                     "model": selected,
@@ -651,7 +875,7 @@ def _predict_with_model(
             )
         meta_rows.append(
             {
-                "domain_name": domain,
+                "tag_name": domain,
                 "value_col": value_col,
                 "model": selected,
                 "mae": None if np.isinf(best_mae) else round(float(best_mae), 4),
@@ -668,24 +892,26 @@ def _summary_text(df_share: pd.DataFrame, df_time: pd.DataFrame, df_pred_weight:
         return ["当前时间范围内没有可用于总结的数据。"]
     top_now = df_share.sort_values("weight", ascending=False).head(3)
     lines.append(
-        "当前主要方向：" + "；".join([f"{r.domain_name}（权重{r.weight:.2f}）" for r in top_now.itertuples(index=False)])
+        "当前主要标签："
+        + "；".join([f"{_tag_label(r.tag_name)}（权重{r.weight:.2f}）" for r in top_now.itertuples(index=False)])
     )
     if not df_pred_weight.empty:
         pred_sum = (
-            df_pred_weight.groupby("domain_name", as_index=False)["weight"]
+            df_pred_weight.groupby("tag_name", as_index=False)["weight"]
             .sum()
             .sort_values("weight", ascending=False)
             .head(3)
         )
         lines.append(
-            "未来4个季度预测：" + "；".join([f"{r.domain_name}（预测累计{r.weight:.2f}）" for r in pred_sum.itertuples(index=False)])
+            "未来4个季度预测："
+            + "；".join([f"{_tag_label(r.tag_name)}（预测累计{r.weight:.2f}）" for r in pred_sum.itertuples(index=False)])
         )
     if not df_time.empty:
-        latest = df_time.sort_values("month").groupby("domain_name", as_index=False).tail(1)
+        latest = df_time.sort_values("month").groupby("tag_name", as_index=False).tail(1)
         strongest = latest.sort_values("weight", ascending=False).head(1)
         if not strongest.empty:
             r = strongest.iloc[0]
-            lines.append(f"最近年度最活跃方向：{r['domain_name']}（年度权重{r['weight']:.2f}）。")
+            lines.append(f"最近年度最活跃标签：{_tag_label(str(r['tag_name']))}（年度权重{r['weight']:.2f}）。")
     return lines
 
 
@@ -694,13 +920,15 @@ def _zh_model_meta(df: pd.DataFrame) -> pd.DataFrame:
         return df
     renamed = df.rename(
         columns={
-            "domain_name": "领域名称",
+            "tag_name": "标签名称",
             "value_col": "预测指标",
             "model": "模型",
             "mae": "MAE误差",
             "mape": "MAPE误差(%)",
         }
     ).copy()
+    if "标签名称" in renamed.columns:
+        renamed["标签名称"] = renamed["标签名称"].astype(str).apply(_tag_label)
     if "预测指标" in renamed.columns:
         renamed["预测指标"] = renamed["预测指标"].replace(
             {"paper_count": "论文数量", "weight": "精力/质量加权值"}
@@ -708,6 +936,98 @@ def _zh_model_meta(df: pd.DataFrame) -> pd.DataFrame:
     if "模型" in renamed.columns:
         renamed["模型"] = renamed["模型"].astype(str).str.upper()
     return renamed
+
+
+def _render_level_charts(level_title: str, df_time: pd.DataFrame, forecast_mode: str) -> pd.DataFrame:
+    st.markdown(f"**{level_title} 时间频率折线**")
+    if df_time.empty:
+        st.info("该筛选范围内无数据。")
+        st.markdown(f"**{level_title} 权重折线**")
+        st.info("该筛选范围内无数据。")
+        return pd.DataFrame()
+
+    hist = _fill_history_quarters(df_time, "paper_count", min_start="2021-01-01", months_step=12)
+    pred_cnt, model_meta_cnt = _predict_with_model(df_time, "paper_count", steps=2, mode=forecast_mode, months_step=12)
+    if not pred_cnt.empty:
+        pred_cnt["series_type"] = pred_cnt["model"].apply(lambda m: f"预测({str(m).upper()})")
+    plot_cnt = pd.concat([hist[["month", "tag_name", "paper_count", "series_type"]], pred_cnt], ignore_index=True)
+    plot_cnt["tag_label"] = plot_cnt["tag_name"].astype(str).apply(_tag_name_zh)
+    fig = px.line(
+        plot_cnt,
+        x="month",
+        y="paper_count",
+        color="tag_label",
+        line_dash="series_type",
+        markers=True,
+        labels={"month": "年份", "paper_count": "论文数量", "tag_label": "标签名称", "series_type": "序列类型"},
+    )
+    max_cnt = float(plot_cnt["paper_count"].max()) if not plot_cnt.empty else 1.0
+    q_start = pd.Timestamp("2021-01-01")
+    q_end = pd.Timestamp(plot_cnt["month"].max()) if not plot_cnt.empty else pd.Timestamp.now().to_period("Q").start_time
+    tick_vals, tick_texts = _year_tick_labels(q_start, q_end)
+    fig.update_xaxes(tickmode="array", tickvals=tick_vals, ticktext=tick_texts, range=[q_start, q_end + pd.DateOffset(months=12)])
+    fig.update_yaxes(rangemode="tozero", range=[0.0, max(1.0, max_cnt * 1.15)])
+    st.plotly_chart(fig, use_container_width=True)
+    if not model_meta_cnt.empty:
+        st.caption(f"{level_title} 论文频率预测模型与误差（回测）")
+        st.dataframe(_zh_model_meta(model_meta_cnt), use_container_width=True)
+
+    st.markdown(f"**{level_title} 权重折线**")
+    hist_w = _fill_history_quarters(df_time, "weight", min_start="2021-01-01", months_step=12)
+    pred_w, model_meta_w = _predict_with_model(df_time, "weight", steps=2, mode=forecast_mode, months_step=12)
+    if not pred_w.empty:
+        pred_w["series_type"] = pred_w["model"].apply(lambda m: f"预测({str(m).upper()})")
+    plot_w = pd.concat([hist_w[["month", "tag_name", "weight", "series_type"]], pred_w], ignore_index=True)
+    plot_w["tag_label"] = plot_w["tag_name"].astype(str).apply(_tag_name_zh)
+    fig = px.line(
+        plot_w,
+        x="month",
+        y="weight",
+        color="tag_label",
+        line_dash="series_type",
+        markers=True,
+        labels={"month": "年份", "weight": "精力/质量加权值", "tag_label": "标签名称", "series_type": "序列类型"},
+    )
+    max_w = float(plot_w["weight"].max()) if not plot_w.empty else 1.0
+    q_end = pd.Timestamp(plot_w["month"].max()) if not plot_w.empty else pd.Timestamp.now().to_period("Q").start_time
+    tick_vals, tick_texts = _year_tick_labels(q_start, q_end)
+    fig.update_xaxes(tickmode="array", tickvals=tick_vals, ticktext=tick_texts, range=[q_start, q_end + pd.DateOffset(months=12)])
+    fig.update_yaxes(rangemode="tozero", range=[0.0, max(1.0, max_w * 1.15)])
+    st.plotly_chart(fig, use_container_width=True)
+    if not model_meta_w.empty:
+        st.caption(f"{level_title} 权重预测模型与误差（回测）")
+        st.dataframe(_zh_model_meta(model_meta_w), use_container_width=True)
+    return pred_w
+
+
+def _load_latest_learned_tags() -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    for path, lvl in [
+        (Path("08_taxonomy_memory/step_results/learned_l2.jsonl"), "L2"),
+        (Path("08_taxonomy_memory/step_results/learned_l3.jsonl"), "L3"),
+    ]:
+        for r in _read_jsonl(path):
+            name = str(r.get("name") or "").strip()
+            name_zh = str(r.get("name_zh") or "").strip() or _tag_name_zh(name)
+            name_en = str(r.get("name_en") or "").strip() or (name if (name and not _has_cjk(name)) else "")
+            if not (name_zh or name_en):
+                continue
+            learned_at = str(r.get("learned_at") or "").strip()
+            rows.append(
+                {
+                    "标签中文": name_zh,
+                    "标签英文": name_en,
+                    "标签层级": str(r.get("level") or lvl),
+                    "习得时间": learned_at,
+                }
+            )
+    if not rows:
+        return pd.DataFrame(columns=["标签中文", "标签英文", "标签层级", "习得时间"])
+    df = pd.DataFrame(rows)
+    dt = pd.to_datetime(df["习得时间"], errors="coerce")
+    df["_ts"] = dt
+    df = df.sort_values("_ts", ascending=False, na_position="last").drop(columns=["_ts"]).reset_index(drop=True)
+    return df
 
 
 st.set_page_config(page_title="教授研究投入可视化", layout="wide")
@@ -734,7 +1054,7 @@ forecast_mode = st.sidebar.selectbox(
     "预测模型",
     options=["auto", "linear", "ets", "arima"],
     index=0,
-    help="auto 会按每个领域回测误差自动选择；ets/arima 来自 statsmodels 开源库。",
+    help="auto 会按每个标签回测误差自动选择；ets/arima 来自 statsmodels 开源库。",
 )
 default_author = professor.replace("pubmed_", "").replace("_", " ")
 target_author = st.sidebar.text_input("目标作者名（用于一作判断）", value=default_author)
@@ -775,143 +1095,129 @@ if start is not None and isinstance(start, datetime):
 if end is not None and isinstance(end, datetime):
     end = end.date()
 
-df_share = _domain_share_df(con, professor, start, end)
-df_time = _domain_time_df(con, professor, start, end)
-df_time = _to_year(df_time)
-pred_w = pd.DataFrame()
+st.sidebar.markdown("### 标签筛选体系")
+min_tag_weight = st.sidebar.slider("标签最小权重（适用于L1/L2/L3）", min_value=0.0, max_value=1.0, value=0.03, step=0.01)
 
-st.subheader("1) 主要领域占比（饼图）")
-if df_share.empty:
+df_share_l1 = _tag_share_df(con, professor, level=1, start=start, end=end)
+df_share_l2 = _tag_share_df(con, professor, level=2, start=start, end=end)
+df_share_l3 = _tag_share_df(con, professor, level=3, start=start, end=end)
+if not df_share_l1.empty:
+    df_share_l1 = df_share_l1[df_share_l1["weight"] >= float(min_tag_weight)].copy()
+if not df_share_l2.empty:
+    df_share_l2 = df_share_l2[df_share_l2["weight"] >= float(min_tag_weight)].copy()
+if not df_share_l3.empty:
+    df_share_l3 = df_share_l3[df_share_l3["weight"] >= float(min_tag_weight)].copy()
+
+tag_options_l1 = sorted(df_share_l1["tag_name"].tolist()) if not df_share_l1.empty else []
+tag_options_l2 = sorted(df_share_l2["tag_name"].tolist()) if not df_share_l2.empty else []
+tag_options_l3 = sorted(df_share_l3["tag_name"].tolist()) if not df_share_l3.empty else []
+label_to_key_l1 = { _tag_label(k): k for k in tag_options_l1 }
+label_to_key_l2 = { _tag_label(k): k for k in tag_options_l2 }
+label_to_key_l3 = { _tag_label(k): k for k in tag_options_l3 }
+label_opts_l1 = sorted(label_to_key_l1.keys())
+label_opts_l2 = sorted(label_to_key_l2.keys())
+label_opts_l3 = sorted(label_to_key_l3.keys())
+sel_label_l1 = st.sidebar.multiselect("L1 标签筛选（中文展示）", options=label_opts_l1, default=label_opts_l1)
+sel_label_l2 = st.sidebar.multiselect("L2 标签筛选（中文展示）", options=label_opts_l2, default=label_opts_l2[:6])
+sel_label_l3 = st.sidebar.multiselect("L3 标签筛选（中文展示）", options=label_opts_l3, default=label_opts_l3[:6])
+selected_l1 = [label_to_key_l1[x] for x in sel_label_l1 if x in label_to_key_l1]
+selected_l2 = [label_to_key_l2[x] for x in sel_label_l2 if x in label_to_key_l2]
+selected_l3 = [label_to_key_l3[x] for x in sel_label_l3 if x in label_to_key_l3]
+
+df_time_l1 = _to_year(_tag_time_df(con, professor, level=1, start=start, end=end))
+df_time_l2 = _to_year(_tag_time_df(con, professor, level=2, start=start, end=end))
+df_time_l3 = _to_year(_tag_time_df(con, professor, level=3, start=start, end=end))
+if selected_l1:
+    df_share_l1 = df_share_l1[df_share_l1["tag_name"].isin(selected_l1)].copy()
+    df_time_l1 = df_time_l1[df_time_l1["tag_name"].isin(selected_l1)].copy()
+if selected_l2:
+    df_share_l2 = df_share_l2[df_share_l2["tag_name"].isin(selected_l2)].copy()
+    df_time_l2 = df_time_l2[df_time_l2["tag_name"].isin(selected_l2)].copy()
+if selected_l3:
+    df_share_l3 = df_share_l3[df_share_l3["tag_name"].isin(selected_l3)].copy()
+    df_time_l3 = df_time_l3[df_time_l3["tag_name"].isin(selected_l3)].copy()
+pred_w_l3 = pd.DataFrame()
+
+st.subheader("1) L1 顶层大类轮盘（3类）")
+if df_share_l1.empty:
     st.info("该筛选范围内无数据。")
 else:
+    df_share_l1 = df_share_l1.copy()
+    df_share_l1["tag_label"] = df_share_l1["tag_name"].astype(str).apply(_tag_name_zh)
     fig = px.pie(
-        df_share,
-        names="domain_name",
+        df_share_l1,
+        names="tag_label",
         values="weight",
         hole=0.35,
-        labels={"domain_name": "领域名称", "weight": "权重"},
+        labels={"tag_label": "标签名称", "weight": "权重"},
     )
     st.plotly_chart(fig, use_container_width=True)
     st.dataframe(
-        df_share.rename(columns={"domain_name": "领域名称", "weight": "权重"}),
+        df_share_l1.rename(columns={"tag_label": "标签名称", "weight": "权重"})[["标签名称", "权重"]],
         use_container_width=True,
     )
+pred_w_l1 = _render_level_charts("L1", df_time_l1, forecast_mode)
 
-st.subheader("2. 时间频率折线")
-if df_time.empty:
+st.subheader("2) L2 高频标签轮盘")
+if df_share_l2.empty:
     st.info("该筛选范围内无数据。")
 else:
-    hist = _fill_history_quarters(df_time, "paper_count", min_start="2021-01-01", months_step=12)
-    pred_cnt, model_meta_cnt = _predict_with_model(
-        df_time,
-        "paper_count",
-        steps=2,
-        mode=forecast_mode,
-        months_step=12,
+    df_share_l2 = df_share_l2.copy()
+    df_share_l2["tag_label"] = df_share_l2["tag_name"].astype(str).apply(_tag_name_zh)
+    fig = px.pie(
+        df_share_l2,
+        names="tag_label",
+        values="weight",
+        hole=0.35,
+        labels={"tag_label": "标签名称", "weight": "权重"},
     )
-    if not pred_cnt.empty:
-        pred_cnt["series_type"] = pred_cnt["model"].apply(lambda m: f"预测({str(m).upper()})")
-    plot_cnt = pd.concat([hist[["month", "domain_name", "paper_count", "series_type"]], pred_cnt], ignore_index=True)
-    fig = px.line(
-        plot_cnt,
-        x="month",
-        y="paper_count",
-        color="domain_name",
-        line_dash="series_type",
-        markers=True,
-        labels={
-            "month": "年份",
-            "paper_count": "论文数量",
-            "domain_name": "领域名称",
-            "series_type": "序列类型",
-        },
-    )
-    max_cnt = float(plot_cnt["paper_count"].max()) if not plot_cnt.empty else 1.0
-    q_start = pd.Timestamp("2021-01-01")
-    q_end = pd.Timestamp(plot_cnt["month"].max()) if not plot_cnt.empty else pd.Timestamp.now().to_period("Q").start_time
-    tick_vals, tick_texts = _year_tick_labels(q_start, q_end)
-    fig.update_xaxes(
-        tickmode="array",
-        tickvals=tick_vals,
-        ticktext=tick_texts,
-        range=[q_start, q_end + pd.DateOffset(months=12)],
-    )
-    fig.update_yaxes(rangemode="tozero", range=[0.0, max(1.0, max_cnt * 1.15)])
     st.plotly_chart(fig, use_container_width=True)
-    if not model_meta_cnt.empty:
-        st.caption("论文频率预测模型与误差（回测）")
-        st.dataframe(_zh_model_meta(model_meta_cnt), use_container_width=True)
+    st.dataframe(df_share_l2.rename(columns={"tag_label": "标签名称", "weight": "权重"})[["标签名称", "权重"]], use_container_width=True)
+pred_w_l2 = _render_level_charts("L2", df_time_l2, forecast_mode)
 
-st.subheader("3. 权重折线")
-if df_time.empty:
+st.subheader("3) L3 高频标签轮盘")
+if df_share_l3.empty:
     st.info("该筛选范围内无数据。")
 else:
-    hist_w = _fill_history_quarters(df_time, "weight", min_start="2021-01-01", months_step=12)
-    pred_w, model_meta_w = _predict_with_model(
-        df_time,
-        "weight",
-        steps=2,
-        mode=forecast_mode,
-        months_step=12,
+    df_share_l3 = df_share_l3.copy()
+    df_share_l3["tag_label"] = df_share_l3["tag_name"].astype(str).apply(_tag_name_zh)
+    fig = px.pie(
+        df_share_l3,
+        names="tag_label",
+        values="weight",
+        hole=0.35,
+        labels={"tag_label": "标签名称", "weight": "权重"},
     )
-    if not pred_w.empty:
-        pred_w["series_type"] = pred_w["model"].apply(lambda m: f"预测({str(m).upper()})")
-    plot_w = pd.concat([hist_w[["month", "domain_name", "weight", "series_type"]], pred_w], ignore_index=True)
-    fig = px.line(
-        plot_w,
-        x="month",
-        y="weight",
-        color="domain_name",
-        line_dash="series_type",
-        markers=True,
-        labels={
-            "month": "年份",
-            "weight": "精力/质量加权值",
-            "domain_name": "领域名称",
-            "series_type": "序列类型",
-        },
-    )
-    max_w = float(plot_w["weight"].max()) if not plot_w.empty else 1.0
-    q_start = pd.Timestamp("2021-01-01")
-    q_end = pd.Timestamp(plot_w["month"].max()) if not plot_w.empty else pd.Timestamp.now().to_period("Q").start_time
-    tick_vals, tick_texts = _year_tick_labels(q_start, q_end)
-    fig.update_xaxes(
-        tickmode="array",
-        tickvals=tick_vals,
-        ticktext=tick_texts,
-        range=[q_start, q_end + pd.DateOffset(months=12)],
-    )
-    fig.update_yaxes(rangemode="tozero", range=[0.0, max(1.0, max_w * 1.15)])
     st.plotly_chart(fig, use_container_width=True)
-    if not model_meta_w.empty:
-        st.caption("精力/质量加权预测模型与误差（回测）")
-        st.dataframe(_zh_model_meta(model_meta_w), use_container_width=True)
+    st.dataframe(df_share_l3.rename(columns={"tag_label": "标签名称", "weight": "权重"})[["标签名称", "权重"]], use_container_width=True)
+pred_w_l3 = _render_level_charts("L3", df_time_l3, forecast_mode)
 
 st.subheader("4) 权重与精力预测公式")
 with st.expander("展开查看权重计算与预测模型原理", expanded=False):
-    st.markdown("**论文权重（用于领域占比与时间加权）**")
+    st.markdown("**论文权重（用于标签占比与时间加权）**")
     st.latex(r"w_{\text{paper}} = \text{identity\_score} \times \text{quality\_score}")
     st.markdown("其中：`identity_score` 来自同名消歧置信度，`quality_score` 来自论文质量评分。")
 
-    st.markdown("**季度聚合权重（图中 weight）**")
-    st.latex(r"W_{d,q} = \sum_{i \in (d,q)} \left(\text{identity\_score}_i \times \text{quality\_score}_i\right)")
-    st.markdown("其中：`d` 为领域，`q` 为季度。")
+    st.markdown("**年度聚合权重（图中 weight）**")
+    st.latex(r"W_{t,y} = \sum_{i \in (t,y)} \left(\text{identity\_score}_i \times \text{quality\_score}_i \times \text{tag\_weight}_i\right)")
+    st.markdown("其中：`t` 为标签，`y` 为年份。")
 
     st.markdown("**精力预测（未来4个季度线性外推）**")
     st.latex(r"\hat{y}_{t} = f_{\theta}(y_{1:t-1}),\quad t=\text{当前季度},\dots,\text{当前季度}+3")
     st.markdown(
         "`f_θ` 支持三种开源方法：`Linear`（线性回归外推）、`ETS`（指数平滑，statsmodels）、"
-        "`ARIMA(1,1,1)`（statsmodels）。`Auto` 模式按每个领域回测误差（MAE/MAPE）自动选最优。"
+        "`ARIMA(1,1,1)`（statsmodels）。`Auto` 模式按每个标签回测误差（MAE/MAPE）自动选最优。"
     )
     st.markdown(
         "- `Linear`：用历史点拟合一条直线，按斜率向未来外推，优点是稳定、可解释。\n"
         "- `ETS`：指数平滑模型，对近期数据赋予更高权重，可建模水平/趋势，适合平滑时序。\n"
         "- `ARIMA(1,1,1)`：先差分去趋势，再用自回归+移动平均建模时序相关性，适合有惯性波动的数据。\n"
-        "- `Auto`：对每个领域做回测，比较 MAE/MAPE 后自动选当前最优模型。"
+        "- `Auto`：对每个标签做回测，比较 MAE/MAPE 后自动选当前最优模型。"
     )
 
 st.subheader("5) 自动语言总结")
-for line in _summary_text(df_share, df_time, pred_w):
+df_share_summary = df_share_l3 if "df_share_l3" in globals() else pd.DataFrame(columns=["tag_name", "weight"])
+for line in _summary_text(df_share_summary, df_time_l3, pred_w_l3):
     st.markdown(f"- {line}")
 
 st.subheader("6) 发表时间核验（上半年/下半年）")
@@ -972,16 +1278,55 @@ with st.expander("展开查看来源网站清单", expanded=False):
         st.info("当前教授未识别到来源网站清单。")
 
 st.subheader("7) 论文清单（可折叠）")
-with st.expander("展开查看全部论文（标题/期刊/时间/来源/一作判断/关键词）", expanded=False):
+full_paper_df = _load_paper_catalog(
+    professor,
+    start=None,
+    end=None,
+    target_author=target_author,
+    strict_only=False,
+)
+with st.expander("展开查看全量论文", expanded=False):
+    if full_paper_df.empty:
+        st.info("暂无全量论文数据。")
+    else:
+        st.caption("全量口径：不受时间范围与严格模式影响，展示可读取到的全部候选论文。")
+        st.caption(f"全量论文条数：{len(full_paper_df)}")
+        st.dataframe(full_paper_df, use_container_width=True)
+
+with st.expander("展开查看当前符合要求的论文", expanded=False):
     if paper_df.empty:
-        st.info("暂无可展示论文。")
+        st.info("当前筛选条件下暂无论文。")
     else:
         if show_all_candidates:
-            st.caption("当前显示 Step03 全部候选（含 identity_decision=False）。")
+            st.caption("当前口径：受时间筛选影响，且显示 Step03 全部候选（含 identity_decision=False）。")
         else:
-            st.caption("当前为严格模式：仅显示 identity_decision=True。")
-        st.caption(f"当前清单条数：{len(paper_df)}")
+            st.caption("当前口径：受时间筛选影响，且仅显示 identity_decision=True（严格模式）。")
+        st.caption(f"当前符合要求条数：{len(paper_df)}")
         st.dataframe(paper_df, use_container_width=True)
+
+st.subheader("8) 最新学习标签（按习得时间倒序）")
+learned_df = _load_latest_learned_tags()
+if learned_df.empty:
+    st.info("当前暂无已习得标签。请先执行 Step08 审核写入 learned_l2/learned_l3。")
+else:
+    st.dataframe(learned_df, use_container_width=True)
+
+st.subheader("9) 一键学习与更新（标签去重 + 重新归类 + 同步论文清单）")
+with st.expander("展开执行：learned 去重清洗 → 重新计算 L1/L2/L3 → 刷新 DuckDB/图表/论文清单", expanded=False):
+    st.markdown(
+        "- 会对 `learned_l2/learned_l3` 做去重与质量门控清洗；\n"
+        "- 然后重跑 `Step06` 生成新的 L1/L2/L3 分类结果；\n"
+        "- 再重跑 `Step07` 与 DuckDB 写入，使图表与论文清单同步更新。\n"
+    )
+    if st.button("一键学习并更新当前教授标签", type="primary"):
+        with st.spinner("正在学习与更新标签（可能需要 1-3 分钟）..."):
+            ok, logs = _run_tag_learning_and_refresh(professor)
+        if ok:
+            st.success("已完成：标签去重/归类/刷新。页面会自动使用最新数据。")
+            st.rerun()
+        else:
+            st.error("执行失败，请查看日志。")
+            st.text_area("执行日志", value=logs[-12000:], height=260)
 
 st.caption(
     "说明：时间轴按年度节点统计，起始于2021-01-01；预测默认展示未来2个年度节点。"

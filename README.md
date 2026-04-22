@@ -53,11 +53,18 @@ powershell -ExecutionPolicy Bypass -File "scripts/run_full_pipeline_oneclick.ps1
   -ProfessorName "【教授姓名】" `
   -SeedPaperTitle "【种子论文名称】" `
   -SeedPMID "【可选PMID】" `
-  -ExtraSourceUrls "【可选来源URL1】" "【可选来源URL2】"
+  -ExtraSourceUrls "【可选来源URL1】" "【可选来源URL2】" `
+  -EnableSnorkel `
+  -EnableSetFit `
+  -EnableBERTopic `
+  -LocalFilesOnly
 ```
 
 说明：
 - 该命令会自动运行 Step01 到 Step07，并更新 `pipeline.duckdb`。
+- 默认额外运行 Step09 质量守卫（完整性与脏数据检查）。
+- 中长期增强按开关启用（均为本地执行）：`-EnableSetFit` / `-EnableBERTopic` / `-EnableSnorkel`。
+- `-LocalFilesOnly` 用于 SetFit/BERTopic 强制仅使用本地缓存模型（离线优先）。
 - 若参数 `-StartWeb` 默认开启，会尝试启动网页（默认端口 8502）。
 - 网页内也提供了同等的一键执行入口（输入作者名、种子论文、来源 URL）。
 

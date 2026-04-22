@@ -1,0 +1,27 @@
+version: "1.0"
+
+# Optional MeSH descriptor -> layered tags mapping.
+# Used only when local mesh lexicon exists (no remote API).
+#
+# format:
+# - mesh_term: canonical MeSH phrase
+#   l2_tag: mapped L2 tag
+#   l3_tag: mapped L3 tag (optional)
+
+mappings:
+  - mesh_term: "Neoplasms"
+    l2_tag: "肿瘤生物学"
+    l3_tag: "靶点鉴定"
+  - mesh_term: "Bioinformatics"
+    l2_tag: "生物信息学"
+    l3_tag: "数据库/平台"
+  - mesh_term: "Machine Learning"
+    l2_tag: "生物信息学"
+    l3_tag: "深度学习"
+  - mesh_term: "Drug-Related Side Effects and Adverse Reactions"
+    l2_tag: "药物安全"
+    l3_tag: "靶点鉴定"
+  - mesh_term: "Pharmacology"
+    l2_tag: "中药药理学"
+    l3_tag: "网络药理学"
+

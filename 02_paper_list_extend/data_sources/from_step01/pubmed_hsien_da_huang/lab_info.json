@@ -3,12 +3,20 @@
   "unique_affiliations": 535,
   "disambiguation_keywords": [
     "The Chinese University of Hong Kong",
-    "School of Medicine",
     "Warshel Institute for Computational Biology",
-    "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development"
+    "School of Medicine",
+    "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development",
+    "Department of General Practice",
+    "Shenzhen Luohu People's Hospital",
+    "Luohu Clinical College",
+    "Shantou University Medical College",
+    "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation",
+    "Department of Electrical & Computer Engineering",
+    "University of Illinois at Chicago",
+    "Department of Endocrinology"
   ],
-  "count_affiliations_after_filter": 928,
-  "unique_affiliations_after_filter": 191,
+  "count_affiliations_after_filter": 954,
+  "unique_affiliations_after_filter": 206,
   "top_affiliations": [
     {
       "affiliation": "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
@@ -259,7 +267,27 @@
       "count": 4
     },
     {
+      "affiliation": "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China.",
+      "count": 3
+    },
+    {
       "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
+      "count": 3
+    },
+    {
+      "affiliation": "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China.",
       "count": 3
     },
     {
@@ -297,6 +325,10 @@
     {
       "affiliation": "School of Life and Health Science, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "count": 3
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
+      "count": 2
     },
     {
       "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
@@ -407,6 +439,18 @@
       "count": 2
     },
     {
+      "affiliation": "Department of Electrical & Computer Engineering, University of Illinois at Chicago, Chicago, IL 60607, USA.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, P. R. China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, No. 157 Malianwa North Road, Haidian District, Beijing 100730, P.R. China.",
+      "count": 1
+    },
+    {
       "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
       "count": 1
     },
@@ -415,7 +459,15 @@
       "count": 1
     },
     {
+      "affiliation": "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
       "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, People's Republic of China. huanghsienda@cuhk.edu.cn.",
       "count": 1
     },
     {
@@ -443,6 +495,10 @@
       "count": 1
     },
     {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, PR China.",
+      "count": 1
+    },
+    {
       "affiliation": "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, PR China.",
       "count": 1
     },
@@ -455,7 +511,19 @@
       "count": 1
     },
     {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, No.9 Dongdansantiao Street, Dongcheng District, Beijing 100730, P.R. China.",
+      "count": 1
+    },
+    {
       "affiliation": "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, P.R. China.",
+      "count": 1
+    },
+    {
+      "affiliation": "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Science & Peking Union Medical College, Beijing, 100730, China.",
       "count": 1
     },
     {
@@ -748,30 +816,6 @@
     },
     {
       "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong (Shenzhen), Shenzhen 518172, China. chidung1212@gmail.com.",
-      "count": 1
-    },
-    {
-      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong (Shenzhen), Shenzhen 518172, China. aliken.bi93g@nctu.edu.tw.",
-      "count": 1
-    },
-    {
-      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong (Shenzhen), Shenzhen 518172, China. aliken.bi93g@nctu.edu.tw.",
-      "count": 1
-    },
-    {
-      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong (Shenzhen), Shenzhen 518172, China. bryan@mail.nctu.edu.tw.",
-      "count": 1
-    },
-    {
-      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong (Shenzhen), Shenzhen 518172, China. bryan@mail.nctu.edu.tw.",
-      "count": 1
-    },
-    {
-      "affiliation": "Warshel Institute for Computational Biology, The Chinese University of Hong Kong (Shenzhen), Shenzhen, Guangdong Province, 518172, China.",
-      "count": 1
-    },
-    {
-      "affiliation": "School of Science and Engineering, The Chinese University of Hong Kong (Shenzhen), Shenzhen, Guangdong Province, 518172, China.",
       "count": 1
     }
   ],
@@ -2526,21 +2570,32 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Electrical & Computer Engineering, University of Illinois at Chicago, Chicago, IL 60607, USA.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
+      "Department of General Practice, Shenzhen Luohu People's Hospital, Shenzhen 518000, China.",
+      "Luohu Clinical College, Shantou University Medical College, Shenzhen 518000, China.",
+      "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for Skin Health and Active Molecule Innovation, Shenzhen 518172, China."
     ],
     "41691474": [
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
@@ -2563,7 +2618,8 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen, Guangdong, P. R. China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, P. R. China."
     ],
     "41481073": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
@@ -2585,7 +2641,8 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, No. 2001 Longxiang Road, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, No. 157 Malianwa North Road, Haidian District, Beijing 100730, P.R. China."
     ],
     "41463366": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
@@ -2600,11 +2657,13 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China."
     ],
     "41390462": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
@@ -2615,6 +2674,7 @@
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
@@ -2633,9 +2693,12 @@
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China.",
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn."
+      "Better Way Group-Chinese University of Hong Kong (Shenzhen) Warshel Joint Laboratory for skin health and active molecule innovation, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong, China. huanghsienda@cuhk.edu.cn.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, People's Republic of China. huanghsienda@cuhk.edu.cn."
     ],
     "41380411": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, China.",
@@ -2693,6 +2756,7 @@
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
@@ -2717,7 +2781,8 @@
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China."
     ],
     "40396374": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China.",
@@ -2747,7 +2812,8 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Longgang District, Shenzhen, Guangdong 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, PR China."
     ],
     "40279769": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, PR China; Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, PR China.",
@@ -2798,6 +2864,7 @@
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing 100730, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Shenzhen 518172, China.",
@@ -2837,7 +2904,8 @@
       "Department of Critical Care Medicine, The Second Affiliated Hospital, School of Medicine, The Chinese University of Hong Kong, Shenzhen & Longgang District People's Hospital of Shenzhen, Shenzhen, Guangdong, China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Health Commission, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China."
     ],
     "40076546": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",
@@ -2905,7 +2973,8 @@
       "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, 2001 Longxiang Boulevard, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, 2001 Longxiang Boulevard, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, 2001 Longxiang Boulevard, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, 2001 Longxiang Boulevard, Longgang District, Shenzhen, Guangdong 518172, P.R. China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, 2001 Longxiang Boulevard, Longgang District, Shenzhen, Guangdong 518172, P.R. China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences & Peking Union Medical College, No.9 Dongdansantiao Street, Dongcheng District, Beijing 100730, P.R. China."
     ],
     "39578692": [
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China.",
@@ -2937,7 +3006,8 @@
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China.",
       "School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China.",
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, P.R. China.",
-      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, P.R. China."
+      "Guangdong Provincial Key Laboratory of Digital Biology and Drug Development, The Chinese University of Hong Kong, Shenzhen, Guangdong, 518172, P.R. China.",
+      "Department of Endocrinology, Key Laboratory of Endocrinology of National Ministry of Health, Peking Union Medical College Hospital, Chinese Academy of Medical Science & Peking Union Medical College, Beijing, 100730, China."
     ],
     "39062881": [
       "Warshel Institute for Computational Biology, School of Medicine, The Chinese University of Hong Kong, Shenzhen 518172, China.",

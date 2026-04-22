@@ -1,130 +1,10 @@
 {
-  "domains": [
+  "tags": [
     {
-      "domain_label": "domain_0",
-      "paper_count": 2,
-      "domain_keywords": [],
-      "domain_theme_en": "",
-      "domain_theme_cn": "论文主题汇总",
-      "domain_theme": "论文主题汇总",
-      "avg_quality_score": 0.44439,
-      "evidence_papers": [
-        {
-          "paper_id": "34850155",
-          "title": "dbAMP 2.0: updated resource for antimicrobial peptides with an enhanced scanning method for genomic and proteomic data.",
-          "abstract_snippet": "The last 18 months, or more, have seen a profound shift in our global experience, with many of us navigating a once-in-100-year pandemic. To date, COVID-19 remains a life-threateni..."
-        },
-        {
-          "paper_id": "openaire:synthesis_and_evaluation_of_10_3_5_dimethoxy_benzyl_9_10h_acridone_derivatives_as_selective_telomeric_g_quadruplex_dna_ligands",
-          "title": "Synthesis and evaluation of 10-(3,5-dimethoxy)benzyl-9(10H)-acridone derivatives as selective telomeric G-quadruplex DNA ligands",
-          "abstract_snippet": "Abstract   A class of 9(10 H )-acridone derivatives with terminal ammonium substituents at C2 (and C7) position(s) on the acridone ring were successfully synthesized. The relative..."
-        }
-      ]
-    },
-    {
-      "domain_label": "domain_1",
-      "paper_count": 3,
-      "domain_keywords": [
-        "微小RNA",
-        "微小RNAs",
-        "代谢",
-        "影响s"
-      ],
-      "domain_theme_en": "微小RNA, 微小RNAs, 代谢",
-      "domain_theme_cn": "miRNA/RNA调控",
-      "domain_theme": "miRNA/RNA调控",
-      "avg_quality_score": 0.614929,
-      "evidence_papers": [
-        {
-          "paper_id": "37337262",
-          "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach.",
-          "abstract_snippet": "Herbal medicine Sanqi (SQ), the dried root or stem of Panax notoginseng (PNS), has been reported to have anti-diabetic and anti-obesity effects and is usually administered as a dec..."
-        },
-        {
-          "paper_id": "30292287",
-          "title": "Metabolomics studies on db/db diabetic mice in skeletal muscle reveal effective clearance of overloaded intermediates by exercise.",
-          "abstract_snippet": "Type 2 diabetes mellitus (T2DM) is characterized by hyperinsulinemia, hyperglycemia and insulin resistance, which correlated with high mortality worldwide. Exercise is one of the e..."
-        },
-        {
-          "paper_id": "29254168",
-          "title": "LC-MS-based metabolomics revealed SLC25A22 as an essential regulator of aspartate-derived amino acids and polyamines in",
-          "abstract_snippet": "SLC25A22, which encodes the mitochondrial glutamate transporter, is overexpressed in colorectal cancer (CRC) and is essential for the proliferation of CRC cells harboring  KRAS  mu..."
-        }
-      ]
-    },
-    {
-      "domain_label": "domain_2",
-      "paper_count": 3,
-      "domain_keywords": [
-        "肿瘤s",
-        "肿瘤s e3",
-        "肿瘤"
-      ],
-      "domain_theme_en": "肿瘤s, 肿瘤s e3, 肿瘤",
-      "domain_theme_cn": "肿瘤s/肿瘤s e3主题汇总",
-      "domain_theme": "肿瘤s/肿瘤s e3主题汇总",
-      "avg_quality_score": 0.636519,
-      "evidence_papers": [
-        {
-          "paper_id": "39062881",
-          "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types.",
-          "abstract_snippet": "Ubiquitination, a post-translational modification, refers to the covalent attachment of ubiquitin molecules to substrates. This modification plays a critical role in diverse cellul..."
-        },
-        {
-          "paper_id": "34663215",
-          "title": "A representation and deep learning model for annotating ubiquitylation sentences stating E3 ligase - substrate interaction.",
-          "abstract_snippet": "Ubiquitylation is an important post-translational modification of proteins that not only plays a central role in cellular coding, but is also closely associated with the developmen..."
-        },
-        {
-          "paper_id": "33693667",
-          "title": "UbiNet 2.0: a verified, classified, annotated and updated database of E3 ubiquitin ligase-substrate interactions.",
-          "abstract_snippet": "Ubiquitination is an important post-translational modification, which controls protein turnover by labeling malfunctional and redundant proteins for proteasomal degradation, and al..."
-        }
-      ]
-    },
-    {
-      "domain_label": "domain_3",
+      "tag_name": "肿瘤",
       "paper_count": 4,
-      "domain_keywords": [
-        "影响iveness"
-      ],
-      "domain_theme_en": "影响iveness",
-      "domain_theme_cn": "影响iveness主题汇总",
-      "domain_theme": "影响iveness主题汇总",
-      "avg_quality_score": 0.383288,
-      "evidence_papers": [
-        {
-          "paper_id": "32672791",
-          "title": "A large-scale investigation and identification of methicillin-resistant Staphylococcus aureus based on peaks binning of matrix-assisted laser desorption ionization-time of flight MS spectra.",
-          "abstract_snippet": "Recent studies have demonstrated that the matrix-assisted laser desorption ionization-time of flight mass spectrometry (MALDI-TOF MS) could be used to detect superbugs, such as met..."
-        },
-        {
-          "paper_id": "openaire:a_large_scale_investigation_and_identification_of_methicillin_resistant_i_staphylococcus_aureus_i_based_on_peaks_binning_of_matrix_assisted_laser_desorption_ionization_time_of_flight_ms_spectra",
-          "title": "A large-scale investigation and identification of methicillin-resistant<i>Staphylococcus aureus</i>based on peaks binning of matrix-assisted laser desorption ionization-time of flight MS spectra",
-          "abstract_snippet": "<jats:title>Abstract</jats:title><jats:p>Recent studies have demonstrated that the matrix-assisted laser desorption ionization-time of flight mass spectrometry (MALDI-TOF MS) could..."
-        },
-        {
-          "paper_id": "openaire:a_large_scale_investigation_and_identification_of_methicillin_resistant_staphylococcus_aureus_based_on_peaks_binning_of_matrix_assisted_laser_desorption_ionization_time_of_flight_ms_spectra",
-          "title": "A large-scale investigation and identification of methicillin-resistant Staphylococcus aureus based on peaks binning of matrix-assisted laser desorption ionization-time of flight MS spectra.",
-          "abstract_snippet": "Recent studies have demonstrated that the matrix-assisted laser desorption ionization-time of flight mass spectrometry (MALDI-TOF MS) could be used to detect superbugs, such as met..."
-        }
-      ]
-    },
-    {
-      "domain_label": "domain_4",
-      "paper_count": 6,
-      "domain_keywords": [
-        "ATAD2 染色质",
-        "影响s",
-        "肿瘤",
-        "ATAD2 溴结构域",
-        "微小RNAs",
-        "微小RNA 信使RNA"
-      ],
-      "domain_theme_en": "ATAD2 染色质, 影响s, 肿瘤",
-      "domain_theme_cn": "miRNA/RNA调控",
-      "domain_theme": "miRNA/RNA调控",
-      "avg_quality_score": 0.6487,
+      "avg_tag_weight": 0.708333,
+      "total_tag_weight": 2.833334,
       "evidence_papers": [
         {
           "paper_id": "41900810",
@@ -144,84 +24,87 @@
       ]
     },
     {
-      "domain_label": "domain_5",
-      "paper_count": 4,
-      "domain_keywords": [
-        "代谢"
-      ],
-      "domain_theme_en": "代谢",
-      "domain_theme_cn": "代谢主题汇总",
-      "domain_theme": "代谢主题汇总",
-      "avg_quality_score": 0.421238,
+      "tag_name": "微小RNA",
+      "paper_count": 3,
+      "avg_tag_weight": 0.694445,
+      "total_tag_weight": 2.083334,
       "evidence_papers": [
+        {
+          "paper_id": "40076546",
+          "title": "Unveiling Novel miRNA-mRNA Interactions and Their Prognostic Roles in Triple-Negative Breast Cancer: Insights into miR-210, miR-183, miR-21, and miR-181b.",
+          "abstract_snippet": "Triple-negative breast cancer (TNBC) poses a major clinical challenge due to its aggressive progression and limited treatment options, making early diagnosis and prognosis critical..."
+        },
+        {
+          "paper_id": "37337262",
+          "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach.",
+          "abstract_snippet": "Herbal medicine Sanqi (SQ), the dried root or stem of Panax notoginseng (PNS), has been reported to have anti-diabetic and anti-obesity effects and is usually administered as a dec..."
+        },
+        {
+          "paper_id": "36440972",
+          "title": "Extraction of microRNA-target interaction sentences from biomedical literature by deep learning approach.",
+          "abstract_snippet": "MicroRNA (miRNA)-target interaction (MTI) plays a substantial role in various cell activities, molecular regulations and physiological processes. Published biomedical literature is..."
+        }
+      ]
+    },
+    {
+      "tag_name": "代谢",
+      "paper_count": 3,
+      "avg_tag_weight": 0.777778,
+      "total_tag_weight": 2.333333,
+      "evidence_papers": [
+        {
+          "paper_id": "37337262",
+          "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach.",
+          "abstract_snippet": "Herbal medicine Sanqi (SQ), the dried root or stem of Panax notoginseng (PNS), has been reported to have anti-diabetic and anti-obesity effects and is usually administered as a dec..."
+        },
+        {
+          "paper_id": "30292287",
+          "title": "Metabolomics studies on db/db diabetic mice in skeletal muscle reveal effective clearance of overloaded intermediates by exercise.",
+          "abstract_snippet": "Type 2 diabetes mellitus (T2DM) is characterized by hyperinsulinemia, hyperglycemia and insulin resistance, which correlated with high mortality worldwide. Exercise is one of the e..."
+        },
         {
           "paper_id": "28859482",
           "title": "Comprehensive Analysis of Acylcarnitine Species in db/db Mouse Using a Novel Method of High-Resolution Parallel Reaction Monitoring Reveals Widespread Metabolic Dysfunction Induced by Diabetes.",
           "abstract_snippet": "Acylcarnitines are exerting a variety of biological functions depending on the differences in lengths, saturation levels, and conjugation groups, which to a great extent contribute..."
-        },
-        {
-          "paper_id": "27837831",
-          "title": "Determination of amino acids in colon cancer cells by using UHPLC-MS/MS and [U-",
-          "abstract_snippet": "Rapid and simple quantitative analysis of intracellular metabolites is a critical tool for monitoring the alteration of biologically significant metabolites in cell lines or in viv..."
-        },
-        {
-          "paper_id": "openaire:a_novel_method_of_liquid_chromatography_tandem_mass_spectrometry_combined_with_chemical_derivatization_for_the_determination_of_ribonucleosides_in_urine",
-          "title": "A novel method of liquid chromatography–tandem mass spectrometry combined with chemical derivatization for the determination of ribonucleosides in urine",
-          "abstract_snippet": "Ribonucleosides are the end products of RNA metabolism. These metabolites, especially the modified ribonucleosides, have been extensively evaluated as cancer-related biomarkers. Ho..."
         }
       ]
     },
     {
-      "domain_label": "domain_6",
-      "paper_count": 2,
-      "domain_keywords": [
-        "包含"
-      ],
-      "domain_theme_en": "包含",
-      "domain_theme_cn": "包含主题汇总",
-      "domain_theme": "包含主题汇总",
-      "avg_quality_score": 0.64734,
-      "evidence_papers": [
-        {
-          "paper_id": "36810579",
-          "title": "Holistic similarity-based prediction of phosphorylation sites for understudied kinases.",
-          "abstract_snippet": "Phosphorylation is an essential mechanism for regulating protein activities. Determining kinase-specific phosphorylation sites by experiments involves time-consuming and expensive..."
-        },
-        {
-          "paper_id": "35781048",
-          "title": "KinasePhos 3.0: Redesign and Expansion of the Prediction on Kinase-specific Phosphorylation Sites.",
-          "abstract_snippet": "The purpose of this work is to enhance KinasePhos, a machine learning-based kinase-specific phosphorylation site prediction tool. Experimentally verified kinase-specific phosphoryl..."
-        }
-      ]
-    },
-    {
-      "domain_label": "domain_7",
-      "paper_count": 3,
-      "domain_keywords": [
-        "抗氧化 影响s",
-        "抗氧化",
-        "keap1 抗氧化",
-        "影响"
-      ],
-      "domain_theme_en": "抗氧化 影响s, 抗氧化, keap1 抗氧化",
-      "domain_theme_cn": "抗氧化/中药机制",
-      "domain_theme": "抗氧化/中药机制",
-      "avg_quality_score": 0.408388,
+      "tag_name": "抗氧化",
+      "paper_count": 1,
+      "avg_tag_weight": 1.0,
+      "total_tag_weight": 1.0,
       "evidence_papers": [
         {
           "paper_id": "40227198",
           "title": "Identifying Baicalein as a Key Bioactive Compound in XueBiJing Targeting KEAP1: Implications for Antioxidant Effects.",
           "abstract_snippet": "XueBiJing injection (XBJ) is renowned for its multi-target pharmacological effects, including immunomodulatory, antithrombotic, and antioxidant activities, offering potential thera..."
-        },
+        }
+      ]
+    },
+    {
+      "tag_name": "微小RNA 信使RNA",
+      "paper_count": 1,
+      "avg_tag_weight": 0.416667,
+      "total_tag_weight": 0.416667,
+      "evidence_papers": [
         {
-          "paper_id": "openaire:fangchinoline_protects_against_bone_loss_in_ovx_mice_via_inhibiting_osteoclast_formation_bone_resorption_and_rankl_induced_signaling",
-          "title": "Fangchinoline protects against bone loss in OVX mice via inhibiting osteoclast formation, bone resorption and RANKL-induced signaling",
-          "abstract_snippet": "Osteoporosis is a disease characterized by abnormally increased formation and function of osteoclasts. Anti-RANKL treatment using natural medicine is a potential therapy for osteop..."
-        },
+          "paper_id": "40076546",
+          "title": "Unveiling Novel miRNA-mRNA Interactions and Their Prognostic Roles in Triple-Negative Breast Cancer: Insights into miR-210, miR-183, miR-21, and miR-181b.",
+          "abstract_snippet": "Triple-negative breast cancer (TNBC) poses a major clinical challenge due to its aggressive progression and limited treatment options, making early diagnosis and prognosis critical..."
+        }
+      ]
+    },
+    {
+      "tag_name": "肿瘤 3",
+      "paper_count": 1,
+      "avg_tag_weight": 0.333333,
+      "total_tag_weight": 0.333333,
+      "evidence_papers": [
         {
-          "paper_id": "openaire:fangchinoline_protects_against_bone_loss_in_ovx_mice_via_inhibiting_osteoclast_formation_bone_resorption_and_rankl_induced_signaling",
-          "title": "Fangchinoline protects against bone loss in OVX mice via inhibiting osteoclast formation, bone resorption and RANKL-induced signaling.",
-          "abstract_snippet": "Osteoporosis is a disease characterized by abnormally increased formation and function of osteoclasts. Anti-RANKL treatment using natural medicine is a potential therapy for osteop..."
+          "paper_id": "39062881",
+          "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types.",
+          "abstract_snippet": "Ubiquitination, a post-translational modification, refers to the covalent attachment of ubiquitin molecules to substrates. This modification plays a critical role in diverse cellul..."
         }
       ]
     }

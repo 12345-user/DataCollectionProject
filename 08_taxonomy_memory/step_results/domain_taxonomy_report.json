@@ -1,5 +1,86 @@
 {
-  "queue_count": 0,
+  "queue_count": 2,
   "learned_count": 0,
-  "top_queue_keywords": []
+  "top_queue_keywords": [
+    {
+      "keyword": "target interactions micrornas",
+      "count": 1
+    },
+    {
+      "keyword": "interactions micrornas mirnas",
+      "count": 1
+    },
+    {
+      "keyword": "validated microrna target",
+      "count": 1
+    },
+    {
+      "keyword": "mirna expression profiles",
+      "count": 1
+    },
+    {
+      "keyword": "microrna target interactions",
+      "count": 1
+    },
+    {
+      "keyword": "micrornas mirnas",
+      "count": 1
+    },
+    {
+      "keyword": "single cell mirna",
+      "count": 1
+    },
+    {
+      "keyword": "predicts mirna expression",
+      "count": 1
+    },
+    {
+      "keyword": "human cancers micrornas",
+      "count": 1
+    },
+    {
+      "keyword": "micrornas mirnas pivotal",
+      "count": 1
+    },
+    {
+      "keyword": "prediction adverse drug",
+      "count": 1
+    },
+    {
+      "keyword": "deepadr multimodal prediction",
+      "count": 1
+    },
+    {
+      "keyword": "drug discovery information",
+      "count": 1
+    },
+    {
+      "keyword": "chemical entities deepadr",
+      "count": 1
+    },
+    {
+      "keyword": "networks adverse drug",
+      "count": 1
+    },
+    {
+      "keyword": "semantic datasets deepadr",
+      "count": 1
+    },
+    {
+      "keyword": "datasets deepadr",
+      "count": 1
+    },
+    {
+      "keyword": "introduce deepadr multimodal",
+      "count": 1
+    },
+    {
+      "keyword": "cancer insights mir",
+      "count": 1
+    },
+    {
+      "keyword": "prognosis critical micrornas",
+      "count": 1
+    }
+  ]
 }

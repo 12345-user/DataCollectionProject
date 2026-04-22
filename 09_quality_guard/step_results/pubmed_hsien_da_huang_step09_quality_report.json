@@ -1,0 +1,16 @@
+{
+  "prefix": "pubmed_hsien_da_huang",
+  "status": "pass",
+  "counts": {
+    "step02": 271,
+    "step03": 271,
+    "step04": 78,
+    "step05": 78
+  },
+  "summary": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "findings": [],
+  "uses_pandera": false
+}

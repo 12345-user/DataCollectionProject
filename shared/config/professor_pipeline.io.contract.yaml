@@ -79,3 +79,20 @@ stable_path_contract:
       - share_current
       - trend_future
       - evidence
+
+  step09:
+    input:
+      step02_expanded_papers_jsonl: "02_paper_list_extend/step_results/<prefix>_expanded_papers.jsonl"
+      step03_disambiguated_jsonl: "04_author_disambiguation/step_results/<prefix>_step03_disambiguated_papers.jsonl"
+      step04_keyword_entity_jsonl: "05_keyword_entity/step_results/<prefix>_step04_keyword_entity.jsonl"
+      step05_paper_domains_jsonl: "06_domain_clustering/step_results/<prefix>_step05_paper_domains.jsonl"
+      step05_domains_json: "06_domain_clustering/step_results/<prefix>_step05_domains.json"
+      step06_timeline_json: "07_temporal_analysis/step_results/<prefix>_step06_project_timeline.json"
+      step06_allocation_json: "07_temporal_analysis/step_results/<prefix>_step06_effort_allocation.json"
+    output:
+      quality_report_json: "09_quality_guard/step_results/<prefix>_step09_quality_report.json"
+      quality_report_md: "09_quality_guard/step_results/<prefix>_step09_quality_report.md"
+    required_fields:
+      - status
+      - summary
+      - findings

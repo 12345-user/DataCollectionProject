@@ -1,0 +1,130 @@
+version: "1.0"
+
+# 三层标签体系（默认配置，后续会被 learning_queue/learned 扩展）
+# - L1：顶层大类（仅供理解与总览）
+# - L2：方向/学科高频标签
+# - L3：技术/主题高频标签
+#
+# keywords：用于本地规则命中（title/abstract/keywords/project_candidates）
+
+l1_categories:
+  - name: "综述/系统分析"
+    keywords:
+      - review
+      - systematic
+      - meta-analysis
+      - survey
+      - literature
+      - "综述"
+      - "系统"
+      - "系统分析"
+      - "荟萃"
+      - "meta"
+  - name: "方法学/工具开发"
+    keywords:
+      - database
+      - atlas
+      - platform
+      - pipeline
+      - framework
+      - tool
+      - benchmark
+      - dataset
+      - model
+      - algorithm
+      - "数据库"
+      - "平台"
+      - "框架"
+      - "流程"
+      - "工具"
+      - "方法"
+  - name: "机制研究"
+    keywords:
+      - mechanism
+      - pathway
+      - regulates
+      - suppresses
+      - induces
+      - molecular
+      - omics
+      - transcriptomic
+      - proteomic
+      - "机制"
+      - "通路"
+      - "组学"
+      - "转录组"
+      - "蛋白组"
+
+l2_tags:
+  - name: "生物信息学"
+    keywords:
+      - bioinformatics
+      - computational
+      - database
+      - atlas
+      - dataset
+      - "生物信息"
+      - "生物信息学"
+  - name: "中药药理学"
+    keywords:
+      - traditional chinese medicine
+      - tcm
+      - herb
+      - panax
+      - baicalein
+      - "中药"
+      - "方剂"
+      - "注射液"
+      - "药理"
+  - name: "肿瘤生物学"
+    keywords:
+      - cancer
+      - tumor
+      - oncology
+      - glioblastoma
+      - breast cancer
+      - "肿瘤"
+      - "癌"
+  - name: "药物安全"
+    keywords:
+      - adverse drug reaction
+      - adr
+      - toxicity
+      - safety
+      - "不良反应"
+      - "不良药物反应"
+      - "毒性"
+      - "安全"
+
+l3_tags:
+  - name: "数据库/平台"
+    keywords:
+      - database
+      - atlas
+      - platform
+      - portal
+      - web server
+      - resource
+      - "数据库"
+      - "平台"
+  - name: "深度学习"
+    keywords:
+      - deep learning
+      - neural network
+      - transformer
+      - multimodal
+      - "深度学习"
+      - "神经网络"
+  - name: "网络药理学"
+    keywords:
+      - network pharmacology
+      - "网络药理学"
+  - name: "靶点鉴定"
+    keywords:
+      - target identification
+      - drug target
+      - dti
+      - interaction
+      - "靶点"
+      - "靶点鉴定"
+
