@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import yaml
 
 try:
     from statsmodels.tsa.arima.model import ARIMA
@@ -205,6 +206,38 @@ def _kw_to_cn(kw: str) -> str:
     return low
 
 
+def _norm_lex_key(s: str) -> str:
+    return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", (s or "").lower()).strip()
+
+
+@st.cache_data(show_spinner=False)
+def _load_prof_lexicon() -> tuple[dict[str, str], dict[str, str]]:
+    p = Path("08_taxonomy_memory/config/professional_tag_lexicon.yaml")
+    if not p.exists():
+        return {}, {}
+    try:
+        obj = yaml.safe_load(p.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}, {}
+    aliases_raw = obj.get("canonical_aliases", {}) or {}
+    zh_raw = obj.get("canonical_zh", {}) or {}
+    alias_map: dict[str, str] = {}
+    zh_map: dict[str, str] = {}
+    if isinstance(aliases_raw, dict):
+        for k, v in aliases_raw.items():
+            nk = _norm_lex_key(str(k))
+            nv = _norm_lex_key(str(v))
+            if nk and nv:
+                alias_map[nk] = nv
+    if isinstance(zh_raw, dict):
+        for k, v in zh_raw.items():
+            nk = _norm_lex_key(str(k))
+            zv = str(v or "").strip()
+            if nk and zv:
+                zh_map[nk] = zv
+    return alias_map, zh_map
+
+
 def _has_cjk(s: str) -> bool:
     return any("\u4e00" <= ch <= "\u9fff" for ch in (s or ""))
 
@@ -221,6 +254,15 @@ def _tag_name_zh(tag_name: str) -> str:
     s = (tag_name or "").strip()
     if not s:
         return ""
+    alias_map, zh_map = _load_prof_lexicon()
+    ck = alias_map.get(_norm_lex_key(s), _norm_lex_key(s))
+    if ck and ck in zh_map:
+        return zh_map[ck]
+    sl = s.lower()
+    if ("mirna" in sl or "microrna" in sl) and "target" in sl:
+        return "微小RNA靶点调控"
+    if ("mirna" in sl or "microrna" in sl) and "mrna" in sl:
+        return "微小RNA与mRNA互作"
     # If it contains English letters, try to translate + strip leftovers.
     if _has_cjk(s) and not _has_ascii_alpha(s):
         return s
@@ -265,12 +307,16 @@ def _tag_name_zh(tag_name: str) -> str:
     for k in sorted(glossary.keys(), key=len, reverse=True):
         out = out.replace(k, glossary[k])
     out = re.sub(r"[A-Za-z]+", " ", out)
+    out = out.replace("（）", " ").replace("()", " ")
     out = re.sub(r"\s+", " ", out).strip(" -_/，。;；()[]{}")
     if _has_cjk(out) and not _has_ascii_alpha(out):
         return out
     # Last resort: keep only Chinese chars if any
     only_zh = "".join([ch for ch in out if "\u4e00" <= ch <= "\u9fff" or ch in "/-+（）()、，； "]).strip()
     only_zh = re.sub(r"\s+", " ", only_zh).strip(" -_/，。;；")
+    only_zh = re.sub(r"(微小\s*){2,}RNA", "微小RNA", only_zh)
+    only_zh = re.sub(r"(微小RNA)(\s+\1)+", r"\1", only_zh)
+    only_zh = re.sub(r"\s*相关\s*$", "", only_zh).strip()
     if _has_cjk(only_zh) and not _has_ascii_alpha(only_zh):
         return only_zh
     return "综合主题汇总"
@@ -737,6 +783,52 @@ def _fill_history_quarters(
     return pd.DataFrame(rows)
 
 
+def _fill_history_with_pred_for_gaps(
+    df_time: pd.DataFrame,
+    value_col: str,
+    min_start: str = "2021-01-01",
+    months_step: int = 12,
+) -> pd.DataFrame:
+    """
+    Build historical series with gap filling by model estimate (instead of zero).
+    If a year has no observed data, use a fitted trend value as "预测补全".
+    """
+    if df_time.empty:
+        return pd.DataFrame(columns=["month", "tag_name", value_col, "series_type"])
+    start = max(pd.Timestamp(min_start), _period_start(pd.Timestamp(df_time["month"].min()), months_step))
+    end = _period_start(pd.Timestamp(df_time["month"].max()), months_step)
+    idx = _period_index(start, end, months_step)
+    rows: list[dict[str, object]] = []
+    for domain in sorted(df_time["tag_name"].dropna().unique()):
+        g = df_time[df_time["tag_name"] == domain].copy()
+        if g.empty:
+            continue
+        observed = g.groupby("month", as_index=True)[value_col].sum().astype(float)
+        observed = observed.reindex(idx)
+        is_missing = observed.isna()
+        s = observed.copy()
+        if is_missing.any():
+            known = observed.dropna()
+            if len(known) >= 2:
+                x_all = np.arange(len(observed), dtype=float)
+                x_known = np.array([idx.index(ts) for ts in known.index], dtype=float)
+                y_known = known.to_numpy(dtype=float)
+                coef = np.polyfit(x_known, y_known, deg=1)
+                pred_all = np.maximum(0.0, coef[0] * x_all + coef[1])
+                for i, miss in enumerate(is_missing.to_numpy()):
+                    if bool(miss):
+                        s.iloc[i] = float(pred_all[i])
+            elif len(known) == 1:
+                s = s.fillna(float(max(0.0, known.iloc[0])))
+            else:
+                s = s.fillna(0.0)
+        for i, ts in enumerate(idx):
+            val = float(max(0.0, s.iloc[i] if pd.notna(s.iloc[i]) else 0.0))
+            stype = "预测补全" if bool(is_missing.iloc[i]) else "历史"
+            rows.append({"month": pd.Timestamp(ts), "tag_name": domain, value_col: val, "series_type": stype})
+    return pd.DataFrame(rows)
+
+
 def _quarter_tick_labels(start: pd.Timestamp, end: pd.Timestamp) -> tuple[list[pd.Timestamp], list[str]]:
     idx = pd.date_range(start=start.to_period("Q").start_time, end=end.to_period("Q").start_time, freq="QS")
     vals = [pd.Timestamp(x) for x in idx]
@@ -819,6 +911,8 @@ def _predict_with_model(
         return empty_pred, empty_meta
 
     now_q_start = _period_start_now(months_step)
+    # User requirement: only forecast after 2026.
+    min_after_2026 = _period_start(pd.Timestamp("2027-01-01"), months_step)
     pred_rows: list[dict[str, object]] = []
     meta_rows: list[dict[str, object]] = []
     for domain in sorted(df_time["tag_name"].dropna().unique()):
@@ -860,6 +954,8 @@ def _predict_with_model(
             fut = _forecast_linear_from_series(s, horizon)
 
         first_ts = now_q_start if now_q_start > last_ts else (last_ts + pd.DateOffset(months=months_step))
+        if first_ts < min_after_2026:
+            first_ts = min_after_2026
         start_idx = max(0, q_gap - 1)
         end_idx = start_idx + steps
         fut_slice = fut[start_idx:end_idx]
@@ -939,44 +1035,34 @@ def _zh_model_meta(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _render_level_charts(level_title: str, df_time: pd.DataFrame, forecast_mode: str) -> pd.DataFrame:
-    st.markdown(f"**{level_title} 时间频率折线**")
+    st.markdown(f"**{level_title} 权重折线**")
     if df_time.empty:
         st.info("该筛选范围内无数据。")
-        st.markdown(f"**{level_title} 权重折线**")
-        st.info("该筛选范围内无数据。")
         return pd.DataFrame()
-
-    hist = _fill_history_quarters(df_time, "paper_count", min_start="2021-01-01", months_step=12)
-    pred_cnt, model_meta_cnt = _predict_with_model(df_time, "paper_count", steps=2, mode=forecast_mode, months_step=12)
-    if not pred_cnt.empty:
-        pred_cnt["series_type"] = pred_cnt["model"].apply(lambda m: f"预测({str(m).upper()})")
-    plot_cnt = pd.concat([hist[["month", "tag_name", "paper_count", "series_type"]], pred_cnt], ignore_index=True)
-    plot_cnt["tag_label"] = plot_cnt["tag_name"].astype(str).apply(_tag_name_zh)
-    fig = px.line(
-        plot_cnt,
-        x="month",
-        y="paper_count",
-        color="tag_label",
-        line_dash="series_type",
-        markers=True,
-        labels={"month": "年份", "paper_count": "论文数量", "tag_label": "标签名称", "series_type": "序列类型"},
-    )
-    max_cnt = float(plot_cnt["paper_count"].max()) if not plot_cnt.empty else 1.0
     q_start = pd.Timestamp("2021-01-01")
-    q_end = pd.Timestamp(plot_cnt["month"].max()) if not plot_cnt.empty else pd.Timestamp.now().to_period("Q").start_time
-    tick_vals, tick_texts = _year_tick_labels(q_start, q_end)
-    fig.update_xaxes(tickmode="array", tickvals=tick_vals, ticktext=tick_texts, range=[q_start, q_end + pd.DateOffset(months=12)])
-    fig.update_yaxes(rangemode="tozero", range=[0.0, max(1.0, max_cnt * 1.15)])
-    st.plotly_chart(fig, use_container_width=True)
-    if not model_meta_cnt.empty:
-        st.caption(f"{level_title} 论文频率预测模型与误差（回测）")
-        st.dataframe(_zh_model_meta(model_meta_cnt), use_container_width=True)
-
-    st.markdown(f"**{level_title} 权重折线**")
-    hist_w = _fill_history_quarters(df_time, "weight", min_start="2021-01-01", months_step=12)
+    hist_w = _fill_history_with_pred_for_gaps(df_time, "weight", min_start="2021-01-01", months_step=12)
     pred_w, model_meta_w = _predict_with_model(df_time, "weight", steps=2, mode=forecast_mode, months_step=12)
     if not pred_w.empty:
         pred_w["series_type"] = pred_w["model"].apply(lambda m: f"预测({str(m).upper()})")
+        bridge_rows_w: list[dict[str, object]] = []
+        hist_last_w = hist_w.sort_values("month").groupby("tag_name", as_index=False).tail(1)
+        model_by_tag_w = pred_w.groupby("tag_name", as_index=False).head(1)[["tag_name", "model"]]
+        for r in hist_last_w.itertuples(index=False):
+            mrow = model_by_tag_w[model_by_tag_w["tag_name"] == r.tag_name]
+            if mrow.empty:
+                continue
+            model_name = str(mrow.iloc[0]["model"]).upper()
+            bridge_rows_w.append(
+                {
+                    "month": r.month,
+                    "tag_name": r.tag_name,
+                    "weight": float(r.weight),
+                    "series_type": f"预测({model_name})",
+                    "model": str(mrow.iloc[0]["model"]),
+                }
+            )
+        if bridge_rows_w:
+            pred_w = pd.concat([pd.DataFrame(bridge_rows_w), pred_w], ignore_index=True)
     plot_w = pd.concat([hist_w[["month", "tag_name", "weight", "series_type"]], pred_w], ignore_index=True)
     plot_w["tag_label"] = plot_w["tag_name"].astype(str).apply(_tag_name_zh)
     fig = px.line(

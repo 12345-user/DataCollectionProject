@@ -26,8 +26,8 @@
     {
       "tag_name": "肿瘤",
       "paper_count": 21,
-      "avg_tag_weight": 0.368183,
-      "total_tag_weight": 7.731834,
+      "avg_tag_weight": 0.362729,
+      "total_tag_weight": 7.617303,
       "evidence_papers": [
         {
           "paper_id": "41900810",
@@ -49,8 +49,8 @@
     {
       "tag_name": "不良药物反应",
       "paper_count": 14,
-      "avg_tag_weight": 0.399799,
-      "total_tag_weight": 5.59719,
+      "avg_tag_weight": 0.393731,
+      "total_tag_weight": 5.51223,
       "evidence_papers": [
         {
           "paper_id": "41481073",
@@ -72,8 +72,8 @@
     {
       "tag_name": "毒性",
       "paper_count": 14,
-      "avg_tag_weight": 0.387522,
-      "total_tag_weight": 5.425314,
+      "avg_tag_weight": 0.381454,
+      "total_tag_weight": 5.340354,
       "evidence_papers": [
         {
           "paper_id": "41481073",
@@ -141,8 +141,8 @@
     {
       "tag_name": "ATAD2 染色质",
       "paper_count": 8,
-      "avg_tag_weight": 0.218183,
-      "total_tag_weight": 1.745463,
+      "avg_tag_weight": 0.218856,
+      "total_tag_weight": 1.750849,
       "evidence_papers": [
         {
           "paper_id": "41900810",
@@ -187,8 +187,8 @@
     {
       "tag_name": "ATAD2 溴结构域",
       "paper_count": 7,
-      "avg_tag_weight": 0.223253,
-      "total_tag_weight": 1.562771,
+      "avg_tag_weight": 0.224022,
+      "total_tag_weight": 1.568157,
       "evidence_papers": [
         {
           "paper_id": "41900810",
@@ -210,8 +210,8 @@
     {
       "tag_name": "肿瘤 3",
       "paper_count": 7,
-      "avg_tag_weight": 0.227979,
-      "total_tag_weight": 1.595854,
+      "avg_tag_weight": 0.228749,
+      "total_tag_weight": 1.60124,
       "evidence_papers": [
         {
           "paper_id": "41900810",
@@ -245,6 +245,19 @@
           "paper_id": "37337262",
           "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach.",
           "abstract_snippet": "Herbal medicine Sanqi (SQ), the dried root or stem of Panax notoginseng (PNS), has been reported to have anti-diabetic and anti-obesity effects and is usually administered as a dec..."
+        }
+      ]
+    },
+    {
+      "tag_name": "深度学习",
+      "paper_count": 1,
+      "avg_tag_weight": 0.268293,
+      "total_tag_weight": 0.268293,
+      "evidence_papers": [
+        {
+          "paper_id": "41390462",
+          "title": "Semi-inductive dataset construction and framework optimization for practical drug target interaction prediction with ScopeDTI.",
+          "abstract_snippet": "Deep learning-based drug-target interaction (DTI) prediction methods have demonstrated strong performance; however, real-world applicability remains constrained by limited data div..."
         }
       ]
     },

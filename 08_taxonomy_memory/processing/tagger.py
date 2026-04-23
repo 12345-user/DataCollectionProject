@@ -15,6 +15,7 @@ _DEFAULT_LEARNED_L3 = Path("08_taxonomy_memory/step_results/learned_l3.jsonl")
 _DEFAULT_STOPWORDS = Path("08_taxonomy_memory/config/stopwords_zh.yaml")
 _DEFAULT_MESH_LEXICON = Path("08_taxonomy_memory/resources/mesh/mesh_terms.jsonl")
 _DEFAULT_MESH_MAPPING = Path("08_taxonomy_memory/config/mesh_mapping.yaml")
+_DEFAULT_PRO_LEXICON = Path("08_taxonomy_memory/config/professional_tag_lexicon.yaml")
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -68,7 +69,47 @@ def _load_cfg(path: Path) -> dict[str, list[dict[str, Any]]]:
     return {"l1_categories": out.get("l1_categories", []), "l2_tags": out.get("l2_tags", []), "l3_tags": out.get("l3_tags", [])}
 
 
-def _merge_learned(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _load_prof_lexicon(path: Path) -> tuple[dict[str, str], dict[str, str]]:
+    if not path.exists():
+        return {}, {}
+    try:
+        obj = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}, {}
+    aliases_raw = obj.get("canonical_aliases", {}) or {}
+    zh_raw = obj.get("canonical_zh", {}) or {}
+    alias_map: dict[str, str] = {}
+    zh_map: dict[str, str] = {}
+    if isinstance(aliases_raw, dict):
+        for k, v in aliases_raw.items():
+            nk = _norm_key(str(k))
+            nv = _norm_key(str(v))
+            if nk and nv:
+                alias_map[nk] = nv
+    if isinstance(zh_raw, dict):
+        for k, v in zh_raw.items():
+            nk = _norm_key(str(k))
+            zv = str(v or "").strip()
+            if nk and zv:
+                zh_map[nk] = zv
+    return alias_map, zh_map
+
+
+def _canonical_key(name: str, alias_map: dict[str, str]) -> str:
+    k = _norm_key(name)
+    if not k:
+        return ""
+    return alias_map.get(k, k)
+
+
+def _translate_zh(name: str, alias_map: dict[str, str], zh_map: dict[str, str]) -> str:
+    ck = _canonical_key(name, alias_map)
+    if ck and ck in zh_map:
+        return zh_map[ck]
+    return (name or "").strip()
+
+
+def _merge_learned(rows: list[dict[str, Any]], alias_map: dict[str, str], zh_map: dict[str, str]) -> list[dict[str, Any]]:
     # Deduplicate learned tags by normalized key to avoid repeated/near-duplicate rows.
     # Prefer Chinese display name when available.
     by_key: dict[str, dict[str, Any]] = {}
@@ -79,20 +120,21 @@ def _merge_learned(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         kws = [str(x).strip().lower() for x in (r.get("keywords") or []) if str(x).strip()]
         if not name or not kws:
             continue
-        key = _norm_key(name)
+        key = _canonical_key(name, alias_map)
         if not key:
             continue
+        disp_name = _translate_zh(name, alias_map, zh_map)
         prev = by_key.get(key)
         if prev is None:
-            by_key[key] = {"name": name, "keywords": kws}
+            by_key[key] = {"name": disp_name, "keywords": kws}
             continue
         # merge keywords
         merged = list(dict.fromkeys((prev.get("keywords") or []) + kws))
-        by_key[key] = {"name": prev.get("name") or name, "keywords": merged}
+        by_key[key] = {"name": prev.get("name") or disp_name, "keywords": merged}
     return list(by_key.values())
 
 
-def _dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _dedupe_items(items: list[dict[str, Any]], alias_map: dict[str, str], zh_map: dict[str, str]) -> list[dict[str, Any]]:
     """
     Deduplicate weighted tag items by normalized key, then re-normalize weights to sum to 1.
     """
@@ -104,7 +146,7 @@ def _dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
         n = str(it.get("tag_name") or "").strip()
         if not n:
             continue
-        k = _norm_key(n)
+        k = _canonical_key(n, alias_map)
         if not k:
             continue
         try:
@@ -115,8 +157,9 @@ def _dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
             continue
         score[k] = score.get(k, 0.0) + w
         # keep the longer representative name (usually more specific)
+        cand = _translate_zh(n, alias_map, zh_map)
         prev = rep.get(k, "")
-        rep[k] = n if len(n) >= len(prev) else prev
+        rep[k] = cand if len(cand) >= len(prev) else prev
     if not score:
         return []
     ranked = sorted(score.items(), key=lambda x: x[1], reverse=True)
@@ -124,7 +167,15 @@ def _dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [{"tag_name": rep.get(k, k), "tag_weight": round(float(v / total), 6)} for k, v in ranked]
 
 
-def _match(text: str, rows: list[dict[str, Any]], max_k: int, min_weight: float, stopwords: set[str]) -> list[dict[str, Any]]:
+def _match(
+    text: str,
+    rows: list[dict[str, Any]],
+    max_k: int,
+    min_weight: float,
+    stopwords: set[str],
+    alias_map: dict[str, str],
+    zh_map: dict[str, str],
+) -> list[dict[str, Any]]:
     text_low = (text or "").lower()
     scored: list[tuple[str, float, int]] = []
     for r in rows:
@@ -148,11 +199,17 @@ def _match(text: str, rows: list[dict[str, Any]], max_k: int, min_weight: float,
     kept = [(n, w) for n, w, _ in scored if w >= float(min_weight)]
     kept = kept[: max(1, int(max_k))]
     total = sum(w for _, w in kept) or 1.0
-    return _dedupe_items([{"tag_name": n, "tag_weight": round(float(w / total), 6)} for n, w in kept])
+    return _dedupe_items([{"tag_name": n, "tag_weight": round(float(w / total), 6)} for n, w in kept], alias_map, zh_map)
 
 
-def _pick_l1(text: str, l1_rows: list[dict[str, Any]], stopwords: set[str]) -> str:
-    items = _match(text, l1_rows, max_k=1, min_weight=0.01, stopwords=stopwords)
+def _pick_l1(
+    text: str,
+    l1_rows: list[dict[str, Any]],
+    stopwords: set[str],
+    alias_map: dict[str, str],
+    zh_map: dict[str, str],
+) -> str:
+    items = _match(text, l1_rows, max_k=1, min_weight=0.01, stopwords=stopwords, alias_map=alias_map, zh_map=zh_map)
     if items:
         return str(items[0].get("tag_name") or "").strip() or "方法学/工具开发"
     return "方法学/工具开发"
@@ -232,8 +289,9 @@ def tag_paper(text: str, config: TaggerConfig | None = None) -> dict[str, Any]:
     cfg = config or TaggerConfig()
     stopwords = _load_stopwords(cfg.stopwords_path)
     base = _load_cfg(cfg.cfg_path)
-    learned_l2 = _merge_learned(_read_jsonl(cfg.learned_l2_path))
-    learned_l3 = _merge_learned(_read_jsonl(cfg.learned_l3_path))
+    alias_map, zh_map = _load_prof_lexicon(_DEFAULT_PRO_LEXICON)
+    learned_l2 = _merge_learned(_read_jsonl(cfg.learned_l2_path), alias_map, zh_map)
+    learned_l3 = _merge_learned(_read_jsonl(cfg.learned_l3_path), alias_map, zh_map)
 
     l1_rows = base.get("l1_categories", [])
     l2_rows = learned_l2 + base.get("l2_tags", [])
@@ -243,9 +301,25 @@ def tag_paper(text: str, config: TaggerConfig | None = None) -> dict[str, Any]:
     mesh_map = _load_mesh_mapping(cfg.mesh_mapping_path)
     mesh_l2, mesh_l3 = _mesh_map(text, mesh_terms, mesh_map) if mesh_terms else ([], [])
 
-    l1 = _pick_l1(text, l1_rows, stopwords=stopwords)
-    l2_items = _match(text, l2_rows, max_k=cfg.l2_top_k, min_weight=cfg.layer_min_weight, stopwords=stopwords)
-    l3_items = _match(text, l3_rows, max_k=cfg.l3_top_k, min_weight=cfg.layer_min_weight, stopwords=stopwords)
+    l1 = _pick_l1(text, l1_rows, stopwords=stopwords, alias_map=alias_map, zh_map=zh_map)
+    l2_items = _match(
+        text,
+        l2_rows,
+        max_k=cfg.l2_top_k,
+        min_weight=cfg.layer_min_weight,
+        stopwords=stopwords,
+        alias_map=alias_map,
+        zh_map=zh_map,
+    )
+    l3_items = _match(
+        text,
+        l3_rows,
+        max_k=cfg.l3_top_k,
+        min_weight=cfg.layer_min_weight,
+        stopwords=stopwords,
+        alias_map=alias_map,
+        zh_map=zh_map,
+    )
 
     # A+B融合：优先合并 MeSH 命中，增强生物医学标签稳定性
     def _merge_items(base_items: list[dict[str, Any]], extra_items: list[dict[str, Any]], top_k: int) -> list[dict[str, Any]]:
@@ -268,7 +342,7 @@ def tag_paper(text: str, config: TaggerConfig | None = None) -> dict[str, Any]:
 
     l2_items = _merge_items(l2_items, mesh_l2, cfg.l2_top_k)
     l3_items = _merge_items(l3_items, mesh_l3, cfg.l3_top_k)
-    l2_items = _dedupe_items(l2_items)[: max(1, int(cfg.l2_top_k))]
-    l3_items = _dedupe_items(l3_items)[: max(1, int(cfg.l3_top_k))]
+    l2_items = _dedupe_items(l2_items, alias_map, zh_map)[: max(1, int(cfg.l2_top_k))]
+    l3_items = _dedupe_items(l3_items, alias_map, zh_map)[: max(1, int(cfg.l3_top_k))]
     return {"layer_l1_tag": l1, "layer_l2_items": l2_items, "layer_l3_items": l3_items}
 

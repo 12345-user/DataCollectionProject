@@ -72,6 +72,7 @@ _LEARNING_QUEUE_PATH = Path("08_taxonomy_memory/step_results/domain_taxonomy_lea
 _SETFIT_MODEL_DIR = Path("08_taxonomy_memory/models/setfit_local")
 _TAG_TAXONOMY_3L_PATH = Path("08_taxonomy_memory/config/tag_taxonomy_3layer.yaml")
 _TAG_TAXONOMY_3L_FALLBACK = Path("shared/config/tag_taxonomy_3layer.yaml")
+_PRO_LEXICON_PATH = Path("08_taxonomy_memory/config/professional_tag_lexicon.yaml")
 
 
 def _load_taxonomy_rules() -> list[tuple[list[str], str]]:
@@ -124,6 +125,32 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+def _load_prof_lexicon() -> tuple[dict[str, str], dict[str, str]]:
+    if not _PRO_LEXICON_PATH.exists():
+        return {}, {}
+    try:
+        obj = yaml.safe_load(_PRO_LEXICON_PATH.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}, {}
+    aliases_raw = obj.get("canonical_aliases", {}) or {}
+    zh_raw = obj.get("canonical_zh", {}) or {}
+    alias_map: dict[str, str] = {}
+    zh_map: dict[str, str] = {}
+    if isinstance(aliases_raw, dict):
+        for k, v in aliases_raw.items():
+            nk = _norm_tag_key(str(k))
+            nv = _norm_tag_key(str(v))
+            if nk and nv:
+                alias_map[nk] = nv
+    if isinstance(zh_raw, dict):
+        for k, v in zh_raw.items():
+            nk = _norm_tag_key(str(k))
+            zv = str(v or "").strip()
+            if nk and zv:
+                zh_map[nk] = zv
+    return alias_map, zh_map
 
 
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -205,6 +232,10 @@ def _kw_to_cn(kw: str) -> str:
         "cancer": "肿瘤",
         "tumor": "肿瘤",
     }
+    _, zh_map = _load_prof_lexicon()
+    nk = _norm_tag_key(low)
+    if nk and nk in zh_map:
+        return zh_map[nk]
     for k, v in token_map.items():
         low = low.replace(k, v)
     low = re.sub(r"\s+", " ", low).strip()
@@ -327,6 +358,7 @@ def _dedupe_weighted_items(items: object, top_k: int | None = None) -> list[dict
     """
     if not isinstance(items, list) or not items:
         return []
+    alias_map, zh_map = _load_prof_lexicon()
     score: dict[str, float] = {}
     rep: dict[str, str] = {}
     extra: dict[str, dict[str, Any]] = {}
@@ -336,7 +368,8 @@ def _dedupe_weighted_items(items: object, top_k: int | None = None) -> list[dict
         n = str(it.get("tag_name") or "").strip()
         if not n:
             continue
-        k = _norm_tag_key(n)
+        nk = _norm_tag_key(n)
+        k = alias_map.get(nk, nk)
         if not k:
             continue
         try:
@@ -346,8 +379,9 @@ def _dedupe_weighted_items(items: object, top_k: int | None = None) -> list[dict
         if w <= 0.0:
             continue
         score[k] = score.get(k, 0.0) + w
+        translated = zh_map.get(k, n)
         prev = rep.get(k, "")
-        rep[k] = n if len(n) >= len(prev) else prev
+        rep[k] = translated if len(translated) >= len(prev) else prev
         extra[k] = it
     if not score:
         return []

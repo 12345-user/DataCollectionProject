@@ -1,0 +1,72 @@
+version: "1.0"
+
+# 专业词库（Step08）
+# - canonical_aliases: 同义词/变体 -> 统一 canonical key（用于去重）
+# - canonical_zh: canonical key -> 中文标准名称（用于中文展示/learned 入库）
+
+canonical_aliases:
+  # miRNA / RNA
+  mirnas: mirna
+  microrna: mirna
+  micrornas: mirna
+  micrornas mirnas: mirna
+  mirnas target genes: mirna_target
+  mirna mrna: mirna_interaction
+  mirna mrna interactions: mirna_interaction
+  mirna target: mirna_target
+  mirna target interactions: mirna_target
+  microrna target: mirna_target
+  interactions micrornas mirnas: mirna_interaction
+  target interactions micrornas: mirna_interaction
+
+  # 肿瘤
+  cancers: cancer
+  breast cancer tnbc: breast_cancer_tnbc
+  negative breast cancer: breast_cancer_tnbc
+  triple negative breast cancer: breast_cancer_tnbc
+  tumorigenesis: tumor
+  cancer cells: cancer
+
+  # 数据库/平台/图谱
+  databases: database
+  dataset: datasets
+  atlas: database_platform
+  genome atlas: tcga
+  cancer genome atlas: tcga
+  tcga: tcga
+  platform: database_platform
+  framework: method_framework
+  computational framework: method_framework
+
+  # 深度学习
+  deep neural network: deep_learning
+  neural network: deep_learning
+  multimodal deep learning: deep_learning
+  deep learning based: deep_learning
+  deep learning method: deep_learning
+  deep learning modeling: deep_learning
+
+  # 药物相关
+  drugs: drug
+  drug discovery: drug_discovery
+  drug target: drug_target
+  adverse drug reaction: adr
+  toxicity: adr
+
+canonical_zh:
+  mirna: "微小RNA"
+  mirna_interaction: "微小RNA与mRNA互作"
+  mirna_target: "微小RNA靶点调控"
+  cancer: "肿瘤生物学"
+  breast_cancer_tnbc: "三阴性乳腺癌"
+  tumor: "肿瘤机制"
+  database: "数据库/平台"
+  datasets: "数据集资源"
+  database_platform: "数据库/图谱平台"
+  tcga: "癌症基因组图谱"
+  method_framework: "方法学框架"
+  deep_learning: "深度学习"
+  drug: "药物研究"
+  drug_discovery: "药物发现"
+  drug_target: "药物靶点"
+  adr: "药物安全与不良反应"

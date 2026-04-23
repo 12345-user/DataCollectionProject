@@ -4,10 +4,48 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+import yaml
 
 
 def _norm_key(s: str) -> str:
     return " ".join((s or "").strip().lower().split())
+
+
+def _norm_token_key(s: str) -> str:
+    return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", (s or "").lower()).strip()
+
+
+def _load_prof_lexicon(path: Path) -> tuple[dict[str, str], dict[str, str]]:
+    if not path.exists():
+        return {}, {}
+    try:
+        obj = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}, {}
+    aliases_raw = obj.get("canonical_aliases", {}) or {}
+    zh_raw = obj.get("canonical_zh", {}) or {}
+    alias_map: dict[str, str] = {}
+    zh_map: dict[str, str] = {}
+    if isinstance(aliases_raw, dict):
+        for k, v in aliases_raw.items():
+            nk = _norm_token_key(str(k))
+            nv = _norm_token_key(str(v))
+            if nk and nv:
+                alias_map[nk] = nv
+    if isinstance(zh_raw, dict):
+        for k, v in zh_raw.items():
+            nk = _norm_token_key(str(k))
+            zv = str(v or "").strip()
+            if nk and zv:
+                zh_map[nk] = zv
+    return alias_map, zh_map
+
+
+def _canonical_token_key(name: str, alias_map: dict[str, str]) -> str:
+    nk = _norm_token_key(name)
+    if not nk:
+        return ""
+    return alias_map.get(nk, nk)
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -94,7 +132,7 @@ def _has_ascii_alpha(s: str) -> bool:
     return bool(re.search(r"[A-Za-z]", s or ""))
 
 
-def _to_tag_name_zh(name: str) -> str:
+def _to_tag_name_zh(name: str, alias_map: dict[str, str], zh_map: dict[str, str]) -> str:
     """
     Local, no-API bilingual mapping.
     - If already Chinese, keep.
@@ -106,6 +144,15 @@ def _to_tag_name_zh(name: str) -> str:
     if _has_cjk(s) and not _has_ascii_alpha(s):
         return s
     low = _norm_key(s)
+    ck = _canonical_token_key(s, alias_map)
+    if ck and ck in zh_map:
+        return zh_map[ck]
+    sl = s.lower()
+    # heuristic biomedical normalization
+    if ("mirna" in sl or "microrna" in sl) and "target" in sl:
+        return "微小RNA靶点调控"
+    if ("mirna" in sl or "microrna" in sl) and "mrna" in sl:
+        return "微小RNA与mRNA互作"
     token_map = {
         "database": "数据库/平台",
         "databases": "数据库/平台",
@@ -148,6 +195,7 @@ def _to_tag_name_zh(name: str) -> str:
     for k in sorted(token_map.keys(), key=len, reverse=True):
         out = out.replace(k, token_map[k])
     out = re.sub(r"[A-Za-z]+", " ", out)
+    out = out.replace("（）", " ").replace("()", " ")
     out = re.sub(r"\s+", " ", out).strip(" -_/，。;；()[]{}")
     if _has_cjk(out) and not _has_ascii_alpha(out):
         return out
@@ -155,6 +203,9 @@ def _to_tag_name_zh(name: str) -> str:
         [ch for ch in out if ("\u4e00" <= ch <= "\u9fff") or ch in "/-+（）()、，； "]
     ).strip()
     only_zh = re.sub(r"\s+", " ", only_zh).strip(" -_/，。;；")
+    only_zh = re.sub(r"(微小\s*){2,}RNA", "微小RNA", only_zh)
+    only_zh = re.sub(r"(微小RNA)(\s+\1)+", r"\1", only_zh)
+    only_zh = re.sub(r"\s*相关\s*$", "", only_zh).strip()
     if _has_cjk(only_zh) and not _has_ascii_alpha(only_zh):
         return only_zh
     return "综合主题汇总"
@@ -249,11 +300,18 @@ def _is_good_candidate(
     return True, "ok"
 
 
-def _append_learned(learned_path: Path, level: str, name: str, keywords: list[str]) -> None:
+def _append_learned(
+    learned_path: Path,
+    level: str,
+    name: str,
+    keywords: list[str],
+    alias_map: dict[str, str],
+    zh_map: dict[str, str],
+) -> None:
     learned_path.parent.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
     name_en = name if not _has_cjk(name) else ""
-    name_zh = _to_tag_name_zh(name)
+    name_zh = _to_tag_name_zh(name, alias_map, zh_map)
     with learned_path.open("a", encoding="utf-8", newline="\n") as f:
         f.write(
             json.dumps(
@@ -278,6 +336,8 @@ def _purge_and_rewrite_learned(
     min_len_cjk: int,
     min_len_ascii: int,
     stopwords_zh: set[str],
+    alias_map: dict[str, str],
+    zh_map: dict[str, str],
 ) -> dict[str, int]:
     rows = _read_jsonl(learned_path)
     kept: dict[str, dict[str, Any]] = {}
@@ -287,7 +347,7 @@ def _purge_and_rewrite_learned(
         kws = [str(x).strip() for x in (r.get("keywords") or []) if str(x).strip()]
         # (re)compute bilingual fields so Chinese display stays clean
         if name:
-            r["name_zh"] = _to_tag_name_zh(str(r.get("name_en") or name))
+            r["name_zh"] = _to_tag_name_zh(str(r.get("name_en") or name), alias_map, zh_map)
             r["name_en"] = str(r.get("name_en") or "").strip() or (name if (name and not _has_cjk(name)) else "")
         # learned rows may not have score; treat as high enough to be judged by content
         ok, _reason = _is_good_candidate(
@@ -302,7 +362,7 @@ def _purge_and_rewrite_learned(
         if not ok:
             dropped += 1
             continue
-        key = _norm_key(name)
+        key = _canonical_token_key(name, alias_map)
         prev = kept.get(key)
         if prev is None:
             kept[key] = r
@@ -334,10 +394,16 @@ def main() -> None:
         default="08_taxonomy_memory/config/stopwords_zh.yaml",
         help="Chinese stopwords yaml (default: 08_taxonomy_memory/config/stopwords_zh.yaml)",
     )
+    p.add_argument(
+        "--professional-lexicon",
+        default="08_taxonomy_memory/config/professional_tag_lexicon.yaml",
+        help="professional lexicon yaml for translation/dedup",
+    )
     p.add_argument("--purge-learned", action="store_true", help="purge and rewrite learned files before approving")
     args = p.parse_args()
 
     stopwords_zh = _load_stopwords_zh(Path(args.stopwords_zh))
+    alias_map, zh_map = _load_prof_lexicon(Path(args.professional_lexicon))
 
     if args.purge_learned:
         s2 = _purge_and_rewrite_learned(
@@ -346,6 +412,8 @@ def main() -> None:
             min_len_cjk=int(args.min_len_cjk),
             min_len_ascii=int(args.min_len_ascii),
             stopwords_zh=stopwords_zh,
+            alias_map=alias_map,
+            zh_map=zh_map,
         )
         s3 = _purge_and_rewrite_learned(
             Path(args.learned_l3),
@@ -353,6 +421,8 @@ def main() -> None:
             min_len_cjk=int(args.min_len_cjk),
             min_len_ascii=int(args.min_len_ascii),
             stopwords_zh=stopwords_zh,
+            alias_map=alias_map,
+            zh_map=zh_map,
         )
         print(f"[ok] purged learned_l2: {s2}")
         print(f"[ok] purged learned_l3: {s3}")
@@ -363,7 +433,11 @@ def main() -> None:
         (Path(args.queue_l2), Path(args.learned_l2), "L2"),
         (Path(args.queue_l3), Path(args.learned_l3), "L3"),
     ]:
-        existing = {str(r.get("name") or "").strip().lower() for r in _read_jsonl(l_path) if str(r.get("name") or "").strip()}
+        existing = {
+            _canonical_token_key(str(r.get("name") or "").strip(), alias_map)
+            for r in _read_jsonl(l_path)
+            if str(r.get("name") or "").strip()
+        }
         rows = _read_jsonl(q_path)
         for r in rows:
             name = str(r.get("candidate_name") or "").strip()
@@ -378,7 +452,7 @@ def main() -> None:
                 continue
             if args.approve_contains and args.approve_contains not in name:
                 continue
-            if name.strip().lower() in existing:
+            if _canonical_token_key(name, alias_map) in existing:
                 continue
             ok, _reason = _is_good_candidate(
                 name,
@@ -392,7 +466,7 @@ def main() -> None:
             if not ok:
                 rejected += 1
                 continue
-            _append_learned(l_path, level=level, name=name, keywords=kws)
+            _append_learned(l_path, level=level, name=name, keywords=kws, alias_map=alias_map, zh_map=zh_map)
             approved += 1
     print(f"[ok] approved into learned: {approved} (rejected: {rejected})")
 
