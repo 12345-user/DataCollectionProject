@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 from datetime import date, datetime
@@ -471,29 +472,47 @@ def _run_oneclick_pipeline(
     extra_source_urls: list[str],
     output_prefix: str,
 ) -> tuple[bool, str]:
-    cmd = [
-        "powershell",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "scripts/run_full_pipeline_oneclick.ps1",
-        "-ProfessorName",
-        professor_name,
-        "-SeedPaperTitle",
-        seed_paper_title,
-        "-OutputPrefix",
-        output_prefix,
-        "-NoStartWeb",
-    ]
-    if seed_pmid.strip():
-        cmd.extend(["-SeedPMID", seed_pmid.strip()])
-    if extra_source_urls:
-        cmd.extend(["-ExtraSourceUrls", *extra_source_urls])
+    project_root = Path(__file__).resolve().parents[2]
+    if os.name == "nt":
+        cmd = [
+            "powershell",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "scripts/run_full_pipeline_oneclick.ps1",
+            "-ProfessorName",
+            professor_name,
+            "-SeedPaperTitle",
+            seed_paper_title,
+            "-OutputPrefix",
+            output_prefix,
+            "-NoStartWeb",
+        ]
+        if seed_pmid.strip():
+            cmd.extend(["-SeedPMID", seed_pmid.strip()])
+        if extra_source_urls:
+            cmd.extend(["-ExtraSourceUrls", *extra_source_urls])
+    else:
+        cmd = [
+            "bash",
+            "scripts/linux/run_full_pipeline_oneclick.sh",
+            "--professor-name",
+            professor_name,
+            "--seed-paper-title",
+            seed_paper_title,
+            "--output-prefix",
+            output_prefix,
+            "--no-start-web",
+        ]
+        if seed_pmid.strip():
+            cmd.extend(["--seed-pmid", seed_pmid.strip()])
+        if extra_source_urls:
+            cmd.extend(["--extra-source-url", *extra_source_urls])
 
     try:
         cp = subprocess.run(
             cmd,
-            cwd=str(Path(__file__).resolve().parents[2]),
+            cwd=str(project_root),
             text=True,
             capture_output=True,
             timeout=1800,
@@ -514,6 +533,8 @@ def _run_tag_learning_and_refresh(prefix: str) -> tuple[bool, str]:
     """
     project_root = Path(__file__).resolve().parents[2]
     python = project_root / ".venv" / "Scripts" / "python.exe"
+    if not python.exists():
+        python = project_root / ".venv" / "bin" / "python"
     if not python.exists():
         return False, f"未找到虚拟环境 Python：{python}"
 

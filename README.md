@@ -68,6 +68,26 @@ powershell -ExecutionPolicy Bypass -File "scripts/run_full_pipeline_oneclick.ps1
 - 若参数 `-StartWeb` 默认开启，会尝试启动网页（默认端口 8502）。
 - 网页内也提供了同等的一键执行入口（输入作者名、种子论文、来源 URL）。
 
+### Ubuntu 22.04（linux 分支推荐）
+
+本项目已在 `scripts/linux` 提供 Linux 原生脚本，避免 `powershell` 和 `.venv\Scripts\*.exe` 依赖：
+
+```bash
+bash scripts/linux/setup_ubuntu22.sh
+
+bash scripts/linux/run_full_pipeline_oneclick.sh \
+  --professor-name "教授姓名" \
+  --seed-paper-title "种子论文名称" \
+  --seed-pmid "可选PMID" \
+  --no-start-web
+```
+
+关键 Linux 脚本：
+- `scripts/linux/setup_ubuntu22.sh`：安装 Ubuntu 22.04 依赖并初始化 venv
+- `scripts/linux/run_professor_collection_simple.sh`：Step01 + bridge（Linux）
+- `scripts/linux/run_steps04_05_06_cloud_glue.sh`：Step03-05（Linux）
+- `scripts/linux/run_full_pipeline_oneclick.sh`：Step01-07 + Step09 一键（Linux）
+
 ---
 
 ## 3) 全流程逻辑图（01 -> 07）
@@ -172,6 +192,16 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collec
   -Prefix "【统一输出前缀】"
 ```
 
+Linux:
+
+```bash
+bash scripts/linux/run_steps04_05_06_cloud_glue.sh \
+  --expanded-papers "02_paper_list_extend/step_results/前缀_expanded_papers.jsonl" \
+  --lab-info "01_data_collection/step_results/professor_lab_info/前缀_lab_info.json" \
+  --target-name "目标教授标准名" \
+  --prefix "统一输出前缀"
+```
+
 ---
 
 ### Step06 时间分析与投入推断（`07_temporal_analysis/processing`）
@@ -186,6 +216,16 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collec
   --timeline-output "07_temporal_analysis/step_results/【前缀】_step06_project_timeline.json" `
   --allocation-output "07_temporal_analysis/step_results/【前缀】_step06_effort_allocation.json" `
   --report-output "07_temporal_analysis/step_results/【前缀】_step06_trend_report.md"
+```
+
+Linux:
+
+```bash
+.venv/bin/python "07_temporal_analysis/processing/run_step07_temporal_analysis.py" \
+  --input "06_domain_clustering/step_results/前缀_step05_paper_domains.jsonl" \
+  --timeline-output "07_temporal_analysis/step_results/前缀_step06_project_timeline.json" \
+  --allocation-output "07_temporal_analysis/step_results/前缀_step06_effort_allocation.json" \
+  --report-output "07_temporal_analysis/step_results/前缀_step06_trend_report.md"
 ```
 
 - **输入示例**：Step05 的 `paper_domains.jsonl`  
@@ -206,6 +246,17 @@ powershell -ExecutionPolicy Bypass -File "scripts\bootstrap\run_professor_collec
   --duckdb-path "07_temporal_analysis/step_results/pipeline.duckdb"
 
 .\.venv\Scripts\streamlit.exe run "07_temporal_analysis/app/streamlit_app.py"
+```
+
+Linux:
+
+```bash
+.venv/bin/python "07_temporal_analysis/processing/build_step07_duckdb.py" \
+  --professor "教授标识" \
+  --paper-domains "06_domain_clustering/step_results/前缀_step05_paper_domains.jsonl" \
+  --duckdb-path "07_temporal_analysis/step_results/pipeline.duckdb"
+
+.venv/bin/python -m streamlit run "07_temporal_analysis/app/streamlit_app.py"
 ```
 
 - **输入示例**：Step05/Step06 结果文件  
