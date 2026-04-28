@@ -1,0 +1,104 @@
+{
+  "terms": [
+    {
+      "term": "微小RNA",
+      "weight": 6.941944,
+      "paper_count": 36
+    },
+    {
+      "term": "肿瘤",
+      "weight": 5.267932,
+      "paper_count": 36
+    },
+    {
+      "term": "ATAD2 染色质",
+      "weight": 4.579911,
+      "paper_count": 36
+    },
+    {
+      "term": "ATAD2 溴结构域",
+      "weight": 4.349651,
+      "paper_count": 34
+    },
+    {
+      "term": "代谢",
+      "weight": 0.340139,
+      "paper_count": 2
+    },
+    {
+      "term": "铁死亡",
+      "weight": 0.258636,
+      "paper_count": 1
+    },
+    {
+      "term": "药物靶点",
+      "weight": 0.231249,
+      "paper_count": 1
+    },
+    {
+      "term": "抗氧化",
+      "weight": 0.223673,
+      "paper_count": 1
+    },
+    {
+      "term": "水凝胶",
+      "weight": 0.221332,
+      "paper_count": 1
+    },
+    {
+      "term": "不良药物反应",
+      "weight": 0.200302,
+      "paper_count": 1
+    },
+    {
+      "term": "空气污染",
+      "weight": 0.198927,
+      "paper_count": 1
+    },
+    {
+      "term": "纳米复合材料 水凝胶",
+      "weight": 0.184444,
+      "paper_count": 1
+    },
+    {
+      "term": "微小RNA 483",
+      "weight": 0.170857,
+      "paper_count": 1
+    },
+    {
+      "term": "纳米颗粒",
+      "weight": 0.157718,
+      "paper_count": 1
+    },
+    {
+      "term": "微小RNA 信使RNA",
+      "weight": 0.156681,
+      "paper_count": 1
+    },
+    {
+      "term": "血液",
+      "weight": 0.152068,
+      "paper_count": 1
+    },
+    {
+      "term": "血液 感染",
+      "weight": 0.152068,
+      "paper_count": 1
+    },
+    {
+      "term": "深度学习",
+      "weight": 0.110687,
+      "paper_count": 1
+    },
+    {
+      "term": "肿瘤 微小RNA",
+      "weight": 0.090615,
+      "paper_count": 1
+    },
+    {
+      "term": "肿瘤 3",
+      "weight": 0.079518,
+      "paper_count": 1
+    }
+  ]
+}

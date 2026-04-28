@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "term": "肿瘤",
+      "weight": 1.965491,
+      "paper_count": 4
+    },
+    {
+      "term": "代谢",
+      "weight": 1.570163,
+      "paper_count": 3
+    },
+    {
+      "term": "微小RNA",
+      "weight": 1.429566,
+      "paper_count": 3
+    },
+    {
+      "term": "抗氧化",
+      "weight": 0.698131,
+      "paper_count": 1
+    },
+    {
+      "term": "微小RNA 信使RNA",
+      "weight": 0.287248,
+      "paper_count": 1
+    },
+    {
+      "term": "肿瘤 3",
+      "weight": 0.228917,
+      "paper_count": 1
+    }
+  ]
+}

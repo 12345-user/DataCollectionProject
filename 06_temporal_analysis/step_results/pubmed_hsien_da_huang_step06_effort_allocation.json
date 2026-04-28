@@ -1,0 +1,296 @@
+{
+  "allocation": {
+    "tau_days": 365,
+    "total_weight": 5.123681054036019,
+    "share_current": [
+      {
+        "tag_name": "微小RNA",
+        "share_current": 0.340368,
+        "weight": 1.7439
+      },
+      {
+        "tag_name": "肿瘤",
+        "share_current": 0.308536,
+        "weight": 1.5808
+      },
+      {
+        "tag_name": "微小RNA 483",
+        "share_current": 0.249097,
+        "weight": 1.2763
+      },
+      {
+        "tag_name": "代谢",
+        "share_current": 0.016778,
+        "weight": 0.086
+      },
+      {
+        "tag_name": "肿瘤 微小RNA",
+        "share_current": 0.01494,
+        "weight": 0.0765
+      },
+      {
+        "tag_name": "抗氧化",
+        "share_current": 0.014222,
+        "weight": 0.0729
+      },
+      {
+        "tag_name": "不良药物反应",
+        "share_current": 0.010793,
+        "weight": 0.0553
+      },
+      {
+        "tag_name": "微小RNA 信使RNA",
+        "share_current": 0.009211,
+        "weight": 0.0472
+      },
+      {
+        "tag_name": "血液",
+        "share_current": 0.007924,
+        "weight": 0.0406
+      },
+      {
+        "tag_name": "血液 感染",
+        "share_current": 0.007924,
+        "weight": 0.0406
+      },
+      {
+        "tag_name": "深度学习",
+        "share_current": 0.006942,
+        "weight": 0.0356
+      },
+      {
+        "tag_name": "毒性",
+        "share_current": 0.005396,
+        "weight": 0.0276
+      },
+      {
+        "tag_name": "铁死亡",
+        "share_current": 0.002152,
+        "weight": 0.011
+      },
+      {
+        "tag_name": "药物靶点",
+        "share_current": 0.001949,
+        "weight": 0.01
+      },
+      {
+        "tag_name": "肿瘤 3",
+        "share_current": 0.001817,
+        "weight": 0.0093
+      },
+      {
+        "tag_name": "RNA 肿瘤",
+        "share_current": 0.000678,
+        "weight": 0.0035
+      },
+      {
+        "tag_name": "空气污染",
+        "share_current": 0.000532,
+        "weight": 0.0027
+      },
+      {
+        "tag_name": "高血压 空气污染",
+        "share_current": 0.000266,
+        "weight": 0.0014
+      },
+      {
+        "tag_name": "中国",
+        "share_current": 0.000181,
+        "weight": 0.0009
+      },
+      {
+        "tag_name": "微小RNA 7",
+        "share_current": 0.000106,
+        "weight": 0.0005
+      },
+      {
+        "tag_name": "感染 微小RNA",
+        "share_current": 0.000106,
+        "weight": 0.0005
+      },
+      {
+        "tag_name": "高血压",
+        "share_current": 8.2e-05,
+        "weight": 0.0004
+      }
+    ]
+  },
+  "trend": [
+    {
+      "tag_name": "肿瘤 微小RNA",
+      "trend_future": 76548.5714,
+      "recent_weight": 0.0765,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.662407,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "肿瘤 3",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "铁死亡",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "药物靶点",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "空气污染",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "高血压 空气污染",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "RNA 肿瘤",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "中国",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "微小RNA 7",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "感染 微小RNA",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "高血压",
+      "trend_future": 1.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.0
+    },
+    {
+      "tag_name": "肿瘤",
+      "trend_future": 0.7086,
+      "recent_weight": 0.5445,
+      "past_weight": 0.7684,
+      "recent_avg_quality": 0.682907,
+      "past_avg_quality": 0.660413
+    },
+    {
+      "tag_name": "微小RNA",
+      "trend_future": 0.5965,
+      "recent_weight": 0.5392,
+      "past_weight": 0.9039,
+      "recent_avg_quality": 0.682907,
+      "past_avg_quality": 0.660413
+    },
+    {
+      "tag_name": "微小RNA 483",
+      "trend_future": 0.5189,
+      "recent_weight": 0.3606,
+      "past_weight": 0.695,
+      "recent_avg_quality": 0.682907,
+      "past_avg_quality": 0.660413
+    },
+    {
+      "tag_name": "不良药物反应",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0553,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.66236
+    },
+    {
+      "tag_name": "毒性",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0276,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.66236
+    },
+    {
+      "tag_name": "深度学习",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0356,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.63826
+    },
+    {
+      "tag_name": "代谢",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0825,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68121
+    },
+    {
+      "tag_name": "抗氧化",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0719,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "血液",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0406,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "血液 感染",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0406,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.68166
+    },
+    {
+      "tag_name": "微小RNA 信使RNA",
+      "trend_future": 0.0,
+      "recent_weight": 0.0,
+      "past_weight": 0.0472,
+      "recent_avg_quality": 0.0,
+      "past_avg_quality": 0.65436
+    }
+  ]
+}

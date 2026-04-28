@@ -45,24 +45,27 @@ if (-not (Test-Path $python)) {
 
 $step02Out = "02_paper_list_extend/step_results/${OutputPrefix}_expanded_papers.jsonl"
 $labInfo = "01_data_collection/step_results/professor_lab_info/${OutputPrefix}_lab_info.json"
-$step05PaperOut = "06_domain_clustering/step_results/${OutputPrefix}_step05_paper_domains.jsonl"
-$timelineOut = "07_temporal_analysis/step_results/${OutputPrefix}_step06_project_timeline.json"
-$allocationOut = "07_temporal_analysis/step_results/${OutputPrefix}_step06_effort_allocation.json"
-$reportOut = "07_temporal_analysis/step_results/${OutputPrefix}_step06_trend_report.md"
-$duckdbPath = "07_temporal_analysis/step_results/pipeline.duckdb"
-$step09Json = "09_quality_guard/step_results/${OutputPrefix}_step09_quality_report.json"
-$step09Md = "09_quality_guard/step_results/${OutputPrefix}_step09_quality_report.md"
-$step04Out = "05_keyword_entity/step_results/${OutputPrefix}_step04_keyword_entity.jsonl"
-$setfitModelDir = "08_taxonomy_memory/models/setfit_local"
-$bertopicOut = "08_taxonomy_memory/step_results/${OutputPrefix}_bertopic_candidates.json"
-$snorkelOut = "08_taxonomy_memory/step_results/${OutputPrefix}_snorkel_weak_labels.jsonl"
-$queueOut = "08_taxonomy_memory/step_results/domain_taxonomy_learning_queue.jsonl"
-$taxReportOut = "08_taxonomy_memory/step_results/domain_taxonomy_report.json"
-$queueL2Out = "08_taxonomy_memory/step_results/learning_queue_l2.jsonl"
-$queueL3Out = "08_taxonomy_memory/step_results/learning_queue_l3.jsonl"
-$learnedL2Out = "08_taxonomy_memory/step_results/learned_l2.jsonl"
-$learnedL3Out = "08_taxonomy_memory/step_results/learned_l3.jsonl"
-$tagReportOut = "08_taxonomy_memory/step_results/tag_report.json"
+$step05PaperOut = "05_domain_analysis/step_results/${OutputPrefix}_step05_paper_domains.jsonl"
+$step05DomainsOut = "05_domain_analysis/step_results/${OutputPrefix}_step05_domains.json"
+$step05WordcloudTermsOut = "05_domain_analysis/step_results/${OutputPrefix}_step05_wordcloud_terms.json"
+$step05WordcloudImageOut = "05_domain_analysis/step_results/${OutputPrefix}_step05_wordcloud.png"
+$timelineOut = "06_temporal_analysis/step_results/${OutputPrefix}_step06_project_timeline.json"
+$allocationOut = "06_temporal_analysis/step_results/${OutputPrefix}_step06_effort_allocation.json"
+$reportOut = "06_temporal_analysis/step_results/${OutputPrefix}_step06_trend_report.md"
+$duckdbPath = "07_visualization/step_results/pipeline.duckdb"
+$step08Json = "08_quality_guard/step_results/${OutputPrefix}_step08_quality_report.json"
+$step08Md = "08_quality_guard/step_results/${OutputPrefix}_step08_quality_report.md"
+$step04Out = "04_keyword_entity/step_results/${OutputPrefix}_step04_keyword_entity.jsonl"
+$setfitModelDir = "05_domain_analysis/models/setfit_local"
+$bertopicOut = "05_domain_analysis/step_results/${OutputPrefix}_bertopic_candidates.json"
+$snorkelOut = "05_domain_analysis/step_results/${OutputPrefix}_snorkel_weak_labels.jsonl"
+$queueOut = "05_domain_analysis/step_results/domain_taxonomy_learning_queue.jsonl"
+$taxReportOut = "05_domain_analysis/step_results/domain_taxonomy_report.json"
+$queueL2Out = "05_domain_analysis/step_results/learning_queue_l2.jsonl"
+$queueL3Out = "05_domain_analysis/step_results/learning_queue_l3.jsonl"
+$learnedL2Out = "05_domain_analysis/step_results/learned_l2.jsonl"
+$learnedL3Out = "05_domain_analysis/step_results/learned_l3.jsonl"
+$tagReportOut = "05_domain_analysis/step_results/tag_report.json"
 
 Write-Host "=== 一键全流程开始 ==="
 Write-Host "ProfessorName: $ProfessorName"
@@ -118,7 +121,7 @@ Assert-LastExit "Step02"
 Assert-LastExit "Step03-05"
 
 # Step06: temporal analysis
-& $python "07_temporal_analysis/processing/run_step07_temporal_analysis.py" `
+& $python "06_temporal_analysis/processing/run_step06_temporal_analysis.py" `
   --input $step05PaperOut `
   --timeline-output $timelineOut `
   --allocation-output $allocationOut `
@@ -126,24 +129,24 @@ Assert-LastExit "Step03-05"
 Assert-LastExit "Step06"
 
 # Step07: build DuckDB for web
-& $python "07_temporal_analysis/processing/build_step07_duckdb.py" `
+& $python "06_temporal_analysis/processing/build_step06_duckdb.py" `
   --professor $OutputPrefix `
   --paper-domains $step05PaperOut `
   --duckdb-path $duckdbPath
 Assert-LastExit "Step07-DB"
 
-# Step09: quality guard (integrity/linkage/dirty-data/readability)
-& $python "09_quality_guard/processing/run_step09_quality_guard.py" `
+# Step08: quality guard (integrity/linkage/dirty-data/readability)
+& $python "08_quality_guard/processing/run_step08_quality_guard.py" `
   --prefix $OutputPrefix `
-  --output-json $step09Json `
-  --output-md $step09Md
-Assert-LastExit "Step09-QualityGuard"
+  --output-json $step08Json `
+  --output-md $step08Md
+Assert-LastExit "Step08-QualityGuard"
 
 # Step08: optional local mid/long-term taxonomy enhancement
 if ($EnableSetFit) {
     $setfitArgs = @(
-        "08_taxonomy_memory/processing/train_setfit_local.py",
-        "--train-jsonl", "08_taxonomy_memory/step_results/domain_taxonomy_learned.jsonl",
+        "05_domain_analysis/processing/tag_taxonomy/train_setfit_local.py",
+        "--train-jsonl", "05_domain_analysis/step_results/domain_taxonomy_learned.jsonl",
         "--output-dir", $setfitModelDir
     )
     if ($LocalFilesOnly) {
@@ -155,7 +158,7 @@ if ($EnableSetFit) {
 
 if ($EnableBERTopic) {
     $bertopicArgs = @(
-        "08_taxonomy_memory/processing/discover_bertopic_local.py",
+        "05_domain_analysis/processing/tag_taxonomy/discover_bertopic_local.py",
         "--input-jsonl", $step04Out,
         "--output-json", $bertopicOut
     )
@@ -167,32 +170,32 @@ if ($EnableBERTopic) {
 }
 
 if ($EnableSnorkel) {
-    & $python "08_taxonomy_memory/processing/snorkel_labeling_local.py" `
+    & $python "05_domain_analysis/processing/tag_taxonomy/snorkel_labeling_local.py" `
       --input-jsonl $step04Out `
       --output-jsonl $snorkelOut
     Assert-LastExit "Step08-Snorkel"
 
-    & $python "08_taxonomy_memory/processing/merge_weak_labels_to_queue.py" `
+    & $python "05_domain_analysis/processing/tag_taxonomy/merge_weak_labels_to_queue.py" `
       --weak-labels-jsonl $snorkelOut `
       --step04-jsonl $step04Out `
       --queue-jsonl $queueOut
     Assert-LastExit "Step08-SnorkelMergeQueue"
 
-    & $python "08_taxonomy_memory/processing/build_taxonomy_report.py" `
+    & $python "05_domain_analysis/processing/tag_taxonomy/build_taxonomy_report.py" `
       --queue $queueOut `
-      --learned "08_taxonomy_memory/step_results/domain_taxonomy_learned.jsonl" `
+      --learned "05_domain_analysis/step_results/domain_taxonomy_learned.jsonl" `
       --output $taxReportOut
     Assert-LastExit "Step08-TaxonomyReport"
 }
 
 if ($EnableTagLearning) {
-    & $python "08_taxonomy_memory/processing/extract_tag_candidates.py" `
+    & $python "05_domain_analysis/processing/tag_taxonomy/extract_tag_candidates.py" `
       --input-jsonl $step04Out `
       --output-l2 $queueL2Out `
       --output-l3 $queueL3Out
     Assert-LastExit "Step08-ExtractTagCandidates"
 
-    & $python "08_taxonomy_memory/processing/build_tag_report.py" `
+    & $python "05_domain_analysis/processing/tag_taxonomy/build_tag_report.py" `
       --queue-l2 $queueL2Out `
       --queue-l3 $queueL3Out `
       --learned-l2 $learnedL2Out `
@@ -202,7 +205,7 @@ if ($EnableTagLearning) {
 }
 
 # Save source-site metadata for web display.
-$sourceMetaPath = "07_temporal_analysis/step_results/${OutputPrefix}_source_sites.json"
+$sourceMetaPath = "07_visualization/step_results/${OutputPrefix}_source_sites.json"
 $sourceMeta = @{
     professor = $OutputPrefix
     input_extra_urls = @($ExtraSourceUrls)
@@ -216,20 +219,23 @@ if (-not $NoStartWeb) {
         Write-Warning "未找到 streamlit 可执行文件：$streamlit"
     } else {
         Write-Host "启动网页： http://localhost:$WebPort"
-        & $streamlit run "07_temporal_analysis/app/streamlit_app.py" --server.port $WebPort --server.headless true
+        & $streamlit run "07_visualization/app/streamlit_app.py" --server.port $WebPort --server.headless true
     }
 }
 
 Write-Host "=== 一键全流程完成 ==="
 Write-Host "Step02 Output: $step02Out"
 Write-Host "Step05 PaperDomains: $step05PaperOut"
+Write-Host "Step05 Domains: $step05DomainsOut"
+Write-Host "Step05 WordcloudTerms: $step05WordcloudTermsOut"
+Write-Host "Step05 WordcloudImage: $step05WordcloudImageOut"
 Write-Host "Step06 Timeline: $timelineOut"
 Write-Host "Step06 Allocation: $allocationOut"
 Write-Host "Step06 Report: $reportOut"
 Write-Host "DuckDB: $duckdbPath"
 Write-Host "SourceSitesMeta: $sourceMetaPath"
-Write-Host "Step09 Quality JSON: $step09Json"
-Write-Host "Step09 Quality MD: $step09Md"
+Write-Host "Step08 Quality JSON: $step08Json"
+Write-Host "Step08 Quality MD: $step08Md"
 if ($EnableSetFit) { Write-Host "Step08 SetFit ModelDir: $setfitModelDir" }
 if ($EnableBERTopic) { Write-Host "Step08 BERTopic Candidates: $bertopicOut" }
 if ($EnableSnorkel) { Write-Host "Step08 Snorkel Weak Labels: $snorkelOut" }

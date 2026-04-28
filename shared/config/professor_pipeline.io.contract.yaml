@@ -1,5 +1,5 @@
 pipeline_name: professor_research_pipeline
-version: "1.0"
+version: "2.0"
 
 stable_path_contract:
   step01:
@@ -38,60 +38,68 @@ stable_path_contract:
       expanded_papers_jsonl: "02_paper_list_extend/step_results/<prefix>_expanded_papers.jsonl"
       step01_lab_info_json: "01_data_collection/step_results/<prefix>_lab_info.json"
     output:
-      disambiguated_papers_jsonl: "04_author_disambiguation/step_results/<prefix>_disambiguated_papers.jsonl"
+      disambiguated_papers_jsonl: "03_author_disambiguation/step_results/<prefix>_step03_disambiguated_papers.jsonl"
     required_fields:
       - paper_id
       - identity_score
       - identity_decision
-      - identity_evidence
 
   step04:
     input:
-      disambiguated_papers_jsonl: "04_author_disambiguation/step_results/<prefix>_disambiguated_papers.jsonl"
+      disambiguated_papers_jsonl: "03_author_disambiguation/step_results/<prefix>_step03_disambiguated_papers.jsonl"
     output:
-      keyword_entity_jsonl: "05_keyword_entity/step_results/<prefix>_keyword_entity.jsonl"
+      keyword_entity_jsonl: "04_keyword_entity/step_results/<prefix>_step04_keyword_entity.jsonl"
     required_fields:
       - paper_id
       - keywords
-      - entities
-      - project_candidates
+      - quality_score
 
   step05:
     input:
-      keyword_entity_jsonl: "05_keyword_entity/step_results/<prefix>_keyword_entity.jsonl"
+      keyword_entity_jsonl: "04_keyword_entity/step_results/<prefix>_step04_keyword_entity.jsonl"
     output:
-      paper_domains_jsonl: "06_domain_clustering/step_results/<prefix>_paper_domains.jsonl"
-      domains_json: "06_domain_clustering/step_results/<prefix>_domains.json"
+      paper_domains_jsonl: "05_domain_analysis/step_results/<prefix>_step05_paper_domains.jsonl"
+      domains_json: "05_domain_analysis/step_results/<prefix>_step05_domains.json"
+      wordcloud_terms_json: "05_domain_analysis/step_results/<prefix>_step05_wordcloud_terms.json"
+      wordcloud_png: "05_domain_analysis/step_results/<prefix>_step05_wordcloud.png"
     required_fields:
       - paper_id
-      - domain_label
-      - domain_confidence
+      - primary_tag_name
+      - tag_items
 
   step06:
     input:
-      paper_domains_jsonl: "06_domain_clustering/step_results/<prefix>_paper_domains.jsonl"
+      paper_domains_jsonl: "05_domain_analysis/step_results/<prefix>_step05_paper_domains.jsonl"
     output:
-      project_timeline_json: "07_temporal_analysis/step_results/<prefix>_project_timeline.json"
-      effort_allocation_json: "07_temporal_analysis/step_results/<prefix>_effort_allocation.json"
-      trend_report_md: "07_temporal_analysis/step_results/<prefix>_trend_report.md"
+      project_timeline_json: "06_temporal_analysis/step_results/<prefix>_step06_project_timeline.json"
+      effort_allocation_json: "06_temporal_analysis/step_results/<prefix>_step06_effort_allocation.json"
+      trend_report_md: "06_temporal_analysis/step_results/<prefix>_step06_trend_report.md"
     required_fields:
-      - project_or_domain
-      - share_current
-      - trend_future
-      - evidence
+      - timeline
 
-  step09:
+  step07:
+    input:
+      paper_domains_jsonl: "05_domain_analysis/step_results/<prefix>_step05_paper_domains.jsonl"
+      timeline_json: "06_temporal_analysis/step_results/<prefix>_step06_project_timeline.json"
+    output:
+      duckdb_path: "07_visualization/step_results/pipeline.duckdb"
+      source_sites_json: "07_visualization/step_results/<prefix>_source_sites.json"
+    required_fields:
+      - professor
+
+  step08:
     input:
       step02_expanded_papers_jsonl: "02_paper_list_extend/step_results/<prefix>_expanded_papers.jsonl"
-      step03_disambiguated_jsonl: "04_author_disambiguation/step_results/<prefix>_step03_disambiguated_papers.jsonl"
-      step04_keyword_entity_jsonl: "05_keyword_entity/step_results/<prefix>_step04_keyword_entity.jsonl"
-      step05_paper_domains_jsonl: "06_domain_clustering/step_results/<prefix>_step05_paper_domains.jsonl"
-      step05_domains_json: "06_domain_clustering/step_results/<prefix>_step05_domains.json"
-      step06_timeline_json: "07_temporal_analysis/step_results/<prefix>_step06_project_timeline.json"
-      step06_allocation_json: "07_temporal_analysis/step_results/<prefix>_step06_effort_allocation.json"
+      step03_disambiguated_jsonl: "03_author_disambiguation/step_results/<prefix>_step03_disambiguated_papers.jsonl"
+      step04_keyword_entity_jsonl: "04_keyword_entity/step_results/<prefix>_step04_keyword_entity.jsonl"
+      step05_paper_domains_jsonl: "05_domain_analysis/step_results/<prefix>_step05_paper_domains.jsonl"
+      step05_domains_json: "05_domain_analysis/step_results/<prefix>_step05_domains.json"
+      step05_wordcloud_terms_json: "05_domain_analysis/step_results/<prefix>_step05_wordcloud_terms.json"
+      step06_timeline_json: "06_temporal_analysis/step_results/<prefix>_step06_project_timeline.json"
+      step06_allocation_json: "06_temporal_analysis/step_results/<prefix>_step06_effort_allocation.json"
     output:
-      quality_report_json: "09_quality_guard/step_results/<prefix>_step09_quality_report.json"
-      quality_report_md: "09_quality_guard/step_results/<prefix>_step09_quality_report.md"
+      quality_report_json: "08_quality_guard/step_results/<prefix>_step08_quality_report.json"
+      quality_report_md: "08_quality_guard/step_results/<prefix>_step08_quality_report.md"
     required_fields:
       - status
       - summary

@@ -1,0 +1,114 @@
+{
+  "terms": [
+    {
+      "term": "微小RNA",
+      "weight": 18.083775,
+      "paper_count": 78
+    },
+    {
+      "term": "肿瘤",
+      "weight": 16.511282,
+      "paper_count": 78
+    },
+    {
+      "term": "微小RNA 483",
+      "weight": 13.991578,
+      "paper_count": 78
+    },
+    {
+      "term": "抗氧化",
+      "weight": 0.771976,
+      "paper_count": 4
+    },
+    {
+      "term": "代谢",
+      "weight": 0.404035,
+      "paper_count": 2
+    },
+    {
+      "term": "铁死亡",
+      "weight": 0.305942,
+      "paper_count": 1
+    },
+    {
+      "term": "药物靶点",
+      "weight": 0.277073,
+      "paper_count": 1
+    },
+    {
+      "term": "RNA 肿瘤",
+      "weight": 0.26213,
+      "paper_count": 1
+    },
+    {
+      "term": "高血压",
+      "weight": 0.236022,
+      "paper_count": 1
+    },
+    {
+      "term": "不良药物反应",
+      "weight": 0.207116,
+      "paper_count": 1
+    },
+    {
+      "term": "空气污染",
+      "weight": 0.205694,
+      "paper_count": 1
+    },
+    {
+      "term": "中国",
+      "weight": 0.190546,
+      "paper_count": 1
+    },
+    {
+      "term": "微小RNA 信使RNA",
+      "weight": 0.176768,
+      "paper_count": 1
+    },
+    {
+      "term": "血液",
+      "weight": 0.152068,
+      "paper_count": 1
+    },
+    {
+      "term": "血液 感染",
+      "weight": 0.152068,
+      "paper_count": 1
+    },
+    {
+      "term": "深度学习",
+      "weight": 0.133215,
+      "paper_count": 1
+    },
+    {
+      "term": "微小RNA 7",
+      "weight": 0.111505,
+      "paper_count": 1
+    },
+    {
+      "term": "感染 微小RNA",
+      "weight": 0.111505,
+      "paper_count": 1
+    },
+    {
+      "term": "肿瘤 微小RNA",
+      "weight": 0.105474,
+      "paper_count": 1
+    },
+    {
+      "term": "毒性",
+      "weight": 0.103558,
+      "paper_count": 1
+    },
+    {
+      "term": "高血压 空气污染",
+      "weight": 0.102847,
+      "paper_count": 1
+    },
+    {
+      "term": "肿瘤 3",
+      "weight": 0.095022,
+      "paper_count": 1
+    }
+  ]
+}

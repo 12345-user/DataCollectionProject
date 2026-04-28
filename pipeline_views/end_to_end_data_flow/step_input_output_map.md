@@ -1,4 +1,4 @@
-# 输入/输出文件契约（Step 01 -> Step 06）
+# 输入/输出文件契约（Step 01 -> Step 08）
 
 为避免不同步骤在字段/文件命名上产生偏差，建议你按下面“最小契约”实现：
 
@@ -19,36 +19,58 @@
 - 输出（建议）：
   - `02_paper_list_extend/step_results/*_expanded_papers.jsonl`
 
-## Step 03（新）：04_author_disambiguation
+## Step 03：03_author_disambiguation
 
 - 输入：
   - `02_paper_list_extend/step_results/*_expanded_papers.jsonl`
   - （可选）`01_data_collection/step_results/professor_lab_info/*_lab_info.json`
 - 输出（建议）：
-  - `04_author_disambiguation/step_results/*_disambiguated_papers.jsonl`
+  - `03_author_disambiguation/step_results/*_step03_disambiguated_papers.jsonl`
 
-## Step 04（新）：05_keyword_entity
-
-- 输入：
-  - `04_author_disambiguation/step_results/*_disambiguated_papers.jsonl`
-- 输出（建议）：
-  - `05_keyword_entity/step_results/*_keyword_entity.jsonl`
-
-## Step 05（新）：06_domain_clustering
+## Step 04：04_keyword_entity
 
 - 输入：
-  - `05_keyword_entity/step_results/*_paper_features.jsonl`
+  - `03_author_disambiguation/step_results/*_step03_disambiguated_papers.jsonl`
 - 输出（建议）：
-  - `06_domain_clustering/step_results/*_domain_labels.json`
+  - `04_keyword_entity/step_results/*_step04_keyword_entity.jsonl`
 
-## Step 06（新）：07_temporal_analysis
+## Step 05：05_domain_analysis
 
 - 输入：
-  - `06_domain_clustering/step_results/*_domain_labels.json`
-  - `05_keyword_entity/step_results/*_paper_features.jsonl`（project 统计）
-  - 身份一致性权重（若有；否则默认 1）
+  - `04_keyword_entity/step_results/*_step04_keyword_entity.jsonl`
 - 输出（建议）：
-  - `07_temporal_analysis/step_results/*_share_current.json`
-  - `07_temporal_analysis/step_results/*_trend_future.json`
-  - `07_temporal_analysis/step_results/*_consistency_report.md`
+  - `05_domain_analysis/step_results/*_step05_paper_domains.jsonl`
+  - `05_domain_analysis/step_results/*_step05_domains.json`
+  - `05_domain_analysis/step_results/*_step05_wordcloud_terms.json`
+  - `05_domain_analysis/step_results/*_step05_wordcloud.png`
+
+说明：
+- 该步内部并列运行 `domain_clustering + tag_taxonomy + wordcloud`
+
+## Step 06：06_temporal_analysis
+
+- 输入：
+  - `05_domain_analysis/step_results/*_step05_paper_domains.jsonl`
+- 输出（建议）：
+  - `06_temporal_analysis/step_results/*_step06_project_timeline.json`
+  - `06_temporal_analysis/step_results/*_step06_effort_allocation.json`
+  - `06_temporal_analysis/step_results/*_step06_trend_report.md`
+
+## Step 07：07_visualization
+
+- 输入：
+  - `05_domain_analysis/step_results/*_step05_paper_domains.jsonl`
+  - `06_temporal_analysis/step_results/*_step06_project_timeline.json`
+- 输出（建议）：
+  - `07_visualization/step_results/pipeline.duckdb`
+  - `07_visualization/step_results/*_source_sites.json`
+
+## Step 08：08_quality_guard
+
+- 输入：
+  - Step02 ~ Step06 产物
+  - Step05 词云产物
+- 输出（建议）：
+  - `08_quality_guard/step_results/*_step08_quality_report.json`
+  - `08_quality_guard/step_results/*_step08_quality_report.md`
 

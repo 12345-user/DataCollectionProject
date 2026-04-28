@@ -1,0 +1,22 @@
+{
+  "prefix": "pubmed_shangfu_li",
+  "status": "pass",
+  "counts": {
+    "step02": 8133,
+    "step03": 8133,
+    "step04": 27,
+    "step05": 27
+  },
+  "summary": {
+    "errors": 0,
+    "warnings": 1
+  },
+  "findings": [
+    {
+      "severity": "warn",
+      "check": "step02.pub_date",
+      "detail": "invalid/empty pub_date rows: 2"
+    }
+  ],
+  "uses_pandera": false
+}

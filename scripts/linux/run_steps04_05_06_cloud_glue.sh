@@ -30,19 +30,21 @@ if [[ ! -x "$PYTHON_BIN" ]]; then
   exit 2
 fi
 
-STEP03_OUT="04_author_disambiguation/step_results/${PREFIX}_step03_disambiguated_papers.jsonl"
-STEP04_OUT="05_keyword_entity/step_results/${PREFIX}_step04_keyword_entity.jsonl"
-STEP05_PAPER_OUT="06_domain_clustering/step_results/${PREFIX}_step05_paper_domains.jsonl"
-STEP05_DOMAINS_OUT="06_domain_clustering/step_results/${PREFIX}_step05_domains.json"
+STEP03_OUT="03_author_disambiguation/step_results/${PREFIX}_step03_disambiguated_papers.jsonl"
+STEP04_OUT="04_keyword_entity/step_results/${PREFIX}_step04_keyword_entity.jsonl"
+STEP05_PAPER_OUT="05_domain_analysis/step_results/${PREFIX}_step05_paper_domains.jsonl"
+STEP05_DOMAINS_OUT="05_domain_analysis/step_results/${PREFIX}_step05_domains.json"
+STEP05_WORDCLOUD_TERMS_OUT="05_domain_analysis/step_results/${PREFIX}_step05_wordcloud_terms.json"
+STEP05_WORDCLOUD_IMAGE_OUT="05_domain_analysis/step_results/${PREFIX}_step05_wordcloud.png"
 
-"$PYTHON_BIN" "04_author_disambiguation/processing/run_step04_author_disambiguation.py" \
+"$PYTHON_BIN" "03_author_disambiguation/processing/run_step03_author_disambiguation.py" \
   --expanded-papers "$EXPANDED_PAPERS" \
   --lab-info "$LAB_INFO" \
   --target-name "$TARGET_NAME" \
   --output "$STEP03_OUT" \
   --threshold 0.5
 
-"$PYTHON_BIN" "05_keyword_entity/processing/run_step05_keyword_entity.py" \
+"$PYTHON_BIN" "04_keyword_entity/processing/run_step04_keyword_entity.py" \
   --input "$STEP03_OUT" \
   --output "$STEP04_OUT" \
   --min-identity-score 0.5 \
@@ -50,10 +52,12 @@ STEP05_DOMAINS_OUT="06_domain_clustering/step_results/${PREFIX}_step05_domains.j
   --keybert-model "sentence-transformers/all-MiniLM-L6-v2" \
   --local-files-only
 
-"$PYTHON_BIN" "06_domain_clustering/processing/run_step06_domain_clustering.py" \
+"$PYTHON_BIN" "05_domain_analysis/processing/run_step05_domain_analysis.py" \
   --input "$STEP04_OUT" \
   --paper-domains-output "$STEP05_PAPER_OUT" \
   --domains-output "$STEP05_DOMAINS_OUT" \
+  --wordcloud-terms-output "$STEP05_WORDCLOUD_TERMS_OUT" \
+  --wordcloud-image-output "$STEP05_WORDCLOUD_IMAGE_OUT" \
   --model "sentence-transformers/all-MiniLM-L6-v2" \
   --local-files-only
 
@@ -62,3 +66,5 @@ echo "$STEP03_OUT"
 echo "$STEP04_OUT"
 echo "$STEP05_PAPER_OUT"
 echo "$STEP05_DOMAINS_OUT"
+echo "$STEP05_WORDCLOUD_TERMS_OUT"
+echo "$STEP05_WORDCLOUD_IMAGE_OUT"

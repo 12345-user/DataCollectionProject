@@ -1,0 +1,335 @@
+{
+  "tags": [
+    {
+      "tag_name": "肿瘤",
+      "paper_count": 78,
+      "avg_tag_weight": 0.313247,
+      "total_tag_weight": 24.433229,
+      "evidence_papers": [
+        {
+          "paper_id": "41900810",
+          "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation.",
+          "abstract_snippet": "Background/Objectives : ATPase family AAA domain-containing protein 2 (ATAD2) is an oncogenic chromatin regulator that amplifies E2F/MYC transcriptional programs, yet direct modula..."
+        },
+        {
+          "paper_id": "41691474",
+          "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers.",
+          "abstract_snippet": "MicroRNAs (miRNAs) are pivotal post‑transcriptional regulators whose single‑cell behavior has remained largely inaccessible due to technical barriers in single-cell small‑RNA profi..."
+        },
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        }
+      ]
+    },
+    {
+      "tag_name": "微小RNA",
+      "paper_count": 78,
+      "avg_tag_weight": 0.342863,
+      "total_tag_weight": 26.743291,
+      "evidence_papers": [
+        {
+          "paper_id": "41900810",
+          "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation.",
+          "abstract_snippet": "Background/Objectives : ATPase family AAA domain-containing protein 2 (ATAD2) is an oncogenic chromatin regulator that amplifies E2F/MYC transcriptional programs, yet direct modula..."
+        },
+        {
+          "paper_id": "41691474",
+          "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers.",
+          "abstract_snippet": "MicroRNAs (miRNAs) are pivotal post‑transcriptional regulators whose single‑cell behavior has remained largely inaccessible due to technical barriers in single-cell small‑RNA profi..."
+        },
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        }
+      ]
+    },
+    {
+      "tag_name": "微小RNA 483",
+      "paper_count": 78,
+      "avg_tag_weight": 0.265975,
+      "total_tag_weight": 20.746029,
+      "evidence_papers": [
+        {
+          "paper_id": "41900810",
+          "title": "Arecoline as a Novel Scaffold Targeting the ATAD2 Bromodomain for Cell Cycle Modulation.",
+          "abstract_snippet": "Background/Objectives : ATPase family AAA domain-containing protein 2 (ATAD2) is an oncogenic chromatin regulator that amplifies E2F/MYC transcriptional programs, yet direct modula..."
+        },
+        {
+          "paper_id": "41691474",
+          "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers.",
+          "abstract_snippet": "MicroRNAs (miRNAs) are pivotal post‑transcriptional regulators whose single‑cell behavior has remained largely inaccessible due to technical barriers in single-cell small‑RNA profi..."
+        },
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        }
+      ]
+    },
+    {
+      "tag_name": "抗氧化",
+      "paper_count": 4,
+      "avg_tag_weight": 0.305352,
+      "total_tag_weight": 1.221408,
+      "evidence_papers": [
+        {
+          "paper_id": "40227198",
+          "title": "Identifying Baicalein as a Key Bioactive Compound in XueBiJing Targeting KEAP1: Implications for Antioxidant Effects.",
+          "abstract_snippet": "XueBiJing injection (XBJ) is renowned for its multi-target pharmacological effects, including immunomodulatory, antithrombotic, and antioxidant activities, offering potential thera..."
+        },
+        {
+          "paper_id": "34248614",
+          "title": "The Use of Chinese Yang/Qi-Invigorating Tonic Botanical Drugs/Herbal Formulations in Ameliorating Chronic Kidney Disease by Enhancing Mitochondrial Function.",
+          "abstract_snippet": "Background:  Chronic kidney disease (CKD) is a leading cause of morbidity and mortality. Mitochondrial dysfunction has been implicated as a key factor in the development of CKD. Ac..."
+        },
+        {
+          "paper_id": "openaire:baicalein_preconditioning_protects_cardiomyocytes_from_ischemia_reperfusion_injury_via_mitochondrial_oxidant_signaling",
+          "title": "Baicalein Preconditioning Protects Cardiomyocytes from Ischemia-Reperfusion Injury via Mitochondrial Oxidant Signaling",
+          "abstract_snippet": "<jats:p> Previous studies suggest baicalein, in addition to its antioxidant effects, protects against hypoxia/reoxygenation injury via its pro-oxidant properties. We hypothesize th..."
+        }
+      ]
+    },
+    {
+      "tag_name": "代谢",
+      "paper_count": 2,
+      "avg_tag_weight": 0.290659,
+      "total_tag_weight": 0.581318,
+      "evidence_papers": [
+        {
+          "paper_id": "40507105",
+          "title": "Dietary Omega-3 PUFAs in Metabolic Disease Research: A Decade of Omics-Enabled Insights (2014-2024).",
+          "abstract_snippet": "Background/Objectives : The rising global prevalence of metabolic diseases (e.g., obesity, type 2 diabetes mellitus) underscores the need for effective interventions. Omega-3 polyu..."
+        },
+        {
+          "paper_id": "37337262",
+          "title": "Panax notoginseng alleviates oxidative stress through miRNA regulations based on systems biology approach.",
+          "abstract_snippet": "Herbal medicine Sanqi (SQ), the dried root or stem of Panax notoginseng (PNS), has been reported to have anti-diabetic and anti-obesity effects and is usually administered as a dec..."
+        }
+      ]
+    },
+    {
+      "tag_name": "肿瘤 微小RNA",
+      "paper_count": 1,
+      "avg_tag_weight": 0.152425,
+      "total_tag_weight": 0.152425,
+      "evidence_papers": [
+        {
+          "paper_id": "41691474",
+          "title": "SiCmiR Atlas: Single-Cell miRNA Landscape Reveals Hub-miRNA and Network Signatures in Human Cancers.",
+          "abstract_snippet": "MicroRNAs (miRNAs) are pivotal post‑transcriptional regulators whose single‑cell behavior has remained largely inaccessible due to technical barriers in single-cell small‑RNA profi..."
+        }
+      ]
+    },
+    {
+      "tag_name": "不良药物反应",
+      "paper_count": 1,
+      "avg_tag_weight": 0.29932,
+      "total_tag_weight": 0.29932,
+      "evidence_papers": [
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        }
+      ]
+    },
+    {
+      "tag_name": "毒性",
+      "paper_count": 1,
+      "avg_tag_weight": 0.14966,
+      "total_tag_weight": 0.14966,
+      "evidence_papers": [
+        {
+          "paper_id": "41481073",
+          "title": "DeepADR: multimodal prediction of adverse drug reaction frequency by integrating early-stage drug discovery information via Kolmogorov-Arnold networks.",
+          "abstract_snippet": "Adverse drug reactions (ADRs) are a major cause of clinical trial failure and postmarket withdrawal, posing significant risks to public health and impeding drug development. While..."
+        }
+      ]
+    },
+    {
+      "tag_name": "深度学习",
+      "paper_count": 1,
+      "avg_tag_weight": 0.19469,
+      "total_tag_weight": 0.19469,
+      "evidence_papers": [
+        {
+          "paper_id": "41390462",
+          "title": "Semi-inductive dataset construction and framework optimization for practical drug target interaction prediction with ScopeDTI.",
+          "abstract_snippet": "Deep learning-based drug-target interaction (DTI) prediction methods have demonstrated strong performance; however, real-world applicability remains constrained by limited data div..."
+        }
+      ]
+    },
+    {
+      "tag_name": "血液",
+      "paper_count": 1,
+      "avg_tag_weight": 0.217822,
+      "total_tag_weight": 0.217822,
+      "evidence_papers": [
+        {
+          "paper_id": "40182288",
+          "title": "Enhancing bloodstream infection diagnostics: a novel filtration and targeted next-generation sequencing approach for precise pathogen identification.",
+          "abstract_snippet": "Bloodstream infections (BSIs) pose a significant diagnostic challenge, largely due to the limitations of traditional methods such as blood cultures. These methods often yield low p..."
+        }
+      ]
+    },
+    {
+      "tag_name": "血液 感染",
+      "paper_count": 1,
+      "avg_tag_weight": 0.217822,
+      "total_tag_weight": 0.217822,
+      "evidence_papers": [
+        {
+          "paper_id": "40182288",
+          "title": "Enhancing bloodstream infection diagnostics: a novel filtration and targeted next-generation sequencing approach for precise pathogen identification.",
+          "abstract_snippet": "Bloodstream infections (BSIs) pose a significant diagnostic challenge, largely due to the limitations of traditional methods such as blood cultures. These methods often yield low p..."
+        }
+      ]
+    },
+    {
+      "tag_name": "微小RNA 信使RNA",
+      "paper_count": 1,
+      "avg_tag_weight": 0.25641,
+      "total_tag_weight": 0.25641,
+      "evidence_papers": [
+        {
+          "paper_id": "40076546",
+          "title": "Unveiling Novel miRNA-mRNA Interactions and Their Prognostic Roles in Triple-Negative Breast Cancer: Insights into miR-210, miR-183, miR-21, and miR-181b.",
+          "abstract_snippet": "Triple-negative breast cancer (TNBC) poses a major clinical challenge due to its aggressive progression and limited treatment options, making early diagnosis and prognosis critical..."
+        }
+      ]
+    },
+    {
+      "tag_name": "肿瘤 3",
+      "paper_count": 1,
+      "avg_tag_weight": 0.138365,
+      "total_tag_weight": 0.138365,
+      "evidence_papers": [
+        {
+          "paper_id": "39062881",
+          "title": "Multi-Omics Characterization of E3 Regulatory Patterns in Different Cancer Types.",
+          "abstract_snippet": "Ubiquitination, a post-translational modification, refers to the covalent attachment of ubiquitin molecules to substrates. This modification plays a critical role in diverse cellul..."
+        }
+      ]
+    },
+    {
+      "tag_name": "铁死亡",
+      "paper_count": 1,
+      "avg_tag_weight": 0.451282,
+      "total_tag_weight": 0.451282,
+      "evidence_papers": [
+        {
+          "paper_id": "38067658",
+          "title": "Effects of Natural Products on Enzymes Involved in Ferroptosis: Regulation and Implications.",
+          "abstract_snippet": "Ferroptosis is a form of regulated cell death that is characterized by the accumulation of iron-dependent lipid peroxides. The regulation of ferroptosis involves both non-enzymatic..."
+        }
+      ]
+    },
+    {
+      "tag_name": "药物靶点",
+      "paper_count": 1,
+      "avg_tag_weight": 0.40553,
+      "total_tag_weight": 0.40553,
+      "evidence_papers": [
+        {
+          "paper_id": "37762364",
+          "title": "A Robust Drug-Target Interaction Prediction Framework with Capsule Network and Transfer Learning.",
+          "abstract_snippet": "Drug-target interactions (DTIs) are considered a crucial component of drug design and drug discovery. To date, many computational methods were developed for drug-target interaction..."
+        }
+      ]
+    },
+    {
+      "tag_name": "空气污染",
+      "paper_count": 1,
+      "avg_tag_weight": 0.29932,
+      "total_tag_weight": 0.29932,
+      "evidence_papers": [
+        {
+          "paper_id": "36132186",
+          "title": "Air pollution and blood pressure in the elderly: evidence from a panel study in Nanjing, China.",
+          "abstract_snippet": "Air pollution is known to have notable negative effects on human health. Recently, the effect of air pollution on blood pressure among the elderly has attracted researchers' attent..."
+        }
+      ]
+    },
+    {
+      "tag_name": "高血压 空气污染",
+      "paper_count": 1,
+      "avg_tag_weight": 0.14966,
+      "total_tag_weight": 0.14966,
+      "evidence_papers": [
+        {
+          "paper_id": "36132186",
+          "title": "Air pollution and blood pressure in the elderly: evidence from a panel study in Nanjing, China.",
+          "abstract_snippet": "Air pollution is known to have notable negative effects on human health. Recently, the effect of air pollution on blood pressure among the elderly has attracted researchers' attent..."
+        }
+      ]
+    },
+    {
+      "tag_name": "RNA 肿瘤",
+      "paper_count": 1,
+      "avg_tag_weight": 0.385965,
+      "total_tag_weight": 0.385965,
+      "evidence_papers": [
+        {
+          "paper_id": "34850139",
+          "title": "CircNet 2.0: an updated database for exploring circular RNA regulatory networks in cancers.",
+          "abstract_snippet": "Circular RNAs (circRNAs), which are single-stranded RNA molecules that have individually formed into a covalently closed continuous loop, act as sponges of microRNAs to regulate tr..."
+        }
+      ]
+    },
+    {
+      "tag_name": "中国",
+      "paper_count": 1,
+      "avg_tag_weight": 0.278481,
+      "total_tag_weight": 0.278481,
+      "evidence_papers": [
+        {
+          "paper_id": "34737698",
+          "title": "Network Pharmacology-Based Identification of Key Mechanisms of Xihuang Pill in the Treatment of Triple-Negative Breast Cancer Stem Cells.",
+          "abstract_snippet": "Xihuang pill, an approved Chinese medicine formula (state medical permit number. Z11020073), is a commonly used adjuvant drug for cancer patients in China. Xihuang pill has a satis..."
+        }
+      ]
+    },
+    {
+      "tag_name": "微小RNA 7",
+      "paper_count": 1,
+      "avg_tag_weight": 0.162963,
+      "total_tag_weight": 0.162963,
+      "evidence_papers": [
+        {
+          "paper_id": "33208444",
+          "title": "Dual Effects of Let-7b in the Early Stage of Hepatitis C Virus Infection.",
+          "abstract_snippet": "MicroRNA let-7b expression is induced by infection of hepatitis C virus (HCV) and is involved in the regulation of HCV replication by directly targeting the HCV genome. The current..."
+        }
+      ]
+    },
+    {
+      "tag_name": "感染 微小RNA",
+      "paper_count": 1,
+      "avg_tag_weight": 0.162963,
+      "total_tag_weight": 0.162963,
+      "evidence_papers": [
+        {
+          "paper_id": "33208444",
+          "title": "Dual Effects of Let-7b in the Early Stage of Hepatitis C Virus Infection.",
+          "abstract_snippet": "MicroRNA let-7b expression is induced by infection of hepatitis C virus (HCV) and is involved in the regulation of HCV replication by directly targeting the HCV genome. The current..."
+        }
+      ]
+    },
+    {
+      "tag_name": "高血压",
+      "paper_count": 1,
+      "avg_tag_weight": 0.352,
+      "total_tag_weight": 0.352,
+      "evidence_papers": [
+        {
+          "paper_id": "32324970",
+          "title": "MicroRNA-483 amelioration of experimental pulmonary hypertension.",
+          "abstract_snippet": "Endothelial dysfunction is critically involved in the pathogenesis of pulmonary arterial hypertension (PAH) and that exogenously administered microRNA may be of therapeutic benefit..."
+        }
+      ]
+    }
+  ]
+}
