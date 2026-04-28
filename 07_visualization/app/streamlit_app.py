@@ -1122,6 +1122,8 @@ def _load_latest_learned_tags() -> pd.DataFrame:
     for path, lvl in [
         (Path("05_domain_analysis/step_results/learned_l2.jsonl"), "L2"),
         (Path("05_domain_analysis/step_results/learned_l3.jsonl"), "L3"),
+        (Path("05_domain_analysis/step_results/wordcloud_learned_l2.jsonl"), "L2"),
+        (Path("05_domain_analysis/step_results/wordcloud_learned_l3.jsonl"), "L3"),
     ]:
         for r in _read_jsonl(path):
             name = str(r.get("name") or "").strip()
@@ -1136,10 +1138,11 @@ def _load_latest_learned_tags() -> pd.DataFrame:
                     "标签英文": name_en,
                     "标签层级": str(r.get("level") or lvl),
                     "习得时间": learned_at,
+                    "来源": str(r.get("source") or ("learned" if "learned_" in str(path) else "")).strip(),
                 }
             )
     if not rows:
-        return pd.DataFrame(columns=["标签中文", "标签英文", "标签层级", "习得时间"])
+        return pd.DataFrame(columns=["标签中文", "标签英文", "标签层级", "习得时间", "来源"])
     df = pd.DataFrame(rows)
     dt = pd.to_datetime(df["习得时间"], errors="coerce")
     df["_ts"] = dt
@@ -1200,9 +1203,17 @@ with st.expander("输入作者与种子论文，执行全流程（01->08）", ex
                 )
             if ok:
                 st.success("一键流程执行完成。请在侧边栏选择对应教授并查看最新结果。")
+                st.session_state["oneclick_last_logs"] = logs[-12000:]
+                st.session_state["oneclick_last_ok"] = True
+                st.session_state["oneclick_last_prefix"] = run_output_prefix.strip() or professor
+                st.rerun()
             else:
                 st.error("一键流程执行失败，请查看日志。")
             st.text_area("执行日志", value=logs[-12000:], height=240)
+
+if "oneclick_last_logs" in st.session_state:
+    with st.expander("上次一键运行日志（自动保留）", expanded=False):
+        st.text_area("日志", value=str(st.session_state.get("oneclick_last_logs") or ""), height=240)
 
 start = st.sidebar.date_input("开始日期（可选）", value=None)
 end = st.sidebar.date_input("结束日期（可选）", value=None)
@@ -1275,7 +1286,7 @@ else:
     )
 pred_w_l1 = _render_level_charts("L1", df_time_l1, forecast_mode)
 
-st.subheader("2) L2 研究方向")
+st.subheader("2) L2 大类型（由词云归并）")
 if df_share_l2.empty:
     st.info("该筛选范围内无数据。")
 else:
@@ -1292,7 +1303,7 @@ else:
     st.dataframe(df_share_l2.rename(columns={"tag_label": "标签名称", "weight": "权重"})[["标签名称", "权重"]], use_container_width=True)
 pred_w_l2 = _render_level_charts("L2", df_time_l2, forecast_mode)
 
-st.subheader("3) L3 核心方法")
+st.subheader("3) L3 具体领域/方向（由词云细化）")
 if df_share_l3.empty:
     st.info("该筛选范围内无数据。")
 else:
@@ -1346,7 +1357,6 @@ with st.container():
     else:
         st.info("当前教授暂无词云结果。请先运行新的 Step05 领域分析。")
 
-st.subheader("7) 发表时间核验（上半年/下半年）")
 paper_df = _load_paper_catalog(
     professor,
     start,
@@ -1354,46 +1364,6 @@ paper_df = _load_paper_catalog(
     target_author,
     strict_only=(not show_all_candidates),
 )
-if paper_df.empty:
-    st.info("当前筛选范围无论文清单数据。")
-else:
-    pub_ts = pd.to_datetime(paper_df["发表时间"], errors="coerce")
-    valid_month = pub_ts.dropna().dt.month
-    h1 = int((valid_month <= 6).sum())
-    h2 = int((valid_month > 6).sum())
-    total = int(len(valid_month))
-    if h2 == 0 and total > 0:
-        st.success(f"核验结果：已发表论文时间全部在上半年（H1={h1}, H2={h2}, 有效时间={total}）。")
-    else:
-        st.warning(f"核验结果：并非全部在上半年（H1={h1}, H2={h2}, 有效时间={total}）。")
-    with st.expander("展开查看详细检验过程", expanded=False):
-        st.markdown(
-            "- 统计口径：仅统计 `发表时间` 可解析为日期的论文。\n"
-            "- 分组规则：月份 `1-6` 记为 `H1`，月份 `7-12` 记为 `H2`。\n"
-            "- 当前筛选条件：受侧边栏教授与时间范围过滤影响。"
-        )
-        detail = paper_df.copy()
-        detail["发表时间_dt"] = pd.to_datetime(detail["发表时间"], errors="coerce")
-        detail = detail[detail["发表时间_dt"].notna()].copy()
-        if detail.empty:
-            st.info("无可解析日期，无法展示详细检验过程。")
-        else:
-            detail["year"] = detail["发表时间_dt"].dt.year
-            detail["half"] = detail["发表时间_dt"].dt.month.apply(lambda m: "H1" if int(m) <= 6 else "H2")
-            by_year_half = (
-                detail.groupby(["year", "half"], as_index=False)
-                .size()
-                .rename(columns={"size": "paper_count"})
-                .sort_values(["year", "half"])
-            )
-            st.markdown("**按年份/半年分布**")
-            st.dataframe(by_year_half, use_container_width=True)
-            h2_examples = detail[detail["half"] == "H2"][["论文名称", "发表时间", "论文来源"]].head(20)
-            st.markdown("**H2 样本预览（最多20条）**")
-            if h2_examples.empty:
-                st.success("当前筛选下没有 H2 样本。")
-            else:
-                st.dataframe(h2_examples, use_container_width=True)
 
 st.subheader("论文信息来源网站")
 with st.expander("展开查看来源网站清单", expanded=False):
@@ -1403,7 +1373,7 @@ with st.expander("展开查看来源网站清单", expanded=False):
     else:
         st.info("当前教授未识别到来源网站清单。")
 
-st.subheader("8) 论文清单（可折叠）")
+st.subheader("7) 论文清单（可折叠）")
 full_paper_df = _load_paper_catalog(
     professor,
     start=None,
@@ -1430,14 +1400,14 @@ with st.expander("展开查看当前符合要求的论文", expanded=False):
         st.caption(f"当前符合要求条数：{len(paper_df)}")
         st.dataframe(paper_df, use_container_width=True)
 
-st.subheader("9) 最新学习标签（按习得时间倒序）")
+st.subheader("8) 最新学习标签（按习得时间倒序）")
 learned_df = _load_latest_learned_tags()
 if learned_df.empty:
     st.info("当前暂无已习得标签。请先执行 Step05 标签审核写入 learned_l2/learned_l3。")
 else:
     st.dataframe(learned_df, use_container_width=True)
 
-st.subheader("10) 一键学习与更新（标签去重 + 重新归类 + 同步论文清单）")
+st.subheader("9) 一键学习与更新（标签去重 + 重新归类 + 同步论文清单）")
 with st.expander("展开执行：learned 去重清洗 → 重新计算 L1/L2/L3 → 刷新 DuckDB/图表/论文清单", expanded=False):
     st.markdown(
         "- 会对 `learned_l2/learned_l3` 做去重与质量门控清洗；\n"

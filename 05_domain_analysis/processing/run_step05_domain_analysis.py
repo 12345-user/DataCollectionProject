@@ -3,6 +3,7 @@ import json
 import math
 import re
 from collections import Counter, defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -10,22 +11,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from huggingface_hub import snapshot_download
 import yaml
-import importlib.util
 from PIL import Image, ImageDraw, ImageFont
-
-
-def _load_step05_tagger():
-    tagger_path = Path("05_domain_analysis/processing/tag_taxonomy/tagger.py")
-    if not tagger_path.exists():
-        return None
-    spec = importlib.util.spec_from_file_location("step05_tagger", str(tagger_path))
-    if spec is None or spec.loader is None:
-        return None
-    mod = importlib.util.module_from_spec(spec)
-    import sys
-    sys.modules["step05_tagger"] = mod
-    spec.loader.exec_module(mod)  # type: ignore[attr-defined]
-    return mod
 
 _BAD_THEME_TOKENS = {
     "研究关键词",
@@ -71,15 +57,28 @@ _TAXONOMY_PATH = Path("shared/config/domain_taxonomy.yaml")
 _LEARNED_TAXONOMY_PATH = Path("05_domain_analysis/step_results/domain_taxonomy_learned.jsonl")
 _LEARNING_QUEUE_PATH = Path("05_domain_analysis/step_results/domain_taxonomy_learning_queue.jsonl")
 _SETFIT_MODEL_DIR = Path("05_domain_analysis/models/setfit_local")
-_TAG_TAXONOMY_3L_PATH = Path("05_domain_analysis/config/tag_taxonomy_3layer.yaml")
-_TAG_TAXONOMY_3L_FALLBACK = Path("shared/config/tag_taxonomy_3layer.yaml")
 _PRO_LEXICON_PATH = Path("05_domain_analysis/config/professional_tag_lexicon.yaml")
+_WC_LEARNED_L2 = Path("05_domain_analysis/step_results/wordcloud_learned_l2.jsonl")
+_WC_LEARNED_L3 = Path("05_domain_analysis/step_results/wordcloud_learned_l3.jsonl")
 _WORDCLOUD_FONTS = [
     Path("C:/Windows/Fonts/msyh.ttc"),
     Path("C:/Windows/Fonts/simhei.ttf"),
     Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
     Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
     Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+]
+
+_L2_CATEGORY_RULES: list[tuple[list[str], str]] = [
+    (["微小rna", "mirna", "microrna"], "微小RNA"),
+    (["肿瘤", "癌", "胶质母细胞瘤", "atad2", "铁死亡"], "肿瘤与机制"),
+    (["mrna", "rna", "调控rna"], "RNA调控"),
+    (["药物", "靶点", "毒性", "不良药物反应"], "药物与安全"),
+    (["深度学习", "机器学习", "模型", "神经网络"], "人工智能与建模"),
+    (["数据库", "图谱", "平台", "数据集"], "数据库与平台"),
+    (["感染", "诊断", "测序", "血液"], "感染与诊断"),
+    (["代谢", "omega-3", "脂肪酸", "抗氧化"], "代谢与营养"),
+    (["水凝胶", "纳米", "修复", "材料"], "材料与修复"),
+    (["高血压", "空气污染", "血压", "中国"], "环境与慢病"),
 ]
 
 
@@ -450,67 +449,47 @@ def _build_tag_scores_for_paper(
     return _dedupe_weighted_items(items, top_k=int(top_k))
 
 
-def _load_tag_taxonomy_3layer() -> dict[str, list[dict[str, Any]]]:
-    cfg_path = _TAG_TAXONOMY_3L_PATH if _TAG_TAXONOMY_3L_PATH.exists() else _TAG_TAXONOMY_3L_FALLBACK
-    if not cfg_path.exists():
-        return {"l1_categories": [], "l2_tags": [], "l3_tags": []}
-    try:
-        obj = yaml.safe_load(cfg_path.read_text(encoding="utf-8")) or {}
-    except Exception:
-        return {"l1_categories": [], "l2_tags": [], "l3_tags": []}
-    out: dict[str, list[dict[str, Any]]] = {}
-    for k in ("l1_categories", "l2_tags", "l3_tags"):
-        rows = obj.get(k, []) or []
-        if not isinstance(rows, list):
-            rows = []
-        cleaned: list[dict[str, Any]] = []
-        for r in rows:
-            if not isinstance(r, dict):
-                continue
-            name = str(r.get("name") or "").strip()
-            kws = [str(x).strip().lower() for x in (r.get("keywords") or []) if str(x).strip()]
-            if name and kws:
-                cleaned.append({"name": name, "keywords": kws})
-        out[k] = cleaned
-    return {
-        "l1_categories": out.get("l1_categories", []),
-        "l2_tags": out.get("l2_tags", []),
-        "l3_tags": out.get("l3_tags", []),
-    }
-
-
-def _match_layer_tags(text: str, layer_rows: list[dict[str, Any]], max_k: int, min_weight: float) -> list[dict[str, Any]]:
+def _pick_l1(text: str) -> str:
     text_low = (text or "").lower()
-    scored: list[tuple[str, float]] = []
-    for r in layer_rows:
-        name = str(r.get("name") or "").strip()
-        kws = r.get("keywords") or []
-        if not name or not kws:
-            continue
-        hits = 0
-        for kw in kws:
-            if kw and kw in text_low:
-                hits += 1
-        if hits <= 0:
-            continue
-        # Weight: hit ratio with soft cap, favors multiple evidence.
-        weight = min(1.0, hits / max(3.0, float(len(kws)) * 0.25))
-        scored.append((name, float(weight)))
-    if not scored:
-        return []
-    scored.sort(key=lambda x: x[1], reverse=True)
-    kept = [(n, w) for n, w in scored if w >= float(min_weight)]
-    kept = kept[: max(1, int(max_k))]
-    total = sum(w for _, w in kept) or 1.0
-    return [{"tag_name": n, "tag_weight": round(float(w / total), 6)} for n, w in kept]
+    if any(k in text_low for k in ["review", "meta-analysis", "systematic review", "综述", "荟萃"]):
+        return "论文综述"
+    if any(k in text_low for k in ["database", "atlas", "platform", "tool", "pipeline", "benchmark", "数据库", "图谱", "平台", "工具"]):
+        return "数据库/工具开发"
+    return "实验研究"
 
 
-def _pick_l1(text: str, l1_rows: list[dict[str, Any]]) -> str:
-    # Single best L1. If no match, default to 方法学/工具开发 (neutral for many comp bio papers).
-    items = _match_layer_tags(text, l1_rows, max_k=1, min_weight=0.01)
-    if items:
-        return str(items[0].get("tag_name") or "").strip() or "方法学/工具开发"
-    return "方法学/工具开发"
+def _derive_l2_from_terms(tag_items: list[dict[str, Any]], max_k: int) -> list[dict[str, Any]]:
+    scores: defaultdict[str, float] = defaultdict(float)
+    for item in tag_items:
+        name = str(item.get("tag_name") or "").strip()
+        if not name:
+            continue
+        weight = float(item.get("tag_weight", 0.0) or 0.0)
+        # Special rule: miRNA with numeric suffix (e.g. 微小RNA484) should contribute to L2=微小RNA big category.
+        if re.search(r"(微小rna|mirna|microrna)\s*[-_]?\s*\d{2,4}", name.lower()):
+            scores["微小RNA"] += weight
+            continue
+
+        norm_name = _norm_tag_key(name)
+        for keys, label in _L2_CATEGORY_RULES:
+            if any(_norm_tag_key(k) in norm_name for k in keys):
+                scores[label] += weight
+                break
+        else:
+            scores["其他方向"] += weight
+    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)[: max(1, int(max_k))]
+    total = sum(v for _, v in ranked) or 1.0
+    return [{"tag_name": n, "tag_weight": round(float(v / total), 6)} for n, v in ranked]
+
+
+def _derive_l3_from_terms(tag_items: list[dict[str, Any]], max_k: int) -> list[dict[str, Any]]:
+    filtered = []
+    for item in tag_items:
+        name = _clean_theme_token(str(item.get("tag_name") or "").strip())
+        if not name or name in {"综合标签", "综合主题汇总", "其他方向"}:
+            continue
+        filtered.append({"tag_name": name, "tag_weight": float(item.get("tag_weight", 0.0) or 0.0)})
+    return _dedupe_weighted_items(filtered, top_k=int(max_k))
 
 
 def _resolve_st_model_path(model_name_or_path: str, local_files_only: bool) -> str:
@@ -560,8 +539,25 @@ def _cluster_labels(embeddings: np.ndarray, min_cluster_size: int, min_domains: 
 
 
 def _aggregate_wordcloud_terms(paper_rows: list[dict[str, Any]], top_n: int) -> list[dict[str, Any]]:
+    def _norm_wc_term(s: str) -> str:
+        s = (s or "").strip()
+        if not s:
+            return ""
+        # Normalize brackets and remove empty bracket fragments like "微小（）".
+        s = s.replace("（", "(").replace("）", ")")
+        s = re.sub(r"\(\s*\)", "", s)
+        # Strip common decorations.
+        s = re.sub(r"[\[\]【】<>《》]", " ", s)
+        s = re.sub(r"\s+", " ", s).strip(" -_/")
+        # Safety: avoid placeholder-like junk.
+        if s in {"研究关键词", "综合标签", "综合主题汇总"}:
+            return ""
+        return s
+
+    alias_map, zh_map = _load_prof_lexicon()
     score: defaultdict[str, float] = defaultdict(float)
     paper_count: Counter[str] = Counter()
+    rep: dict[str, str] = {}
     for row in paper_rows:
         identity = float(row.get("identity_score", 1.0) or 1.0)
         quality = float(row.get("quality_score", 0.0) or 0.0)
@@ -569,19 +565,107 @@ def _aggregate_wordcloud_terms(paper_rows: list[dict[str, Any]], top_n: int) -> 
         for item in row.get("tag_items") or []:
             if not isinstance(item, dict):
                 continue
-            name = str(item.get("tag_name") or "").strip()
+            raw = _norm_wc_term(str(item.get("tag_name") or ""))
+            name = _clean_theme_token(raw)
             if not name:
+                continue
+            # Canonicalize by lexicon alias map.
+            key = _norm_tag_key(name)
+            key = alias_map.get(key, key)
+            if not key:
                 continue
             tag_weight = float(item.get("tag_weight", 0.0) or 0.0)
             if tag_weight <= 0.0:
                 continue
-            score[name] += paper_weight * tag_weight
-            paper_count[name] += 1
-    ranked = sorted(score.items(), key=lambda x: x[1], reverse=True)[: max(1, int(top_n))]
+            score[key] += paper_weight * tag_weight
+            paper_count[key] += 1
+            # Prefer Chinese display name if available.
+            display = zh_map.get(key, name)
+            prev = rep.get(key, "")
+            rep[key] = display if len(display) >= len(prev) else prev
+
+    ranked = sorted(score.items(), key=lambda x: x[1], reverse=True)
+    ranked = ranked[: max(1, int(top_n))]
     return [
-        {"term": name, "weight": round(float(weight), 6), "paper_count": int(paper_count[name])}
-        for name, weight in ranked
+        {"term": rep.get(key, key), "weight": round(float(weight), 6), "paper_count": int(paper_count[key])}
+        for key, weight in ranked
     ]
+
+
+def _append_wordcloud_learned_tags(paper_rows: list[dict[str, Any]]) -> None:
+    """
+    Persist "derived" L2/L3 tags into an append-only learned log so the Streamlit UI
+    can show wordcloud-driven updates (new tags over time).
+    """
+    alias_map, zh_map = _load_prof_lexicon()
+
+    def _load_seen(path: Path) -> set[str]:
+        if not path.exists():
+            return set()
+        seen: set[str] = set()
+        for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            k = _norm_tag_key(str(obj.get("name") or ""))
+            if k:
+                seen.add(k)
+        return seen
+
+    def _write_new(path: Path, level: str, items: list[str]) -> None:
+        now = datetime.now().isoformat(timespec="seconds")
+        seen = _load_seen(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8", newline="\n") as f:
+            for raw in items:
+                name = _clean_theme_token(str(raw or "").strip())
+                if not name:
+                    continue
+                key = _norm_tag_key(name)
+                key = alias_map.get(key, key)
+                if not key or key in seen:
+                    continue
+                seen.add(key)
+                name_zh = zh_map.get(key, name)
+                rec = {
+                    "name": name,
+                    "name_zh": name_zh,
+                    "level": level,
+                    "learned_at": now,
+                    "source": "wordcloud_derived",
+                }
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+    l2_all: list[str] = []
+    l3_all: list[str] = []
+    for r in paper_rows:
+        for it in (r.get("layer_l2_items") or []):
+            if isinstance(it, dict):
+                l2_all.append(str(it.get("tag_name") or "").strip())
+        for it in (r.get("layer_l3_items") or []):
+            if isinstance(it, dict):
+                l3_all.append(str(it.get("tag_name") or "").strip())
+
+    # Dedupe within this run (keep stable order by frequency).
+    l2_rank = [k for k, _ in Counter([_norm_tag_key(x) for x in l2_all if _norm_tag_key(x)]).most_common()]
+    l3_rank = [k for k, _ in Counter([_norm_tag_key(x) for x in l3_all if _norm_tag_key(x)]).most_common()]
+    # Map back to representative raw strings (prefer longer / more informative).
+    def _rep(raws: list[str], keys: list[str]) -> list[str]:
+        bucket: defaultdict[str, str] = defaultdict(str)
+        for x in raws:
+            k = _norm_tag_key(x)
+            if not k:
+                continue
+            if len(str(x)) > len(bucket[k]):
+                bucket[k] = str(x)
+        return [bucket[k] for k in keys if bucket.get(k)]
+
+    _write_new(_WC_LEARNED_L2, "L2", _rep(l2_all, l2_rank)[:200])
+    _write_new(_WC_LEARNED_L3, "L3", _rep(l3_all, l3_rank)[:400])
 
 
 def _pick_font(size: int) -> ImageFont.ImageFont | ImageFont.FreeTypeFont:
@@ -666,9 +750,8 @@ def main() -> None:
     )
     p.add_argument("--tag-top-k", type=int, default=5, help="Max representative tags per paper.")
     p.add_argument("--tag-min-weight", type=float, default=0.20, help="Drop low-weight tags below this score.")
-    p.add_argument("--l2-top-k", type=int, default=2, help="Max L2 tags per paper.")
-    p.add_argument("--l3-top-k", type=int, default=2, help="Max L3 tags per paper.")
-    p.add_argument("--layer-min-weight", type=float, default=0.20, help="Drop low-weight L2/L3 tags below this score.")
+    p.add_argument("--l2-top-k", type=int, default=2, help="Max L2 broad categories per paper.")
+    p.add_argument("--l3-top-k", type=int, default=3, help="Max L3 specific directions per paper.")
     args = p.parse_args()
 
     rows = _read_jsonl(Path(args.input))
@@ -713,12 +796,6 @@ def main() -> None:
         else:
             theme_by_dn[dn] = _domain_name_cn(domain_kw_top.get(dn, []), rules=taxonomy_rules)
 
-    tax3 = _load_tag_taxonomy_3layer()
-    l1_rows = tax3.get("l1_categories", [])
-    l2_rows = tax3.get("l2_tags", [])
-    l3_rows = tax3.get("l3_tags", [])
-    step05_tagger = _load_step05_tagger()
-
     paper_rows: list[dict[str, Any]] = []
     for row, dn in zip(rows, label_names):
         cluster_tags = domain_kw_top.get(dn, [])
@@ -730,30 +807,13 @@ def main() -> None:
         )
         if not tag_items and cluster_tags:
             tag_items = [{"tag_name": cluster_tags[0], "tag_weight": 1.0, "raw_score": 1.0}]
+        tag_items = _dedupe_weighted_items(tag_items, top_k=int(args.tag_top_k))
         tag_names = [str(x.get("tag_name") or "") for x in tag_items if str(x.get("tag_name") or "").strip()]
         primary_tag = tag_names[0] if tag_names else "综合标签"
         full_text = _build_text(row)
-        if step05_tagger is not None and hasattr(step05_tagger, "tag_paper"):
-            tagged = step05_tagger.tag_paper(full_text)
-            l1 = str(tagged.get("layer_l1_tag") or "").strip() or "方法学/工具开发"
-            l2_items = _dedupe_weighted_items(tagged.get("layer_l2_items") or [], top_k=int(args.l2_top_k))
-            l3_items = _dedupe_weighted_items(tagged.get("layer_l3_items") or [], top_k=int(args.l3_top_k))
-        else:
-            l1 = _pick_l1(full_text, l1_rows)
-            l2_items = _match_layer_tags(
-                full_text,
-                l2_rows,
-                max_k=int(args.l2_top_k),
-                min_weight=float(args.layer_min_weight),
-            )
-            l3_items = _match_layer_tags(
-                full_text,
-                l3_rows,
-                max_k=int(args.l3_top_k),
-                min_weight=float(args.layer_min_weight),
-            )
-            l2_items = _dedupe_weighted_items(l2_items, top_k=int(args.l2_top_k))
-            l3_items = _dedupe_weighted_items(l3_items, top_k=int(args.l3_top_k))
+        l1 = _pick_l1(full_text)
+        l2_items = _derive_l2_from_terms(tag_items, max_k=int(args.l2_top_k))
+        l3_items = _derive_l3_from_terms(tag_items, max_k=int(args.l3_top_k))
         paper_rows.append(
             {
                 "paper_id": row.get("paper_id"),
@@ -762,7 +822,7 @@ def main() -> None:
                 "pub_date": row.get("pub_date"),
                 "identity_score": row.get("identity_score", 1.0),
                 "quality_score": row.get("quality_score", 0.0),
-                "tag_items": _dedupe_weighted_items(tag_items, top_k=int(args.tag_top_k)),
+                "tag_items": tag_items,
                 "tag_names": tag_names,
                 "primary_tag_name": primary_tag,
                 "tag_filter_pass": True,
@@ -818,6 +878,7 @@ def main() -> None:
     _write_json(Path(args.domains_output), {"tags": tags})
     _write_json(Path(args.wordcloud_terms_output), {"terms": wordcloud_terms})
     _render_wordcloud_image(wordcloud_terms, Path(args.wordcloud_image_output))
+    _append_wordcloud_learned_tags(paper_rows)
     print(args.paper_domains_output)
     print(args.domains_output)
     print(args.wordcloud_terms_output)

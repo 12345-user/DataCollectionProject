@@ -44,7 +44,7 @@ def main() -> None:
     for r in rows:
         d = _parse_pub_date(str(r.get("pub_date") or r.get("publication_date") or ""))
 
-        # 3-layer tags (L1/L2/L3) + detailed tags (L4)
+        # L1/L2/L3 tags + detailed tags (L4 kept for paper tag details)
         layer_rows: list[dict[str, Any]] = []
         l1 = str(r.get("layer_l1_tag") or "").strip()
         if l1:
